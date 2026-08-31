@@ -2533,17 +2533,47 @@ function App() {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [uploadOpen, setUploadOpen] = useState(false);
 
-  // Fetch projects database
+  // Fetch projects database with relative path normalization for GitHub Pages / Custom Domains
   const loadProjects = useCallback(async () => {
     try {
-      // First try website/projects.json then fallback to data/projects.json
-      let res = await fetch(`/website/projects.json?t=${Date.now()}`);
-      if (!res.ok) {
-        res = await fetch(`/data/projects.json?t=${Date.now()}`);
+      const endpoints = [
+        `./website/projects.json?t=${Date.now()}`,
+        `website/projects.json?t=${Date.now()}`,
+        `/website/projects.json?t=${Date.now()}`,
+        `./data/projects.json?t=${Date.now()}`,
+        `data/projects.json?t=${Date.now()}`,
+        `/data/projects.json?t=${Date.now()}`,
+        `projects.json?t=${Date.now()}`
+      ];
+      let data = null;
+      for (const ep of endpoints) {
+        try {
+          const res = await fetch(ep);
+          if (res.ok) {
+            data = await res.json();
+            break;
+          }
+        } catch (e) {}
       }
-      if (!res.ok) throw new Error('Could not load projects.json');
-      const data = await res.json();
-      setProjects(data);
+      if (!data) throw new Error('Could not load projects.json from any known endpoint');
+
+      const resolveMedia = (u) => {
+        if (!u) return '';
+        if (u.startsWith('http://') || u.startsWith('https://') || u.startsWith('data:') || u.startsWith('blob:')) return u;
+        const clean = u.startsWith('/') ? u.slice(1) : u;
+        return './' + clean;
+      };
+
+      const normalized = data.map((p) => ({
+        ...p,
+        media: resolveMedia(p.media),
+        variants: (p.variants || []).map((v) => ({
+          ...v,
+          media: resolveMedia(v.media)
+        }))
+      }));
+
+      setProjects(normalized);
     } catch (err) {
       console.error("Error loading portfolio dataset:", err);
     } finally {
