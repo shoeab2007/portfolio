@@ -19,10 +19,12 @@
         "media": "./01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_AntiSOCIAL_Zynth Main_Post.png"
+        "file": "2026_May_AntiSOCIAL_Zynth Main_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp"
   },
   {
     "id": "690a6d544bdb5998a0fbf169e4b1535d",
@@ -44,10 +46,12 @@
         "media": "./01_Gig_Posters/2026_April_Social Xchange_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_Social Xchange_Post.png"
+        "file": "2026_April_Social Xchange_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
   },
   {
     "id": "2db74210b1bc870a281fceb8f6994e6e",
@@ -69,10 +73,12 @@
         "media": "./01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KharSOCIAL_PullUP_Post.png"
+        "file": "2026_April_KharSOCIAL_PullUP_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp"
   },
   {
     "id": "6cf34a3974506e1d3eb2cce14268cbb4",
@@ -94,10 +100,12 @@
         "media": "/01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post.mp4"
+        "file": "2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post.mp4",
+        "thumbnail": "./01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_thumb.webp"
   },
   {
     "id": "d362b4f3f82afa996b342913d713a2fc",
@@ -119,10 +127,12 @@
         "media": "./01_Gig_Posters/2026_May_Khar social_House52_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_Khar social_House52_Post.png"
+        "file": "2026_May_Khar social_House52_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp"
   },
   {
     "id": "bed35e5674f82d47d8dbc4db99934fd6",
@@ -144,10 +154,12 @@
         "media": "./01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_March_KharSOCIAL_Holi Social_Post.png"
+        "file": "2026_March_KharSOCIAL_Holi Social_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp"
   },
   {
     "id": "0147eb1dec1c07352e4787940b95e173",
@@ -169,10 +181,12 @@
         "media": "./01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KoregaonSOCIAL_HHL_Post.png"
+        "file": "2026_April_KoregaonSOCIAL_HHL_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp"
   },
   {
     "id": "2195bd5b3dfeadcbaf7ac65e3607e127",
@@ -194,10 +208,12 @@
         "media": "./01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_June_KoregaonSOCIAL_HHL_Post.png"
+        "file": "2026_June_KoregaonSOCIAL_HHL_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp"
   },
   {
     "id": "c1837c5d87907b02e5619d109b92779d",
@@ -219,10 +235,12 @@
         "media": "./01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_KoregaonSOCIAL_HHL_Post.png"
+        "file": "2026_May_KoregaonSOCIAL_HHL_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp"
   },
   {
     "id": "8f2c59c869e66aa63241e4f487ecf2a3",
@@ -244,10 +262,12 @@
         "media": "./01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_AntiSOCIAL_Heads will Roll_Post.png"
+        "file": "2026_May_AntiSOCIAL_Heads will Roll_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp"
   },
   {
     "id": "0c01f9ea400797078c70a062dc730053",
@@ -269,10 +289,12 @@
         "media": "./01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KharSOCIAL_Grind_Post.png"
+        "file": "2026_April_KharSOCIAL_Grind_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp"
   },
   {
     "id": "b79dbcb5d9ca68bd9c4e4e311951ba66",
@@ -294,10 +316,12 @@
         "media": "/01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "2026_May_KharSOCIAL_Grind_Post.mp4"
+        "file": "2026_May_KharSOCIAL_Grind_Post.mp4",
+        "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_thumb.webp"
   },
   {
     "id": "de7e194578c6a20435e0fe104f78d806",
@@ -319,10 +343,12 @@
         "media": "./01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KharSOCIAL_Common Grounds_Post.png"
+        "file": "2026_April_KharSOCIAL_Common Grounds_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp"
   },
   {
     "id": "a8d3bd5d43637c60ed217b50cd208356",
@@ -344,10 +370,12 @@
         "media": "./01_Gig_Posters/2026_May_Chembur_Desi Class_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_Chembur_Desi Class_Post.png"
+        "file": "2026_May_Chembur_Desi Class_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp"
   },
   {
     "id": "dcd5fb786a0e7ab1f25235e25b505cd8",
@@ -369,10 +397,12 @@
         "media": "/01_Gig_Posters/2026_May_Anti_Open_Stage_Post.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "2026_May_Anti_Open_Stage_Post.mp4"
+        "file": "2026_May_Anti_Open_Stage_Post.mp4",
+        "thumbnail": "./01_Gig_Posters/2026_May_Anti_Open_Stage_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_Anti_Open_Stage_Post_thumb.webp"
   },
   {
     "id": "34c64702f74f41aac263de7abcd3fc42",
@@ -394,10 +424,12 @@
         "media": "./01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "2026_May_MaladSOCIAL_AngrejiBeats.png"
+        "file": "2026_May_MaladSOCIAL_AngrejiBeats.png",
+        "thumbnail": "./01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp"
   },
   {
     "id": "01e0111e3d6b1a51752a6cd072e5005b",
@@ -419,10 +451,12 @@
         "media": "./01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.png"
+        "file": "2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.png",
+        "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp"
   },
   {
     "id": "f091788aeaf1ccc9859fc6625540a817",
@@ -444,10 +478,12 @@
         "media": "/02_Campaign_and_Promos/Hospitality/Video-528.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Video-528.mp4"
+        "file": "Video-528.mp4",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-528_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-528_thumb.webp"
   },
   {
     "id": "0317652624e681e9debbaa6e579cf833",
@@ -469,10 +505,12 @@
         "media": "/02_Campaign_and_Promos/Hospitality/Video-216.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Video-216.mp4"
+        "file": "Video-216.mp4",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-216_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-216_thumb.webp"
   },
   {
     "id": "cf887d32fec90b0dba36a065b89f28b3",
@@ -494,10 +532,12 @@
         "media": "/02_Campaign_and_Promos/Hospitality/rS indeoendence.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "rS indeoendence.mp4"
+        "file": "rS indeoendence.mp4",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/rS indeoendence_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/rS indeoendence_thumb.webp"
   },
   {
     "id": "f7caa63d77b9ea11b3876e382338b1eb",
@@ -519,10 +559,12 @@
         "media": "./01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2025_March_AntiSOCIAL_Pulse_Post.png"
+        "file": "2025_March_AntiSOCIAL_Pulse_Post.png",
+        "thumbnail": "./01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp"
   },
   {
     "id": "0e1bc5ae864e3f5a2e003be284c2d6cd",
@@ -544,10 +586,12 @@
         "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Square.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Mumbai Square.png"
+        "file": "Mumbai Square.png",
+        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp"
   },
   {
     "id": "869a69a185d343733cd955e5ecdc3c0f",
@@ -569,7 +613,8 @@
         "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Mumbai Post.png"
+        "file": "Mumbai Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp"
       },
       {
         "id": "283aff79217a10ffffcb44bb0f140443",
@@ -577,10 +622,12 @@
         "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Mumbai Story.png"
+        "file": "Mumbai Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp"
   },
   {
     "id": "5f013a43fd7a5dfb8e2a391cc14a2cd7",
@@ -602,10 +649,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Square SMS Post.png"
+        "file": "Molo 5th April Square SMS Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp"
   },
   {
     "id": "c03e5b0aadaa7eeb4f6f714d85203854",
@@ -627,10 +676,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Square Skillbox Post.png"
+        "file": "Molo 5th April Square Skillbox Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp"
   },
   {
     "id": "a36e32011b984e4407fd221592649901",
@@ -652,10 +703,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Square Post.png"
+        "file": "Molo 5th April Square Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp"
   },
   {
     "id": "3ca4c12258a89393b83b502c44ab053a",
@@ -677,10 +730,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover SMS.png"
+        "file": "Molo 5th April Cover SMS.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp"
   },
   {
     "id": "b499db4a1f6410889680073538c751a2",
@@ -702,10 +757,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover Skillbox 1350x1080.png"
+        "file": "Molo 5th April Cover Skillbox 1350x1080.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp"
   },
   {
     "id": "40766c3c914baf80892a810fa931b0c8",
@@ -727,10 +784,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover Skillbox.png"
+        "file": "Molo 5th April Cover Skillbox.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp"
   },
   {
     "id": "3f327d9ce6229e79f2d50179bc9dc0cf",
@@ -752,10 +811,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover Insider.png"
+        "file": "Molo 5th April Cover Insider.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp"
   },
   {
     "id": "cde6611f261682ca6c4f057c262f6ef4",
@@ -777,7 +838,8 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Post.png"
+        "file": "Molo 5th April Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp"
       },
       {
         "id": "bf72925fa1f943dba1db0d3f6862695d",
@@ -785,10 +847,12 @@
         "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Molo 5th April Story.png"
+        "file": "Molo 5th April Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp"
   },
   {
     "id": "06348a38b87f895dbf08b9d76b8ef8a1",
@@ -810,10 +874,12 @@
         "media": "/02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Metaraph Mumbai_Reel.mp4"
+        "file": "Metaraph Mumbai_Reel.mp4",
+        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_thumb.webp"
   },
   {
     "id": "9e240fc2849783fed0b77ad659f4cff1",
@@ -835,10 +901,12 @@
         "media": "/02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Metaraph Kolkata_Story.mp4"
+        "file": "Metaraph Kolkata_Story.mp4",
+        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_thumb.webp"
   },
   {
     "id": "b7a135f0e82bfc66eb2a3e0fd8ca97e9",
@@ -860,7 +928,8 @@
         "media": "./02_Campaign_and_Promos/Metaraph/Metaraph Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Metaraph Post.png"
+        "file": "Metaraph Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp"
       },
       {
         "id": "ad9b94ec988fe41cbd437117019015c6",
@@ -868,10 +937,12 @@
         "media": "./02_Campaign_and_Promos/Metaraph/Metaraph Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Metaraph Story.png"
+        "file": "Metaraph Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp"
   },
   {
     "id": "18f49743fe162ccb4022d7f099cbcf47",
@@ -893,10 +964,12 @@
         "media": "./01_Gig_Posters/2025_March_Malad_Desi Drip_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2025_March_Malad_Desi Drip_Post.png"
+        "file": "2025_March_Malad_Desi Drip_Post.png",
+        "thumbnail": "./01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp"
   },
   {
     "id": "497b6c99ada230bc58c37b93aa8d1fa1",
@@ -918,10 +991,12 @@
         "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "khar Calender Weeks v1.png"
+        "file": "khar Calender Weeks v1.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp"
   },
   {
     "id": "63384ed55ed06922a857946ac49e66b2",
@@ -943,7 +1018,8 @@
         "media": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Khar Calender June Post.png"
+        "file": "Khar Calender June Post.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp"
       },
       {
         "id": "c6039ee1839ec20848d9ea88cff8202a",
@@ -951,7 +1027,8 @@
         "media": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Khar Calender June Story.png"
+        "file": "Khar Calender June Story.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Story_thumb.webp"
       },
       {
         "id": "6fee44275a81479be1272953c3c4e5c6",
@@ -959,10 +1036,12 @@
         "media": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Khar Calender June Cover.png"
+        "file": "Khar Calender June Cover.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp"
   },
   {
     "id": "9a02acdf6b94e7b25ee1ae9bdf5f88c8",
@@ -984,10 +1063,12 @@
         "media": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Khar Social_March _Calendar_Post.png"
+        "file": "Khar Social_March _Calendar_Post.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp"
   },
   {
     "id": "e6294f3ffafbd56d9f72ecd589c59b92",
@@ -1009,10 +1090,12 @@
         "media": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Khar Social_March _Calendar_Story.png"
+        "file": "Khar Social_March _Calendar_Story.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp"
   },
   {
     "id": "e4febf41f386b5362634076381445f4c",
@@ -1034,7 +1117,8 @@
         "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "khar Calender WEEKS Story.png"
+        "file": "khar Calender WEEKS Story.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp"
       },
       {
         "id": "38472a54a92b1542ef4f9e5dfc724e01",
@@ -1042,7 +1126,8 @@
         "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender COver.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "khar Calender COver.png"
+        "file": "khar Calender COver.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender COver_thumb.webp"
       },
       {
         "id": "c0307d9c7058344c31162879c7d09a88",
@@ -1050,10 +1135,12 @@
         "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Sunboard.webp",
         "type": "image",
         "ratio": "Print Sunboard",
-        "file": "khar Calender WEEKS Sunboard.png"
+        "file": "khar Calender WEEKS Sunboard.png",
+        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Sunboard_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp"
   },
   {
     "id": "c03c18475b48a002d14f57d799b5eb4a",
@@ -1075,10 +1162,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-983.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-983.jpg"
+        "file": "Image-983.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp"
   },
   {
     "id": "e1b092af99f7863de463a4e0662083ce",
@@ -1100,10 +1189,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-880.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-880.jpg"
+        "file": "Image-880.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp"
   },
   {
     "id": "2b58f4af989c037a52c71a7ac4c3d2f0",
@@ -1125,10 +1216,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-811.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-811.jpg"
+        "file": "Image-811.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp"
   },
   {
     "id": "db13d17e4219a2aef4679dc3ea433bef",
@@ -1150,10 +1243,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-807.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-807.jpg"
+        "file": "Image-807.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp"
   },
   {
     "id": "3cabca475dc1973dd6952430e4d76a8a",
@@ -1175,10 +1270,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-658.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-658.jpg"
+        "file": "Image-658.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp"
   },
   {
     "id": "b8fefe80892ff4e41c08adb9b3e04237",
@@ -1200,10 +1297,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-563.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-563.jpg"
+        "file": "Image-563.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp"
   },
   {
     "id": "1bebdac3032c7650bd6cbbbcfcfdd439",
@@ -1225,10 +1324,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-536.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-536.jpg"
+        "file": "Image-536.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp"
   },
   {
     "id": "a69174bc2a22529590ff69407f18218a",
@@ -1250,10 +1351,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-27.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-27.jpg"
+        "file": "Image-27.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp"
   },
   {
     "id": "6eb6ee57963240097ad1afd0a704d40f",
@@ -1275,10 +1378,12 @@
         "media": "./02_Campaign_and_Promos/Hospitality/Image-237.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-237.jpg"
+        "file": "Image-237.jpg",
+        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp"
   },
   {
     "id": "a8458ad9aec92c98a8dfb4a5bfcacbb8",
@@ -1300,7 +1405,8 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP6th Feb Post.png"
+        "file": "DOP6th Feb Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp"
       },
       {
         "id": "628bc1b58c7627b4921b4b5695089536",
@@ -1308,10 +1414,12 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP6th Feb Story.png"
+        "file": "DOP6th Feb Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp"
   },
   {
     "id": "c115efdc4089f9190a36caaaec856db1",
@@ -1333,7 +1441,8 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP27th Feb Post.png"
+        "file": "DOP27th Feb Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp"
       },
       {
         "id": "59fabf6436c7969b6c4580f4fa4bf38b",
@@ -1341,7 +1450,8 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP27th Feb Story.png"
+        "file": "DOP27th Feb Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Story_thumb.webp"
       },
       {
         "id": "a6ea5c53d558c7ec2a69f4f8a4190e78",
@@ -1349,10 +1459,12 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP27th Feb Cover.png"
+        "file": "DOP27th Feb Cover.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp"
   },
   {
     "id": "aaf856e4f72131e20289cbc629bc1310",
@@ -1374,7 +1486,8 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP20th Feb Post.png"
+        "file": "DOP20th Feb Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp"
       },
       {
         "id": "8f14283bd1c4be678ec587d9f23131b7",
@@ -1382,7 +1495,8 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP20th Feb Story.png"
+        "file": "DOP20th Feb Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Story_thumb.webp"
       },
       {
         "id": "4860b85f921f69f171018a27735fb6b5",
@@ -1390,10 +1504,12 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP20th Feb Cover.png"
+        "file": "DOP20th Feb Cover.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp"
   },
   {
     "id": "66ed6cb41f5a9cd35d1501b84a14cd36",
@@ -1415,10 +1531,12 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP13th Feb Post.png"
+        "file": "DOP13th Feb Post.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp"
   },
   {
     "id": "f5ad00bcf69963a5aa12fb045a7accc5",
@@ -1440,10 +1558,12 @@
         "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Feb V1.png"
+        "file": "DOP Feb V1.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp"
   },
   {
     "id": "5755c41dd320f8498ac908c8d85b9dfc",
@@ -1465,7 +1585,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP Week 4 post.png"
+        "file": "DOP Week 4 post.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp"
       },
       {
         "id": "a2f55e82ae5a1306c0be4d97f4d215bc",
@@ -1473,7 +1594,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 4 Story.png"
+        "file": "DOP Week 4 Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Story_thumb.webp"
       },
       {
         "id": "95ce6a01d151a034add436fdedd89cf2",
@@ -1481,10 +1603,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 4 Cover.png"
+        "file": "DOP Week 4 Cover.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp"
   },
   {
     "id": "deac1c1051cba15863566dc5d2543544",
@@ -1506,7 +1630,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 3.png"
+        "file": "DOP Week 3.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp"
       },
       {
         "id": "9fdaa74d0c2fe2d6857de362db84df44",
@@ -1514,7 +1639,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 3 Story.png"
+        "file": "DOP Week 3 Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 Story_thumb.webp"
       },
       {
         "id": "9402dfc5f1c29066eb72d7c63060fcad",
@@ -1522,10 +1648,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 3 cover.png"
+        "file": "DOP Week 3 cover.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp"
   },
   {
     "id": "063bd7084b3a00501e0d10986e8a8e08",
@@ -1547,7 +1675,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 2.png"
+        "file": "DOP Week 2.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp"
       },
       {
         "id": "c7079531ef2034f92aa41db962509bc6",
@@ -1555,7 +1684,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 2 Story.png"
+        "file": "DOP Week 2 Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 Story_thumb.webp"
       },
       {
         "id": "933911f0e3f9f5379ad16745bdff99eb",
@@ -1563,10 +1693,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 2 cover.png"
+        "file": "DOP Week 2 cover.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp"
   },
   {
     "id": "9ad4a5cadddd6e4aa254df2b841f82fb",
@@ -1588,10 +1720,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1 v4.png"
+        "file": "DOP Week 1 v4.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp"
   },
   {
     "id": "350c186be1b8593e346cd67b2b180028",
@@ -1613,10 +1747,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1 v3.png"
+        "file": "DOP Week 1 v3.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp"
   },
   {
     "id": "fc7e4ec9a116696252a71184fb3f4132",
@@ -1638,10 +1774,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1 v2.png"
+        "file": "DOP Week 1 v2.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp"
   },
   {
     "id": "722f435809f97d6048f7363e717299ec",
@@ -1663,7 +1801,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1.png"
+        "file": "DOP Week 1.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp"
       },
       {
         "id": "103903035fc7307db2a6bfed318068a4",
@@ -1671,7 +1810,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 1 Story.png"
+        "file": "DOP Week 1 Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Story_thumb.webp"
       },
       {
         "id": "87ab76fca2187845fb3afab53f5b6375",
@@ -1679,10 +1819,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 1 Cover.png"
+        "file": "DOP Week 1 Cover.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp"
   },
   {
     "id": "48eed17764b975fda285efa0364c4fb7",
@@ -1704,7 +1846,8 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP April Calender.png"
+        "file": "DOP April Calender.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp"
       },
       {
         "id": "9c9efa83a3e2193a411a1fa4c3933a35",
@@ -1712,10 +1855,12 @@
         "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP April Calender Story.png"
+        "file": "DOP April Calender Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp"
   },
   {
     "id": "3efe74a32cc682832ff47d43264f80bc",
@@ -1737,10 +1882,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_April/Cover April.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Cover April.mp4"
+        "file": "Cover April.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/Cover April_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/Cover April_thumb.webp"
   },
   {
     "id": "f1df667c0ba9f9be5efbd0d0dba14fbf",
@@ -1762,10 +1909,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_May/Cover.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Cover.mp4"
+        "file": "Cover.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Cover_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Cover_thumb.webp"
   },
   {
     "id": "e6ab2eb3037f7cc5ef97900cf131bcb5",
@@ -1787,10 +1936,12 @@
         "media": "./02_Campaign_and_Promos/COEUS/COEUS 500x750.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "COEUS 500x750.png"
+        "file": "COEUS 500x750.png",
+        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp"
   },
   {
     "id": "2ceaed70bc0919b19f7f65d20bfa5ab7",
@@ -1812,10 +1963,12 @@
         "media": "./02_Campaign_and_Promos/COEUS/COEUS 1280x640.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "COEUS 1280x640.png"
+        "file": "COEUS 1280x640.png",
+        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp"
   },
   {
     "id": "c9117967e08960b16220405dd6c26c82",
@@ -1837,7 +1990,8 @@
         "media": "./02_Campaign_and_Promos/COEUS/COEUS Finasl.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "COEUS Finasl.png"
+        "file": "COEUS Finasl.png",
+        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp"
       },
       {
         "id": "a44d3f84842cbad833001932e0562966",
@@ -1845,10 +1999,12 @@
         "media": "./02_Campaign_and_Promos/COEUS/COEUS Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "COEUS Story.png"
+        "file": "COEUS Story.png",
+        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp"
   },
   {
     "id": "000c6c4d5b26d3812029d532f01a0e92",
@@ -1870,10 +2026,12 @@
         "media": "./01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2025_March_ChemburD+SOCIAL_CircuitX_Post.png"
+        "file": "2025_March_ChemburD+SOCIAL_CircuitX_Post.png",
+        "thumbnail": "./01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp"
   },
   {
     "id": "f4599fa7e13c657701845b78a98dc0d0",
@@ -1895,10 +2053,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_April/April Calender Story.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "April Calender Story.mp4"
+        "file": "April Calender Story.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Calender Story_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Calender Story_thumb.webp"
   },
   {
     "id": "ea51ad9fc44cbc8aaca540503e59585b",
@@ -1920,10 +2080,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Anti Calender June Week 4.mp4"
+        "file": "Anti Calender June Week 4.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_thumb.webp"
   },
   {
     "id": "647463684db5e0866f9b67f845fc461c",
@@ -1945,10 +2107,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Anti Calender June Week 3.mp4"
+        "file": "Anti Calender June Week 3.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_thumb.webp"
   },
   {
     "id": "7d41cfef678ae816fcb35a1063d0d270",
@@ -1970,10 +2134,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Anti Calender June Week 2.mp4"
+        "file": "Anti Calender June Week 2.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_thumb.webp"
   },
   {
     "id": "672d179d6e4b4e888ecd59f0e8658875",
@@ -1995,10 +2161,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Anti Calender June Week 1.mp4"
+        "file": "Anti Calender June Week 1.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_thumb.webp"
   },
   {
     "id": "9865636c4cebea4bde752901041b20ca",
@@ -2020,7 +2188,8 @@
         "media": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Anti Calender June story.png"
+        "file": "Anti Calender June story.png",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp"
       },
       {
         "id": "81359b7c7fc4d4a02348565b4a6a7edb",
@@ -2028,10 +2197,12 @@
         "media": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Sunboard.webp",
         "type": "image",
         "ratio": "Print Sunboard",
-        "file": "Anti Calender June Sunboard.png"
+        "file": "Anti Calender June Sunboard.png",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Sunboard_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp"
   },
   {
     "id": "53ea232c4f027b95c162be46968298f5",
@@ -2053,10 +2224,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 5.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "April Week 5.mp4"
+        "file": "April Week 5.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 5_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 5_thumb.webp"
   },
   {
     "id": "38ec145014ac78e4a455f8fae8a3cf94",
@@ -2078,10 +2251,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_May/Week 5.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Week 5.mp4"
+        "file": "Week 5.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 5_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 5_thumb.webp"
   },
   {
     "id": "5fb42693c00ce2c5e286c18a3dd45a5b",
@@ -2103,10 +2278,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 4.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "April Week 4.mp4"
+        "file": "April Week 4.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 4_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 4_thumb.webp"
   },
   {
     "id": "b0c714425eac23adaa640c64f0e249bd",
@@ -2128,10 +2305,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_May/Week 4.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Week 4.mp4"
+        "file": "Week 4.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 4_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 4_thumb.webp"
   },
   {
     "id": "4e2384f9929c02421ea94faa0c686c87",
@@ -2153,10 +2332,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 3.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "April Week 3.mp4"
+        "file": "April Week 3.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 3_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 3_thumb.webp"
   },
   {
     "id": "5f308f727c8c2028f8e3a4cce05158d4",
@@ -2178,10 +2359,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_May/Week 3.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Week 3.mp4"
+        "file": "Week 3.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 3_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 3_thumb.webp"
   },
   {
     "id": "0f7cdd3df13984f7550d56ce38ee62c5",
@@ -2203,10 +2386,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 2.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "April Week 2.mp4"
+        "file": "April Week 2.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 2_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 2_thumb.webp"
   },
   {
     "id": "48c4d8167de5ff952b83d346b254632a",
@@ -2228,10 +2413,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_May/Week 2.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Week 2.mp4"
+        "file": "Week 2.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 2_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 2_thumb.webp"
   },
   {
     "id": "f6cfca48b3b9492ac96333d2533bf6a8",
@@ -2253,10 +2440,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 1.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "April Week 1.mp4"
+        "file": "April Week 1.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 1_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 1_thumb.webp"
   },
   {
     "id": "03515eb1878686b16813704d4427b692",
@@ -2278,10 +2467,12 @@
         "media": "/02_Event_Calendars/Anti_Calendar_May/Week 1.mp4",
         "type": "video",
         "ratio": "9:16 (Video)",
-        "file": "Week 1.mp4"
+        "file": "Week 1.mp4",
+        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 1_thumb.webp"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 1_thumb.webp"
   },
   {
     "id": "f6fad1f945bb3b33e0b59eb5a0459675",
@@ -2303,9 +2494,11 @@
         "media": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf",
         "type": "pdf",
         "ratio": "PDF Document",
-        "file": "F.Gheewala KSA Company Profile 2023.pdf"
+        "file": "F.Gheewala KSA Company Profile 2023.pdf",
+        "thumbnail": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf"
       }
     ],
-    "is_default": true
+    "is_default": true,
+    "thumbnail": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf"
   }
 ]

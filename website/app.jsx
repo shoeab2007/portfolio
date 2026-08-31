@@ -624,7 +624,7 @@ function ScrollRevealWrapper({ children, index = 0, className = "" }) {
 // -------------------------------------------------------------
 // 5.5 High-Performance Lazy-Loading Video Streamer
 // -------------------------------------------------------------
-function LazyVideo({ src, className = '', loop = true, muted = true, playsInline = true }) {
+function LazyVideo({ src, poster = '', className = '', loop = true, muted = true, playsInline = true }) {
   const videoRef = useRef(null);
   const [inView, setInView] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -638,7 +638,7 @@ function LazyVideo({ src, className = '', loop = true, muted = true, playsInline
           setInView(entry.isIntersecting);
         });
       },
-      { rootMargin: '200px 0px', threshold: 0.05 }
+      { rootMargin: '250px 0px', threshold: 0.05 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -659,13 +659,14 @@ function LazyVideo({ src, className = '', loop = true, muted = true, playsInline
 
   return (
     <div
-      className="relative w-full h-full flex items-center justify-center overflow-hidden group/vid"
+      className="relative w-full h-full flex items-center justify-center overflow-hidden group/vid bg-black/60"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <video
         ref={videoRef}
-        preload="metadata"
+        poster={poster}
+        preload="none"
         loop={loop}
         muted={muted}
         playsInline={playsInline}
@@ -973,16 +974,21 @@ function BentoProjectsGrid({
                       {isVideo ? (
                         <LazyVideo
                           src={project.media}
+                          poster={project.thumbnail}
                           className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
                         />
                       ) : (
                         <img
-                          src={project.media}
-                          alt={project.title}
-                          loading="lazy"
+                          src={project.thumbnail || project.media}
+                          alt={project.client || 'Shoeab Portfolio Artwork'}
+                          loading={idx < 6 ? "eager" : "lazy"}
+                          decoding="async"
+                          fetchpriority={idx < 2 ? "high" : "auto"}
                           className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
                           onError={(e) => {
-                            e.target.style.display = 'none';
+                            if (project.thumbnail && e.target.src !== project.media) {
+                              e.target.src = project.media;
+                            }
                           }}
                         />
                       )}
@@ -1074,14 +1080,21 @@ function BentoProjectsGrid({
                     {project.type === 'video' ? (
                       <LazyVideo
                         src={project.media}
+                        poster={project.thumbnail}
                         className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
                       />
                     ) : (
                       <img
-                        src={project.media}
-                        alt={project.title}
+                        src={project.thumbnail || project.media}
+                        alt={project.client || 'Shoeab Portfolio'}
                         loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
+                        onError={(e) => {
+                          if (project.thumbnail && e.target.src !== project.media) {
+                            e.target.src = project.media;
+                          }
+                        }}
                       />
                     )}
 
@@ -1152,9 +1165,21 @@ function BentoProjectsGrid({
                   <div className="flex items-center gap-4 min-w-0">
                     <div className="w-16 h-16 rounded-lg bg-black/90 flex-shrink-0 overflow-hidden border border-white/15 p-1 flex items-center justify-center">
                       {project.type === 'video' ? (
-                        <video src={project.media} muted className="w-full h-full object-contain" />
+                        <img
+                          src={project.thumbnail || project.media}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-contain"
+                        />
                       ) : (
-                        <img src={project.media} alt="" className="w-full h-full object-contain" />
+                        <img
+                          src={project.thumbnail || project.media}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-contain"
+                        />
                       )}
                     </div>
                     <div className="min-w-0">
