@@ -51,7 +51,7 @@ def scan_assets():
                     continue
                     
                 ext = os.path.splitext(file)[1].lower()
-                if ext not in ['.png', '.jpg', '.jpeg', '.gif', '.mp4', '.pdf']:
+                if ext not in ['.png', '.jpg', '.jpeg', '.gif', '.mp4', '.pdf', '.webp']:
                     continue
                     
                 file_abs = os.path.join(root, file)
