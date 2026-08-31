@@ -1,0 +1,2453 @@
+// Shoeab Shaikh - Lead Visual Strategist & Art Director Portfolio
+// Built with React 18, Tailwind CSS, Matter.js Physics Engine, Lucide Icons, and Web Audio SFX.
+
+const { useState, useEffect, useRef, useMemo, useCallback } = React;
+
+// -------------------------------------------------------------
+// 1. Web Audio API Sound Synthesizer
+// -------------------------------------------------------------
+const AudioController = {
+  ctx: null,
+  enabled: true,
+  init() {
+    if (!this.ctx && (window.AudioContext || window.webkitAudioContext)) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      this.ctx = new AudioCtx();
+    }
+  },
+  play(type) {
+    if (!this.enabled) return;
+    try {
+      this.init();
+      if (!this.ctx) return;
+      if (this.ctx.state === 'suspended') {
+        this.ctx.resume();
+      }
+      const t = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, t);
+        osc.frequency.exponentialRampToValueAtTime(300, t + 0.04);
+        gain.gain.setValueAtTime(0.08, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
+        osc.start(t);
+        osc.stop(t + 0.04);
+      } else if (type === 'pop') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(450, t);
+        osc.frequency.exponentialRampToValueAtTime(900, t + 0.06);
+        gain.gain.setValueAtTime(0.1, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
+        osc.start(t);
+        osc.stop(t + 0.06);
+      } else if (type === 'toss') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(180, t);
+        osc.frequency.exponentialRampToValueAtTime(520, t + 0.12);
+        gain.gain.setValueAtTime(0.12, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.12);
+        osc.start(t);
+        osc.stop(t + 0.12);
+      } else if (type === 'success') {
+        [440, 554.37, 659.25, 880].forEach((freq, i) => {
+          const o = this.ctx.createOscillator();
+          const g = this.ctx.createGain();
+          o.type = 'sine';
+          o.frequency.value = freq;
+          o.connect(g);
+          g.connect(this.ctx.destination);
+          g.gain.setValueAtTime(0.06, t + i * 0.07);
+          g.gain.exponentialRampToValueAtTime(0.001, t + i * 0.07 + 0.15);
+          o.start(t + i * 0.07);
+          o.stop(t + i * 0.07 + 0.15);
+        });
+      } else if (type === 'bounce') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(120, t);
+        osc.frequency.exponentialRampToValueAtTime(40, t + 0.08);
+        gain.gain.setValueAtTime(0.15, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.08);
+        osc.start(t);
+        osc.stop(t + 0.08);
+      }
+    } catch (e) {
+      console.warn("Audio feedback error:", e);
+    }
+  }
+};
+
+// -------------------------------------------------------------
+// 2. Custom Kinetic Cursor Component
+// -------------------------------------------------------------
+function CustomCursor() {
+  const cursorRef = useRef(null);
+  const dotRef = useRef(null);
+  const [cursorText, setCursorText] = useState('');
+  const [cursorActive, setCursorActive] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    let mouseX = -100, mouseY = -100;
+    let ringX = -100, ringY = -100;
+    let animId;
+
+    const onMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      }
+    };
+
+    const render = () => {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+      }
+      animId = requestAnimationFrame(render);
+    };
+
+    const onMouseEnter = () => setHidden(false);
+    const onMouseLeave = () => setHidden(true);
+
+    window.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseenter', onMouseEnter);
+    document.addEventListener('mouseleave', onMouseLeave);
+    animId = requestAnimationFrame(render);
+
+    // Global cursor hover triggers
+    const handleMouseOver = (e) => {
+      const target = e.target.closest('[data-cursor]');
+      if (target) {
+        const text = target.getAttribute('data-cursor');
+        setCursorText(text || '');
+        setCursorActive(true);
+      } else if (e.target.closest('button, a, input, textarea, select, .interactive-card')) {
+        setCursorText('');
+        setCursorActive(true);
+      } else {
+        setCursorText('');
+        setCursorActive(false);
+      }
+    };
+
+    document.addEventListener('mouseover', handleMouseOver);
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseenter', onMouseEnter);
+      document.removeEventListener('mouseleave', onMouseLeave);
+      document.removeEventListener('mouseover', handleMouseOver);
+      cancelAnimationFrame(animId);
+    };
+  }, []);
+
+  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+    return null; // Disable on touch devices
+  }
+
+  return (
+    <React.Fragment>
+      {/* Precision Center Dot */}
+      <div
+        ref={dotRef}
+        className={`fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 bg-accent rounded-full pointer-events-none z-[9999] transition-opacity duration-150 ${
+          hidden ? 'opacity-0' : 'opacity-100'
+        }`}
+        style={{ willChange: 'transform' }}
+      />
+      {/* Smooth Trailing Magnetic Ring */}
+      <div
+        ref={cursorRef}
+        className={`fixed top-0 left-0 pointer-events-none z-[9998] flex items-center justify-center -ml-6 -mt-6 rounded-full border border-accent/70 transition-all duration-200 ease-out ${
+          cursorActive
+            ? 'w-16 h-16 -ml-8 -mt-8 bg-accent/15 border-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] scale-110'
+            : 'w-12 h-12 bg-transparent opacity-60'
+        } ${hidden ? 'opacity-0 scale-50' : 'opacity-100'}`}
+        style={{ willChange: 'transform' }}
+      >
+        {cursorText && (
+          <span className="text-[9px] font-mono font-black text-black bg-accent px-1.5 py-0.5 rounded tracking-tighter uppercase shadow-sm">
+            {cursorText}
+          </span>
+        )}
+      </div>
+    </React.Fragment>
+  );
+}
+
+// -------------------------------------------------------------
+// 3. Navbar Component
+// -------------------------------------------------------------
+function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [timeStr, setTimeStr] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setTimeStr(
+        now.toLocaleTimeString('en-US', {
+          timeZone: 'Asia/Kolkata',
+          hour12: false,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        }) + ' IST'
+      );
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  const scrollTo = (id) => {
+    AudioController.play('click');
+    setMobileOpen(false);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-black/85 backdrop-blur-xl border-b border-white/15 py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)]'
+          : 'bg-transparent border-b border-white/10 py-5'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Brand / Logo */}
+        <div
+          onClick={() => scrollTo('hero')}
+          data-cursor="TOP"
+          className="group cursor-pointer flex items-center gap-3 select-none"
+        >
+          <div className="w-3 h-3 bg-accent rounded-sm rotate-45 group-hover:rotate-180 transition-transform duration-500 shadow-[0_0_12px_#00FF66]" />
+          <div>
+            <span className="font-black text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-accent transition-colors font-sans">
+              SHOEAB SHAIKH
+            </span>
+            <div className="flex items-center gap-2 font-mono text-[10px] text-white/50 tracking-wider">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              <span>{timeStr || 'MUMBAI // IST'}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-7 font-mono text-xs font-bold uppercase tracking-wider">
+          <button
+            onClick={() => scrollTo('projects')}
+            data-cursor="VIEW"
+            className="text-white/80 hover:text-accent transition-colors flex items-center gap-1.5 group"
+          >
+            <span className="text-accent/60 group-hover:text-accent">//01</span> ARCHIVE
+            <span className="text-[10px] px-1.5 py-0.2 bg-white/10 group-hover:bg-accent group-hover:text-black rounded transition-colors">
+              {totalCount}
+            </span>
+          </button>
+          <button
+            onClick={() => scrollTo('playground')}
+            data-cursor="PHYSICS"
+            className="text-white/80 hover:text-accent transition-colors flex items-center gap-1.5 group"
+          >
+            <span className="text-accent/60 group-hover:text-accent">//02</span> PLAYGROUND
+          </button>
+          <button
+            onClick={() => scrollTo('timeline')}
+            data-cursor="ROADMAP"
+            className="text-white/80 hover:text-accent transition-colors flex items-center gap-1.5 group"
+          >
+            <span className="text-accent/60 group-hover:text-accent">//03</span> PROCESS
+          </button>
+          <button
+            onClick={() => scrollTo('about')}
+            data-cursor="BIO"
+            className="text-white/80 hover:text-accent transition-colors flex items-center gap-1.5 group"
+          >
+            <span className="text-accent/60 group-hover:text-accent">//04</span> ABOUT
+          </button>
+          <button
+            onClick={() => scrollTo('contact')}
+            data-cursor="HELLO"
+            className="text-white/80 hover:text-accent transition-colors flex items-center gap-1.5 group"
+          >
+            <span className="text-accent/60 group-hover:text-accent">//05</span> CONTACT
+          </button>
+        </nav>
+
+        {/* Action Controls */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Sound Toggle */}
+          <button
+            onClick={() => {
+              const next = !soundEnabled;
+              setSoundEnabled(next);
+              AudioController.enabled = next;
+              if (next) AudioController.play('pop');
+            }}
+            data-cursor={soundEnabled ? 'MUTE' : 'UNMUTE'}
+            className={`p-2 sm:px-3 sm:py-1.5 rounded border text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
+              soundEnabled
+                ? 'border-accent/40 bg-accent/10 text-accent shadow-[0_0_10px_rgba(0,255,102,0.2)]'
+                : 'border-white/20 bg-white/5 text-white/40 hover:text-white hover:border-white/40'
+            }`}
+            title="Toggle Audio Feedback"
+          >
+            <i data-lucide={soundEnabled ? "volume-2" : "volume-x"} className="w-3.5 h-3.5"></i>
+            <span className="hidden sm:inline">{soundEnabled ? 'SFX ON' : 'MUTED'}</span>
+          </button>
+
+          {/* Admin Upload Trigger */}
+          <button
+            onClick={() => {
+              AudioController.play('pop');
+              onOpenUpload();
+            }}
+            data-cursor="UPLOAD"
+            className="bg-white/10 hover:bg-accent text-white hover:text-black border border-white/20 hover:border-accent font-mono text-xs font-bold px-3 py-1.5 rounded transition-all duration-300 flex items-center gap-1.5 shadow-sm"
+          >
+            <i data-lucide="plus-circle" className="w-3.5 h-3.5"></i>
+            <span className="hidden sm:inline">UPLOAD</span>
+          </button>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => {
+              AudioController.play('pop');
+              setMobileOpen(!mobileOpen);
+            }}
+            className="md:hidden p-2 text-white hover:text-accent border border-white/20 rounded bg-white/5"
+            aria-label="Toggle Navigation"
+          >
+            <i data-lucide={mobileOpen ? "x" : "menu"} className="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      {mobileOpen && (
+        <div className="md:hidden fixed inset-0 top-[65px] bg-black/95 backdrop-blur-2xl z-40 p-6 flex flex-col justify-between border-t border-white/15 animate-fade-in">
+          <div className="flex flex-col gap-6 pt-4">
+            <button
+              onClick={() => scrollTo('projects')}
+              className="text-left text-2xl font-black uppercase text-white hover:text-accent border-b border-white/10 pb-4 flex items-center justify-between"
+            >
+              <span>01 // ARCHIVE</span>
+              <span className="font-mono text-sm text-accent bg-accent/10 px-2 py-0.5 rounded">
+                {totalCount} ITEMS
+              </span>
+            </button>
+            <button
+              onClick={() => scrollTo('playground')}
+              className="text-left text-2xl font-black uppercase text-white hover:text-accent border-b border-white/10 pb-4"
+            >
+              02 // PHYSICS PLAYGROUND
+            </button>
+            <button
+              onClick={() => scrollTo('timeline')}
+              className="text-left text-2xl font-black uppercase text-white hover:text-accent border-b border-white/10 pb-4"
+            >
+              03 // PROCESS &amp; TIMELINE
+            </button>
+            <button
+              onClick={() => scrollTo('about')}
+              className="text-left text-2xl font-black uppercase text-white hover:text-accent border-b border-white/10 pb-4"
+            >
+              04 // BIO &amp; MANIFESTO
+            </button>
+            <button
+              onClick={() => scrollTo('contact')}
+              className="text-left text-2xl font-black uppercase text-white hover:text-accent border-b border-white/10 pb-4"
+            >
+              05 // GET IN TOUCH
+            </button>
+          </div>
+
+          <div className="pt-6 border-t border-white/10 font-mono text-xs text-white/50 flex flex-col gap-2">
+            <div className="flex items-center justify-between text-white/80">
+              <span>AVAILABLE FOR COMMISSIONS</span>
+              <span className="text-accent font-bold">Q2 / Q3 2026</span>
+            </div>
+            <div>MUMBAI, INDIA • GLOBAL REMOTE</div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
+
+// -------------------------------------------------------------
+// 4. Hero Section & Matter.js Floating Gravity Pills
+// -------------------------------------------------------------
+// 4. Hero Section
+// -------------------------------------------------------------
+function HeroSection({ totalCount, onExplore }) {
+  return (
+    <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] pt-28 pb-16 flex flex-col justify-between overflow-hidden">
+      {/* Background Cyber Grid Lines & Ambient Glow */}
+      <div className="absolute inset-0 bg-cyber-grid bg-[size:48px_48px] opacity-25 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-2/3 right-10 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-grow flex flex-col justify-center">
+        {/* Availability Badge */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-darkcard border border-white/15 backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+            </span>
+            <span className="font-mono text-xs uppercase tracking-wider text-white/90">
+              AVAILABLE FOR Q2 / Q3 2026 PROJECTS
+            </span>
+          </div>
+          <span className="hidden sm:inline-block font-mono text-xs text-white/40">
+            // RESIDENCIES • CAMPAIGNS • IDENTITY
+          </span>
+        </div>
+
+        {/* Giant Kinetic Headline */}
+        <div className="space-y-1 mb-8">
+          <h1 className="font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] uppercase tracking-tighter text-white leading-[0.88] select-none">
+            VISUAL <span className="text-stroke-accent hover:text-accent transition-colors duration-300">STRATEGIST</span>
+            <br />
+            <span className="text-accent">&amp; ART</span> DIRECTOR
+          </h1>
+        </div>
+
+        {/* Subtitle & Manifesto */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
+          <p className="lg:col-span-8 font-mono text-sm sm:text-base md:text-lg text-white/80 uppercase border-l-2 border-accent pl-5 leading-relaxed">
+            Defining the intersection of brutalist minimalism, kinetic motion, and bold strategic visual systems.
+            Over <span className="text-accent font-bold">{totalCount} curated artworks</span> spanning premier
+            nightlife venues, music festivals, brand identities, and high-impact editorial productions.
+          </p>
+
+          {/* Action CTAs */}
+          <div className="lg:col-span-4 flex flex-wrap gap-3 items-center">
+            <button
+              onClick={() => {
+                AudioController.play('pop');
+                onExplore();
+              }}
+              data-cursor="EXPLORE"
+              className="flex-1 min-w-[170px] bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] flex items-center justify-center gap-2 group"
+            >
+              <span>EXPLORE ARCHIVE</span>
+              <i data-lucide="arrow-down-right" className="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform"></i>
+            </button>
+
+            <a
+              href="#contact"
+              onClick={() => AudioController.play('click')}
+              data-cursor="CONNECT"
+              className="flex-1 min-w-[140px] bg-darkcard hover:bg-white/10 text-white border border-white/20 font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all flex items-center justify-center gap-2 text-center"
+            >
+              <span>GET IN TOUCH</span>
+              <i data-lucide="mail" className="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Down Scroll Indicator */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6 flex justify-between items-center text-white/40 font-mono text-xs uppercase">
+        <div className="flex items-center gap-2">
+          <span>SCROLL TO EXPLORE</span>
+          <i data-lucide="arrow-down" className="w-3.5 h-3.5 animate-bounce"></i>
+        </div>
+        <div className="hidden sm:flex items-center gap-6">
+          <span>CURATED WORKS 2025 - 2026</span>
+          <span>HIGH-OCTANE KINETIC DESIGN</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Helper component to trigger smooth 60fps scroll animations on viewport entry
+function ScrollRevealWrapper({ children, index = 0, className = "" }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // Reset visibility if element changed
+    setVisible(false);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      {
+        threshold: 0.08,
+        rootMargin: '0px 0px -25px 0px'
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const delay = `${(index % 4) * 65}ms`;
+
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: delay }}
+      className={`scroll-reveal ${visible ? 'is-visible' : ''} ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
+// 6. Featured Projects Bento Grid & Filters
+// -------------------------------------------------------------
+function BentoProjectsGrid({
+  projects,
+  onSelectProject,
+  activeFilter,
+  setActiveFilter,
+  viewMode,
+  setViewMode
+}) {
+  const [activeSubcategory, setActiveSubcategory] = useState('all');
+  const [hoveredId, setHoveredId] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(24);
+
+  // Reset subcategory whenever main category filter changes
+  useEffect(() => {
+    setActiveSubcategory('all');
+    setVisibleCount(24);
+  }, [activeFilter]);
+
+  const categories = useMemo(() => {
+    return [
+      { id: 'Gig Posters', label: 'GIG POSTERS', count: projects.filter((p) => p.category === 'Gig Posters').length },
+      { id: 'Campaigns & Promos', label: 'CAMPAIGNS', count: projects.filter((p) => p.category === 'Campaigns & Promos').length },
+      { id: 'Event Calendars', label: 'CALENDARS', count: projects.filter((p) => p.category === 'Event Calendars').length },
+      { id: 'video', label: 'MOTION / VIDEO', count: projects.filter((p) => p.type === 'video').length },
+      { id: 'Brochures', label: 'BROCHURES', count: projects.filter((p) => p.category === 'Brochures').length },
+      { id: 'custom', label: 'CUSTOM UPLOADS', count: projects.filter((p) => !p.is_default).length }
+    ];
+  }, [projects]);
+
+  // Subcategories for Event Calendars
+  const calendarSubcategories = useMemo(() => {
+    const calList = projects.filter((p) => p.category === 'Event Calendars');
+    return [
+      { id: 'all', label: 'ALL CALENDARS', count: calList.length },
+      { id: 'anti_all', label: 'antiSOCIAL (19)', count: calList.filter((p) => p.client && p.client.toLowerCase().includes('anti')).length },
+      { id: 'khar_all', label: 'KharSOCIAL (9)', count: calList.filter((p) => p.client && p.client.toLowerCase().includes('khar')).length },
+      { id: 'Anti_Calendar_April', label: 'ANTI • APRIL (7)', count: calList.filter((p) => p.subfolder === 'Anti_Calendar_April').length },
+      { id: 'Anti_Calendar_May', label: 'ANTI • MAY (6)', count: calList.filter((p) => p.subfolder === 'Anti_Calendar_May').length },
+      { id: 'Anti_Calendar_June', label: 'ANTI • JUNE (6)', count: calList.filter((p) => p.subfolder === 'Anti_Calendar_June').length },
+      { id: 'Khar_Calendar_May', label: 'KHAR • MAY (4)', count: calList.filter((p) => p.subfolder === 'Khar_Calendar_May').length },
+      { id: 'Khar_Calendar_June', label: 'KHAR • JUNE (3)', count: calList.filter((p) => p.subfolder === 'Khar_Calendar_June').length },
+      { id: 'Khar_Calendar_March25', label: 'KHAR • MAR 25 (2)', count: calList.filter((p) => p.subfolder === 'Khar_Calendar_March25').length }
+    ];
+  }, [projects]);
+
+  // Subcategories for Campaigns & Promos
+  const campaignSubcategories = useMemo(() => {
+    const campList = projects.filter((p) => p.category === 'Campaigns & Promos');
+    return [
+      { id: 'all', label: 'ALL CAMPAIGNS', count: campList.length },
+      { id: 'COEUS', label: 'COEUS BRANDING', count: campList.filter((p) => p.subfolder === 'COEUS').length },
+      { id: 'MOLO', label: 'MOLO SERIES', count: campList.filter((p) => p.subfolder === 'MOLO').length },
+      { id: '2025_Feb_DOP', label: 'DOP FEB', count: campList.filter((p) => p.subfolder === '2025_Feb_DOP').length },
+      { id: '2025_April_DOP', label: 'DOP APRIL', count: campList.filter((p) => p.subfolder === '2025_April_DOP').length },
+      { id: 'Hospitality', label: 'HOSPITALITY', count: campList.filter((p) => p.subfolder === 'Hospitality').length },
+      { id: 'Metaraph', label: 'METARAPH', count: campList.filter((p) => p.subfolder === 'Metaraph').length }
+    ];
+  }, [projects]);
+
+  // Filtered Projects based on active category and subcategory
+  const filteredProjects = useMemo(() => {
+    return projects.filter((p) => {
+      // Category filter
+      if (activeFilter === 'video') {
+        if (p.type !== 'video') return false;
+      } else if (activeFilter === 'custom') {
+        if (p.is_default) return false;
+      } else if (activeFilter) {
+        if (p.category !== activeFilter) return false;
+      }
+
+      // Subcategory filter for Event Calendars
+      if (activeFilter === 'Event Calendars' && activeSubcategory !== 'all') {
+        if (activeSubcategory === 'anti_all') {
+          if (!p.client || !p.client.toLowerCase().includes('anti')) return false;
+        } else if (activeSubcategory === 'khar_all') {
+          if (!p.client || !p.client.toLowerCase().includes('khar')) return false;
+        } else {
+          if (p.subfolder !== activeSubcategory) return false;
+        }
+      }
+
+      // Subcategory filter for Campaigns & Promos
+      if (activeFilter === 'Campaigns & Promos' && activeSubcategory !== 'all') {
+        if (p.subfolder !== activeSubcategory) return false;
+      }
+
+      return true;
+    });
+  }, [projects, activeFilter, activeSubcategory]);
+
+  const currentDisplaySet = filteredProjects.slice(0, visibleCount);
+
+  return (
+    <section id="projects" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-6 border-b border-white/15 pb-8">
+          <div>
+            <div className="flex items-center gap-2 font-mono text-xs text-accent uppercase mb-2">
+              <span>// ARCHIVE INDEX</span>
+              <span>•</span>
+              <span>{filteredProjects.length} CURATED PROJECTS</span>
+            </div>
+            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans">
+              FEATURED <span className="text-stroke-accent">WORKS</span>
+            </h2>
+          </div>
+
+          {/* Layout View Mode Switcher */}
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[10px] text-white/40 uppercase hidden sm:inline">VIEW:</span>
+            <div className="flex items-center border border-white/20 rounded bg-darkcard p-0.5">
+              <button
+                onClick={() => {
+                  AudioController.play('click');
+                  setViewMode('bento');
+                }}
+                data-cursor="BENTO"
+                className={`p-2 rounded ${
+                  viewMode === 'bento' ? 'bg-accent text-black font-bold' : 'text-white/60 hover:text-white'
+                } transition-colors`}
+                title="Bento Masonry Grid"
+              >
+                <i data-lucide="layout-grid" className="w-4 h-4"></i>
+              </button>
+              <button
+                onClick={() => {
+                  AudioController.play('click');
+                  setViewMode('showcase');
+                }}
+                data-cursor="STREAM"
+                className={`p-2 rounded ${
+                  viewMode === 'showcase' ? 'bg-accent text-black font-bold' : 'text-white/60 hover:text-white'
+                } transition-colors`}
+                title="Showcase Stream"
+              >
+                <i data-lucide="columns" className="w-4 h-4"></i>
+              </button>
+              <button
+                onClick={() => {
+                  AudioController.play('click');
+                  setViewMode('list');
+                }}
+                data-cursor="LIST"
+                className={`p-2 rounded ${
+                  viewMode === 'list' ? 'bg-accent text-black font-bold' : 'text-white/60 hover:text-white'
+                } transition-colors`}
+                title="Compact List View"
+              >
+                <i data-lucide="list" className="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Category Pills Bar */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-4 no-scrollbar">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => {
+                AudioController.play('click');
+                setActiveFilter(cat.id);
+                setVisibleCount(24);
+              }}
+              data-cursor={cat.label}
+              className={`whitespace-nowrap px-4 py-2 rounded font-mono text-xs font-bold uppercase transition-all duration-200 flex items-center gap-2 ${
+                activeFilter === cat.id
+                  ? 'bg-accent text-black shadow-[0_0_15px_rgba(0,255,102,0.4)]'
+                  : 'bg-darkcard text-white/70 hover:text-white hover:border-white/40 border border-white/15'
+              }`}
+            >
+              <span>{cat.label}</span>
+              <span
+                className={`text-[10px] px-1.5 py-0.5 rounded ${
+                  activeFilter === cat.id ? 'bg-black text-accent' : 'bg-white/10 text-white/60'
+                }`}
+              >
+                {cat.count}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* Subcategory Filter Ribbon for Event Calendars */}
+        {activeFilter === 'Event Calendars' && (
+          <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 border-b border-white/10 no-scrollbar animate-fade-in">
+            <span className="font-mono text-[10px] text-accent font-bold uppercase tracking-wider pl-1 pr-2 flex items-center gap-1">
+              <i data-lucide="filter" className="w-3 h-3"></i> EDITIONS:
+            </span>
+            {calendarSubcategories.map((sub) => (
+              <button
+                key={sub.id}
+                onClick={() => {
+                  AudioController.play('click');
+                  setActiveSubcategory(sub.id);
+                  setVisibleCount(24);
+                }}
+                data-cursor={sub.label}
+                className={`whitespace-nowrap px-3 py-1.5 rounded font-mono text-[11px] font-bold uppercase transition-all flex items-center gap-1.5 ${
+                  activeSubcategory === sub.id
+                    ? 'bg-accent text-black shadow-[0_0_10px_rgba(0,255,102,0.4)]'
+                    : 'bg-black/60 hover:bg-white/10 text-white/70 hover:text-white border border-white/10'
+                }`}
+              >
+                <span>{sub.label}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Subcategories Ribbon for Campaigns & Promos */}
+        {activeFilter === 'Campaigns & Promos' && (
+          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar bg-darkcard/80 p-3 rounded-xl border border-cyan-400/30 animate-fade-in">
+            <span className="font-mono text-[10px] text-cyan-400 font-bold uppercase pl-2 flex items-center gap-1.5 whitespace-nowrap">
+              <i data-lucide="layers" className="w-3.5 h-3.5"></i>
+              CAMPAIGN SERIES:
+            </span>
+            {campaignSubcategories.map((sub) => (
+              <button
+                key={sub.id}
+                onClick={() => {
+                  AudioController.play('click');
+                  setActiveSubcategory(sub.id);
+                  setVisibleCount(24);
+                }}
+                data-cursor={sub.label}
+                className={`whitespace-nowrap px-3 py-1.5 rounded font-mono text-[11px] font-bold uppercase transition-all flex items-center gap-1.5 ${
+                  activeSubcategory === sub.id
+                    ? 'bg-cyan-400 text-black shadow-[0_0_10px_rgba(0,240,255,0.4)]'
+                    : 'bg-black/60 hover:bg-white/10 text-white/70 hover:text-white border border-white/10'
+                }`}
+              >
+                <span>{sub.label}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* No Results State */}
+        {filteredProjects.length === 0 && (
+          <div className="py-20 text-center border border-white/15 rounded-xl bg-darkcard">
+            <i data-lucide="search-x" className="w-12 h-12 mx-auto text-white/30 mb-4"></i>
+            <h3 className="text-xl font-bold uppercase font-sans text-white mb-2">No Artworks Found</h3>
+            <p className="font-mono text-xs text-white/50 mb-6">Try clearing your search query or selecting a different category tab.</p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setActiveFilter('all');
+                setActiveSubcategory('all');
+                setSelectedYear('all');
+              }}
+              className="px-5 py-2.5 bg-accent text-black font-mono font-bold text-xs uppercase rounded hover:bg-white transition-colors"
+            >
+              RESET ALL FILTERS
+            </button>
+          </div>
+        )}
+
+        {/* Bento Grid View Mode */}
+        {viewMode === 'bento' && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[340px]">
+            {currentDisplaySet.map((project, idx) => {
+              const isVideo = project.type === 'video';
+              const isSpanned = idx % 7 === 0 || (isVideo && idx % 3 === 0);
+
+              return (
+                <ScrollRevealWrapper
+                  key={project.id}
+                  index={idx}
+                  className={`${isSpanned ? 'sm:col-span-2' : 'col-span-1'} h-full`}
+                >
+                  <div
+                    onClick={() => {
+                      AudioController.play('pop');
+                      onSelectProject(project);
+                    }}
+                    onMouseEnter={() => {
+                      setHoveredId(project.id);
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredId(null);
+                    }}
+                    data-cursor={isVideo ? 'PLAY' : 'VIEW'}
+                    className="interactive-card group relative bg-darkcard border border-white/15 hover:border-accent rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col justify-between p-4 h-full hover:shadow-[0_0_30px_rgba(0,255,102,0.18)] hover:-translate-y-1"
+                  >
+                    {/* Media Preview */}
+                    <div className="absolute inset-0 bg-black overflow-hidden z-0">
+                      {isVideo ? (
+                        <video
+                          src={project.media}
+                          muted
+                          loop
+                          playsInline
+                          autoPlay={hoveredId === project.id}
+                          className="w-full h-full object-cover object-center opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                        />
+                      ) : (
+                        <img
+                          src={project.media}
+                          alt={project.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover object-center opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                          }}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
+                    </div>
+
+                    {/* Top Badges */}
+                    <div className="relative z-10 flex items-center justify-between w-full">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-black/80 border border-white/20 text-accent">
+                          {project.category}
+                        </span>
+                        {project.variants && project.variants.length > 1 && (
+                          <span className="font-mono text-[9px] uppercase font-bold px-2 py-0.5 rounded bg-accent/20 border border-accent/40 text-accent flex items-center gap-1 shadow-[0_0_10px_rgba(0,255,102,0.25)]">
+                            <span>✦ {project.variants.length} FORMATS</span>
+                          </span>
+                        )}
+                        {project.subfolder && (
+                          <span className="font-mono text-[9px] uppercase font-bold px-2 py-0.5 rounded bg-white/10 border border-white/15 text-white/90">
+                            {project.subfolder.replace(/_/g, ' ')}
+                          </span>
+                        )}
+                        {isVideo && (
+                          <span className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-cyan-500/20 border border-cyan-400 text-cyan-300 flex items-center gap-1">
+                            <i data-lucide="play" className="w-2.5 h-2.5 fill-current"></i> MOTION
+                          </span>
+                        )}
+                      </div>
+
+                      <span className="font-mono text-[10px] uppercase text-white/70 px-2 py-0.5 rounded bg-black/60 border border-white/10">
+                        {project.year || '2026'}
+                      </span>
+                    </div>
+
+                    {/* Bottom Info Bar */}
+                    <div className="relative z-10 space-y-2">
+                      <div className="font-mono text-[11px] text-accent tracking-wider uppercase font-bold truncate">
+                        {project.client || 'Shoeab Shaikh'}
+                      </div>
+
+                      <h3 className="font-black text-lg sm:text-xl text-white uppercase tracking-tight group-hover:text-accent transition-colors truncate">
+                        {project.title}
+                      </h3>
+
+                      <div className="flex items-center justify-between pt-2 border-t border-white/10">
+                        <span className="font-mono text-[10px] text-white/50 truncate max-w-[70%]">
+                          {project.tech || 'Photoshop, Illustrator'}
+                        </span>
+
+                        <span className="font-mono text-xs text-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                          <span>SPECS</span>
+                          <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollRevealWrapper>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Showcase View Mode */}
+        {viewMode === 'showcase' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {currentDisplaySet.map((project, idx) => (
+              <ScrollRevealWrapper key={project.id} index={idx} className="h-full">
+                <div
+                  onClick={() => {
+                    AudioController.play('pop');
+                    onSelectProject(project);
+                  }}
+                  data-cursor="VIEW"
+                  className="group bg-darkcard border border-white/15 hover:border-accent rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col h-full hover:shadow-[0_0_30px_rgba(0,255,102,0.18)] hover:-translate-y-1"
+                >
+                  <div className="relative aspect-[16/10] bg-black overflow-hidden">
+                    {project.type === 'video' ? (
+                      <video
+                        src={project.media}
+                        muted
+                        loop
+                        autoPlay
+                        playsInline
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <img
+                        src={project.media}
+                        alt={project.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
+                    <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
+                      <span className="bg-black/80 border border-white/20 text-accent font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                        {project.category}
+                      </span>
+                      {project.variants && project.variants.length > 1 && (
+                        <span className="bg-accent text-black font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                          ✦ {project.variants.length} SIZES / FORMATS
+                        </span>
+                      )}
+                      {project.subfolder && (
+                        <span className="bg-black/80 border border-white/20 text-cyan-400 font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                          {project.subfolder.replace(/_/g, ' ')}
+                        </span>
+                      )}
+                    </div>
+                    <div className="absolute top-4 right-4 bg-black/80 border border-white/20 text-white font-mono text-[10px] px-2.5 py-1 rounded">
+                      {project.year}
+                    </div>
+                  </div>
+
+                  <div className="p-6 flex flex-col justify-between flex-grow space-y-4">
+                    <div>
+                      <div className="font-mono text-xs text-accent uppercase font-bold mb-1">
+                        CLIENT: {project.client}
+                      </div>
+                      <h3 className="font-black text-2xl uppercase tracking-tight text-white group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="font-mono text-xs text-white/70 uppercase mt-2 line-clamp-2">
+                        {project.strategy}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-white/10 font-mono text-xs">
+                      <span className="text-white/40">{project.tech}</span>
+                      <span className="text-accent font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        VIEW CASE STUDY <i data-lucide="arrow-right" className="w-3.5 h-3.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </ScrollRevealWrapper>
+            ))}
+          </div>
+        )}
+
+        {/* Compact List View Mode */}
+        {viewMode === 'list' && (
+          <div className="border border-white/15 rounded-xl bg-darkcard divide-y divide-white/10 overflow-hidden">
+            {currentDisplaySet.map((project, idx) => (
+              <ScrollRevealWrapper key={project.id} index={idx}>
+                <div
+                  onClick={() => {
+                    AudioController.play('pop');
+                    onSelectProject(project);
+                  }}
+                  data-cursor="OPEN"
+                  className="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-white/5 cursor-pointer group transition-colors"
+                >
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="w-12 h-12 rounded bg-black flex-shrink-0 overflow-hidden border border-white/10">
+                      {project.type === 'video' ? (
+                        <video src={project.media} muted className="w-full h-full object-cover" />
+                      ) : (
+                        <img src={project.media} alt="" className="w-full h-full object-cover" />
+                      )}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="font-black text-base text-white uppercase truncate group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h4>
+                      <div className="flex items-center gap-2 font-mono text-[11px] text-white/50 uppercase truncate flex-wrap">
+                        <span className="text-accent">{project.client}</span>
+                        <span>•</span>
+                        <span>{project.category}</span>
+                        {project.variants && project.variants.length > 1 && (
+                          <>
+                            <span>•</span>
+                            <span className="text-accent font-bold">✦ {project.variants.length} SIZES</span>
+                          </>
+                        )}
+                        {project.subfolder && (
+                          <>
+                            <span>•</span>
+                            <span className="text-cyan-400">{project.subfolder.replace(/_/g, ' ')}</span>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-6 flex-shrink-0 font-mono text-xs">
+                    <span className="hidden md:inline text-white/40">{project.tech}</span>
+                    <span className="text-white/60 bg-white/10 px-2 py-0.5 rounded">{project.year}</span>
+                    <i data-lucide="arrow-right" className="w-4 h-4 text-white/40 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
+                  </div>
+                </div>
+              </ScrollRevealWrapper>
+            ))}
+          </div>
+        )}
+
+        {/* Load More Button */}
+        {visibleCount < filteredProjects.length && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => {
+                AudioController.play('pop');
+                setVisibleCount((prev) => prev + 24);
+              }}
+              data-cursor="LOAD"
+              className="px-8 py-4 bg-darkcard hover:bg-accent text-white hover:text-black border border-white/20 hover:border-accent font-mono text-xs font-black uppercase rounded transition-all duration-300 shadow-md inline-flex items-center gap-2"
+            >
+              <span>LOAD MORE ARTIFACTS ({filteredProjects.length - visibleCount} REMAINING)</span>
+              <i data-lucide="chevron-down" className="w-4 h-4"></i>
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+// -------------------------------------------------------------
+// 7. Interactive Project Detail Modal / Drawer with Multi-Size Suite
+// -------------------------------------------------------------
+function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
+  const [activeVariant, setActiveVariant] = useState(null);
+
+  // Sync active variant when project changes
+  useEffect(() => {
+    if (project) {
+      const defaultVar =
+        project.variants && project.variants.length > 0
+          ? project.variants[0]
+          : {
+              id: project.id,
+              label: 'Main Artwork',
+              media: project.media,
+              type: project.type,
+              ratio: 'Primary View'
+            };
+      setActiveVariant(defaultVar);
+    }
+  }, [project]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft') onPrev();
+      if (e.key === 'ArrowRight') onNext();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose, onPrev, onNext]);
+
+  if (!project) return null;
+
+  const currentItem = activeVariant || {
+    media: project.media,
+    type: project.type,
+    label: 'Main Artwork',
+    ratio: 'Primary Artwork'
+  };
+
+  const isVideo = currentItem.type === 'video';
+  const isPdf = currentItem.type === 'pdf';
+  const variants = project.variants || [];
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-2xl animate-fade-in">
+      {/* Backdrop Click */}
+      <div className="absolute inset-0" onClick={onClose} />
+
+      {/* Modal Container */}
+      <div className="relative z-10 w-full max-w-6xl max-h-[92vh] bg-darkcard border border-white/20 rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.9)] flex flex-col">
+        {/* Modal Top Bar */}
+        <div className="flex items-center justify-between p-4 sm:px-6 border-b border-white/10 bg-black/60">
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-xs uppercase font-bold text-accent px-2.5 py-1 rounded bg-accent/10 border border-accent/30">
+              {project.category}
+            </span>
+            {variants.length > 1 && (
+              <span className="font-mono text-xs text-white/80 px-2.5 py-1 rounded bg-white/10 border border-white/15 uppercase flex items-center gap-1">
+                <span className="text-accent font-bold">✦ {variants.length} SIZES / FORMATS</span>
+              </span>
+            )}
+            <span className="font-mono text-xs text-white/50 hidden md:inline uppercase">
+              ID: {project.id ? project.id.slice(0, 8) : 'PROJ'}
+            </span>
+          </div>
+
+          {/* Controls: Prev, Next, Close */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                AudioController.play('click');
+                onPrev();
+              }}
+              data-cursor="PREV"
+              className="p-2 text-white/60 hover:text-accent border border-white/15 hover:border-accent rounded bg-white/5 transition-colors"
+              title="Previous Project (Left Arrow)"
+            >
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+            </button>
+            <button
+              onClick={() => {
+                AudioController.play('click');
+                onNext();
+              }}
+              data-cursor="NEXT"
+              className="p-2 text-white/60 hover:text-accent border border-white/15 hover:border-accent rounded bg-white/5 transition-colors"
+              title="Next Project (Right Arrow)"
+            >
+              <i data-lucide="arrow-right" className="w-4 h-4"></i>
+            </button>
+            <button
+              onClick={() => {
+                AudioController.play('click');
+                onClose();
+              }}
+              data-cursor="CLOSE"
+              className="p-2 text-white hover:text-red-400 border border-white/20 hover:border-red-400 rounded bg-white/10 transition-colors ml-2"
+              title="Close (Esc)"
+            >
+              <i data-lucide="x" className="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        {/* Modal Body */}
+        <div className="overflow-y-auto flex-grow p-4 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Media Player / Viewer Left Column */}
+          <div className="lg:col-span-7 space-y-4">
+            {/* Active Display Window (Main Artwork on top) */}
+            <div className="bg-black rounded-xl overflow-hidden border border-white/15 flex items-center justify-center min-h-[340px] max-h-[580px] relative group shadow-2xl">
+              {isVideo ? (
+                <video
+                  key={currentItem.media}
+                  src={currentItem.media}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="w-full h-full max-h-[550px] object-contain"
+                />
+              ) : isPdf ? (
+                <div className="p-8 text-center space-y-4">
+                  <i data-lucide="file-text" className="w-16 h-16 mx-auto text-accent"></i>
+                  <h4 className="font-bold text-white uppercase">{project.title}</h4>
+                  <a
+                    href={currentItem.media}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-black font-mono font-bold text-xs uppercase rounded"
+                  >
+                    <i data-lucide="download" className="w-4 h-4"></i> OPEN PDF PROFILE
+                  </a>
+                </div>
+              ) : (
+                <img
+                  key={currentItem.media}
+                  src={currentItem.media}
+                  alt={project.title}
+                  className="w-full h-full max-h-[550px] object-contain transition-all duration-300"
+                />
+              )}
+
+              {/* Active Format Pill Indicator on Top of Media */}
+              <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1 rounded font-mono text-[11px] font-bold text-accent uppercase flex items-center gap-1.5 shadow-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                <span>{currentItem.label}</span>
+                <span className="text-white/40">•</span>
+                <span className="text-white/80">{currentItem.ratio}</span>
+              </div>
+            </div>
+
+            {/* Other Sizes / Formats of the Same Artwork Interactive Selector */}
+            {variants.length > 1 && (
+              <div className="bg-darkcard border border-white/15 rounded-xl p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[11px] font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                    <i data-lucide="layout-template" className="w-3.5 h-3.5 text-accent"></i>
+                    <span>AVAILABLE DELIVERABLE SIZES ({variants.length})</span>
+                  </span>
+                  <span className="font-mono text-[10px] text-white/40 uppercase">CLICK TO PREVIEW</span>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  {variants.map((v, i) => {
+                    const isSelected = currentItem.media === v.media;
+                    return (
+                      <button
+                        key={v.id || i}
+                        onClick={() => {
+                          AudioController.play('pop');
+                          setActiveVariant(v);
+                        }}
+                        data-cursor="SWITCH"
+                        className={`p-2.5 rounded-lg border text-left font-mono text-xs transition-all duration-200 flex flex-col justify-between gap-1.5 ${
+                          isSelected
+                            ? 'bg-accent/15 border-accent text-white shadow-[0_0_15px_rgba(0,255,102,0.25)]'
+                            : 'bg-black/60 border-white/10 hover:border-white/30 text-white/70 hover:text-white'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between w-full">
+                          <span className={`font-bold text-[11px] uppercase truncate ${isSelected ? 'text-accent' : 'text-white'}`}>
+                            {v.label}
+                          </span>
+                          {isSelected && (
+                            <span className="w-2 h-2 rounded-full bg-accent flex-shrink-0 animate-ping"></span>
+                          )}
+                        </div>
+                        <div className="flex items-center justify-between text-[10px] text-white/50 uppercase">
+                          <span>{v.ratio}</span>
+                          <span className="text-[9px] px-1 rounded bg-white/10">{v.type}</span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Project Dossier Right Column */}
+          <div className="lg:col-span-5 space-y-6">
+            <div>
+              <div className="font-mono text-xs text-accent uppercase font-bold mb-1">
+                CLIENT: {project.client || 'Shoeab Shaikh'}
+              </div>
+              <h2 className="font-black text-2xl sm:text-3xl uppercase tracking-tight text-white font-sans">
+                {project.title}
+              </h2>
+            </div>
+
+            {/* Strategic Intent */}
+            <div className="border-l-2 border-accent pl-4 space-y-1">
+              <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
+                STRATEGIC EXECUTION
+              </span>
+              <p className="font-mono text-xs sm:text-sm text-white/90 uppercase leading-relaxed">
+                {project.strategy || 'High-contrast brutalist design created for premier venue programming and branding.'}
+              </p>
+            </div>
+
+            {/* Metadata Matrix */}
+            <div className="grid grid-cols-2 gap-4 border-y border-white/10 py-4 font-mono text-xs">
+              <div>
+                <span className="text-white/40 uppercase block text-[10px]">ROLE</span>
+                <span className="text-white font-bold uppercase">{project.role || 'Visual Strategist'}</span>
+              </div>
+              <div>
+                <span className="text-white/40 uppercase block text-[10px]">YEAR</span>
+                <span className="text-white font-bold">{project.year || '2026'}</span>
+              </div>
+              <div>
+                <span className="text-white/40 uppercase block text-[10px]">ACTIVE FORMAT</span>
+                <span className="text-accent font-bold uppercase">{currentItem.label}</span>
+              </div>
+              <div>
+                <span className="text-white/40 uppercase block text-[10px]">EDITION / SUBFOLDER</span>
+                <span className="text-cyan-400 font-bold uppercase">{project.subfolder ? project.subfolder.replace(/_/g, ' ') : 'MAIN ARCHIVE'}</span>
+              </div>
+            </div>
+
+            {/* Tech Stack Chips */}
+            <div>
+              <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-2">
+                TECHNICAL SOFTWARE STACK
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {(project.tech || 'Photoshop, Illustrator').split(',').map((t, idx) => (
+                  <span
+                    key={idx}
+                    className="font-mono text-xs px-3 py-1 bg-white/10 border border-white/20 rounded text-white uppercase"
+                  >
+                    {t.trim()}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Raw Asset Actions */}
+            <div className="pt-4 flex flex-wrap gap-3">
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(window.location.origin + currentItem.media);
+                  AudioController.play('success');
+                  if (typeof confetti !== 'undefined') {
+                    confetti({ particleCount: 40, spread: 50, origin: { y: 0.7 } });
+                  }
+                }}
+                data-cursor="COPY"
+                className="w-full bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-3.5 px-4 rounded transition-all duration-300 shadow-[0_0_15px_rgba(0,255,102,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] flex items-center justify-center gap-2"
+                title="Copy Direct Link to Current Format"
+              >
+                <i data-lucide="share-2" className="w-4 h-4"></i>
+                <span>SHARE &amp; COPY ASSET LINK ({currentItem.label.toUpperCase()})</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
+// 8. Skills & Matter.js Interactive 2D Sandbox
+// -------------------------------------------------------------
+function SkillsPlayground() {
+  const playgroundRef = useRef(null);
+  const engineRef = useRef(null);
+  const renderRef = useRef(null);
+  const runnerRef = useRef(null);
+
+  const [activeTab, setActiveTab] = useState('physics'); // 'physics' or 'proficiencies'
+  const [gravityState, setGravityState] = useState('normal'); // 'normal', 'zero', 'invert'
+
+  const TOOL_BADGES = useMemo(
+    () => [
+      { name: 'PHOTOSHOP', lines: ['PHOTOSHOP'], radius: 48, fill: '#00C8FF', text: '#000000' },
+      { name: 'ILLUSTRATOR', lines: ['ILLUSTRATOR'], radius: 50, fill: '#FF9A00', text: '#000000' },
+      { name: 'INDESIGN', lines: ['INDESIGN'], radius: 44, fill: '#FF3366', text: '#FFFFFF' },
+      { name: 'CANVA', lines: ['CANVA'], radius: 36, fill: '#00C4CC', text: '#000000' },
+      { name: 'PREMIERE PRO', lines: ['PREMIERE', 'PRO'], radius: 46, fill: '#EA77FF', text: '#000000' },
+      { name: 'AFTER EFFECTS', lines: ['AFTER', 'EFFECTS'], radius: 48, fill: '#9999FF', text: '#000000' },
+      { name: 'FIGMA', lines: ['FIGMA'], radius: 38, fill: '#A259FF', text: '#FFFFFF' },
+      { name: 'BLENDER', lines: ['BLENDER'], radius: 40, fill: '#F5792A', text: '#000000' },
+      { name: 'BRAND STRATEGY', lines: ['BRAND', 'STRATEGY'], radius: 54, fill: '#00FF66', text: '#000000' },
+      { name: 'ART DIRECTION', lines: ['ART', 'DIRECTION'], radius: 52, fill: '#00F0FF', text: '#000000' },
+      { name: 'TYPOGRAPHY', lines: ['TYPO-', 'GRAPHY'], radius: 44, fill: '#FFFFFF', text: '#000000' },
+      { name: 'KINETIC MOTION', lines: ['KINETIC', 'MOTION'], radius: 48, fill: '#CCFF00', text: '#000000' }
+    ],
+    []
+  );
+
+  useEffect(() => {
+    if (activeTab !== 'physics' || typeof Matter === 'undefined' || !playgroundRef.current) return;
+
+    const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint, Events, Body } = Matter;
+
+    const container = playgroundRef.current;
+    const width = container.clientWidth || 800;
+    const height = 380;
+
+    const engine = Engine.create({
+      gravity: { x: 0, y: 1.0, scale: 0.001 }
+    });
+    engineRef.current = engine;
+
+    const render = Render.create({
+      element: container,
+      engine: engine,
+      options: {
+        width: width,
+        height: height,
+        wireframes: false,
+        background: 'transparent',
+        showAngleIndicator: false
+      }
+    });
+    renderRef.current = render;
+    Render.run(render);
+
+    const runner = Runner.create();
+    runnerRef.current = runner;
+    Runner.run(runner, engine);
+
+    // Walls
+    const wallThick = 60;
+    const ground = Bodies.rectangle(width / 2, height + wallThick / 2 - 4, width * 2, wallThick, {
+      isStatic: true,
+      render: { fillStyle: 'transparent' }
+    });
+    const ceiling = Bodies.rectangle(width / 2, -wallThick / 2, width * 2, wallThick, {
+      isStatic: true,
+      render: { fillStyle: 'transparent' }
+    });
+    const leftWall = Bodies.rectangle(-wallThick / 2, height / 2, wallThick, height * 2, {
+      isStatic: true,
+      render: { fillStyle: 'transparent' }
+    });
+    const rightWall = Bodies.rectangle(width + wallThick / 2, height / 2, wallThick, height * 2, {
+      isStatic: true,
+      render: { fillStyle: 'transparent' }
+    });
+
+    Composite.add(engine.world, [ground, ceiling, leftWall, rightWall]);
+
+    // Spawn interactive circular tool bodies with tailored sizes inside canvas bounds
+    const cols = Math.min(4, Math.max(2, Math.floor((width - 60) / 125)));
+    const toolBodies = TOOL_BADGES.map((tool, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const startX = 65 + col * ((width - 130) / Math.max(1, cols - 1)) + (Math.random() * 20 - 10);
+      const startY = 45 + row * 60 + (Math.random() * 10);
+
+      const body = Bodies.circle(startX, startY, tool.radius, {
+        restitution: 0.8,
+        friction: 0.05,
+        frictionAir: 0.012,
+        density: 0.002,
+        render: {
+          fillStyle: tool.fill
+        }
+      });
+      body.customTool = tool;
+      body.radius = tool.radius;
+      return body;
+    });
+
+    Composite.add(engine.world, toolBodies);
+
+    // Custom render loop to draw crisp text centered inside circular badges (1 or 2 lines)
+    Events.on(render, 'afterRender', () => {
+      const ctx = render.context;
+      if (!ctx) return;
+
+      const allBodies = Composite.allBodies(engine.world);
+      allBodies.forEach((b) => {
+        if (b.customTool) {
+          const { x, y } = b.position;
+          const angle = b.angle;
+          const tool = b.customTool;
+
+          ctx.save();
+          ctx.translate(x, y);
+          ctx.rotate(angle);
+
+          // Draw subtle circular border ring
+          ctx.beginPath();
+          ctx.arc(0, 0, tool.radius - 2.5, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(0, 0, 0, 0.35)';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          // Render centered text (1 line or 2 lines)
+          ctx.fillStyle = tool.text;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+
+          if (tool.lines.length === 1) {
+            const fontSize = tool.radius >= 48 ? '10px' : '9px';
+            ctx.font = `900 ${fontSize} "Space Mono", monospace`;
+            ctx.fillText(tool.lines[0], 0, 1);
+          } else {
+            const fontSize = tool.radius >= 48 ? '9.5px' : '8.5px';
+            ctx.font = `900 ${fontSize} "Space Mono", monospace`;
+            ctx.fillText(tool.lines[0], 0, -6.5);
+            ctx.fillText(tool.lines[1], 0, 7.5);
+          }
+
+          ctx.restore();
+        }
+      });
+    });
+
+    // Mouse & Touch interaction
+    const mouse = Mouse.create(render.canvas);
+    const mouseConstraint = MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.25,
+        render: { visible: false }
+      }
+    });
+    Composite.add(engine.world, mouseConstraint);
+    render.mouse = mouse;
+
+    Events.on(mouseConstraint, 'startdrag', () => AudioController.play('pop'));
+    Events.on(mouseConstraint, 'enddrag', () => AudioController.play('toss'));
+
+    const handleResize = () => {
+      if (!container || !render.canvas) return;
+      const newW = container.clientWidth;
+      render.canvas.width = newW;
+      Body.setPosition(ground, { x: newW / 2, y: height + wallThick / 2 - 4 });
+      Body.setPosition(rightWall, { x: newW + wallThick / 2, y: height / 2 });
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      Render.stop(render);
+      Runner.stop(runner);
+      Composite.clear(engine.world);
+      Engine.clear(engine);
+      if (render.canvas) render.canvas.remove();
+    };
+  }, [activeTab, TOOL_BADGES]);
+
+  const handleExplode = () => {
+    AudioController.play('pop');
+    if (!engineRef.current) return;
+    const { Composite, Body } = Matter;
+    const bodies = Composite.allBodies(engineRef.current.world).filter((b) => !b.isStatic);
+    bodies.forEach((b) => {
+      const angle = Math.random() * Math.PI * 2;
+      Body.applyForce(b, b.position, {
+        x: Math.cos(angle) * 0.08 * b.mass,
+        y: Math.sin(angle) * 0.08 * b.mass - 0.06
+      });
+      Body.setAngularVelocity(b, (Math.random() - 0.5) * 0.5);
+    });
+  };
+
+  const setGravity = (type) => {
+    AudioController.play('click');
+    setGravityState(type);
+    if (!engineRef.current) return;
+    if (type === 'normal') engineRef.current.gravity.y = 1.0;
+    if (type === 'zero') {
+      engineRef.current.gravity.y = 0;
+      handleExplode();
+    }
+    if (type === 'invert') engineRef.current.gravity.y = -1.1;
+  };
+
+  const proficiencies = [
+    { name: 'Visual Strategy & Art Direction', level: 98, desc: 'Holistic venue programming, thematic narratives & high-contrast brand systems.' },
+    { name: 'Brutalist & Editorial Poster Design', level: 96, desc: 'Micro-typography, experimental layouts & print-ready multi-format output.' },
+    { name: 'Kinetic Motion & Reel Animation', level: 93, desc: '60fps After Effects kinetic typography, sound-synced video teasers & stage visuals.' },
+    { name: 'Multi-Page Editorial & Brochure Systems', level: 90, desc: 'Corporate profiles, print catalogues & event calendar sunboard spreads.' }
+  ];
+
+  return (
+    <section id="playground" className="py-24 bg-black/40 border-t border-white/15 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-white/15 pb-6">
+          <div>
+            <span className="font-mono text-xs text-accent uppercase block mb-1">// INTERACTIVE ARSENAL</span>
+            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans">
+              SKILLS &amp; <span className="text-stroke-accent">PHYSICS</span>
+            </h2>
+          </div>
+
+          {/* Switcher */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                AudioController.play('click');
+                setActiveTab('physics');
+              }}
+              data-cursor="PLAY"
+              className={`px-4 py-2 font-mono text-xs font-bold uppercase rounded transition-colors ${
+                activeTab === 'physics' ? 'bg-accent text-black' : 'bg-darkcard text-white/70 hover:text-white border border-white/15'
+              }`}
+            >
+              2D KINETIC SANDBOX
+            </button>
+            <button
+              onClick={() => {
+                AudioController.play('click');
+                setActiveTab('proficiencies');
+              }}
+              data-cursor="METRICS"
+              className={`px-4 py-2 font-mono text-xs font-bold uppercase rounded transition-colors ${
+                activeTab === 'proficiencies' ? 'bg-accent text-black' : 'bg-darkcard text-white/70 hover:text-white border border-white/15'
+              }`}
+            >
+              PROFICIENCY BREAKDOWN
+            </button>
+          </div>
+        </div>
+
+        {activeTab === 'physics' ? (
+          <div className="bg-darkcard border border-white/15 rounded-xl p-5 backdrop-blur-md relative shadow-2xl">
+            {/* Sandbox Toolbar */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-white/10 mb-4">
+              <div className="font-mono text-xs text-white/70 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span>INTERACT WITH TOOL BADGES • DRAG, FLICK &amp; COLLIDE</span>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={() => setGravity('normal')}
+                  className={`px-3 py-1.5 rounded font-mono text-xs uppercase font-bold transition-colors ${
+                    gravityState === 'normal' ? 'bg-accent text-black' : 'bg-white/10 text-white/70 hover:text-white'
+                  }`}
+                >
+                  NORMAL (9.8G)
+                </button>
+                <button
+                  onClick={() => setGravity('zero')}
+                  className={`px-3 py-1.5 rounded font-mono text-xs uppercase font-bold transition-colors ${
+                    gravityState === 'zero' ? 'bg-accent text-black' : 'bg-white/10 text-white/70 hover:text-white'
+                  }`}
+                >
+                  ZERO-G
+                </button>
+                <button
+                  onClick={() => setGravity('invert')}
+                  className={`px-3 py-1.5 rounded font-mono text-xs uppercase font-bold transition-colors ${
+                    gravityState === 'invert' ? 'bg-accent text-black' : 'bg-white/10 text-white/70 hover:text-white'
+                  }`}
+                >
+                  INVERT
+                </button>
+                <button
+                  onClick={handleExplode}
+                  data-cursor="BOOM"
+                  className="px-3 py-1.5 bg-accent hover:bg-white text-black rounded font-mono text-xs font-black uppercase transition-colors flex items-center gap-1 shadow-sm"
+                >
+                  <i data-lucide="sparkles" className="w-3.5 h-3.5"></i>
+                  <span>EXPLODE</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Sandbox Canvas */}
+            <div
+              ref={playgroundRef}
+              className="w-full h-[380px] cursor-grab active:cursor-grabbing relative overflow-hidden bg-black/40 rounded-lg border border-white/10"
+              data-cursor="TOSS"
+            />
+
+            {/* Tool Arsenal Pills Strip */}
+            <div className="pt-4 border-t border-white/10 mt-4 flex items-center justify-between gap-3 flex-wrap">
+              <span className="font-mono text-[11px] font-bold text-accent uppercase flex items-center gap-1.5">
+                <i data-lucide="cpu" className="w-3.5 h-3.5"></i>
+                ACTIVE CREATIVE ARSENAL (12):
+              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                {TOOL_BADGES.map((t, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      AudioController.play('pop');
+                      handleExplode();
+                    }}
+                    data-cursor="TOSS"
+                    style={{ backgroundColor: t.fill, color: t.text }}
+                    className="font-mono text-[10px] font-black uppercase px-2.5 py-1 rounded shadow-sm hover:scale-105 transition-transform"
+                    title={`Toss ${t.name}`}
+                  >
+                    {t.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {proficiencies.map((p, i) => (
+              <div key={i} className="bg-darkcard border border-white/15 rounded-xl p-6 space-y-3">
+                <div className="flex items-center justify-between font-mono text-xs">
+                  <span className="font-bold text-white uppercase">{p.name}</span>
+                  <span className="text-accent font-black text-base">{p.level}%</span>
+                </div>
+                <div className="w-full bg-black/60 h-2 rounded-full overflow-hidden border border-white/10">
+                  <div
+                    className="bg-accent h-full rounded-full transition-all duration-1000 shadow-[0_0_10px_#00FF66]"
+                    style={{ width: `${p.level}%` }}
+                  />
+                </div>
+                <p className="font-mono text-xs text-white/60 uppercase">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+// -------------------------------------------------------------
+// 9. Process & Milestones Timeline
+// -------------------------------------------------------------
+function ProcessTimeline() {
+  const steps = [
+    {
+      num: '01',
+      title: 'RESEARCH & STRATEGIC IMMERSION',
+      desc: 'Deconstructing the artist, music tempo, audience demographics, and venue culture to establish an unmistakable visual tone.'
+    },
+    {
+      num: '02',
+      title: 'EXPERIMENTAL DECONSTRUCTION',
+      desc: 'Exploring brutalist typography, dynamic grid tensions, analog textures, and high-impact color palettes.'
+    },
+    {
+      num: '03',
+      title: 'KINETIC MOTION & RIGGING',
+      desc: 'Transforming static key-visuals into 60fps kinetic motion graphics, teasers, story reels, and LED stage loops.'
+    },
+    {
+      num: '04',
+      title: 'PRODUCTION & MULTI-FORMAT ROLLOUT',
+      desc: 'Preparing ultra high-res print files, event calendar sunboard spreads, and digital social kits with zero compromise.'
+    }
+  ];
+
+  return (
+    <section id="timeline" className="py-24 border-t border-white/15 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-14">
+          <span className="font-mono text-xs text-accent uppercase block mb-1">// METHODOLOGY</span>
+          <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans">
+            CREATIVE <span className="text-stroke-accent">PROCESS</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((s, idx) => (
+            <div
+              key={idx}
+              className="bg-darkcard border border-white/15 hover:border-accent rounded-xl p-6 space-y-4 group transition-all duration-300 relative overflow-hidden"
+            >
+              <div className="font-black text-4xl text-white/20 group-hover:text-accent font-sans transition-colors">
+                {s.num}
+              </div>
+              <h3 className="font-bold text-lg uppercase text-white tracking-tight group-hover:text-accent transition-colors font-sans">
+                {s.title}
+              </h3>
+              <p className="font-mono text-xs text-white/70 uppercase leading-relaxed">
+                {s.desc}
+              </p>
+              <div className="w-6 h-1 bg-white/20 group-hover:bg-accent transition-colors" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------------------------------------------
+// 10. About & Work Experience Timeline
+// -------------------------------------------------------------
+function AboutSection() {
+  const experiences = [
+    {
+      role: 'Lead Visual Strategist & Art Director',
+      company: 'antiSOCIAL & KharSOCIAL (Impresario Hospitality)',
+      period: '2024 — PRESENT',
+      type: 'LEAD ROLE',
+      desc: 'Spearheading month-on-month event programming visual identities, print sunboard schedules, kinetic social reels, and brutalist gig poster systems across premier nightlife destinations in Mumbai & Pune.'
+    },
+    {
+      role: 'Senior Brand Designer & Creative Lead',
+      company: 'COEUS Branding & MOLO Series',
+      period: '2023 — 2024',
+      type: 'AGENCY & CAMPAIGN',
+      desc: 'Directed comprehensive visual identity overhauls, typography systems, multi-week promotional campaign suites, and editorial design collateral for modern lifestyle and nightlife entities.'
+    },
+    {
+      role: 'Visual Designer & Kinetic Motion Specialist',
+      company: 'DOP Music Experiences & Hospitality Group',
+      period: '2022 — 2023',
+      type: 'MOTION & DIGITAL',
+      desc: 'Designed sound-synced kinetic video teasers, event stage backdrop graphics, and multi-ratio social media collateral packages (Feed Post, Story 9:16, Event Cover 16:9).'
+    },
+    {
+      role: 'Editorial Systems & Publication Designer',
+      company: 'F.Gheewala KSA & Corporate Brands',
+      period: '2021 — 2022',
+      type: 'EDITORIAL & PRINT',
+      desc: 'Engineered comprehensive multi-page corporate profiles, print catalogues, brand style guides, and executive presentation systems.'
+    },
+    {
+      role: 'Freelance Visual Artist & Nightlife Art Director',
+      company: 'Independent Music Labels & Cultural Venues',
+      period: '2019 — 2021',
+      type: 'INDEPENDENT PRACTICE',
+      desc: 'Produced over 100+ high-impact gig posters, visual identity systems, and custom typographic treatments for underground events, club residencies, and festival tours.'
+    }
+  ];
+
+  return (
+    <section id="about" className="py-24 border-t border-white/15 bg-black/60 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Column: Bio & Philosophy */}
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+            <div className="flex items-center gap-2 font-mono text-xs text-accent uppercase">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span>// CAREER &amp; PHILOSOPHY</span>
+            </div>
+            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans leading-none">
+              DESIGN WITH <br /><span className="text-accent">STRATEGIC</span> TEETH
+            </h2>
+            <p className="font-mono text-sm sm:text-base text-white/80 uppercase leading-relaxed border-l-2 border-accent pl-4">
+              I am Shoeab Shaikh, a Visual Strategist &amp; Art Director specializing in brutalist aesthetics,
+              kinetic motion graphics, and large-scale brand identity systems.
+            </p>
+            <p className="font-mono text-xs sm:text-sm text-white/60 uppercase leading-relaxed">
+              My work merges razor-sharp typography with kinetic energy to build unmistakable visual pulses for
+              premier nightlife venues, international touring artists, music festivals, and forward-thinking commercial brands.
+            </p>
+
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-xl font-mono text-xs text-accent uppercase flex items-center justify-between shadow-[0_0_20px_rgba(0,255,102,0.15)]">
+              <span>ACTIVE STATUS: ACCEPTING SELECT COMMISSIONS</span>
+              <span className="font-bold">2026</span>
+            </div>
+          </div>
+
+          {/* Right Column: Work Experience Timeline */}
+          <div className="lg:col-span-7 bg-darkcard border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <h3 className="font-mono text-xs text-accent uppercase tracking-widest font-bold flex items-center gap-2">
+                <i data-lucide="briefcase" className="w-4 h-4 text-accent"></i>
+                <span>PROFESSIONAL WORK EXPERIENCE</span>
+              </h3>
+              <span className="font-mono text-[10px] text-white/40 uppercase">2019 — PRESENT</span>
+            </div>
+
+            <div className="space-y-6 divide-y divide-white/10">
+              {experiences.map((exp, idx) => (
+                <div key={idx} className={`${idx !== 0 ? 'pt-6' : ''} space-y-2 group`}>
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <h4 className="font-black text-lg sm:text-xl text-white uppercase tracking-tight group-hover:text-accent transition-colors font-sans">
+                        {exp.role}
+                      </h4>
+                      <div className="font-mono text-xs text-accent/90 uppercase font-bold flex items-center gap-2 mt-0.5">
+                        <span>{exp.company}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-[10px] px-2.5 py-1 rounded bg-accent/15 border border-accent/30 text-accent font-bold uppercase">
+                        {exp.period}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="font-mono text-xs text-white/70 uppercase leading-relaxed pt-1">
+                    {exp.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------------------------------------------
+// 11. Infinite Kinetic Marquee
+// -------------------------------------------------------------
+function MarqueeBanner() {
+  const items = [
+    'SHOEAB SHAIKH',
+    'VISUAL STRATEGIST',
+    'ART DIRECTOR',
+    'BRUTALIST AESTHETICS',
+    'KINETIC MOTION',
+    'NIGHTLIFE BRANDING',
+    'EDITORIAL SYSTEMS'
+  ];
+
+  return (
+    <div className="border-y border-white/20 bg-accent text-black py-4 overflow-hidden select-none">
+      <div className="flex gap-8 whitespace-nowrap animate-marquee font-sans font-black text-2xl sm:text-3xl tracking-tighter uppercase">
+        {[...items, ...items, ...items].map((t, idx) => (
+          <div key={idx} className="flex items-center gap-8">
+            <span>{t}</span>
+            <span>★</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
+// 12. Contact & Quick Copy Section
+// -------------------------------------------------------------
+function ContactSection() {
+  const [copied, setCopied] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: 'Branding & Art Direction',
+    budget: '$2,500 - $5,000',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const emailAddress = 'shoeabshaikh@gmail.com';
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(emailAddress);
+    setCopied(true);
+    AudioController.play('success');
+    if (typeof confetti !== 'undefined') {
+      confetti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
+    }
+    setTimeout(() => setCopied(false), 3000);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    AudioController.play('success');
+    setSubmitted(true);
+    if (typeof confetti !== 'undefined') {
+      confetti({ particleCount: 80, spread: 80, origin: { y: 0.6 } });
+    }
+  };
+
+  return (
+    <section id="contact" className="py-24 border-t border-white/15 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Column: Direct Action & Big Headline */}
+          <div className="lg:col-span-6 space-y-8">
+            <div>
+              <span className="font-mono text-xs text-accent uppercase block mb-1">// INITIATE COLLABORATION</span>
+              <h2 className="font-black text-5xl sm:text-7xl uppercase tracking-tighter text-white font-sans leading-[0.9]">
+                LET&apos;S CREATE <br /><span className="text-accent">TOGETHER</span>
+              </h2>
+            </div>
+
+            <p className="font-mono text-sm sm:text-base text-white/80 uppercase leading-relaxed">
+              Have an upcoming venue launch, music campaign, festival rollout, or brand identity? Let&apos;s talk strategy and execution.
+            </p>
+
+            {/* Quick 1-Click Copy Email Pill */}
+            <div className="space-y-2">
+              <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
+                DIRECT INBOX (1-CLICK COPY)
+              </span>
+              <button
+                onClick={copyEmail}
+                data-cursor={copied ? 'COPIED!' : 'COPY EMAIL'}
+                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-darkcard border border-white/20 hover:border-accent font-mono text-sm sm:text-base text-white flex items-center justify-between sm:justify-start gap-4 transition-all duration-300 group shadow-lg"
+              >
+                <div className="flex items-center gap-3">
+                  <i data-lucide="mail" className="w-5 h-5 text-accent"></i>
+                  <span className="font-bold font-sans tracking-wide text-white group-hover:text-accent transition-colors">
+                    {emailAddress}
+                  </span>
+                </div>
+                <span
+                  className={`text-xs px-2.5 py-1 rounded font-bold uppercase transition-all ${
+                    copied ? 'bg-accent text-black' : 'bg-white/10 text-white/70 group-hover:bg-white group-hover:text-black'
+                  }`}
+                >
+                  {copied ? '✓ COPIED TO CLIPBOARD' : 'COPY'}
+                </span>
+              </button>
+            </div>
+
+            {/* Social Links */}
+            <div className="space-y-3 pt-4">
+              <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
+                CREATIVE NETWORKS
+              </span>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: 'INSTAGRAM', url: 'https://instagram.com' },
+                  { name: 'LINKEDIN', url: 'https://linkedin.com' },
+                  { name: 'BEHANCE', url: 'https://behance.net' },
+                  { name: 'DRIBBBLE', url: 'https://dribbble.com' }
+                ].map((s, idx) => (
+                  <a
+                    key={idx}
+                    href={s.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor="VISIT"
+                    className="font-mono text-xs px-4 py-2 bg-darkcard border border-white/15 hover:border-accent hover:text-accent rounded text-white/80 transition-colors uppercase"
+                  >
+                    {s.name} ↗
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Interactive Form */}
+          <div className="lg:col-span-6 bg-darkcard border border-white/15 rounded-2xl p-6 sm:p-8 relative backdrop-blur-xl">
+            {submitted ? (
+              <div className="py-16 text-center space-y-4 animate-fade-in">
+                <div className="w-16 h-16 rounded-full bg-accent/20 border-2 border-accent text-accent flex items-center justify-center mx-auto">
+                  <i data-lucide="check" className="w-8 h-8"></i>
+                </div>
+                <h3 className="font-black text-2xl uppercase text-white font-sans">
+                  TRANSMISSION RECEIVED
+                </h3>
+                <p className="font-mono text-xs text-white/70 uppercase max-w-md mx-auto">
+                  Thank you for reaching out. Your project inquiry has been queued for immediate review. Expect a response within 24 hours.
+                </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="px-6 py-2.5 bg-accent text-black font-mono text-xs font-bold uppercase rounded hover:bg-white transition-colors"
+                >
+                  SEND ANOTHER MESSAGE
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <h3 className="font-black text-xl uppercase tracking-tight text-white font-sans mb-4">
+                  PROJECT INQUIRY FORM
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">YOUR NAME *</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="e.g. Alex Vance"
+                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">EMAIL ADDRESS *</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="alex@studio.com"
+                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">REQUIRED SERVICE</label>
+                    <select
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white uppercase focus:outline-none"
+                    >
+                      <option>Branding &amp; Art Direction</option>
+                      <option>Gig Poster Series</option>
+                      <option>Kinetic Video / Motion</option>
+                      <option>Event Calendar Programming</option>
+                      <option>Full Identity Rollout</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">ESTIMATED BUDGET</label>
+                    <select
+                      value={formData.budget}
+                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white uppercase focus:outline-none"
+                    >
+                      <option>$1,500 - $3,000</option>
+                      <option>$3,000 - $6,000</option>
+                      <option>$6,000 - $15,000</option>
+                      <option>$15,000+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">PROJECT DETAILS / BRIEF *</label>
+                  <textarea
+                    rows="4"
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Describe timeline, deliverables, and vision..."
+                    className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  data-cursor="SUBMIT"
+                  className="w-full bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all duration-300 shadow-[0_0_20px_rgba(0,255,102,0.3)] flex items-center justify-center gap-2 group"
+                >
+                  <span>TRANSMIT BRIEF</span>
+                  <i data-lucide="send" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------------------------------------------
+// 13. Admin Upload Modal (Connected to server.py /api/upload)
+// -------------------------------------------------------------
+function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState('');
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('Gig Posters');
+  const [client, setClient] = useState('');
+  const [role, setRole] = useState('Visual Strategist & Art Director');
+  const [year, setYear] = useState('2026');
+  const [strategy, setStrategy] = useState('');
+  const [tech, setTech] = useState('Photoshop, Illustrator');
+  const [file, setFile] = useState(null);
+
+  if (!isOpen) return null;
+
+  const handleUploadSubmit = async (e) => {
+    e.preventDefault();
+    if (!file) {
+      setUploadError('Please select a media file (PNG, JPG, MP4, PDF).');
+      return;
+    }
+
+    setUploading(true);
+    setUploadError('');
+
+    try {
+      const data = new FormData();
+      data.append('title', title);
+      data.append('category', category);
+      data.append('client', client || 'Shoeab Shaikh');
+      data.append('role', role);
+      data.append('year', year);
+      data.append('strategy', strategy || 'Curated portfolio piece.');
+      data.append('tech', tech);
+      data.append('file', file);
+
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: data
+      });
+
+      if (!res.ok) {
+        throw new Error('Upload failed on server.');
+      }
+
+      AudioController.play('success');
+      setUploadSuccess(true);
+      if (typeof confetti !== 'undefined') {
+        confetti({ particleCount: 50, spread: 70 });
+      }
+
+      setTimeout(() => {
+        setUploadSuccess(false);
+        onRefreshProjects();
+        onClose();
+      }, 1500);
+    } catch (err) {
+      console.error(err);
+      setUploadError('Failed to upload. Ensure server.py is running.');
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-fade-in">
+      <div className="absolute inset-0" onClick={onClose} />
+      <div className="relative z-10 w-full max-w-lg bg-darkcard border border-white/20 rounded-xl p-6 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between border-b border-white/10 pb-3">
+          <div className="flex items-center gap-2 font-mono text-xs text-accent font-bold uppercase">
+            <i data-lucide="upload-cloud" className="w-4 h-4"></i>
+            <span>ADMIN ARTIFACT UPLOAD</span>
+          </div>
+          <button onClick={onClose} className="text-white/50 hover:text-white">
+            <i data-lucide="x" className="w-4 h-4"></i>
+          </button>
+        </div>
+
+        {uploadSuccess ? (
+          <div className="py-8 text-center space-y-2">
+            <i data-lucide="check-circle" className="w-12 h-12 text-accent mx-auto"></i>
+            <h4 className="text-lg font-bold uppercase text-white">UPLOAD COMPLETE</h4>
+            <p className="font-mono text-xs text-white/60 uppercase">Gallery is updating...</p>
+          </div>
+        ) : (
+          <form onSubmit={handleUploadSubmit} className="space-y-3 font-mono text-xs">
+            {uploadError && <div className="p-2 bg-red-500/20 border border-red-500 text-red-300 text-[11px] rounded">{uploadError}</div>}
+
+            <div>
+              <label className="text-white/50 block mb-1 uppercase">ARTWORK FILE (PNG, JPG, MP4, PDF) *</label>
+              <input
+                type="file"
+                required
+                accept="image/*,video/mp4,application/pdf"
+                onChange={(e) => setFile(e.target.files[0])}
+                className="w-full bg-black/60 border border-white/20 p-2 rounded text-white file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="text-white/50 block mb-1 uppercase">TITLE *</label>
+                <input
+                  type="text"
+                  required
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="e.g. Neon Horizon"
+                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                />
+              </div>
+              <div>
+                <label className="text-white/50 block mb-1 uppercase">CATEGORY *</label>
+                <select
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white uppercase focus:outline-none"
+                >
+                  <option>Gig Posters</option>
+                  <option>Campaigns &amp; Promos</option>
+                  <option>Event Calendars</option>
+                  <option>Brochures</option>
+                  <option>Branding</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="text-white/50 block mb-1 uppercase">CLIENT</label>
+                <input
+                  type="text"
+                  value={client}
+                  onChange={(e) => setClient(e.target.value)}
+                  placeholder="antiSOCIAL, KharSOCIAL..."
+                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                />
+              </div>
+              <div>
+                <label className="text-white/50 block mb-1 uppercase">YEAR</label>
+                <input
+                  type="text"
+                  value={year}
+                  onChange={(e) => setYear(e.target.value)}
+                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="text-white/50 block mb-1 uppercase">STRATEGY / NOTES</label>
+              <textarea
+                rows="2"
+                value={strategy}
+                onChange={(e) => setStrategy(e.target.value)}
+                placeholder="Design concept or brief summary..."
+                className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              disabled={uploading}
+              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-3 rounded transition-colors disabled:opacity-50"
+            >
+              {uploading ? 'PROCESSING UPLOAD...' : 'CONFIRM & ADD TO ARCHIVE'}
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
+// 14. Footer Component
+// -------------------------------------------------------------
+function Footer() {
+  const scrollToTop = () => {
+    AudioController.play('click');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <footer className="border-t border-white/15 bg-black py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-white/50 uppercase">
+        <div className="flex items-center gap-3">
+          <div className="w-2.5 h-2.5 rounded-sm bg-accent rotate-45" />
+          <span className="font-bold text-white tracking-wider font-sans">
+            SHOEAB SHAIKH // ART DIRECTION
+          </span>
+          <span>© {new Date().getFullYear()}</span>
+        </div>
+
+        <div className="flex items-center gap-6">
+          <span>REACT 18 • TAILWIND • MATTER.JS</span>
+          <button
+            onClick={scrollToTop}
+            data-cursor="TOP"
+            className="text-white hover:text-accent flex items-center gap-1.5 transition-colors border border-white/20 px-3 py-1.5 rounded"
+          >
+            <span>BACK TO TOP</span>
+            <i data-lucide="arrow-up" className="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// -------------------------------------------------------------
+// 15. Main Root Application Orchestrator
+// -------------------------------------------------------------
+function App() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('Gig Posters');
+  const [viewMode, setViewMode] = useState('bento');
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [uploadOpen, setUploadOpen] = useState(false);
+
+  // Fetch projects database
+  const loadProjects = useCallback(async () => {
+    try {
+      // First try website/projects.json then fallback to data/projects.json
+      let res = await fetch(`/website/projects.json?t=${Date.now()}`);
+      if (!res.ok) {
+        res = await fetch(`/data/projects.json?t=${Date.now()}`);
+      }
+      if (!res.ok) throw new Error('Could not load projects.json');
+      const data = await res.json();
+      setProjects(data);
+    } catch (err) {
+      console.error("Error loading portfolio dataset:", err);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadProjects();
+  }, [loadProjects]);
+
+  // Trigger Lucide icon parsing on every state update
+  useEffect(() => {
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      lucide.createIcons();
+    }
+  });
+
+  const handleNextProject = () => {
+    if (!selectedProject || projects.length === 0) return;
+    const currIdx = projects.findIndex((p) => p.id === selectedProject.id);
+    const nextIdx = (currIdx + 1) % projects.length;
+    setSelectedProject(projects[nextIdx]);
+  };
+
+  const handlePrevProject = () => {
+    if (!selectedProject || projects.length === 0) return;
+    const currIdx = projects.findIndex((p) => p.id === selectedProject.id);
+    const prevIdx = (currIdx - 1 + projects.length) % projects.length;
+    setSelectedProject(projects[prevIdx]);
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white selection:bg-accent selection:text-black flex flex-col font-sans relative overflow-x-hidden">
+      {/* Custom Kinetic Cursor */}
+      <CustomCursor />
+
+      {/* Navigation Bar */}
+      <Navbar
+        soundEnabled={soundEnabled}
+        setSoundEnabled={setSoundEnabled}
+        onOpenUpload={() => setUploadOpen(true)}
+        totalCount={projects.length}
+      />
+
+      {/* Main Content Sections */}
+      <main className="flex-grow">
+        <HeroSection
+          totalCount={projects.length}
+          onExplore={() => {
+            const el = document.getElementById('projects');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+        />
+
+        <BentoProjectsGrid
+          projects={projects}
+          onSelectProject={(p) => setSelectedProject(p)}
+          activeFilter={activeFilter}
+          setActiveFilter={setActiveFilter}
+          viewMode={viewMode}
+          setViewMode={setViewMode}
+        />
+
+        <SkillsPlayground />
+
+        <ProcessTimeline />
+
+        <AboutSection />
+
+        <MarqueeBanner />
+
+        <ContactSection />
+      </main>
+
+      {/* Project Case Study Detail Modal */}
+      {selectedProject && (
+        <ProjectDetailModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+          onPrev={handlePrevProject}
+          onNext={handleNextProject}
+        />
+      )}
+
+      {/* Admin Upload Modal */}
+      <AdminUploadModal
+        isOpen={uploadOpen}
+        onClose={() => setUploadOpen(false)}
+        onRefreshProjects={loadProjects}
+      />
+
+      {/* Brutalist Footer */}
+      <Footer />
+    </div>
+  );
+}
+
+// Mount React Root
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Shoeab Shaikh // Lead Visual Strategist &amp; Art Director</title>
+    <meta name="description" content="Portfolio of Shoeab Shaikh — Visual Strategist & Art Director specializing in brutalist aesthetics, kinetic motion graphics, and large-scale brand identity systems.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Matter.js 2D Physics Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <!-- React 18 & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel Standalone for JSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone@7.23.6/babel.min.js"></script>
+
+    <!-- Tailwind Theme Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        accent: "#00FF66",
+                        cyber: "#00F0FF",
+                        darkbg: "#060606",
+                        darkcard: "#0E0E0E",
+                        black: "#000000",
+                        white: "#FFFFFF"
+                    },
+                    fontFamily: {
+                        sans: ["Hanken Grotesk", "Syne", "sans-serif"],
+                        mono: ["Space Mono", "monospace"],
+                        display: ["Syne", "Hanken Grotesk", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'cyber-grid': 'linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)'
+                    },
+                    animation: {
+                        'marquee': 'marquee 22s linear infinite',
+                        'fade-in': 'fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.98)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Cyber Brutalist Styles */
+        html {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        body {
+            background-color: #000000;
+            cursor: default;
+        }
+        
+        /* Custom Brutalist Neon Scrollbars */
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060606;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00FF66;
+            border-radius: 0px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFFFFF;
+        }
+
+        /* Scroll Animation Classes */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(32px) scale(0.96);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Outline Stroke Text */
+        .text-stroke-accent {
+            -webkit-text-stroke: 1.5px #00FF66;
+            color: transparent;
+        }
+        .text-stroke-white {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+            color: transparent;
+        }
+
+        /* Hide scrollbars for overflow tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased bg-black text-white selection:bg-accent selection:text-black">
+    <!-- React Root Mount -->
+    <div id="root">
+        <!-- Initial Preloader before React mounts -->
+        <div class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center font-mono text-xs text-white/50 uppercase gap-4">
+            <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <span>INITIALIZING SHOEAB SHAIKH ARCHIVE // 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Script compiled via Babel -->
+    <script type="text/babel" src="/website/app.jsx"></script>
+</body>
+</html>

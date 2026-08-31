@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.class
+*.pyc
+
+# Local snapshots and temporary archives
+.snapshots/
+*.zip
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+.BIN/
+.Spotlight-V100
+.Trashes
+
+# IDE / Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
