@@ -1017,24 +1017,20 @@ function BentoProjectsGrid({
 
                     {/* Clean Metadata Info Strip Below Artwork */}
                     <div className="p-4 space-y-2 flex-grow flex flex-col justify-between bg-darkcard">
-                      <div className="space-y-1">
+                      <div className="space-y-1.5">
                         <div className="flex items-center justify-between gap-2">
-                          <span className="font-mono text-[10px] text-accent tracking-wider uppercase font-bold truncate">
+                          <span className="font-mono text-xs text-accent tracking-wider uppercase font-bold truncate">
                             {project.client || 'Shoeab Shaikh'}
                           </span>
                           {project.subfolder && (
-                            <span className="font-mono text-[9px] uppercase text-cyan-400 truncate max-w-[45%]">
+                            <span className="font-mono text-[10px] uppercase text-cyan-400 truncate max-w-[48%] font-semibold">
                               {project.subfolder.replace(/_/g, ' ')}
                             </span>
                           )}
                         </div>
 
-                        <h3 className="font-black text-base sm:text-lg text-white uppercase tracking-tight group-hover:text-accent transition-colors truncate font-sans">
-                          {project.title}
-                        </h3>
-
                         {project.strategy && (
-                          <p className="font-mono text-[11px] text-white/60 uppercase line-clamp-2 leading-relaxed pt-0.5">
+                          <p className="font-mono text-xs text-white/70 uppercase line-clamp-2 leading-relaxed pt-0.5 group-hover:text-white transition-colors">
                             {project.strategy}
                           </p>
                         )}
@@ -1112,13 +1108,17 @@ function BentoProjectsGrid({
 
                   <div className="p-6 flex flex-col justify-between flex-grow space-y-4 bg-darkcard">
                     <div>
-                      <div className="font-mono text-xs text-accent uppercase font-bold mb-1">
-                        CLIENT: {project.client || 'Shoeab Shaikh'}
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="font-mono text-xs text-accent uppercase font-bold">
+                          CLIENT: {project.client || 'Shoeab Shaikh'}
+                        </span>
+                        {project.subfolder && (
+                          <span className="font-mono text-xs uppercase text-cyan-400 font-semibold">
+                            {project.subfolder.replace(/_/g, ' ')}
+                          </span>
+                        )}
                       </div>
-                      <h3 className="font-black text-2xl uppercase tracking-tight text-white group-hover:text-accent transition-colors font-sans">
-                        {project.title}
-                      </h3>
-                      <p className="font-mono text-xs text-white/70 uppercase mt-2 line-clamp-2 leading-relaxed">
+                      <p className="font-mono text-sm text-white/90 uppercase line-clamp-3 leading-relaxed">
                         {project.strategy}
                       </p>
                     </div>
@@ -1158,26 +1158,20 @@ function BentoProjectsGrid({
                       )}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-black text-base text-white uppercase truncate group-hover:text-accent transition-colors font-sans">
-                        {project.title}
-                      </h4>
-                      <div className="flex items-center gap-2 font-mono text-[11px] text-white/50 uppercase truncate flex-wrap mt-0.5">
-                        <span className="text-accent font-bold">{project.client}</span>
-                        <span>•</span>
-                        <span>{project.category}</span>
-                        {project.variants && project.variants.length > 1 && (
-                          <>
-                            <span>•</span>
-                            <span className="text-accent font-bold">✦ {project.variants.length} SIZES</span>
-                          </>
-                        )}
+                      <div className="flex items-center gap-2 font-mono text-xs uppercase font-bold text-white group-hover:text-accent transition-colors">
+                        <span className="text-accent">{project.client || 'Shoeab Shaikh'}</span>
                         {project.subfolder && (
                           <>
-                            <span>•</span>
+                            <span className="text-white/30">•</span>
                             <span className="text-cyan-400">{project.subfolder.replace(/_/g, ' ')}</span>
                           </>
                         )}
+                        <span>•</span>
+                        <span className="text-white/60">{project.category}</span>
                       </div>
+                      <p className="font-mono text-xs text-white/70 uppercase truncate max-w-xl mt-1">
+                        {project.strategy}
+                      </p>
                     </div>
                   </div>
 
