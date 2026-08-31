@@ -330,7 +330,7 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
             </span>
             <div className="flex items-center gap-2 font-mono text-[10px] text-white/50 tracking-wider">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span>{timeStr || 'MUMBAI // IST'} • 8.5+ YRS</span>
+              <span>{timeStr || 'MUMBAI // IST'} • 9+ YRS</span>
             </div>
           </div>
         </div>
@@ -378,7 +378,20 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* LinkedIn Direct Link */}
+          <a
+            href="https://www.linkedin.com/in/shaikhshoeab/"
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="LINKEDIN"
+            className="p-2 sm:px-3 sm:py-1.5 rounded border border-white/20 hover:border-accent bg-white/5 hover:bg-accent hover:text-black text-white/80 font-mono text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
+            title="Shoeab Ahmed LinkedIn Profile"
+          >
+            <i data-lucide="linkedin" className="w-3.5 h-3.5"></i>
+            <span className="hidden lg:inline">LINKEDIN</span>
+          </a>
+
           {/* Sound Toggle */}
           <button
             onClick={() => {
@@ -399,17 +412,18 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
             <span className="hidden sm:inline">{soundEnabled ? 'SFX ON' : 'MUTED'}</span>
           </button>
 
-          {/* Admin Upload Trigger */}
+          {/* Secure Admin Lock Trigger */}
           <button
             onClick={() => {
               AudioController.play('pop');
               onOpenUpload();
             }}
-            data-cursor="UPLOAD"
+            data-cursor="ADMIN"
             className="bg-white/10 hover:bg-accent text-white hover:text-black border border-white/20 hover:border-accent font-mono text-xs font-bold px-3 py-1.5 rounded transition-all duration-300 flex items-center gap-1.5 shadow-sm"
+            title="Admin Passkey Upload Access"
           >
-            <i data-lucide="plus-circle" className="w-3.5 h-3.5"></i>
-            <span className="hidden sm:inline">UPLOAD</span>
+            <i data-lucide="lock" className="w-3.5 h-3.5"></i>
+            <span className="hidden sm:inline">ADMIN</span>
           </button>
 
           {/* Mobile Menu Button */}
@@ -500,7 +514,7 @@ function HeroSection({ totalCount, onExplore }) {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
             <span className="font-mono text-xs uppercase tracking-wider text-white/90">
-              AVAILABLE FOR Q2 / Q3 2026 PROJECTS • 8.5+ YEARS EXP
+              AVAILABLE FOR Q2 / Q3 2026 PROJECTS • 9+ YEARS EXP
             </span>
           </div>
           <span className="hidden sm:inline-block font-mono text-xs text-white/40">
@@ -520,7 +534,7 @@ function HeroSection({ totalCount, onExplore }) {
         {/* Subtitle & Manifesto */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
           <p className="lg:col-span-8 font-mono text-sm sm:text-base md:text-lg text-white/80 uppercase border-l-2 border-accent pl-5 leading-relaxed">
-            Specializing in brand identity, social media design, photography, and video editing. Over <span className="text-accent font-bold">8.5+ years</span> of turning marketing goals into visuals that ship on time across <span className="text-accent font-bold">{totalCount} curated artworks</span>.
+            Specializing in brand identity, social media design, photography, and video editing. Over <span className="text-accent font-bold">9+ years</span> of turning marketing goals into visuals that ship on time across <span className="text-accent font-bold">{totalCount} curated artworks</span>.
           </p>
 
           {/* Action CTAs */}
@@ -603,6 +617,60 @@ function ScrollRevealWrapper({ children, index = 0, className = "" }) {
       className={`scroll-reveal ${visible ? 'is-visible' : ''} ${className}`}
     >
       {children}
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
+// 5.5 High-Performance Lazy-Loading Video Streamer
+// -------------------------------------------------------------
+function LazyVideo({ src, className = '', loop = true, muted = true, playsInline = true }) {
+  const videoRef = useRef(null);
+  const [inView, setInView] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setInView(entry.isIntersecting);
+        });
+      },
+      { rootMargin: '200px 0px', threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (inView || isHovered) {
+      if (!el.src && src) {
+        el.src = src;
+      }
+      el.play().catch(() => {});
+    } else {
+      el.pause();
+    }
+  }, [inView, isHovered, src]);
+
+  return (
+    <div
+      className="relative w-full h-full flex items-center justify-center overflow-hidden group/vid"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <video
+        ref={videoRef}
+        preload="metadata"
+        loop={loop}
+        muted={muted}
+        playsInline={playsInline}
+        className={className}
+      />
     </div>
   );
 }
@@ -903,12 +971,8 @@ function BentoProjectsGrid({
 
                       {/* Media (Strictly Uncropped with object-contain) */}
                       {isVideo ? (
-                        <video
+                        <LazyVideo
                           src={project.media}
-                          muted
-                          loop
-                          playsInline
-                          autoPlay
                           className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
                         />
                       ) : (
@@ -1012,12 +1076,8 @@ function BentoProjectsGrid({
                     <div className="absolute inset-0 bg-cyber-grid bg-[size:24px_24px] opacity-10 pointer-events-none" />
 
                     {project.type === 'video' ? (
-                      <video
+                      <LazyVideo
                         src={project.media}
-                        muted
-                        loop
-                        autoPlay
-                        playsInline
                         className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
                       />
                     ) : (
@@ -1273,6 +1333,7 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
                   controls
                   autoPlay
                   playsInline
+                  preload="metadata"
                   className="w-full h-full max-h-[550px] object-contain"
                 />
               ) : isPdf ? (
@@ -1650,7 +1711,7 @@ function SkillsPlayground() {
   };
 
   const proficiencies = [
-    { name: 'Brand Identity & Social Media Design', level: 98, desc: 'Logo systems, social media campaigns, marketing collateral & brand guidelines (8.5+ years).' },
+    { name: 'Brand Identity & Social Media Design', level: 98, desc: 'Logo systems, social media campaigns, marketing collateral & brand guidelines (9+ years).' },
     { name: 'Adobe Creative Suite (Illustrator, Photoshop, InDesign)', level: 98, desc: 'Vector logos, photo manipulation, multi-page brochures, print packaging & prepress.' },
     { name: 'Video Editing & Motion (Premiere Pro, After Effects, Final Cut Pro)', level: 92, desc: 'Photo/video content, on-site live shoot production, sound-synced video reels & teasers.' },
     { name: 'CorelDraw, Canva & Signage Design', level: 94, desc: 'Shop boards, standees, hoardings, US cabinet/directional sign layouts & fast turnarounds.' }
@@ -1945,15 +2006,15 @@ function AboutSection() {
               </div>
               <div className="p-2">
                 <span className="text-[9px] text-white/40 block uppercase">EXPERIENCE</span>
-                <span className="text-xs text-accent font-black uppercase">8.5+ YRS</span>
+                <span className="text-xs text-accent font-black uppercase">9+ YRS</span>
               </div>
             </div>
 
             <p className="font-mono text-sm sm:text-base text-white/90 uppercase leading-relaxed border-l-2 border-accent pl-4">
-              Graphic Designer specializing in brand identity, social media design &amp; photography. 8.5+ years turning marketing goals into visuals that ship on time.
+              Graphic Designer specializing in brand identity, social media design &amp; photography. 9+ years turning marketing goals into visuals that ship on time.
             </p>
             <p className="font-mono text-xs sm:text-sm text-white/60 uppercase leading-relaxed">
-              A versatile mix of branding, photography, and social content design — built on 8.5+ years of keeping visual identity consistent across every channel.
+              A versatile mix of branding, photography, and social content design — built on 9+ years of keeping visual identity consistent across every channel.
             </p>
 
             {/* Languages Bar */}
@@ -2042,7 +2103,7 @@ function MarqueeBanner() {
     'SOCIAL MEDIA DESIGN',
     'PHOTOGRAPHY',
     'VIDEO EDITING',
-    '8.5+ YEARS EXPERIENCE',
+    '9+ YEARS EXPERIENCE',
     'MUMBAI // INDIA'
   ];
 
@@ -2066,18 +2127,9 @@ function MarqueeBanner() {
 function ContactSection() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    service: 'Brand Identity & Social Campaigns',
-    budget: '$1,500 - $3,000',
-    message: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
 
   const emailAddress = 'shoeab2007@gmail.com';
   const phone1 = '+91 90822 67615';
-  const phone2 = '+974 7126 3818';
 
   const copyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
@@ -2099,207 +2151,203 @@ function ContactSection() {
     setTimeout(() => setCopiedPhone(false), 3000);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    AudioController.play('success');
-    setSubmitted(true);
-    if (typeof confetti !== 'undefined') {
-      confetti({ particleCount: 80, spread: 80, origin: { y: 0.6 } });
-    }
-  };
-
   return (
-    <section id="contact" className="py-24 border-t border-white/15 relative overflow-hidden">
+    <section id="contact" className="py-24 border-t border-white/15 relative overflow-hidden bg-black/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Direct Action & Big Headline */}
-          <div className="lg:col-span-6 space-y-8">
-            <div>
-              <span className="font-mono text-xs text-accent uppercase block mb-1">// INITIATE COLLABORATION</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          {/* Left Column: Direct Action & Headline */}
+          <div className="lg:col-span-6 space-y-8 flex flex-col justify-between">
+            <div className="space-y-4">
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block font-bold">
+                // INITIATE COLLABORATION
+              </span>
               <h2 className="font-black text-5xl sm:text-7xl uppercase tracking-tighter text-white font-sans leading-[0.9]">
                 LET&apos;S CREATE <br /><span className="text-accent">TOGETHER</span>
               </h2>
+              <p className="font-mono text-sm sm:text-base text-white/80 uppercase leading-relaxed pt-2 border-l-2 border-accent pl-4">
+                Open to brand identity design, social campaign rollouts, photography, and kinetic motion graphics. Turning marketing goals into visuals that ship on time.
+              </p>
             </div>
 
-            <p className="font-mono text-sm sm:text-base text-white/80 uppercase leading-relaxed">
-              Open to new projects, brand identity design, social campaigns, photography, and video editing. Let&apos;s build visuals that ship on time.
-            </p>
-
             {/* Quick 1-Click Copy Contact Pills */}
-            <div className="space-y-3">
+            <div className="space-y-4 pt-2">
               <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
-                DIRECT CONTACT (1-CLICK COPY)
+                DIRECT CONTACT (1-CLICK COPY &amp; CONNECT)
               </span>
 
-              {/* Email Button */}
+              {/* Email 1-Click Copy */}
               <button
                 onClick={copyEmail}
                 data-cursor={copiedEmail ? 'COPIED!' : 'COPY EMAIL'}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-darkcard border border-white/20 hover:border-accent font-mono text-sm text-white flex items-center justify-between sm:justify-start gap-4 transition-all duration-300 group shadow-lg"
+                className="w-full px-6 py-4 rounded-xl bg-darkcard border border-white/20 hover:border-accent font-mono text-sm text-white flex items-center justify-between gap-4 transition-all duration-300 group shadow-lg"
               >
-                <div className="flex items-center gap-3">
-                  <i data-lucide="mail" className="w-4 h-4 text-accent"></i>
-                  <span className="font-bold font-sans tracking-wide text-white group-hover:text-accent transition-colors">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/30 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                    <i data-lucide="mail" className="w-4 h-4"></i>
+                  </div>
+                  <span className="font-bold font-sans tracking-wide text-white group-hover:text-accent transition-colors text-base">
                     {emailAddress}
                   </span>
                 </div>
                 <span
-                  className={`text-xs px-2.5 py-1 rounded font-bold uppercase transition-all ${
-                    copiedEmail ? 'bg-accent text-black' : 'bg-white/10 text-white/70 group-hover:bg-white group-hover:text-black'
+                  className={`text-xs px-3 py-1.5 rounded font-bold uppercase transition-all ${
+                    copiedEmail ? 'bg-accent text-black font-black' : 'bg-white/10 text-white/70 group-hover:bg-accent group-hover:text-black'
                   }`}
                 >
                   {copiedEmail ? '✓ COPIED' : 'COPY EMAIL'}
                 </span>
               </button>
 
-              {/* Phone Numbers Row */}
-              <div className="flex flex-wrap gap-2 pt-1">
+              {/* Phone / WhatsApp 1-Click Action */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   onClick={copyPhone}
-                  data-cursor={copiedPhone ? 'COPIED!' : 'CALL / WHATSAPP'}
-                  className="px-4 py-2.5 rounded-lg bg-darkcard border border-white/15 hover:border-accent font-mono text-xs text-white flex items-center gap-2 transition-colors"
+                  data-cursor={copiedPhone ? 'COPIED!' : 'COPY NUMBER'}
+                  className="px-5 py-3.5 rounded-xl bg-darkcard border border-white/20 hover:border-accent font-mono text-xs text-white flex items-center justify-between transition-colors shadow-md group"
                 >
-                  <i data-lucide="phone" className="w-3.5 h-3.5 text-accent"></i>
-                  <span className="font-bold">{phone1} (IND)</span>
+                  <div className="flex items-center gap-2.5">
+                    <i data-lucide="phone" className="w-4 h-4 text-accent"></i>
+                    <span className="font-bold text-white group-hover:text-accent transition-colors">{phone1}</span>
+                  </div>
+                  <span className="text-[10px] text-white/50 group-hover:text-white uppercase">
+                    {copiedPhone ? '✓' : 'IND'}
+                  </span>
                 </button>
 
-                <div className="px-4 py-2.5 rounded-lg bg-darkcard border border-white/15 font-mono text-xs text-white/80 flex items-center gap-2">
-                  <i data-lucide="phone" className="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>{phone2} (QAT)</span>
-                </div>
+                <a
+                  href="https://wa.me/919082267615"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="WHATSAPP"
+                  className="px-5 py-3.5 rounded-xl bg-darkcard border border-white/20 hover:border-emerald-400 font-mono text-xs text-white flex items-center justify-between transition-colors shadow-md group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <i data-lucide="message-circle" className="w-4 h-4 text-emerald-400"></i>
+                    <span className="font-bold text-white group-hover:text-emerald-400 transition-colors">WHATSAPP CHAT</span>
+                  </div>
+                  <i data-lucide="arrow-up-right" className="w-3.5 h-3.5 text-white/50 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
               </div>
             </div>
 
-            {/* Social & Portfolio Links */}
+            {/* Creative Networks */}
             <div className="space-y-3 pt-2">
               <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
-                PORTFOLIO &amp; CREATIVE NETWORKS
+                CREATIVE &amp; PROFESSIONAL NETWORKS
               </span>
               <div className="flex flex-wrap gap-3">
-                {[
-                  { name: 'BEHANCE // SHOEABSHAIKH', url: 'https://behance.net/shoeabshaikh' },
-                  { name: 'INSTAGRAM', url: 'https://instagram.com' },
-                  { name: 'LINKEDIN', url: 'https://linkedin.com' }
-                ].map((s, idx) => (
-                  <a
-                    key={idx}
-                    href={s.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    data-cursor="VISIT"
-                    className="font-mono text-xs px-4 py-2 bg-darkcard border border-white/15 hover:border-accent hover:text-accent rounded text-white/80 transition-colors uppercase font-bold"
-                  >
-                    {s.name} ↗
-                  </a>
-                ))}
+                <a
+                  href="https://www.linkedin.com/in/shaikhshoeab/"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="LINKEDIN"
+                  className="font-mono text-xs px-5 py-2.5 bg-darkcard border border-white/20 hover:border-accent hover:text-accent rounded-xl text-white/90 transition-all uppercase font-bold flex items-center gap-2 shadow-sm"
+                >
+                  <i data-lucide="linkedin" className="w-3.5 h-3.5 text-accent"></i>
+                  <span>LINKEDIN // SHAIKHSHOEAB</span>
+                  <span>↗</span>
+                </a>
+                <a
+                  href="https://behance.net/shoeabshaikh"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="BEHANCE"
+                  className="font-mono text-xs px-5 py-2.5 bg-darkcard border border-white/20 hover:border-accent hover:text-accent rounded-xl text-white/90 transition-all uppercase font-bold flex items-center gap-2 shadow-sm"
+                >
+                  <i data-lucide="sparkles" className="w-3.5 h-3.5 text-accent"></i>
+                  <span>BEHANCE // SHOEABSHAIKH</span>
+                  <span>↗</span>
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Interactive Form */}
-          <div className="lg:col-span-6 bg-darkcard border border-white/15 rounded-2xl p-6 sm:p-8 relative backdrop-blur-xl">
-            {submitted ? (
-              <div className="py-16 text-center space-y-4 animate-fade-in">
-                <div className="w-16 h-16 rounded-full bg-accent/20 border-2 border-accent text-accent flex items-center justify-center mx-auto">
-                  <i data-lucide="check" className="w-8 h-8"></i>
+          {/* Right Column: Direct Collaboration Card */}
+          <div className="lg:col-span-6 bg-darkcard border border-white/20 rounded-2xl p-6 sm:p-8 relative backdrop-blur-xl flex flex-col justify-between shadow-2xl">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center gap-2 font-mono text-xs text-accent font-bold uppercase">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  <span>COMMISSION &amp; WORK SPECS</span>
                 </div>
-                <h3 className="font-black text-2xl uppercase text-white font-sans">
-                  TRANSMISSION RECEIVED
-                </h3>
-                <p className="font-mono text-xs text-white/70 uppercase max-w-md mx-auto">
-                  Thank you for reaching out. Your project inquiry has been queued for immediate review. Expect a response within 24 hours.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 bg-accent text-black font-mono text-xs font-bold uppercase rounded hover:bg-white transition-colors"
-                >
-                  SEND ANOTHER MESSAGE
-                </button>
+                <span className="font-mono text-[10px] px-2.5 py-1 rounded bg-accent/15 border border-accent/30 text-accent font-bold uppercase">
+                  ACTIVE AVAILABILITY
+                </span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="font-black text-xl uppercase tracking-tight text-white font-sans mb-4">
-                  PROJECT INQUIRY FORM
-                </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">YOUR NAME *</label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Alex Vance"
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
-                    />
+              <div className="space-y-4 font-mono text-xs">
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                  <span className="text-[10px] text-white/40 uppercase block">AVAILABILITY STATUS</span>
+                  <p className="text-white font-bold text-sm uppercase">OPEN FOR Q3 / Q4 2026 PROJECTS &amp; FULL-TIME ROLES</p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                    <span className="text-[10px] text-white/40 uppercase block">EXPERIENCE</span>
+                    <span className="text-accent font-black text-sm uppercase">9+ YEARS VERIFIED</span>
                   </div>
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">EMAIL ADDRESS *</label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="alex@studio.com"
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
-                    />
+                  <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                    <span className="text-[10px] text-white/40 uppercase block">LOCATION</span>
+                    <span className="text-white font-bold text-sm uppercase">MUMBAI (REMOTE)</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">REQUIRED SERVICE</label>
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white uppercase focus:outline-none"
-                    >
-                      <option>Branding &amp; Art Direction</option>
-                      <option>Gig Poster Series</option>
-                      <option>Kinetic Video / Motion</option>
-                      <option>Event Calendar Programming</option>
-                      <option>Full Identity Rollout</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">ESTIMATED BUDGET</label>
-                    <select
-                      value={formData.budget}
-                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white uppercase focus:outline-none"
-                    >
-                      <option>$1,500 - $3,000</option>
-                      <option>$3,000 - $6,000</option>
-                      <option>$6,000 - $15,000</option>
-                      <option>$15,000+</option>
-                    </select>
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-2">
+                  <span className="text-[10px] text-accent uppercase font-bold tracking-wider block">
+                    CORE SPECIALIZATIONS &amp; SERVICES:
+                  </span>
+                  <div className="grid grid-cols-2 gap-2 text-white/80 text-[11px] uppercase">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Brand Identity</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Social Media Design</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Commercial Photography</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Video &amp; Motion Editing</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Print &amp; Packaging</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Signage / OOH Layouts</span>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div>
-                  <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">PROJECT DETAILS / BRIEF *</label>
-                  <textarea
-                    rows="4"
-                    required
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Describe timeline, deliverables, and vision..."
-                    className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
-                  ></textarea>
-                </div>
+            {/* Direct Instant Action CTAs */}
+            <div className="space-y-3 pt-6 border-t border-white/10">
+              <a
+                href={`mailto:${emailAddress}?subject=Project%20Inquiry%20//%20Shoeab%20Ahmed`}
+                data-cursor="EMAIL"
+                className="w-full bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.35)] flex items-center justify-center gap-2 group text-center"
+              >
+                <span>INITIATE EMAIL DIRECTLY</span>
+                <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </a>
 
-                <button
-                  type="submit"
-                  data-cursor="SUBMIT"
-                  className="w-full bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all duration-300 shadow-[0_0_20px_rgba(0,255,102,0.3)] flex items-center justify-center gap-2 group"
-                >
-                  <span>TRANSMIT BRIEF</span>
-                  <i data-lucide="send" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                </button>
-              </form>
-            )}
+              <a
+                href="https://www.linkedin.com/in/shaikhshoeab/"
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="LINKEDIN"
+                className="w-full bg-white/5 hover:bg-white/15 text-white border border-white/20 font-mono text-xs font-bold uppercase py-3.5 px-6 rounded-xl transition-all flex items-center justify-center gap-2 text-center"
+              >
+                <i data-lucide="linkedin" className="w-4 h-4 text-accent"></i>
+                <span>CONNECT ON LINKEDIN</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -2308,9 +2356,19 @@ function ContactSection() {
 }
 
 // -------------------------------------------------------------
-// 13. Admin Upload Modal (Connected to server.py /api/upload)
+// 13. Admin Passkey Auth & Upload Gate
 // -------------------------------------------------------------
 function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    try {
+      return localStorage.getItem('shoeab_admin_authenticated') === 'true';
+    } catch (e) {
+      return false;
+    }
+  });
+  const [passkeyInput, setPasskeyInput] = useState('');
+  const [authError, setAuthError] = useState('');
+
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState('');
   const [uploadSuccess, setUploadSuccess] = useState(false);
@@ -2325,6 +2383,30 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   const [file, setFile] = useState(null);
 
   if (!isOpen) return null;
+
+  const handlePasskeySubmit = (e) => {
+    e.preventDefault();
+    if (passkeyInput.trim().toUpperCase() === 'SHOEAB2026') {
+      setIsAuthenticated(true);
+      setAuthError('');
+      try {
+        localStorage.setItem('shoeab_admin_authenticated', 'true');
+      } catch (err) {}
+      AudioController.play('success');
+    } else {
+      setAuthError('INVALID PASSKEY. ACCESS RESTRICTED TO PORTFOLIO OWNER.');
+      AudioController.play('pop');
+    }
+  };
+
+  const handleSignOut = () => {
+    setIsAuthenticated(false);
+    setPasskeyInput('');
+    try {
+      localStorage.removeItem('shoeab_admin_authenticated');
+    } catch (err) {}
+    AudioController.play('click');
+  };
 
   const handleUploadSubmit = async (e) => {
     e.preventDefault();
@@ -2353,7 +2435,7 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
       });
 
       if (!res.ok) {
-        throw new Error('Upload failed on server.');
+        throw new Error('Upload failed on server. (Note: On static GitHub Pages, uploads are managed via Git repository commits).');
       }
 
       AudioController.play('success');
@@ -2369,7 +2451,7 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
       }, 1500);
     } catch (err) {
       console.error(err);
-      setUploadError('Failed to upload. Ensure server.py is running.');
+      setUploadError(err.message || 'Failed to upload. Ensure server.py is running locally.');
     } finally {
       setUploading(false);
     }
@@ -2378,56 +2460,111 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-fade-in">
       <div className="absolute inset-0" onClick={onClose} />
-      <div className="relative z-10 w-full max-w-lg bg-darkcard border border-white/20 rounded-xl p-6 shadow-2xl space-y-4">
-        <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <div className="flex items-center gap-2 font-mono text-xs text-accent font-bold uppercase">
-            <i data-lucide="upload-cloud" className="w-4 h-4"></i>
-            <span>ADMIN ARTIFACT UPLOAD</span>
+      <div className="relative z-10 w-full max-w-lg bg-darkcard border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+        {/* Modal Header */}
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="flex items-center gap-2.5 font-mono text-xs text-accent font-bold uppercase">
+            <i data-lucide={isAuthenticated ? "unlock" : "lock"} className="w-4 h-4 text-accent"></i>
+            <span>{isAuthenticated ? 'ADMIN PORTFOLIO UPLOAD' : 'SECURITY GATE // OWNER ACCESS'}</span>
           </div>
-          <button onClick={onClose} className="text-white/50 hover:text-white">
-            <i data-lucide="x" className="w-4 h-4"></i>
-          </button>
+          <div className="flex items-center gap-3">
+            {isAuthenticated && (
+              <button
+                onClick={handleSignOut}
+                className="font-mono text-[10px] text-red-400 hover:text-red-300 uppercase px-2 py-0.5 rounded border border-red-500/30 bg-red-500/10"
+              >
+                LOCK SESSION
+              </button>
+            )}
+            <button onClick={onClose} className="text-white/50 hover:text-white">
+              <i data-lucide="x" className="w-4 h-4"></i>
+            </button>
+          </div>
         </div>
 
-        {uploadSuccess ? (
-          <div className="py-8 text-center space-y-2">
+        {/* Auth Gate Screen */}
+        {!isAuthenticated ? (
+          <form onSubmit={handlePasskeySubmit} className="space-y-4 font-mono">
+            <div className="text-center space-y-2 py-2">
+              <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 text-accent flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(0,255,102,0.2)]">
+                <i data-lucide="shield-alert" className="w-6 h-6"></i>
+              </div>
+              <h3 className="font-sans font-black text-xl text-white uppercase tracking-tight">RESTRICTED ADMIN ACCESS</h3>
+              <p className="text-xs text-white/60 uppercase max-w-xs mx-auto leading-relaxed">
+                The upload system is restricted to the portfolio owner. Enter your master passkey to unlock.
+              </p>
+            </div>
+
+            {authError && (
+              <div className="p-3 bg-red-500/15 border border-red-500/50 text-red-300 text-xs rounded-xl font-bold uppercase text-center animate-shake">
+                {authError}
+              </div>
+            )}
+
+            <div className="space-y-1.5 pt-2">
+              <label className="text-[10px] text-white/50 uppercase tracking-wider block">ENTER MASTER PASSKEY</label>
+              <input
+                type="password"
+                required
+                value={passkeyInput}
+                onChange={(e) => setPasskeyInput(e.target.value)}
+                placeholder="••••••••"
+                className="w-full bg-black/70 border border-white/20 focus:border-accent rounded-xl p-3.5 text-white font-mono text-sm tracking-widest text-center focus:outline-none shadow-inner"
+              />
+            </div>
+
+            <button
+              type="submit"
+              data-cursor="UNLOCK"
+              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-4 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.35)] flex items-center justify-center gap-2 text-xs mt-2"
+            >
+              <span>AUTHORIZE &amp; UNLOCK</span>
+              <i data-lucide="key" className="w-4 h-4"></i>
+            </button>
+          </form>
+        ) : uploadSuccess ? (
+          <div className="py-8 text-center space-y-3 font-mono">
             <i data-lucide="check-circle" className="w-12 h-12 text-accent mx-auto"></i>
-            <h4 className="text-lg font-bold uppercase text-white">UPLOAD COMPLETE</h4>
-            <p className="font-mono text-xs text-white/60 uppercase">Gallery is updating...</p>
+            <h4 className="text-lg font-bold uppercase text-white font-sans">UPLOAD COMPLETE</h4>
+            <p className="text-xs text-white/60 uppercase">Gallery is updating in realtime...</p>
           </div>
         ) : (
-          <form onSubmit={handleUploadSubmit} className="space-y-3 font-mono text-xs">
-            {uploadError && <div className="p-2 bg-red-500/20 border border-red-500 text-red-300 text-[11px] rounded">{uploadError}</div>}
+          <form onSubmit={handleUploadSubmit} className="space-y-4 font-mono text-xs">
+            {uploadError && (
+              <div className="p-2.5 bg-red-500/20 border border-red-500 text-red-300 text-[11px] rounded-xl">
+                {uploadError}
+              </div>
+            )}
 
             <div>
-              <label className="text-white/50 block mb-1 uppercase">ARTWORK FILE (PNG, JPG, MP4, PDF) *</label>
+              <label className="text-white/50 block mb-1 uppercase text-[10px]">ARTWORK FILE (PNG, JPG, MP4, PDF) *</label>
               <input
                 type="file"
                 required
                 accept="image/*,video/mp4,application/pdf"
                 onChange={(e) => setFile(e.target.files[0])}
-                className="w-full bg-black/60 border border-white/20 p-2 rounded text-white file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
+                className="w-full bg-black/60 border border-white/20 p-2 rounded-xl text-white file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-white/50 block mb-1 uppercase">TITLE *</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">TITLE *</label>
                 <input
                   type="text"
                   required
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="e.g. Neon Horizon"
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
                 />
               </div>
               <div>
-                <label className="text-white/50 block mb-1 uppercase">CATEGORY *</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">CATEGORY *</label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white uppercase focus:outline-none"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white uppercase focus:outline-none"
                 >
                   <option>Gig Posters</option>
                   <option>Campaigns &amp; Promos</option>
@@ -2440,41 +2577,41 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-white/50 block mb-1 uppercase">CLIENT</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">CLIENT</label>
                 <input
                   type="text"
                   value={client}
                   onChange={(e) => setClient(e.target.value)}
                   placeholder="antiSOCIAL, KharSOCIAL..."
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
                 />
               </div>
               <div>
-                <label className="text-white/50 block mb-1 uppercase">YEAR</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">YEAR</label>
                 <input
                   type="text"
                   value={year}
                   onChange={(e) => setYear(e.target.value)}
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-white/50 block mb-1 uppercase">STRATEGY / NOTES</label>
+              <label className="text-white/50 block mb-1 uppercase text-[10px]">STRATEGY / BRIEF NOTES</label>
               <textarea
                 rows="2"
                 value={strategy}
                 onChange={(e) => setStrategy(e.target.value)}
-                placeholder="Design concept or brief summary..."
-                className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                placeholder="Visual direction or event brief..."
+                className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
               ></textarea>
             </div>
 
             <button
               type="submit"
               disabled={uploading}
-              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-3 rounded transition-colors disabled:opacity-50"
+              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-3.5 rounded-xl transition-colors disabled:opacity-50 text-xs"
             >
               {uploading ? 'PROCESSING UPLOAD...' : 'CONFIRM & ADD TO ARCHIVE'}
             </button>

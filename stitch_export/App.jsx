@@ -183,6 +183,89 @@ function CustomCursor() {
 }
 
 // -------------------------------------------------------------
+// 2.5 SvgOutlinedWord - Clean Boolean Union Stroked Typography (Zero Overlapping Glyph Lines)
+// -------------------------------------------------------------
+function SvgOutlinedWord({ text, color = '#00FF66', className = '' }) {
+  const [hovered, setHovered] = useState(false);
+  const maskId = useMemo(
+    () => 'svg-stroke-mask-' + text.toLowerCase().replace(/[^a-z0-9]/g, '') + '-' + Math.random().toString(36).substr(2, 6),
+    [text]
+  );
+
+  const charWidthMap = {
+    'DESIGNER': 585,
+    'WORKS': 415,
+    'PHYSICS': 515,
+    'PROCESS': 525,
+    'STRATEGIST': 710
+  };
+  const width = charWidthMap[text] || text.length * 75;
+
+  return (
+    <span
+      className={`inline-block relative cursor-pointer align-baseline select-none transition-transform duration-300 hover:scale-[1.02] ${className}`}
+      onMouseEnter={() => {
+        setHovered(true);
+        AudioController.play('pop');
+      }}
+      onMouseLeave={() => setHovered(false)}
+      data-cursor="GLOW"
+    >
+      <svg
+        viewBox={`0 0 ${width} 110`}
+        className="h-[0.85em] w-auto inline-block align-baseline overflow-visible"
+        style={{ verticalAlign: '-0.07em' }}
+      >
+        <defs>
+          <mask id={maskId}>
+            {/* White outer dilated stroke (4.5px stroke width) */}
+            <text
+              x="0"
+              y="88"
+              fontFamily="'Hanken Grotesk', 'Syne', sans-serif"
+              fontWeight="900"
+              fontSize="96"
+              letterSpacing="0.05em"
+              fill="white"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+            >
+              {text}
+            </text>
+
+            {/* Black united knockout (removes all interior glyph stroke overlaps when not hovered) */}
+            {!hovered && (
+              <text
+                x="0"
+                y="88"
+                fontFamily="'Hanken Grotesk', 'Syne', sans-serif"
+                fontWeight="900"
+                fontSize="96"
+                letterSpacing="0.05em"
+                fill="black"
+                stroke="none"
+              >
+                {text}
+              </text>
+            )}
+          </mask>
+        </defs>
+
+        <rect
+          width="100%"
+          height="100%"
+          fill={color}
+          mask={`url(#${maskId})`}
+          className="transition-colors duration-300"
+        />
+      </svg>
+    </span>
+  );
+}
+
+// -------------------------------------------------------------
 // 3. Navbar Component
 // -------------------------------------------------------------
 function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
@@ -243,11 +326,11 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
           <div className="w-3 h-3 bg-accent rounded-sm rotate-45 group-hover:rotate-180 transition-transform duration-500 shadow-[0_0_12px_#00FF66]" />
           <div>
             <span className="font-black text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-accent transition-colors font-sans">
-              SHOEAB SHAIKH
+              SHOEAB AHMED
             </span>
             <div className="flex items-center gap-2 font-mono text-[10px] text-white/50 tracking-wider">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span>{timeStr || 'MUMBAI // IST'}</span>
+              <span>{timeStr || 'MUMBAI // IST'} • 9+ YRS</span>
             </div>
           </div>
         </div>
@@ -295,7 +378,20 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* LinkedIn Direct Link */}
+          <a
+            href="https://www.linkedin.com/in/shaikhshoeab/"
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="LINKEDIN"
+            className="p-2 sm:px-3 sm:py-1.5 rounded border border-white/20 hover:border-accent bg-white/5 hover:bg-accent hover:text-black text-white/80 font-mono text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
+            title="Shoeab Ahmed LinkedIn Profile"
+          >
+            <i data-lucide="linkedin" className="w-3.5 h-3.5"></i>
+            <span className="hidden lg:inline">LINKEDIN</span>
+          </a>
+
           {/* Sound Toggle */}
           <button
             onClick={() => {
@@ -316,17 +412,18 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
             <span className="hidden sm:inline">{soundEnabled ? 'SFX ON' : 'MUTED'}</span>
           </button>
 
-          {/* Admin Upload Trigger */}
+          {/* Secure Admin Lock Trigger */}
           <button
             onClick={() => {
               AudioController.play('pop');
               onOpenUpload();
             }}
-            data-cursor="UPLOAD"
+            data-cursor="ADMIN"
             className="bg-white/10 hover:bg-accent text-white hover:text-black border border-white/20 hover:border-accent font-mono text-xs font-bold px-3 py-1.5 rounded transition-all duration-300 flex items-center gap-1.5 shadow-sm"
+            title="Admin Passkey Upload Access"
           >
-            <i data-lucide="plus-circle" className="w-3.5 h-3.5"></i>
-            <span className="hidden sm:inline">UPLOAD</span>
+            <i data-lucide="lock" className="w-3.5 h-3.5"></i>
+            <span className="hidden sm:inline">ADMIN</span>
           </button>
 
           {/* Mobile Menu Button */}
@@ -417,29 +514,27 @@ function HeroSection({ totalCount, onExplore }) {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
             <span className="font-mono text-xs uppercase tracking-wider text-white/90">
-              AVAILABLE FOR Q2 / Q3 2026 PROJECTS
+              AVAILABLE FOR Q2 / Q3 2026 PROJECTS • 9+ YEARS EXP
             </span>
           </div>
           <span className="hidden sm:inline-block font-mono text-xs text-white/40">
-            // RESIDENCIES • CAMPAIGNS • IDENTITY
+            // BRAND IDENTITY • SOCIAL MEDIA • PHOTOGRAPHY
           </span>
         </div>
 
         {/* Giant Kinetic Headline */}
-        <div className="space-y-1 mb-8">
-          <h1 className="font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] uppercase tracking-tighter text-white leading-[0.88] select-none">
-            VISUAL <span className="text-stroke-accent hover:text-accent transition-colors duration-300">STRATEGIST</span>
-            <br />
-            <span className="text-accent">&amp; ART</span> DIRECTOR
+        <div className="space-y-2 mb-8">
+          <h1 className="font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] uppercase tracking-normal text-white leading-[0.92] select-none flex flex-wrap items-baseline gap-x-5 sm:gap-x-7 gap-y-1">
+            <span className="tracking-tight">GRAPHIC</span> <SvgOutlinedWord text="DESIGNER" />
+            <br className="w-full hidden sm:block" />
+            <span className="text-accent tracking-tight">&amp; VISUAL</span> <span className="tracking-tight">STRATEGIST</span>
           </h1>
         </div>
 
         {/* Subtitle & Manifesto */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
           <p className="lg:col-span-8 font-mono text-sm sm:text-base md:text-lg text-white/80 uppercase border-l-2 border-accent pl-5 leading-relaxed">
-            Defining the intersection of brutalist minimalism, kinetic motion, and bold strategic visual systems.
-            Over <span className="text-accent font-bold">{totalCount} curated artworks</span> spanning premier
-            nightlife venues, music festivals, brand identities, and high-impact editorial productions.
+            Specializing in brand identity, social media design, photography, and video editing. Over <span className="text-accent font-bold">9+ years</span> of turning marketing goals into visuals that ship on time across <span className="text-accent font-bold">{totalCount} curated artworks</span>.
           </p>
 
           {/* Action CTAs */}
@@ -522,6 +617,60 @@ function ScrollRevealWrapper({ children, index = 0, className = "" }) {
       className={`scroll-reveal ${visible ? 'is-visible' : ''} ${className}`}
     >
       {children}
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
+// 5.5 High-Performance Lazy-Loading Video Streamer
+// -------------------------------------------------------------
+function LazyVideo({ src, className = '', loop = true, muted = true, playsInline = true }) {
+  const videoRef = useRef(null);
+  const [inView, setInView] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setInView(entry.isIntersecting);
+        });
+      },
+      { rootMargin: '200px 0px', threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (inView || isHovered) {
+      if (!el.src && src) {
+        el.src = src;
+      }
+      el.play().catch(() => {});
+    } else {
+      el.pause();
+    }
+  }, [inView, isHovered, src]);
+
+  return (
+    <div
+      className="relative w-full h-full flex items-center justify-center overflow-hidden group/vid"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <video
+        ref={videoRef}
+        preload="metadata"
+        loop={loop}
+        muted={muted}
+        playsInline={playsInline}
+        className={className}
+      />
     </div>
   );
 }
@@ -633,8 +782,8 @@ function BentoProjectsGrid({
               <span>•</span>
               <span>{filteredProjects.length} CURATED PROJECTS</span>
             </div>
-            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans">
-              FEATURED <span className="text-stroke-accent">WORKS</span>
+            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-normal text-white font-sans flex items-baseline gap-3.5 flex-wrap">
+              <span className="tracking-tight">FEATURED</span> <SvgOutlinedWord text="WORKS" />
             </h2>
           </div>
 
@@ -791,16 +940,15 @@ function BentoProjectsGrid({
 
         {/* Bento Grid View Mode */}
         {viewMode === 'bento' && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[340px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {currentDisplaySet.map((project, idx) => {
               const isVideo = project.type === 'video';
-              const isSpanned = idx % 7 === 0 || (isVideo && idx % 3 === 0);
 
               return (
                 <ScrollRevealWrapper
                   key={project.id}
                   index={idx}
-                  className={`${isSpanned ? 'sm:col-span-2' : 'col-span-1'} h-full`}
+                  className="h-full"
                 >
                   <div
                     onClick={() => {
@@ -814,79 +962,92 @@ function BentoProjectsGrid({
                       setHoveredId(null);
                     }}
                     data-cursor={isVideo ? 'PLAY' : 'VIEW'}
-                    className="interactive-card group relative bg-darkcard border border-white/15 hover:border-accent rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col justify-between p-4 h-full hover:shadow-[0_0_30px_rgba(0,255,102,0.18)] hover:-translate-y-1"
+                    className="interactive-card group bg-darkcard/90 border border-white/15 hover:border-accent rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col justify-between h-full hover:shadow-[0_0_35px_rgba(0,255,102,0.2)] hover:-translate-y-1.5"
                   >
-                    {/* Media Preview */}
-                    <div className="absolute inset-0 bg-black overflow-hidden z-0">
+                    {/* Uncropped Artwork Frame */}
+                    <div className="relative w-full aspect-[4/5] bg-gradient-to-b from-[#141414] via-[#0a0a0a] to-[#040404] p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b border-white/10">
+                      {/* Subtle cyber background grid */}
+                      <div className="absolute inset-0 bg-cyber-grid bg-[size:24px_24px] opacity-10 pointer-events-none" />
+
+                      {/* Media (Strictly Uncropped with object-contain) */}
                       {isVideo ? (
-                        <video
+                        <LazyVideo
                           src={project.media}
-                          muted
-                          loop
-                          playsInline
-                          autoPlay={hoveredId === project.id}
-                          className="w-full h-full object-cover object-center opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                          className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
                         />
                       ) : (
                         <img
                           src={project.media}
                           alt={project.title}
                           loading="lazy"
-                          className="w-full h-full object-cover object-center opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                          className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
                           onError={(e) => {
                             e.target.style.display = 'none';
                           }}
                         />
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
-                    </div>
 
-                    {/* Top Badges */}
-                    <div className="relative z-10 flex items-center justify-between w-full">
-                      <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-black/80 border border-white/20 text-accent">
+                      {/* Floating Category & Format Badges (Top) */}
+                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-20 pointer-events-none">
+                        <span className="font-mono text-[9px] uppercase font-bold px-2 py-0.5 rounded bg-black/85 border border-white/20 text-accent backdrop-blur-md shadow-sm">
                           {project.category}
                         </span>
-                        {project.variants && project.variants.length > 1 && (
-                          <span className="font-mono text-[9px] uppercase font-bold px-2 py-0.5 rounded bg-accent/20 border border-accent/40 text-accent flex items-center gap-1 shadow-[0_0_10px_rgba(0,255,102,0.25)]">
-                            <span>✦ {project.variants.length} FORMATS</span>
+
+                        <div className="flex items-center gap-1.5">
+                          {project.variants && project.variants.length > 1 && (
+                            <span className="font-mono text-[9px] uppercase font-black px-2 py-0.5 rounded bg-accent/25 border border-accent/60 text-accent flex items-center gap-1 backdrop-blur-md shadow-[0_0_10px_rgba(0,255,102,0.3)]">
+                              ✦ {project.variants.length} SIZES
+                            </span>
+                          )}
+                          <span className="font-mono text-[9px] uppercase text-white/70 px-2 py-0.5 rounded bg-black/85 border border-white/15 backdrop-blur-md">
+                            {project.year || '2026'}
                           </span>
-                        )}
-                        {project.subfolder && (
-                          <span className="font-mono text-[9px] uppercase font-bold px-2 py-0.5 rounded bg-white/10 border border-white/15 text-white/90">
-                            {project.subfolder.replace(/_/g, ' ')}
-                          </span>
-                        )}
-                        {isVideo && (
-                          <span className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-cyan-500/20 border border-cyan-400 text-cyan-300 flex items-center gap-1">
-                            <i data-lucide="play" className="w-2.5 h-2.5 fill-current"></i> MOTION
-                          </span>
-                        )}
+                        </div>
                       </div>
 
-                      <span className="font-mono text-[10px] uppercase text-white/70 px-2 py-0.5 rounded bg-black/60 border border-white/10">
-                        {project.year || '2026'}
-                      </span>
+                      {/* Video Motion Badge (Bottom Left) */}
+                      {isVideo && (
+                        <div className="absolute bottom-3 left-3 z-20 pointer-events-none">
+                          <span className="font-mono text-[9px] uppercase font-bold px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-400 text-cyan-300 flex items-center gap-1 backdrop-blur-md shadow-sm">
+                            <i data-lucide="play" className="w-2.5 h-2.5 fill-current"></i> 60FPS REEL
+                          </span>
+                        </div>
+                      )}
                     </div>
 
-                    {/* Bottom Info Bar */}
-                    <div className="relative z-10 space-y-2">
-                      <div className="font-mono text-[11px] text-accent tracking-wider uppercase font-bold truncate">
-                        {project.client || 'Shoeab Shaikh'}
+                    {/* Clean Metadata Info Strip Below Artwork */}
+                    <div className="p-4 space-y-2 flex-grow flex flex-col justify-between bg-darkcard">
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-mono text-[10px] text-accent tracking-wider uppercase font-bold truncate">
+                            {project.client || 'Shoeab Shaikh'}
+                          </span>
+                          {project.subfolder && (
+                            <span className="font-mono text-[9px] uppercase text-cyan-400 truncate max-w-[45%]">
+                              {project.subfolder.replace(/_/g, ' ')}
+                            </span>
+                          )}
+                        </div>
+
+                        <h3 className="font-black text-base sm:text-lg text-white uppercase tracking-tight group-hover:text-accent transition-colors truncate font-sans">
+                          {project.title}
+                        </h3>
+
+                        {project.strategy && (
+                          <p className="font-mono text-[11px] text-white/60 uppercase line-clamp-2 leading-relaxed pt-0.5">
+                            {project.strategy}
+                          </p>
+                        )}
                       </div>
 
-                      <h3 className="font-black text-lg sm:text-xl text-white uppercase tracking-tight group-hover:text-accent transition-colors truncate">
-                        {project.title}
-                      </h3>
-
-                      <div className="flex items-center justify-between pt-2 border-t border-white/10">
-                        <span className="font-mono text-[10px] text-white/50 truncate max-w-[70%]">
+                      <div className="flex items-center justify-between pt-3 border-t border-white/10 font-mono text-xs">
+                        <span className="text-[10px] text-white/40 uppercase truncate max-w-[65%]">
                           {project.tech || 'Photoshop, Illustrator'}
                         </span>
 
-                        <span className="font-mono text-xs text-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        <span className="text-[11px] text-accent font-bold uppercase flex items-center gap-1 group-hover:translate-x-1 transition-transform flex-shrink-0">
                           <span>SPECS</span>
-                          <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                          <i data-lucide="arrow-up-right" className="w-3.5 h-3.5"></i>
                         </span>
                       </div>
                     </div>
@@ -908,61 +1069,62 @@ function BentoProjectsGrid({
                     onSelectProject(project);
                   }}
                   data-cursor="VIEW"
-                  className="group bg-darkcard border border-white/15 hover:border-accent rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col h-full hover:shadow-[0_0_30px_rgba(0,255,102,0.18)] hover:-translate-y-1"
+                  className="group bg-darkcard border border-white/15 hover:border-accent rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col h-full hover:shadow-[0_0_35px_rgba(0,255,102,0.2)] hover:-translate-y-1.5"
                 >
-                  <div className="relative aspect-[16/10] bg-black overflow-hidden">
+                  {/* Showcase Uncropped Frame */}
+                  <div className="relative aspect-[16/10] bg-gradient-to-b from-[#141414] via-[#0a0a0a] to-[#040404] p-4 sm:p-6 flex items-center justify-center overflow-hidden border-b border-white/10">
+                    <div className="absolute inset-0 bg-cyber-grid bg-[size:24px_24px] opacity-10 pointer-events-none" />
+
                     {project.type === 'video' ? (
-                      <video
+                      <LazyVideo
                         src={project.media}
-                        muted
-                        loop
-                        autoPlay
-                        playsInline
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
                       />
                     ) : (
                       <img
                         src={project.media}
                         alt={project.title}
                         loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
                       />
                     )}
-                    <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
-                      <span className="bg-black/80 border border-white/20 text-accent font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+
+                    <div className="absolute top-4 left-4 flex gap-2 flex-wrap z-20">
+                      <span className="bg-black/85 border border-white/20 text-accent font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase backdrop-blur-md">
                         {project.category}
                       </span>
                       {project.variants && project.variants.length > 1 && (
-                        <span className="bg-accent text-black font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                        <span className="bg-accent text-black font-mono text-[10px] font-black px-2.5 py-1 rounded uppercase shadow-[0_0_10px_rgba(0,255,102,0.3)]">
                           ✦ {project.variants.length} SIZES / FORMATS
                         </span>
                       )}
                       {project.subfolder && (
-                        <span className="bg-black/80 border border-white/20 text-cyan-400 font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase">
+                        <span className="bg-black/85 border border-white/20 text-cyan-400 font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase backdrop-blur-md">
                           {project.subfolder.replace(/_/g, ' ')}
                         </span>
                       )}
                     </div>
-                    <div className="absolute top-4 right-4 bg-black/80 border border-white/20 text-white font-mono text-[10px] px-2.5 py-1 rounded">
-                      {project.year}
+
+                    <div className="absolute top-4 right-4 bg-black/85 border border-white/20 text-white/80 font-mono text-[10px] px-2.5 py-1 rounded backdrop-blur-md z-20">
+                      {project.year || '2026'}
                     </div>
                   </div>
 
-                  <div className="p-6 flex flex-col justify-between flex-grow space-y-4">
+                  <div className="p-6 flex flex-col justify-between flex-grow space-y-4 bg-darkcard">
                     <div>
                       <div className="font-mono text-xs text-accent uppercase font-bold mb-1">
-                        CLIENT: {project.client}
+                        CLIENT: {project.client || 'Shoeab Shaikh'}
                       </div>
-                      <h3 className="font-black text-2xl uppercase tracking-tight text-white group-hover:text-accent transition-colors">
+                      <h3 className="font-black text-2xl uppercase tracking-tight text-white group-hover:text-accent transition-colors font-sans">
                         {project.title}
                       </h3>
-                      <p className="font-mono text-xs text-white/70 uppercase mt-2 line-clamp-2">
+                      <p className="font-mono text-xs text-white/70 uppercase mt-2 line-clamp-2 leading-relaxed">
                         {project.strategy}
                       </p>
                     </div>
 
                     <div className="flex items-center justify-between pt-4 border-t border-white/10 font-mono text-xs">
-                      <span className="text-white/40">{project.tech}</span>
+                      <span className="text-white/40">{project.tech || 'Photoshop, Illustrator'}</span>
                       <span className="text-accent font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         VIEW CASE STUDY <i data-lucide="arrow-right" className="w-3.5 h-3.5"></i>
                       </span>
@@ -988,19 +1150,19 @@ function BentoProjectsGrid({
                   className="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-white/5 cursor-pointer group transition-colors"
                 >
                   <div className="flex items-center gap-4 min-w-0">
-                    <div className="w-12 h-12 rounded bg-black flex-shrink-0 overflow-hidden border border-white/10">
+                    <div className="w-16 h-16 rounded-lg bg-black/90 flex-shrink-0 overflow-hidden border border-white/15 p-1 flex items-center justify-center">
                       {project.type === 'video' ? (
-                        <video src={project.media} muted className="w-full h-full object-cover" />
+                        <video src={project.media} muted className="w-full h-full object-contain" />
                       ) : (
-                        <img src={project.media} alt="" className="w-full h-full object-cover" />
+                        <img src={project.media} alt="" className="w-full h-full object-contain" />
                       )}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-black text-base text-white uppercase truncate group-hover:text-accent transition-colors">
+                      <h4 className="font-black text-base text-white uppercase truncate group-hover:text-accent transition-colors font-sans">
                         {project.title}
                       </h4>
-                      <div className="flex items-center gap-2 font-mono text-[11px] text-white/50 uppercase truncate flex-wrap">
-                        <span className="text-accent">{project.client}</span>
+                      <div className="flex items-center gap-2 font-mono text-[11px] text-white/50 uppercase truncate flex-wrap mt-0.5">
+                        <span className="text-accent font-bold">{project.client}</span>
                         <span>•</span>
                         <span>{project.category}</span>
                         {project.variants && project.variants.length > 1 && (
@@ -1021,7 +1183,7 @@ function BentoProjectsGrid({
 
                   <div className="flex items-center gap-6 flex-shrink-0 font-mono text-xs">
                     <span className="hidden md:inline text-white/40">{project.tech}</span>
-                    <span className="text-white/60 bg-white/10 px-2 py-0.5 rounded">{project.year}</span>
+                    <span className="text-white/70 bg-white/10 px-2.5 py-1 rounded">{project.year || '2026'}</span>
                     <i data-lucide="arrow-right" className="w-4 h-4 text-white/40 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
                   </div>
                 </div>
@@ -1171,6 +1333,7 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
                   controls
                   autoPlay
                   playsInline
+                  preload="metadata"
                   className="w-full h-full max-h-[550px] object-contain"
                 />
               ) : isPdf ? (
@@ -1352,15 +1515,15 @@ function SkillsPlayground() {
       { name: 'PHOTOSHOP', lines: ['PHOTOSHOP'], radius: 48, fill: '#00C8FF', text: '#000000' },
       { name: 'ILLUSTRATOR', lines: ['ILLUSTRATOR'], radius: 50, fill: '#FF9A00', text: '#000000' },
       { name: 'INDESIGN', lines: ['INDESIGN'], radius: 44, fill: '#FF3366', text: '#FFFFFF' },
-      { name: 'CANVA', lines: ['CANVA'], radius: 36, fill: '#00C4CC', text: '#000000' },
       { name: 'PREMIERE PRO', lines: ['PREMIERE', 'PRO'], radius: 46, fill: '#EA77FF', text: '#000000' },
       { name: 'AFTER EFFECTS', lines: ['AFTER', 'EFFECTS'], radius: 48, fill: '#9999FF', text: '#000000' },
-      { name: 'FIGMA', lines: ['FIGMA'], radius: 38, fill: '#A259FF', text: '#FFFFFF' },
-      { name: 'BLENDER', lines: ['BLENDER'], radius: 40, fill: '#F5792A', text: '#000000' },
-      { name: 'BRAND STRATEGY', lines: ['BRAND', 'STRATEGY'], radius: 54, fill: '#00FF66', text: '#000000' },
-      { name: 'ART DIRECTION', lines: ['ART', 'DIRECTION'], radius: 52, fill: '#00F0FF', text: '#000000' },
-      { name: 'TYPOGRAPHY', lines: ['TYPO-', 'GRAPHY'], radius: 44, fill: '#FFFFFF', text: '#000000' },
-      { name: 'KINETIC MOTION', lines: ['KINETIC', 'MOTION'], radius: 48, fill: '#CCFF00', text: '#000000' }
+      { name: 'CORELDRAW', lines: ['COREL', 'DRAW'], radius: 46, fill: '#00E676', text: '#000000' },
+      { name: 'CANVA', lines: ['CANVA'], radius: 38, fill: '#00C4CC', text: '#000000' },
+      { name: 'FINAL CUT PRO', lines: ['FINAL CUT', 'PRO'], radius: 48, fill: '#00F0FF', text: '#000000' },
+      { name: 'BRAND IDENTITY', lines: ['BRAND', 'IDENTITY'], radius: 52, fill: '#00FF66', text: '#000000' },
+      { name: 'SOCIAL MEDIA', lines: ['SOCIAL', 'MEDIA'], radius: 50, fill: '#FFCC00', text: '#000000' },
+      { name: 'PHOTOGRAPHY', lines: ['PHOTO-', 'GRAPHY'], radius: 48, fill: '#FFFFFF', text: '#000000' },
+      { name: 'VIDEO EDITING', lines: ['VIDEO', 'EDITING'], radius: 48, fill: '#FF5500', text: '#FFFFFF' }
     ],
     []
   );
@@ -1548,10 +1711,10 @@ function SkillsPlayground() {
   };
 
   const proficiencies = [
-    { name: 'Visual Strategy & Art Direction', level: 98, desc: 'Holistic venue programming, thematic narratives & high-contrast brand systems.' },
-    { name: 'Brutalist & Editorial Poster Design', level: 96, desc: 'Micro-typography, experimental layouts & print-ready multi-format output.' },
-    { name: 'Kinetic Motion & Reel Animation', level: 93, desc: '60fps After Effects kinetic typography, sound-synced video teasers & stage visuals.' },
-    { name: 'Multi-Page Editorial & Brochure Systems', level: 90, desc: 'Corporate profiles, print catalogues & event calendar sunboard spreads.' }
+    { name: 'Brand Identity & Social Media Design', level: 98, desc: 'Logo systems, social media campaigns, marketing collateral & brand guidelines (9+ years).' },
+    { name: 'Adobe Creative Suite (Illustrator, Photoshop, InDesign)', level: 98, desc: 'Vector logos, photo manipulation, multi-page brochures, print packaging & prepress.' },
+    { name: 'Video Editing & Motion (Premiere Pro, After Effects, Final Cut Pro)', level: 92, desc: 'Photo/video content, on-site live shoot production, sound-synced video reels & teasers.' },
+    { name: 'CorelDraw, Canva & Signage Design', level: 94, desc: 'Shop boards, standees, hoardings, US cabinet/directional sign layouts & fast turnarounds.' }
   ];
 
   return (
@@ -1560,8 +1723,8 @@ function SkillsPlayground() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-white/15 pb-6">
           <div>
             <span className="font-mono text-xs text-accent uppercase block mb-1">// INTERACTIVE ARSENAL</span>
-            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans">
-              SKILLS &amp; <span className="text-stroke-accent">PHYSICS</span>
+            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-normal text-white font-sans flex items-baseline gap-3.5 flex-wrap">
+              <span className="tracking-tight">SKILLS &amp;</span> <SvgOutlinedWord text="PHYSICS" />
             </h2>
           </div>
 
@@ -1727,8 +1890,8 @@ function ProcessTimeline() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-14">
           <span className="font-mono text-xs text-accent uppercase block mb-1">// METHODOLOGY</span>
-          <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans">
-            CREATIVE <span className="text-stroke-accent">PROCESS</span>
+          <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-normal text-white font-sans flex items-baseline gap-3.5 flex-wrap">
+            <span className="tracking-tight">CREATIVE</span> <SvgOutlinedWord text="PROCESS" />
           </h2>
         </div>
 
@@ -1762,39 +1925,58 @@ function ProcessTimeline() {
 function AboutSection() {
   const experiences = [
     {
-      role: 'Lead Visual Strategist & Art Director',
-      company: 'antiSOCIAL & KharSOCIAL (Impresario Hospitality)',
-      period: '2024 — PRESENT',
-      type: 'LEAD ROLE',
-      desc: 'Spearheading month-on-month event programming visual identities, print sunboard schedules, kinetic social reels, and brutalist gig poster systems across premier nightlife destinations in Mumbai & Pune.'
+      role: 'Graphic Designer',
+      company: 'VCK Brand Communications',
+      period: 'OCT 2025 — MAR 2026',
+      desc: 'Led social media design output for client brands and produced photo/video content on-site during live shoots. Coordinated with account teams to keep visual assets aligned to each client\'s brand guidelines.'
     },
     {
-      role: 'Senior Brand Designer & Creative Lead',
-      company: 'COEUS Branding & MOLO Series',
-      period: '2023 — 2024',
-      type: 'AGENCY & CAMPAIGN',
-      desc: 'Directed comprehensive visual identity overhauls, typography systems, multi-week promotional campaign suites, and editorial design collateral for modern lifestyle and nightlife entities.'
+      role: 'Graphic Designer, Social Media Manager & Photographer',
+      company: 'Bin Meshleh Holdings',
+      period: 'APR 2025 — SEP 2025',
+      desc: 'Designed posters and social campaigns for vehicles going to auction, managing photography end-to-end. Owned the full visual pipeline from shoot to final social post, reducing dependence on outside vendors.'
     },
     {
-      role: 'Visual Designer & Kinetic Motion Specialist',
-      company: 'DOP Music Experiences & Hospitality Group',
-      period: '2022 — 2023',
-      type: 'MOTION & DIGITAL',
-      desc: 'Designed sound-synced kinetic video teasers, event stage backdrop graphics, and multi-ratio social media collateral packages (Feed Post, Story 9:16, Event Cover 16:9).'
+      role: 'Graphic Designer',
+      company: 'AFp.net',
+      period: 'FEB 2025 — MAR 2025',
+      desc: 'Produced posters, social assets, and event tickets for music events across India on tight event timelines.'
     },
     {
-      role: 'Editorial Systems & Publication Designer',
-      company: 'F.Gheewala KSA & Corporate Brands',
-      period: '2021 — 2022',
-      type: 'EDITORIAL & PRINT',
-      desc: 'Engineered comprehensive multi-page corporate profiles, print catalogues, brand style guides, and executive presentation systems.'
+      role: 'Graphic Designer',
+      company: 'AlBuraq Venture Pvt. Ltd.',
+      period: 'MAY 2024 — DEC 2024',
+      desc: 'Owned brand consistency across logos, marketing collateral, and brochures for the company\'s visual identity. Partnered with the marketing team on go-to-market visuals for product launches.'
     },
     {
-      role: 'Freelance Visual Artist & Nightlife Art Director',
-      company: 'Independent Music Labels & Cultural Venues',
-      period: '2019 — 2021',
-      type: 'INDEPENDENT PRACTICE',
-      desc: 'Produced over 100+ high-impact gig posters, visual identity systems, and custom typographic treatments for underground events, club residencies, and festival tours.'
+      role: 'Artwork Production Specialist',
+      company: 'Unilever Pvt. Ltd. (Remote)',
+      period: 'FEB 2022 — AUG 2023',
+      desc: 'Managed production of print and digital artwork, maintaining brand and quality consistency across a major FMCG portfolio. Prepared and optimized files for print and digital platforms, troubleshooting production issues.'
+    },
+    {
+      role: 'Graphic Designer',
+      company: 'F. Gheewala Human Resources',
+      period: 'JUL 2021 — JAN 2022',
+      desc: 'In-house designer for social media posts, brochures, and brand guideline documents.'
+    },
+    {
+      role: 'Graphic Designer',
+      company: 'Snoop Technologies Pvt. Ltd.',
+      period: 'MAY 2019 — DEC 2020',
+      desc: 'Designed logos, flyers, product packaging, and brochures using Adobe Creative Suite; edited video in Premiere Pro, After Effects, and Final Cut Pro.'
+    },
+    {
+      role: 'Graphic Designer',
+      company: 'Teknovance Pvt. Ltd.',
+      period: 'DEC 2018 — FEB 2019',
+      desc: 'Designed signage, cabinet, and directional sign layouts for a US-based client using CorelDraw and Illustrator.'
+    },
+    {
+      role: 'Graphic Designer',
+      company: 'Shabab Digital',
+      period: 'JAN 2011 — AUG 2014',
+      desc: 'Designed and produced shop boards, standees, and hoardings in CorelDraw and Photoshop per customer requirements.'
     }
   ];
 
@@ -1806,23 +1988,64 @@ function AboutSection() {
           <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
             <div className="flex items-center gap-2 font-mono text-xs text-accent uppercase">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span>// CAREER &amp; PHILOSOPHY</span>
+              <span>// PROFILE &amp; PHILOSOPHY</span>
             </div>
             <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans leading-none">
-              DESIGN WITH <br /><span className="text-accent">STRATEGIC</span> TEETH
+              SHOEAB <br /><span className="text-accent">AHMED</span>
             </h2>
-            <p className="font-mono text-sm sm:text-base text-white/80 uppercase leading-relaxed border-l-2 border-accent pl-4">
-              I am Shoeab Shaikh, a Visual Strategist &amp; Art Director specializing in brutalist aesthetics,
-              kinetic motion graphics, and large-scale brand identity systems.
+
+            {/* Quick Profile Specs */}
+            <div className="grid grid-cols-3 gap-2 bg-darkcard border border-white/10 p-3 rounded-xl font-mono text-center">
+              <div className="p-2 border-r border-white/10">
+                <span className="text-[9px] text-white/40 block uppercase">NATIONALITY</span>
+                <span className="text-xs text-white font-bold uppercase">INDIAN</span>
+              </div>
+              <div className="p-2 border-r border-white/10">
+                <span className="text-[9px] text-white/40 block uppercase">BASED IN</span>
+                <span className="text-xs text-white font-bold uppercase">MUMBAI</span>
+              </div>
+              <div className="p-2">
+                <span className="text-[9px] text-white/40 block uppercase">EXPERIENCE</span>
+                <span className="text-xs text-accent font-black uppercase">9+ YRS</span>
+              </div>
+            </div>
+
+            <p className="font-mono text-sm sm:text-base text-white/90 uppercase leading-relaxed border-l-2 border-accent pl-4">
+              Graphic Designer specializing in brand identity, social media design &amp; photography. 9+ years turning marketing goals into visuals that ship on time.
             </p>
             <p className="font-mono text-xs sm:text-sm text-white/60 uppercase leading-relaxed">
-              My work merges razor-sharp typography with kinetic energy to build unmistakable visual pulses for
-              premier nightlife venues, international touring artists, music festivals, and forward-thinking commercial brands.
+              A versatile mix of branding, photography, and social content design — built on 9+ years of keeping visual identity consistent across every channel.
             </p>
 
-            <div className="p-4 bg-accent/10 border border-accent/30 rounded-xl font-mono text-xs text-accent uppercase flex items-center justify-between shadow-[0_0_20px_rgba(0,255,102,0.15)]">
-              <span>ACTIVE STATUS: ACCEPTING SELECT COMMISSIONS</span>
-              <span className="font-bold">2026</span>
+            {/* Languages Bar */}
+            <div className="p-4 bg-darkcard border border-white/10 rounded-xl space-y-2">
+              <span className="font-mono text-[10px] text-accent uppercase font-bold tracking-wider flex items-center gap-1.5">
+                <i data-lucide="globe" className="w-3.5 h-3.5"></i> SPOKEN LANGUAGES (4):
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {['ENGLISH', 'HINDI', 'MARATHI', 'URDU'].map((lang, idx) => (
+                  <span key={idx} className="font-mono text-[10px] uppercase font-bold px-2.5 py-1 bg-white/10 border border-white/15 text-white rounded">
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Education Box */}
+            <div className="p-4 bg-darkcard border border-white/10 rounded-xl space-y-3">
+              <span className="font-mono text-[10px] text-accent uppercase font-bold tracking-wider flex items-center gap-1.5">
+                <i data-lucide="graduation-cap" className="w-3.5 h-3.5"></i> EDUCATION
+              </span>
+              <div className="space-y-2 divide-y divide-white/10 font-mono text-xs">
+                <div className="pt-1">
+                  <span className="text-white font-bold uppercase block">Maharashtra College of Arts, Commerce &amp; Science</span>
+                  <span className="text-white/50 text-[11px] uppercase">B.Sc. Computer Science — Undergraduate (UG) • 2017</span>
+                </div>
+                <div className="pt-2">
+                  <span className="text-white font-bold uppercase block">M.H. Saboo Siddik Junior College</span>
+                  <span className="text-white/50 text-[11px] uppercase">HSC — Science • 2011</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1831,9 +2054,9 @@ function AboutSection() {
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="font-mono text-xs text-accent uppercase tracking-widest font-bold flex items-center gap-2">
                 <i data-lucide="briefcase" className="w-4 h-4 text-accent"></i>
-                <span>PROFESSIONAL WORK EXPERIENCE</span>
+                <span>WORK EXPERIENCE ({experiences.length} ROLES)</span>
               </h3>
-              <span className="font-mono text-[10px] text-white/40 uppercase">2019 — PRESENT</span>
+              <span className="font-mono text-[10px] text-white/40 uppercase">2011 — PRESENT</span>
             </div>
 
             <div className="space-y-6 divide-y divide-white/10">
@@ -1874,13 +2097,14 @@ function AboutSection() {
 // -------------------------------------------------------------
 function MarqueeBanner() {
   const items = [
-    'SHOEAB SHAIKH',
-    'VISUAL STRATEGIST',
-    'ART DIRECTOR',
-    'BRUTALIST AESTHETICS',
-    'KINETIC MOTION',
-    'NIGHTLIFE BRANDING',
-    'EDITORIAL SYSTEMS'
+    'SHOEAB AHMED',
+    'GRAPHIC DESIGNER',
+    'BRAND IDENTITY',
+    'SOCIAL MEDIA DESIGN',
+    'PHOTOGRAPHY',
+    'VIDEO EDITING',
+    '9+ YEARS EXPERIENCE',
+    'MUMBAI // INDIA'
   ];
 
   return (
@@ -1901,211 +2125,229 @@ function MarqueeBanner() {
 // 12. Contact & Quick Copy Section
 // -------------------------------------------------------------
 function ContactSection() {
-  const [copied, setCopied] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    service: 'Branding & Art Direction',
-    budget: '$2,500 - $5,000',
-    message: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
-  const emailAddress = 'shoeabshaikh@gmail.com';
+  const emailAddress = 'shoeab2007@gmail.com';
+  const phone1 = '+91 90822 67615';
 
   const copyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
-    setCopied(true);
+    setCopiedEmail(true);
     AudioController.play('success');
     if (typeof confetti !== 'undefined') {
       confetti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
     }
-    setTimeout(() => setCopied(false), 3000);
+    setTimeout(() => setCopiedEmail(false), 3000);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const copyPhone = () => {
+    navigator.clipboard.writeText(phone1);
+    setCopiedPhone(true);
     AudioController.play('success');
-    setSubmitted(true);
     if (typeof confetti !== 'undefined') {
-      confetti({ particleCount: 80, spread: 80, origin: { y: 0.6 } });
+      confetti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
     }
+    setTimeout(() => setCopiedPhone(false), 3000);
   };
 
   return (
-    <section id="contact" className="py-24 border-t border-white/15 relative overflow-hidden">
+    <section id="contact" className="py-24 border-t border-white/15 relative overflow-hidden bg-black/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Direct Action & Big Headline */}
-          <div className="lg:col-span-6 space-y-8">
-            <div>
-              <span className="font-mono text-xs text-accent uppercase block mb-1">// INITIATE COLLABORATION</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          {/* Left Column: Direct Action & Headline */}
+          <div className="lg:col-span-6 space-y-8 flex flex-col justify-between">
+            <div className="space-y-4">
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block font-bold">
+                // INITIATE COLLABORATION
+              </span>
               <h2 className="font-black text-5xl sm:text-7xl uppercase tracking-tighter text-white font-sans leading-[0.9]">
                 LET&apos;S CREATE <br /><span className="text-accent">TOGETHER</span>
               </h2>
+              <p className="font-mono text-sm sm:text-base text-white/80 uppercase leading-relaxed pt-2 border-l-2 border-accent pl-4">
+                Open to brand identity design, social campaign rollouts, photography, and kinetic motion graphics. Turning marketing goals into visuals that ship on time.
+              </p>
             </div>
 
-            <p className="font-mono text-sm sm:text-base text-white/80 uppercase leading-relaxed">
-              Have an upcoming venue launch, music campaign, festival rollout, or brand identity? Let&apos;s talk strategy and execution.
-            </p>
-
-            {/* Quick 1-Click Copy Email Pill */}
-            <div className="space-y-2">
+            {/* Quick 1-Click Copy Contact Pills */}
+            <div className="space-y-4 pt-2">
               <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
-                DIRECT INBOX (1-CLICK COPY)
+                DIRECT CONTACT (1-CLICK COPY &amp; CONNECT)
               </span>
+
+              {/* Email 1-Click Copy */}
               <button
                 onClick={copyEmail}
-                data-cursor={copied ? 'COPIED!' : 'COPY EMAIL'}
-                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-darkcard border border-white/20 hover:border-accent font-mono text-sm sm:text-base text-white flex items-center justify-between sm:justify-start gap-4 transition-all duration-300 group shadow-lg"
+                data-cursor={copiedEmail ? 'COPIED!' : 'COPY EMAIL'}
+                className="w-full px-6 py-4 rounded-xl bg-darkcard border border-white/20 hover:border-accent font-mono text-sm text-white flex items-center justify-between gap-4 transition-all duration-300 group shadow-lg"
               >
-                <div className="flex items-center gap-3">
-                  <i data-lucide="mail" className="w-5 h-5 text-accent"></i>
-                  <span className="font-bold font-sans tracking-wide text-white group-hover:text-accent transition-colors">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/30 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                    <i data-lucide="mail" className="w-4 h-4"></i>
+                  </div>
+                  <span className="font-bold font-sans tracking-wide text-white group-hover:text-accent transition-colors text-base">
                     {emailAddress}
                   </span>
                 </div>
                 <span
-                  className={`text-xs px-2.5 py-1 rounded font-bold uppercase transition-all ${
-                    copied ? 'bg-accent text-black' : 'bg-white/10 text-white/70 group-hover:bg-white group-hover:text-black'
+                  className={`text-xs px-3 py-1.5 rounded font-bold uppercase transition-all ${
+                    copiedEmail ? 'bg-accent text-black font-black' : 'bg-white/10 text-white/70 group-hover:bg-accent group-hover:text-black'
                   }`}
                 >
-                  {copied ? '✓ COPIED TO CLIPBOARD' : 'COPY'}
+                  {copiedEmail ? '✓ COPIED' : 'COPY EMAIL'}
                 </span>
               </button>
+
+              {/* Phone / WhatsApp 1-Click Action */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button
+                  onClick={copyPhone}
+                  data-cursor={copiedPhone ? 'COPIED!' : 'COPY NUMBER'}
+                  className="px-5 py-3.5 rounded-xl bg-darkcard border border-white/20 hover:border-accent font-mono text-xs text-white flex items-center justify-between transition-colors shadow-md group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <i data-lucide="phone" className="w-4 h-4 text-accent"></i>
+                    <span className="font-bold text-white group-hover:text-accent transition-colors">{phone1}</span>
+                  </div>
+                  <span className="text-[10px] text-white/50 group-hover:text-white uppercase">
+                    {copiedPhone ? '✓' : 'IND'}
+                  </span>
+                </button>
+
+                <a
+                  href="https://wa.me/919082267615"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="WHATSAPP"
+                  className="px-5 py-3.5 rounded-xl bg-darkcard border border-white/20 hover:border-emerald-400 font-mono text-xs text-white flex items-center justify-between transition-colors shadow-md group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <i data-lucide="message-circle" className="w-4 h-4 text-emerald-400"></i>
+                    <span className="font-bold text-white group-hover:text-emerald-400 transition-colors">WHATSAPP CHAT</span>
+                  </div>
+                  <i data-lucide="arrow-up-right" className="w-3.5 h-3.5 text-white/50 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
+              </div>
             </div>
 
-            {/* Social Links */}
-            <div className="space-y-3 pt-4">
+            {/* Creative Networks */}
+            <div className="space-y-3 pt-2">
               <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
-                CREATIVE NETWORKS
+                CREATIVE &amp; PROFESSIONAL NETWORKS
               </span>
               <div className="flex flex-wrap gap-3">
-                {[
-                  { name: 'INSTAGRAM', url: 'https://instagram.com' },
-                  { name: 'LINKEDIN', url: 'https://linkedin.com' },
-                  { name: 'BEHANCE', url: 'https://behance.net' },
-                  { name: 'DRIBBBLE', url: 'https://dribbble.com' }
-                ].map((s, idx) => (
-                  <a
-                    key={idx}
-                    href={s.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    data-cursor="VISIT"
-                    className="font-mono text-xs px-4 py-2 bg-darkcard border border-white/15 hover:border-accent hover:text-accent rounded text-white/80 transition-colors uppercase"
-                  >
-                    {s.name} ↗
-                  </a>
-                ))}
+                <a
+                  href="https://www.linkedin.com/in/shaikhshoeab/"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="LINKEDIN"
+                  className="font-mono text-xs px-5 py-2.5 bg-darkcard border border-white/20 hover:border-accent hover:text-accent rounded-xl text-white/90 transition-all uppercase font-bold flex items-center gap-2 shadow-sm"
+                >
+                  <i data-lucide="linkedin" className="w-3.5 h-3.5 text-accent"></i>
+                  <span>LINKEDIN // SHAIKHSHOEAB</span>
+                  <span>↗</span>
+                </a>
+                <a
+                  href="https://behance.net/shoeabshaikh"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="BEHANCE"
+                  className="font-mono text-xs px-5 py-2.5 bg-darkcard border border-white/20 hover:border-accent hover:text-accent rounded-xl text-white/90 transition-all uppercase font-bold flex items-center gap-2 shadow-sm"
+                >
+                  <i data-lucide="sparkles" className="w-3.5 h-3.5 text-accent"></i>
+                  <span>BEHANCE // SHOEABSHAIKH</span>
+                  <span>↗</span>
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Interactive Form */}
-          <div className="lg:col-span-6 bg-darkcard border border-white/15 rounded-2xl p-6 sm:p-8 relative backdrop-blur-xl">
-            {submitted ? (
-              <div className="py-16 text-center space-y-4 animate-fade-in">
-                <div className="w-16 h-16 rounded-full bg-accent/20 border-2 border-accent text-accent flex items-center justify-center mx-auto">
-                  <i data-lucide="check" className="w-8 h-8"></i>
+          {/* Right Column: Direct Collaboration Card */}
+          <div className="lg:col-span-6 bg-darkcard border border-white/20 rounded-2xl p-6 sm:p-8 relative backdrop-blur-xl flex flex-col justify-between shadow-2xl">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center gap-2 font-mono text-xs text-accent font-bold uppercase">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  <span>COMMISSION &amp; WORK SPECS</span>
                 </div>
-                <h3 className="font-black text-2xl uppercase text-white font-sans">
-                  TRANSMISSION RECEIVED
-                </h3>
-                <p className="font-mono text-xs text-white/70 uppercase max-w-md mx-auto">
-                  Thank you for reaching out. Your project inquiry has been queued for immediate review. Expect a response within 24 hours.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 bg-accent text-black font-mono text-xs font-bold uppercase rounded hover:bg-white transition-colors"
-                >
-                  SEND ANOTHER MESSAGE
-                </button>
+                <span className="font-mono text-[10px] px-2.5 py-1 rounded bg-accent/15 border border-accent/30 text-accent font-bold uppercase">
+                  ACTIVE AVAILABILITY
+                </span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="font-black text-xl uppercase tracking-tight text-white font-sans mb-4">
-                  PROJECT INQUIRY FORM
-                </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">YOUR NAME *</label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Alex Vance"
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
-                    />
+              <div className="space-y-4 font-mono text-xs">
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                  <span className="text-[10px] text-white/40 uppercase block">AVAILABILITY STATUS</span>
+                  <p className="text-white font-bold text-sm uppercase">OPEN FOR Q3 / Q4 2026 PROJECTS &amp; FULL-TIME ROLES</p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                    <span className="text-[10px] text-white/40 uppercase block">EXPERIENCE</span>
+                    <span className="text-accent font-black text-sm uppercase">9+ YEARS VERIFIED</span>
                   </div>
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">EMAIL ADDRESS *</label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="alex@studio.com"
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
-                    />
+                  <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                    <span className="text-[10px] text-white/40 uppercase block">LOCATION</span>
+                    <span className="text-white font-bold text-sm uppercase">MUMBAI (REMOTE)</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">REQUIRED SERVICE</label>
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white uppercase focus:outline-none"
-                    >
-                      <option>Branding &amp; Art Direction</option>
-                      <option>Gig Poster Series</option>
-                      <option>Kinetic Video / Motion</option>
-                      <option>Event Calendar Programming</option>
-                      <option>Full Identity Rollout</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">ESTIMATED BUDGET</label>
-                    <select
-                      value={formData.budget}
-                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white uppercase focus:outline-none"
-                    >
-                      <option>$1,500 - $3,000</option>
-                      <option>$3,000 - $6,000</option>
-                      <option>$6,000 - $15,000</option>
-                      <option>$15,000+</option>
-                    </select>
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-2">
+                  <span className="text-[10px] text-accent uppercase font-bold tracking-wider block">
+                    CORE SPECIALIZATIONS &amp; SERVICES:
+                  </span>
+                  <div className="grid grid-cols-2 gap-2 text-white/80 text-[11px] uppercase">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Brand Identity</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Social Media Design</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Commercial Photography</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Video &amp; Motion Editing</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Print &amp; Packaging</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      <span>Signage / OOH Layouts</span>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div>
-                  <label className="font-mono text-[10px] text-white/50 uppercase block mb-1">PROJECT DETAILS / BRIEF *</label>
-                  <textarea
-                    rows="4"
-                    required
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Describe timeline, deliverables, and vision..."
-                    className="w-full bg-black/60 border border-white/20 focus:border-accent rounded p-3 text-xs font-mono text-white placeholder-white/30 focus:outline-none"
-                  ></textarea>
-                </div>
+            {/* Direct Instant Action CTAs */}
+            <div className="space-y-3 pt-6 border-t border-white/10">
+              <a
+                href={`mailto:${emailAddress}?subject=Project%20Inquiry%20//%20Shoeab%20Ahmed`}
+                data-cursor="EMAIL"
+                className="w-full bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.35)] flex items-center justify-center gap-2 group text-center"
+              >
+                <span>INITIATE EMAIL DIRECTLY</span>
+                <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </a>
 
-                <button
-                  type="submit"
-                  data-cursor="SUBMIT"
-                  className="w-full bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all duration-300 shadow-[0_0_20px_rgba(0,255,102,0.3)] flex items-center justify-center gap-2 group"
-                >
-                  <span>TRANSMIT BRIEF</span>
-                  <i data-lucide="send" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                </button>
-              </form>
-            )}
+              <a
+                href="https://www.linkedin.com/in/shaikhshoeab/"
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="LINKEDIN"
+                className="w-full bg-white/5 hover:bg-white/15 text-white border border-white/20 font-mono text-xs font-bold uppercase py-3.5 px-6 rounded-xl transition-all flex items-center justify-center gap-2 text-center"
+              >
+                <i data-lucide="linkedin" className="w-4 h-4 text-accent"></i>
+                <span>CONNECT ON LINKEDIN</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -2114,9 +2356,19 @@ function ContactSection() {
 }
 
 // -------------------------------------------------------------
-// 13. Admin Upload Modal (Connected to server.py /api/upload)
+// 13. Admin Passkey Auth & Upload Gate
 // -------------------------------------------------------------
 function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    try {
+      return localStorage.getItem('shoeab_admin_authenticated') === 'true';
+    } catch (e) {
+      return false;
+    }
+  });
+  const [passkeyInput, setPasskeyInput] = useState('');
+  const [authError, setAuthError] = useState('');
+
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState('');
   const [uploadSuccess, setUploadSuccess] = useState(false);
@@ -2131,6 +2383,30 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   const [file, setFile] = useState(null);
 
   if (!isOpen) return null;
+
+  const handlePasskeySubmit = (e) => {
+    e.preventDefault();
+    if (passkeyInput.trim().toUpperCase() === 'SHOEAB2026') {
+      setIsAuthenticated(true);
+      setAuthError('');
+      try {
+        localStorage.setItem('shoeab_admin_authenticated', 'true');
+      } catch (err) {}
+      AudioController.play('success');
+    } else {
+      setAuthError('INVALID PASSKEY. ACCESS RESTRICTED TO PORTFOLIO OWNER.');
+      AudioController.play('pop');
+    }
+  };
+
+  const handleSignOut = () => {
+    setIsAuthenticated(false);
+    setPasskeyInput('');
+    try {
+      localStorage.removeItem('shoeab_admin_authenticated');
+    } catch (err) {}
+    AudioController.play('click');
+  };
 
   const handleUploadSubmit = async (e) => {
     e.preventDefault();
@@ -2159,7 +2435,7 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
       });
 
       if (!res.ok) {
-        throw new Error('Upload failed on server.');
+        throw new Error('Upload failed on server. (Note: On static GitHub Pages, uploads are managed via Git repository commits).');
       }
 
       AudioController.play('success');
@@ -2175,7 +2451,7 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
       }, 1500);
     } catch (err) {
       console.error(err);
-      setUploadError('Failed to upload. Ensure server.py is running.');
+      setUploadError(err.message || 'Failed to upload. Ensure server.py is running locally.');
     } finally {
       setUploading(false);
     }
@@ -2184,56 +2460,111 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-fade-in">
       <div className="absolute inset-0" onClick={onClose} />
-      <div className="relative z-10 w-full max-w-lg bg-darkcard border border-white/20 rounded-xl p-6 shadow-2xl space-y-4">
-        <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <div className="flex items-center gap-2 font-mono text-xs text-accent font-bold uppercase">
-            <i data-lucide="upload-cloud" className="w-4 h-4"></i>
-            <span>ADMIN ARTIFACT UPLOAD</span>
+      <div className="relative z-10 w-full max-w-lg bg-darkcard border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+        {/* Modal Header */}
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="flex items-center gap-2.5 font-mono text-xs text-accent font-bold uppercase">
+            <i data-lucide={isAuthenticated ? "unlock" : "lock"} className="w-4 h-4 text-accent"></i>
+            <span>{isAuthenticated ? 'ADMIN PORTFOLIO UPLOAD' : 'SECURITY GATE // OWNER ACCESS'}</span>
           </div>
-          <button onClick={onClose} className="text-white/50 hover:text-white">
-            <i data-lucide="x" className="w-4 h-4"></i>
-          </button>
+          <div className="flex items-center gap-3">
+            {isAuthenticated && (
+              <button
+                onClick={handleSignOut}
+                className="font-mono text-[10px] text-red-400 hover:text-red-300 uppercase px-2 py-0.5 rounded border border-red-500/30 bg-red-500/10"
+              >
+                LOCK SESSION
+              </button>
+            )}
+            <button onClick={onClose} className="text-white/50 hover:text-white">
+              <i data-lucide="x" className="w-4 h-4"></i>
+            </button>
+          </div>
         </div>
 
-        {uploadSuccess ? (
-          <div className="py-8 text-center space-y-2">
+        {/* Auth Gate Screen */}
+        {!isAuthenticated ? (
+          <form onSubmit={handlePasskeySubmit} className="space-y-4 font-mono">
+            <div className="text-center space-y-2 py-2">
+              <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 text-accent flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(0,255,102,0.2)]">
+                <i data-lucide="shield-alert" className="w-6 h-6"></i>
+              </div>
+              <h3 className="font-sans font-black text-xl text-white uppercase tracking-tight">RESTRICTED ADMIN ACCESS</h3>
+              <p className="text-xs text-white/60 uppercase max-w-xs mx-auto leading-relaxed">
+                The upload system is restricted to the portfolio owner. Enter your master passkey to unlock.
+              </p>
+            </div>
+
+            {authError && (
+              <div className="p-3 bg-red-500/15 border border-red-500/50 text-red-300 text-xs rounded-xl font-bold uppercase text-center animate-shake">
+                {authError}
+              </div>
+            )}
+
+            <div className="space-y-1.5 pt-2">
+              <label className="text-[10px] text-white/50 uppercase tracking-wider block">ENTER MASTER PASSKEY</label>
+              <input
+                type="password"
+                required
+                value={passkeyInput}
+                onChange={(e) => setPasskeyInput(e.target.value)}
+                placeholder="••••••••"
+                className="w-full bg-black/70 border border-white/20 focus:border-accent rounded-xl p-3.5 text-white font-mono text-sm tracking-widest text-center focus:outline-none shadow-inner"
+              />
+            </div>
+
+            <button
+              type="submit"
+              data-cursor="UNLOCK"
+              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-4 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.35)] flex items-center justify-center gap-2 text-xs mt-2"
+            >
+              <span>AUTHORIZE &amp; UNLOCK</span>
+              <i data-lucide="key" className="w-4 h-4"></i>
+            </button>
+          </form>
+        ) : uploadSuccess ? (
+          <div className="py-8 text-center space-y-3 font-mono">
             <i data-lucide="check-circle" className="w-12 h-12 text-accent mx-auto"></i>
-            <h4 className="text-lg font-bold uppercase text-white">UPLOAD COMPLETE</h4>
-            <p className="font-mono text-xs text-white/60 uppercase">Gallery is updating...</p>
+            <h4 className="text-lg font-bold uppercase text-white font-sans">UPLOAD COMPLETE</h4>
+            <p className="text-xs text-white/60 uppercase">Gallery is updating in realtime...</p>
           </div>
         ) : (
-          <form onSubmit={handleUploadSubmit} className="space-y-3 font-mono text-xs">
-            {uploadError && <div className="p-2 bg-red-500/20 border border-red-500 text-red-300 text-[11px] rounded">{uploadError}</div>}
+          <form onSubmit={handleUploadSubmit} className="space-y-4 font-mono text-xs">
+            {uploadError && (
+              <div className="p-2.5 bg-red-500/20 border border-red-500 text-red-300 text-[11px] rounded-xl">
+                {uploadError}
+              </div>
+            )}
 
             <div>
-              <label className="text-white/50 block mb-1 uppercase">ARTWORK FILE (PNG, JPG, MP4, PDF) *</label>
+              <label className="text-white/50 block mb-1 uppercase text-[10px]">ARTWORK FILE (PNG, JPG, MP4, PDF) *</label>
               <input
                 type="file"
                 required
                 accept="image/*,video/mp4,application/pdf"
                 onChange={(e) => setFile(e.target.files[0])}
-                className="w-full bg-black/60 border border-white/20 p-2 rounded text-white file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
+                className="w-full bg-black/60 border border-white/20 p-2 rounded-xl text-white file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-white/50 block mb-1 uppercase">TITLE *</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">TITLE *</label>
                 <input
                   type="text"
                   required
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="e.g. Neon Horizon"
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
                 />
               </div>
               <div>
-                <label className="text-white/50 block mb-1 uppercase">CATEGORY *</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">CATEGORY *</label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white uppercase focus:outline-none"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white uppercase focus:outline-none"
                 >
                   <option>Gig Posters</option>
                   <option>Campaigns &amp; Promos</option>
@@ -2246,41 +2577,41 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-white/50 block mb-1 uppercase">CLIENT</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">CLIENT</label>
                 <input
                   type="text"
                   value={client}
                   onChange={(e) => setClient(e.target.value)}
                   placeholder="antiSOCIAL, KharSOCIAL..."
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
                 />
               </div>
               <div>
-                <label className="text-white/50 block mb-1 uppercase">YEAR</label>
+                <label className="text-white/50 block mb-1 uppercase text-[10px]">YEAR</label>
                 <input
                   type="text"
                   value={year}
                   onChange={(e) => setYear(e.target.value)}
-                  className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-white/50 block mb-1 uppercase">STRATEGY / NOTES</label>
+              <label className="text-white/50 block mb-1 uppercase text-[10px]">STRATEGY / BRIEF NOTES</label>
               <textarea
                 rows="2"
                 value={strategy}
                 onChange={(e) => setStrategy(e.target.value)}
-                placeholder="Design concept or brief summary..."
-                className="w-full bg-black/60 border border-white/20 rounded p-2 text-white focus:outline-none focus:border-accent"
+                placeholder="Visual direction or event brief..."
+                className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
               ></textarea>
             </div>
 
             <button
               type="submit"
               disabled={uploading}
-              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-3 rounded transition-colors disabled:opacity-50"
+              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-3.5 rounded-xl transition-colors disabled:opacity-50 text-xs"
             >
               {uploading ? 'PROCESSING UPLOAD...' : 'CONFIRM & ADD TO ARCHIVE'}
             </button>
@@ -2306,7 +2637,7 @@ function Footer() {
         <div className="flex items-center gap-3">
           <div className="w-2.5 h-2.5 rounded-sm bg-accent rotate-45" />
           <span className="font-bold text-white tracking-wider font-sans">
-            SHOEAB SHAIKH // ART DIRECTION
+            SHOEAB AHMED // GRAPHIC DESIGNER &amp; VISUAL STRATEGIST
           </span>
           <span>© {new Date().getFullYear()}</span>
         </div>
@@ -2339,17 +2670,47 @@ function App() {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [uploadOpen, setUploadOpen] = useState(false);
 
-  // Fetch projects database
+  // Fetch projects database with relative path normalization for GitHub Pages / Custom Domains
   const loadProjects = useCallback(async () => {
     try {
-      // First try website/projects.json then fallback to data/projects.json
-      let res = await fetch(`/website/projects.json?t=${Date.now()}`);
-      if (!res.ok) {
-        res = await fetch(`/data/projects.json?t=${Date.now()}`);
+      const endpoints = [
+        `./website/projects.json?t=${Date.now()}`,
+        `website/projects.json?t=${Date.now()}`,
+        `/website/projects.json?t=${Date.now()}`,
+        `./data/projects.json?t=${Date.now()}`,
+        `data/projects.json?t=${Date.now()}`,
+        `/data/projects.json?t=${Date.now()}`,
+        `projects.json?t=${Date.now()}`
+      ];
+      let data = null;
+      for (const ep of endpoints) {
+        try {
+          const res = await fetch(ep);
+          if (res.ok) {
+            data = await res.json();
+            break;
+          }
+        } catch (e) {}
       }
-      if (!res.ok) throw new Error('Could not load projects.json');
-      const data = await res.json();
-      setProjects(data);
+      if (!data) throw new Error('Could not load projects.json from any known endpoint');
+
+      const resolveMedia = (u) => {
+        if (!u) return '';
+        if (u.startsWith('http://') || u.startsWith('https://') || u.startsWith('data:') || u.startsWith('blob:')) return u;
+        const clean = u.startsWith('/') ? u.slice(1) : u;
+        return './' + clean;
+      };
+
+      const normalized = data.map((p) => ({
+        ...p,
+        media: resolveMedia(p.media),
+        variants: (p.variants || []).map((v) => ({
+          ...v,
+          media: resolveMedia(v.media)
+        }))
+      }));
+
+      setProjects(normalized);
     } catch (err) {
       console.error("Error loading portfolio dataset:", err);
     } finally {
