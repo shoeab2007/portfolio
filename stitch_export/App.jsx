@@ -525,7 +525,7 @@ function HeroSection({ totalCount, onExplore }) {
         {/* Giant Kinetic Headline */}
         <div className="space-y-2 mb-8">
           <h1 className="font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] uppercase tracking-normal text-white leading-[0.92] select-none flex flex-wrap items-baseline gap-x-5 sm:gap-x-7 gap-y-1">
-            <span className="tracking-tight">GRAPHIC</span> <SvgOutlinedWord text="DESIGNER" />
+            <span className="tracking-tight">BRAND</span> <SvgOutlinedWord text="DESIGNER" />
             <br className="w-full hidden sm:block" />
             <span className="text-accent tracking-tight">&amp; VISUAL</span> <span className="tracking-tight">STRATEGIST</span>
           </h1>
@@ -2045,7 +2045,7 @@ function AboutSection() {
             </div>
 
             <p className="font-mono text-sm sm:text-base text-white/90 uppercase leading-relaxed border-l-2 border-accent pl-4">
-              Graphic Designer specializing in brand identity, social media design &amp; photography. 9+ years turning marketing goals into visuals that ship on time.
+              Brand Designer specializing in brand identity, social media design &amp; photography. 9+ years turning marketing goals into visuals that ship on time.
             </p>
             <p className="font-mono text-xs sm:text-sm text-white/60 uppercase leading-relaxed">
               A versatile mix of branding, photography, and social content design — built on 9+ years of keeping visual identity consistent across every channel.
@@ -2132,7 +2132,7 @@ function AboutSection() {
 function MarqueeBanner() {
   const items = [
     'SHOEAB AHMED',
-    'GRAPHIC DESIGNER',
+    'BRAND DESIGNER',
     'BRAND IDENTITY',
     'SOCIAL MEDIA DESIGN',
     'PHOTOGRAPHY',
@@ -2698,7 +2698,7 @@ function Footer() {
         <div className="flex items-center gap-3">
           <div className="w-2.5 h-2.5 rounded-sm bg-accent rotate-45" />
           <span className="font-bold text-white tracking-wider font-sans">
-            SHOEAB AHMED // GRAPHIC DESIGNER &amp; VISUAL STRATEGIST
+            SHOEAB AHMED // BRAND DESIGNER &amp; VISUAL STRATEGIST
           </span>
           <span>© {new Date().getFullYear()}</span>
         </div>
