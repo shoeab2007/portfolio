@@ -47,7 +47,7 @@ def scan_assets():
             subfolder_name = "" if sub_rel == "." else sub_rel.replace('\\', '/')
             
             for file in files:
-                if file.startswith('.') or file.lower() == 'thumbs.db' or '_thumb' in file.lower() or 'open mic #32' in file.lower() or 'open mic' in file.lower():
+                if file.startswith('.') or file.lower() == 'thumbs.db' or '_thumb' in file.lower() or '_anim' in file.lower() or 'open mic #32' in file.lower() or 'open mic' in file.lower():
                     continue
                     
                 ext = os.path.splitext(file)[1].lower()
@@ -196,6 +196,13 @@ def scan_assets():
                 return thumb_u
             return media_u
 
+        def get_anim(media_u):
+            base_p = os.path.splitext(media_u)[0]
+            anim_u = f"{base_p}_anim.webp"
+            if os.path.exists(anim_u.lstrip('/')):
+                return anim_u
+            return get_thumb(media_u)
+
         variants = []
         for it in items:
             variants.append({
@@ -203,6 +210,7 @@ def scan_assets():
                 'label': it['fmt']['label'],
                 'media': it['media'],
                 'thumbnail': get_thumb(it['media']),
+                'animated_preview': get_anim(it['media']),
                 'type': it['fmt']['type'],
                 'ratio': it['fmt']['ratio'],
                 'file': it['file']
@@ -221,6 +229,8 @@ def scan_assets():
             'tech': tech,
             'media': primary['media'],
             'thumbnail': get_thumb(primary['media']),
+            'animated_preview': get_anim(primary['media']),
+            'vimeo_showcase': 'https://vimeo.com/showcase/12389928/embed2',
             'type': primary['fmt']['type'],
             'variants': variants,
             'is_default': True

@@ -1047,27 +1047,19 @@ function BentoProjectsGrid({
                       <div className="absolute inset-0 bg-cyber-grid bg-[size:24px_24px] opacity-10 pointer-events-none" />
 
                       {/* Media (Strictly Uncropped with object-contain) */}
-                      {isVideo ? (
-                        <LazyVideo
-                          src={project.media}
-                          poster={project.thumbnail}
-                          className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
-                        />
-                      ) : (
-                        <img
-                          src={project.thumbnail || project.media}
-                          alt={project.client || 'Shoeab Portfolio Artwork'}
-                          loading={idx < 6 ? "eager" : "lazy"}
-                          decoding="async"
-                          fetchpriority={idx < 2 ? "high" : "auto"}
-                          className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
-                          onError={(e) => {
-                            if (project.thumbnail && e.target.src !== project.media) {
-                              e.target.src = project.media;
-                            }
-                          }}
-                        />
-                      )}
+                      <img
+                        src={isVideo ? (project.animated_preview || project.thumbnail || project.media) : (project.thumbnail || project.media)}
+                        alt={project.client || 'Shoeab Portfolio Artwork'}
+                        loading={idx < 6 ? "eager" : "lazy"}
+                        decoding="async"
+                        fetchpriority={idx < 2 ? "high" : "auto"}
+                        className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500 rounded drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] z-10"
+                        onError={(e) => {
+                          if (project.thumbnail && e.target.src !== project.media) {
+                            e.target.src = project.media;
+                          }
+                        }}
+                      />
 
                       {/* Floating Category & Format Badges (Top) */}
                       <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-20 pointer-events-none">
@@ -1153,26 +1145,18 @@ function BentoProjectsGrid({
                   <div className="relative aspect-[16/10] bg-gradient-to-b from-[#141414] via-[#0a0a0a] to-[#040404] p-4 sm:p-6 flex items-center justify-center overflow-hidden border-b border-white/10">
                     <div className="absolute inset-0 bg-cyber-grid bg-[size:24px_24px] opacity-10 pointer-events-none" />
 
-                    {project.type === 'video' ? (
-                      <LazyVideo
-                        src={project.media}
-                        poster={project.thumbnail}
-                        className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
-                      />
-                    ) : (
-                      <img
-                        src={project.thumbnail || project.media}
-                        alt={project.client || 'Shoeab Portfolio'}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
-                        onError={(e) => {
-                          if (project.thumbnail && e.target.src !== project.media) {
-                            e.target.src = project.media;
-                          }
-                        }}
-                      />
-                    )}
+                    <img
+                      src={project.type === 'video' ? (project.animated_preview || project.thumbnail || project.media) : (project.thumbnail || project.media)}
+                      alt={project.client || 'Shoeab Portfolio'}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-2xl z-10"
+                      onError={(e) => {
+                        if (project.thumbnail && e.target.src !== project.media) {
+                          e.target.src = project.media;
+                        }
+                      }}
+                    />
 
                     <div className="absolute top-4 left-4 flex gap-2 flex-wrap z-20">
                       <span className="bg-black/85 border border-white/20 text-accent font-mono text-[10px] font-bold px-2.5 py-1 rounded uppercase backdrop-blur-md">
@@ -1240,23 +1224,13 @@ function BentoProjectsGrid({
                 >
                   <div className="flex items-center gap-4 min-w-0">
                     <div className="w-16 h-16 rounded-lg bg-black/90 flex-shrink-0 overflow-hidden border border-white/15 p-1 flex items-center justify-center">
-                      {project.type === 'video' ? (
-                        <img
-                          src={project.thumbnail || project.media}
-                          alt=""
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-contain"
-                        />
-                      ) : (
-                        <img
-                          src={project.thumbnail || project.media}
-                          alt=""
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-contain"
-                        />
-                      )}
+                      <img
+                        src={project.type === 'video' ? (project.animated_preview || project.thumbnail || project.media) : (project.thumbnail || project.media)}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 font-mono text-xs uppercase font-bold text-white group-hover:text-accent transition-colors">
@@ -1422,23 +1396,9 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
             {/* Active Display Window (Main Artwork on top) */}
             <div className="bg-black rounded-xl overflow-hidden border border-white/15 flex items-center justify-center min-h-[340px] max-h-[580px] relative group shadow-2xl">
               {(() => {
-                const vId = currentItem.vimeo_id || parseVimeoId(currentItem.vimeo_url) || parseVimeoId(currentItem.media);
+                const vId = currentItem.vimeo_id || parseVimeoId(currentItem.vimeo_url) || parseVimeoId(currentItem.media) || (isVideo ? '12389928' : null);
                 if (vId) {
-                  return <VimeoEmbed vimeoId={vId} autoplay={true} loop={true} muted={false} />;
-                }
-                if (isVideo) {
-                  return (
-                    <video
-                      key={currentItem.media}
-                      src={currentItem.media}
-                      poster={currentItem.thumbnail}
-                      controls
-                      autoPlay
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full max-h-[550px] object-contain"
-                    />
-                  );
+                  return <VimeoEmbed vimeoId={vId} isShowcase={vId === '12389928' || (typeof vId === 'string' && vId.includes('showcase'))} autoplay={true} loop={true} muted={false} />;
                 }
                 if (isPdf) {
                   return (
@@ -2837,17 +2797,19 @@ function App() {
       };
 
       const normalized = data
-        .filter((p) => !p.media?.includes('_thumb'))
+        .filter((p) => !p.media?.includes('_thumb') && !p.media?.includes('_anim'))
         .map((p) => ({
           ...p,
           media: resolveMedia(p.media),
           thumbnail: resolveMedia(p.thumbnail || p.media),
+          animated_preview: resolveMedia(p.animated_preview || p.thumbnail || p.media),
           variants: (p.variants || [])
-            .filter((v) => !v.media?.includes('_thumb'))
+            .filter((v) => !v.media?.includes('_thumb') && !v.media?.includes('_anim'))
             .map((v) => ({
               ...v,
               media: resolveMedia(v.media),
-              thumbnail: resolveMedia(v.thumbnail || v.media)
+              thumbnail: resolveMedia(v.thumbnail || v.media),
+              animated_preview: resolveMedia(v.animated_preview || v.thumbnail || v.media)
             }))
         }));
 
