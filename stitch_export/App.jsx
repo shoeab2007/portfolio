@@ -977,44 +977,6 @@ function BentoProjectsGrid({
           </div>
         )}
 
-        {/* Vimeo Motion Showcase Cinema Stage */}
-        {activeFilter === 'video' && (
-          <div className="mb-10 p-4 sm:p-6 bg-darkcard/90 border border-cyan-400/30 rounded-2xl shadow-[0_0_35px_rgba(0,240,255,0.15)] space-y-4 animate-fade-in">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
-              <div className="flex items-center gap-2.5 font-mono text-xs text-cyan-400 font-bold uppercase">
-                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-                <span>OFFICIAL VIMEO MOTION REEL SHOWCASE</span>
-              </div>
-              <a
-                href="https://vimeo.com/showcase/12389928"
-                target="_blank"
-                rel="noreferrer"
-                data-cursor="VIMEO"
-                className="font-mono text-[11px] text-white/70 hover:text-cyan-400 flex items-center gap-1 uppercase transition-colors"
-              >
-                <span>OPEN ON VIMEO.COM</span>
-                <i data-lucide="arrow-up-right" className="w-3.5 h-3.5"></i>
-              </a>
-            </div>
-
-            {/* Vimeo Responsive Showcase Embed */}
-            <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-white/15 shadow-2xl bg-black">
-              <div className="relative w-full aspect-[4/5] sm:aspect-[16/10] max-h-[540px]">
-                <iframe
-                  src="https://vimeo.com/showcase/12389928/embed2"
-                  className="w-full h-full border-0"
-                  allow="autoplay; fullscreen; picture-in-picture; gyroscope; accelerometer; clipboard-write; encrypted-media; web-share"
-                  allowFullScreen
-                  title="Shoeab Ahmed Vimeo Motion Showcase"
-                />
-              </div>
-            </div>
-            <p className="text-center font-mono text-[11px] text-white/50 uppercase">
-              Stream all motion posters, gig promos, and video teasers in high-definition HD.
-            </p>
-          </div>
-        )}
-
         {/* Bento Grid View Mode */}
         {viewMode === 'bento' && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -1396,9 +1358,23 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
             {/* Active Display Window (Main Artwork on top) */}
             <div className="bg-black rounded-xl overflow-hidden border border-white/15 flex items-center justify-center min-h-[340px] max-h-[580px] relative group shadow-2xl">
               {(() => {
-                const vId = currentItem.vimeo_id || parseVimeoId(currentItem.vimeo_url) || parseVimeoId(currentItem.media) || (isVideo ? '12389928' : null);
+                const vId = currentItem.vimeo_id || parseVimeoId(currentItem.vimeo_url);
                 if (vId) {
-                  return <VimeoEmbed vimeoId={vId} isShowcase={vId === '12389928' || (typeof vId === 'string' && vId.includes('showcase'))} autoplay={true} loop={true} muted={false} />;
+                  return <VimeoEmbed vimeoId={vId} autoplay={true} loop={true} muted={false} />;
+                }
+                if (isVideo) {
+                  return (
+                    <video
+                      key={currentItem.media}
+                      src={currentItem.media}
+                      poster={currentItem.thumbnail || currentItem.animated_preview}
+                      controls
+                      autoPlay
+                      playsInline
+                      preload="auto"
+                      className="w-full h-full max-h-[550px] object-contain"
+                    />
+                  );
                 }
                 if (isPdf) {
                   return (
