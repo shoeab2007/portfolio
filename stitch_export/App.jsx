@@ -622,29 +622,19 @@ function ScrollRevealWrapper({ children, index = 0, className = "" }) {
 }
 
 // -------------------------------------------------------------
-// 5.4 Vimeo Video & Showcase Integration Helper & Player
+// 5.4 Single Vimeo Video Integration Helper & Player
 // -------------------------------------------------------------
 function parseVimeoId(url) {
   if (!url || typeof url !== 'string') return null;
   const trimmed = url.trim();
-  if (trimmed.includes('showcase/')) {
-    const sMatch = trimmed.match(/showcase\/(\d+)/);
-    return sMatch ? { type: 'showcase', id: sMatch[1] } : null;
-  }
-  if (/^\d{6,12}$/.test(trimmed)) return { type: 'video', id: trimmed };
+  if (/^\d{6,12}$/.test(trimmed)) return trimmed;
   const match = trimmed.match(/(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)(\d+)/);
-  return match ? { type: 'video', id: match[1] } : null;
+  return match ? match[1] : null;
 }
 
-function VimeoEmbed({ vimeoId = '12389928', isShowcase = false, autoplay = true, loop = true, muted = false, className = '' }) {
-  let embedUrl = '';
-  if (isShowcase || (typeof vimeoId === 'string' && (vimeoId.includes('showcase') || vimeoId === '12389928')) || (typeof vimeoId === 'object' && vimeoId?.type === 'showcase')) {
-    const sId = typeof vimeoId === 'object' ? vimeoId.id : (vimeoId.includes('showcase') ? (vimeoId.match(/showcase\/(\d+)/)?.[1] || '12389928') : vimeoId);
-    embedUrl = `https://vimeo.com/showcase/${sId}/embed2`;
-  } else {
-    const rawId = typeof vimeoId === 'object' ? vimeoId.id : vimeoId;
-    embedUrl = `https://player.vimeo.com/video/${rawId}?autoplay=${autoplay ? 1 : 0}&loop=${loop ? 1 : 0}&muted=${muted ? 1 : 0}&autopause=0&title=0&byline=0&portrait=0&dnt=1`;
-  }
+function VimeoEmbed({ vimeoId, autoplay = true, loop = true, muted = false, className = '' }) {
+  if (!vimeoId) return null;
+  const embedUrl = `https://player.vimeo.com/video/${vimeoId}?autoplay=${autoplay ? 1 : 0}&loop=${loop ? 1 : 0}&muted=${muted ? 1 : 0}&autopause=0&title=0&byline=0&portrait=0&dnt=1`;
 
   return (
     <div className={`relative w-full h-full min-h-[350px] max-h-[580px] flex items-center justify-center bg-black overflow-hidden rounded-xl ${className}`}>
@@ -653,7 +643,7 @@ function VimeoEmbed({ vimeoId = '12389928', isShowcase = false, autoplay = true,
         className="w-full h-full min-h-[350px] max-h-[560px] border-0 rounded-xl"
         allow="autoplay; fullscreen; picture-in-picture; gyroscope; accelerometer; clipboard-write; encrypted-media; web-share"
         allowFullScreen
-        title="Vimeo Player"
+        title="Vimeo Single Video Player"
       />
     </div>
   );
