@@ -622,6 +622,33 @@ function ScrollRevealWrapper({ children, index = 0, className = "" }) {
 }
 
 // -------------------------------------------------------------
+// 5.4 Vimeo Video Integration Helper & Player
+// -------------------------------------------------------------
+function parseVimeoId(url) {
+  if (!url || typeof url !== 'string') return null;
+  const trimmed = url.trim();
+  if (/^\d{6,12}$/.test(trimmed)) return trimmed;
+  const match = trimmed.match(/(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)(\d+)/);
+  return match ? match[1] : null;
+}
+
+function VimeoEmbed({ vimeoId, autoplay = true, loop = true, muted = false, className = '' }) {
+  if (!vimeoId) return null;
+  const embedUrl = `https://player.vimeo.com/video/${vimeoId}?autoplay=${autoplay ? 1 : 0}&loop=${loop ? 1 : 0}&muted=${muted ? 1 : 0}&autopause=0&title=0&byline=0&portrait=0&dnt=1`;
+  return (
+    <div className={`relative w-full h-full min-h-[340px] max-h-[580px] flex items-center justify-center bg-black overflow-hidden rounded-xl ${className}`}>
+      <iframe
+        src={embedUrl}
+        className="w-full h-full min-h-[340px] max-h-[560px] border-0 rounded-xl"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
+        title="Vimeo Player"
+      />
+    </div>
+  );
+}
+
+// -------------------------------------------------------------
 // 5.5 High-Performance Lazy-Loading Video Streamer
 // -------------------------------------------------------------
 function LazyVideo({ src, poster = '', className = '', loop = true, muted = true, playsInline = true }) {
@@ -1345,37 +1372,50 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
           <div className="lg:col-span-7 space-y-4">
             {/* Active Display Window (Main Artwork on top) */}
             <div className="bg-black rounded-xl overflow-hidden border border-white/15 flex items-center justify-center min-h-[340px] max-h-[580px] relative group shadow-2xl">
-              {isVideo ? (
-                <video
-                  key={currentItem.media}
-                  src={currentItem.media}
-                  controls
-                  autoPlay
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-full max-h-[550px] object-contain"
-                />
-              ) : isPdf ? (
-                <div className="p-8 text-center space-y-4">
-                  <i data-lucide="file-text" className="w-16 h-16 mx-auto text-accent"></i>
-                  <h4 className="font-bold text-white uppercase">{project.title}</h4>
-                  <a
-                    href={currentItem.media}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-black font-mono font-bold text-xs uppercase rounded"
-                  >
-                    <i data-lucide="download" className="w-4 h-4"></i> OPEN PDF PROFILE
-                  </a>
-                </div>
-              ) : (
-                <img
-                  key={currentItem.media}
-                  src={currentItem.media}
-                  alt={project.title}
-                  className="w-full h-full max-h-[550px] object-contain transition-all duration-300"
-                />
-              )}
+              {(() => {
+                const vId = currentItem.vimeo_id || parseVimeoId(currentItem.vimeo_url) || parseVimeoId(currentItem.media);
+                if (vId) {
+                  return <VimeoEmbed vimeoId={vId} autoplay={true} loop={true} muted={false} />;
+                }
+                if (isVideo) {
+                  return (
+                    <video
+                      key={currentItem.media}
+                      src={currentItem.media}
+                      poster={currentItem.thumbnail}
+                      controls
+                      autoPlay
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full max-h-[550px] object-contain"
+                    />
+                  );
+                }
+                if (isPdf) {
+                  return (
+                    <div className="p-8 text-center space-y-4">
+                      <i data-lucide="file-text" className="w-16 h-16 mx-auto text-accent"></i>
+                      <h4 className="font-bold text-white uppercase">{project.title}</h4>
+                      <a
+                        href={currentItem.media}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-black font-mono font-bold text-xs uppercase rounded"
+                      >
+                        <i data-lucide="download" className="w-4 h-4"></i> OPEN PDF PROFILE
+                      </a>
+                    </div>
+                  );
+                }
+                return (
+                  <img
+                    key={currentItem.media}
+                    src={currentItem.media}
+                    alt={project.title}
+                    className="w-full h-full max-h-[550px] object-contain transition-all duration-300"
+                  />
+                );
+              })()}
 
               {/* Active Format Pill Indicator on Top of Media */}
               <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1 rounded font-mono text-[11px] font-bold text-accent uppercase flex items-center gap-1.5 shadow-md">
@@ -2400,6 +2440,7 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   const [strategy, setStrategy] = useState('');
   const [tech, setTech] = useState('Photoshop, Illustrator');
   const [file, setFile] = useState(null);
+  const [vimeoUrl, setVimeoUrl] = useState('');
 
   if (!isOpen) return null;
 
@@ -2429,8 +2470,8 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
 
   const handleUploadSubmit = async (e) => {
     e.preventDefault();
-    if (!file) {
-      setUploadError('Please select a media file (PNG, JPG, MP4, PDF).');
+    if (!file && !vimeoUrl.trim()) {
+      setUploadError('Please select a media file OR enter a Vimeo Video Link.');
       return;
     }
 
@@ -2446,7 +2487,12 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
       data.append('year', year);
       data.append('strategy', strategy || 'Curated portfolio piece.');
       data.append('tech', tech);
-      data.append('file', file);
+      if (vimeoUrl.trim()) {
+        data.append('vimeo_url', vimeoUrl.trim());
+      }
+      if (file) {
+        data.append('file', file);
+      }
 
       const res = await fetch('/api/upload', {
         method: 'POST',
@@ -2555,15 +2601,36 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
               </div>
             )}
 
-            <div>
-              <label className="text-white/50 block mb-1 uppercase text-[10px]">ARTWORK FILE (PNG, JPG, MP4, PDF) *</label>
-              <input
-                type="file"
-                required
-                accept="image/*,video/mp4,application/pdf"
-                onChange={(e) => setFile(e.target.files[0])}
-                className="w-full bg-black/60 border border-white/20 p-2 rounded-xl text-white file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
-              />
+            <div className="space-y-3 p-3 bg-black/40 border border-white/10 rounded-xl">
+              <div>
+                <label className="text-white/70 block mb-1 uppercase text-[10px] font-bold">OPTION A: UPLOAD LOCAL MEDIA FILE</label>
+                <input
+                  type="file"
+                  accept="image/*,video/mp4,application/pdf"
+                  onChange={(e) => setFile(e.target.files[0])}
+                  className="w-full bg-black/60 border border-white/20 p-2 rounded-xl text-white file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
+                />
+              </div>
+
+              <div className="flex items-center gap-2 text-white/30 text-[10px] uppercase font-bold">
+                <div className="flex-grow h-px bg-white/10" />
+                <span>OR</span>
+                <div className="flex-grow h-px bg-white/10" />
+              </div>
+
+              <div>
+                <label className="text-cyan-400 block mb-1 uppercase text-[10px] font-bold flex items-center gap-1.5">
+                  <i data-lucide="video" className="w-3.5 h-3.5"></i>
+                  OPTION B: VIMEO VIDEO LINK / ID
+                </label>
+                <input
+                  type="text"
+                  value={vimeoUrl}
+                  onChange={(e) => setVimeoUrl(e.target.value)}
+                  placeholder="https://vimeo.com/123456789 or Video ID"
+                  className="w-full bg-black/60 border border-cyan-400/40 focus:border-cyan-400 rounded-xl p-2.5 text-white font-mono text-xs focus:outline-none"
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-3">

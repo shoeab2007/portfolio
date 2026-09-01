@@ -276,24 +276,30 @@ class PortfolioRequestHandler(SimpleHTTPRequestHandler):
                 else:
                     fields[name] = part.get_content().strip()
 
-            if not file_data or not filename:
+            vimeo_url = fields.get('vimeo_url', '').strip()
+
+            if not file_data and not vimeo_url:
                 self.send_response(400)
                 self.end_headers()
-                self.wfile.write(b"No media file uploaded")
+                self.wfile.write(b"No media file uploaded or Vimeo URL provided")
                 return
 
-            # Save uploaded file inside website/uploads
-            ext = os.path.splitext(filename)[1].lower()
-            unique_filename = f"{uuid.uuid4()}{ext}"
-            uploads_dir = os.path.join(os.path.dirname(__file__), 'website', 'uploads')
-            os.makedirs(uploads_dir, exist_ok=True)
-            
-            file_path = os.path.join(uploads_dir, unique_filename)
-            with open(file_path, 'wb') as f:
-                f.write(file_data)
+            if vimeo_url:
+                media_url = vimeo_url
+                proj_type = 'video'
+            else:
+                # Save uploaded file inside website/uploads
+                ext = os.path.splitext(filename)[1].lower()
+                unique_filename = f"{uuid.uuid4()}{ext}"
+                uploads_dir = os.path.join(os.path.dirname(__file__), 'website', 'uploads')
+                os.makedirs(uploads_dir, exist_ok=True)
+                
+                file_path = os.path.join(uploads_dir, unique_filename)
+                with open(file_path, 'wb') as f:
+                    f.write(file_data)
 
-            media_url = f"/website/uploads/{unique_filename}"
-            proj_type = 'video' if ext == '.mp4' else ('pdf' if ext == '.pdf' else 'image')
+                media_url = f"/website/uploads/{unique_filename}"
+                proj_type = 'video' if ext == '.mp4' else ('pdf' if ext == '.pdf' else 'image')
             
             new_project = {
                 'id': str(uuid.uuid4()),
@@ -301,10 +307,11 @@ class PortfolioRequestHandler(SimpleHTTPRequestHandler):
                 'category': fields.get('category', 'Branding'),
                 'role': fields.get('role', 'Visual Strategist & Art Director'),
                 'client': fields.get('client', 'Shoeab Shaikh'),
-                'year': fields.get('year', '2025'),
+                'year': fields.get('year', '2026'),
                 'strategy': fields.get('strategy', 'A custom uploaded art project.'),
                 'tech': fields.get('tech', 'Photoshop, Illustrator'),
                 'media': media_url,
+                'vimeo_url': vimeo_url if vimeo_url else None,
                 'type': proj_type,
                 'is_default': False
             }
