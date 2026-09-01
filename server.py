@@ -47,7 +47,7 @@ def scan_assets():
             subfolder_name = "" if sub_rel == "." else sub_rel.replace('\\', '/')
             
             for file in files:
-                if file.startswith('.') or file.lower() == 'thumbs.db' or 'open mic #32' in file.lower() or 'open mic' in file.lower():
+                if file.startswith('.') or file.lower() == 'thumbs.db' or '_thumb' in file.lower() or 'open mic #32' in file.lower() or 'open mic' in file.lower():
                     continue
                     
                 ext = os.path.splitext(file)[1].lower()
@@ -189,12 +189,20 @@ def scan_assets():
         if not title:
             title = filename_no_ext.replace('_', ' ').title()
 
+        def get_thumb(media_u):
+            base_p = os.path.splitext(media_u)[0]
+            thumb_u = f"{base_p}_thumb.webp"
+            if os.path.exists(thumb_u.lstrip('/')):
+                return thumb_u
+            return media_u
+
         variants = []
         for it in items:
             variants.append({
                 'id': it['id'],
                 'label': it['fmt']['label'],
                 'media': it['media'],
+                'thumbnail': get_thumb(it['media']),
                 'type': it['fmt']['type'],
                 'ratio': it['fmt']['ratio'],
                 'file': it['file']
@@ -212,6 +220,7 @@ def scan_assets():
             'strategy': strategy,
             'tech': tech,
             'media': primary['media'],
+            'thumbnail': get_thumb(primary['media']),
             'type': primary['fmt']['type'],
             'variants': variants,
             'is_default': True

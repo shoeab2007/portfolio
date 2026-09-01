@@ -1,6 +1,6 @@
 [
   {
-    "id": "39812482c4da2cf621dc09f947b9a61c",
+    "id": "95c01e5cd27e53acb10e54c8984af2b1",
     "title": "Zynth Main",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -8,26 +8,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL",
     "year": "2026",
-    "strategy": "High-contrast underground techno club visual system utilizing harsh duotone gradients, distressed glyphs, and brutalist geometric framing tailored for dark club environments.",
-    "tech": "Photoshop, Illustrator, InDesign",
-    "media": "./01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post.webp",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
+    "tech": "Photoshop, Illustrator",
+    "media": "/01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "39812482c4da2cf621dc09f947b9a61c",
+        "id": "95c01e5cd27e53acb10e54c8984af2b1",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post.webp",
+        "media": "/01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_AntiSOCIAL_Zynth Main_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp"
+        "file": "2026_May_AntiSOCIAL_Zynth Main_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp"
   },
   {
-    "id": "690a6d544bdb5998a0fbf169e4b1535d",
+    "id": "e08bfc4b9cdda94b2268c7ceae02546b",
     "title": "Xchange",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -35,26 +35,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Shoeab Shaikh",
     "year": "2026",
-    "strategy": "Multi-genre electronic exchange showcase. Developed a heavy modular typographic grid emphasizing artist lineup hierarchy with chromatic aberration accents.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_April_Social Xchange_Post.webp",
+    "media": "/01_Gig_Posters/2026_April_Social Xchange_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "690a6d544bdb5998a0fbf169e4b1535d",
+        "id": "e08bfc4b9cdda94b2268c7ceae02546b",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_April_Social Xchange_Post.webp",
+        "media": "/01_Gig_Posters/2026_April_Social Xchange_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_Social Xchange_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
+        "file": "2026_April_Social Xchange_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
   },
   {
-    "id": "2db74210b1bc870a281fceb8f6994e6e",
+    "id": "00139d39583dc9a66bd4497a63ff45d4",
     "title": "Pullup",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -62,23 +62,23 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL",
     "year": "2026",
-    "strategy": "High-energy UK garage & bass music night. Designed with acid-green chromatic highlights, kinetic typography warps, and industrial structural layout.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post.webp",
+    "media": "/01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "2db74210b1bc870a281fceb8f6994e6e",
+        "id": "00139d39583dc9a66bd4497a63ff45d4",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post.webp",
+        "media": "/01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KharSOCIAL_PullUP_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp"
+        "file": "2026_April_KharSOCIAL_PullUP_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp"
   },
   {
     "id": "6cf34a3974506e1d3eb2cce14268cbb4",
@@ -89,7 +89,7 @@
     "role": "Visual Strategist & Art Director",
     "client": "KoregaonSOCIAL",
     "year": "2026",
-    "strategy": "Retro-futuristic nu-disco club experience. Produced dynamic kinetic 60fps motion graphics, 70s-inspired chrome typography, and vibrant social campaign collateral.",
+    "strategy": "Dynamic kinetic motion poster & collateral suite for live music and nightlife event promotion.",
     "tech": "After Effects, Premiere Pro, Photoshop",
     "media": "/01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post.mp4",
     "type": "video",
@@ -101,14 +101,14 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post.mp4",
-        "thumbnail": "./01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_thumb.webp"
+        "thumbnail": "/01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_thumb.webp"
   },
   {
-    "id": "d362b4f3f82afa996b342913d713a2fc",
+    "id": "49b69c29fc185f5d06af16fc74001888",
     "title": "Khar House52",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -116,26 +116,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Shoeab Shaikh",
     "year": "2026",
-    "strategy": "Deep house & minimal techno residency. Crafted a minimal Swiss-inspired typographic poster balancing stark negative space against sharp metallic focal elements.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_May_Khar social_House52_Post.webp",
+    "media": "/01_Gig_Posters/2026_May_Khar social_House52_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "d362b4f3f82afa996b342913d713a2fc",
+        "id": "49b69c29fc185f5d06af16fc74001888",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_May_Khar social_House52_Post.webp",
+        "media": "/01_Gig_Posters/2026_May_Khar social_House52_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_Khar social_House52_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp"
+        "file": "2026_May_Khar social_House52_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp"
   },
   {
-    "id": "bed35e5674f82d47d8dbc4db99934fd6",
+    "id": "0c893f768a22f89ca1511f6de49c3672",
     "title": "Holi",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -143,26 +143,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL",
     "year": "2026",
-    "strategy": "Special festive electronic showcase. Balanced festive vibrancy with underground nightlife aesthetics, using fluid dynamic pigment splatters over brutalist monospace typography.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post.webp",
+    "media": "/01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "bed35e5674f82d47d8dbc4db99934fd6",
+        "id": "0c893f768a22f89ca1511f6de49c3672",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post.webp",
+        "media": "/01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_March_KharSOCIAL_Holi Social_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp"
+        "file": "2026_March_KharSOCIAL_Holi Social_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp"
   },
   {
-    "id": "0147eb1dec1c07352e4787940b95e173",
+    "id": "d34ebd328b8092cafd784fd545a6520c",
     "title": "Hhl",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -170,26 +170,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KoregaonSOCIAL",
     "year": "2026",
-    "strategy": "Hip Hop Loyalty club series. Developed bold graffiti-infused display typography with high-contrast monochrome portraiture and urban grit textures.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post.webp",
+    "media": "/01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "0147eb1dec1c07352e4787940b95e173",
+        "id": "d34ebd328b8092cafd784fd545a6520c",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post.webp",
+        "media": "/01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KoregaonSOCIAL_HHL_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp"
+        "file": "2026_April_KoregaonSOCIAL_HHL_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp"
   },
   {
-    "id": "2195bd5b3dfeadcbaf7ac65e3607e127",
+    "id": "c1c5c31ef276bec0928629a05b4049d5",
     "title": "Hhl",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -197,26 +197,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KoregaonSOCIAL",
     "year": "2026",
-    "strategy": "Hip Hop Loyalty club series. Developed bold graffiti-infused display typography with high-contrast monochrome portraiture and urban grit textures.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post.webp",
+    "media": "/01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "2195bd5b3dfeadcbaf7ac65e3607e127",
+        "id": "c1c5c31ef276bec0928629a05b4049d5",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post.webp",
+        "media": "/01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_June_KoregaonSOCIAL_HHL_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp"
+        "file": "2026_June_KoregaonSOCIAL_HHL_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp"
   },
   {
-    "id": "c1837c5d87907b02e5619d109b92779d",
+    "id": "533a8d40dbe049fb23d9fa54f1d5ebfa",
     "title": "Hhl",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -224,26 +224,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KoregaonSOCIAL",
     "year": "2026",
-    "strategy": "Hip Hop Loyalty club series. Developed bold graffiti-infused display typography with high-contrast monochrome portraiture and urban grit textures.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post.webp",
+    "media": "/01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "c1837c5d87907b02e5619d109b92779d",
+        "id": "533a8d40dbe049fb23d9fa54f1d5ebfa",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post.webp",
+        "media": "/01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_KoregaonSOCIAL_HHL_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp"
+        "file": "2026_May_KoregaonSOCIAL_HHL_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp"
   },
   {
-    "id": "8f2c59c869e66aa63241e4f487ecf2a3",
+    "id": "8c8580af186eba378960f4371450fc6e",
     "title": "Heads Will Roll",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -251,26 +251,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL",
     "year": "2026",
-    "strategy": "Hardcore electronic & industrial bass event. Engineered aggressive distressed typography, razor-sharp vector line art, and dark atmospheric textures.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post.webp",
+    "media": "/01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "8f2c59c869e66aa63241e4f487ecf2a3",
+        "id": "8c8580af186eba378960f4371450fc6e",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post.webp",
+        "media": "/01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_AntiSOCIAL_Heads will Roll_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp"
+        "file": "2026_May_AntiSOCIAL_Heads will Roll_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp"
   },
   {
-    "id": "0c01f9ea400797078c70a062dc730053",
+    "id": "057183d3ac78aeb5130295e3a8782073",
     "title": "Grind",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -278,23 +278,23 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL",
     "year": "2026",
-    "strategy": "Weekly hip-hop & R&B club night poster. Designed high-impact street-style editorial layout featuring liquid chrome typography and clean venue branding.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post.webp",
+    "media": "/01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "0c01f9ea400797078c70a062dc730053",
+        "id": "057183d3ac78aeb5130295e3a8782073",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post.webp",
+        "media": "/01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KharSOCIAL_Grind_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp"
+        "file": "2026_April_KharSOCIAL_Grind_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp"
   },
   {
     "id": "b79dbcb5d9ca68bd9c4e4e311951ba66",
@@ -305,7 +305,7 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL",
     "year": "2026",
-    "strategy": "Weekly hip-hop & R&B sanctuary kinetic motion teaser. Produced synchronized 60fps typography animations and dynamic liquid chrome distortion effects for Instagram stories.",
+    "strategy": "Dynamic kinetic motion poster & collateral suite for live music and nightlife event promotion.",
     "tech": "After Effects, Premiere Pro, Photoshop",
     "media": "/01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post.mp4",
     "type": "video",
@@ -317,14 +317,14 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "2026_May_KharSOCIAL_Grind_Post.mp4",
-        "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_thumb.webp"
+        "thumbnail": "/01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_thumb.webp"
   },
   {
-    "id": "de7e194578c6a20435e0fe104f78d806",
+    "id": "787a032367e5ecff0af28f09f8b30406",
     "title": "Common Grounds",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -332,26 +332,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL",
     "year": "2026",
-    "strategy": "Community-centric acoustic & indie music gathering. Designed warm, organic textured print collateral with bespoke serif lettering and earth-tone duotones.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post.webp",
+    "media": "/01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "de7e194578c6a20435e0fe104f78d806",
+        "id": "787a032367e5ecff0af28f09f8b30406",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post.webp",
+        "media": "/01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_KharSOCIAL_Common Grounds_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp"
+        "file": "2026_April_KharSOCIAL_Common Grounds_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp"
   },
   {
-    "id": "a8d3bd5d43637c60ed217b50cd208356",
+    "id": "79e38bd5d5262faaf09be451c1e3c4b6",
     "title": "Chembur Desi Class",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -359,23 +359,23 @@
     "role": "Visual Strategist & Art Director",
     "client": "ChemburSOCIAL",
     "year": "2026",
-    "strategy": "Contemporary desi hip-hop & regional beats showcase. Blended regional typography with modern street aesthetics and high-impact event branding.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_May_Chembur_Desi Class_Post.webp",
+    "media": "/01_Gig_Posters/2026_May_Chembur_Desi Class_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "a8d3bd5d43637c60ed217b50cd208356",
+        "id": "79e38bd5d5262faaf09be451c1e3c4b6",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_May_Chembur_Desi Class_Post.webp",
+        "media": "/01_Gig_Posters/2026_May_Chembur_Desi Class_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_Chembur_Desi Class_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp"
+        "file": "2026_May_Chembur_Desi Class_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp"
   },
   {
     "id": "dcd5fb786a0e7ab1f25235e25b505cd8",
@@ -386,7 +386,7 @@
     "role": "Visual Strategist & Art Director",
     "client": "Shoeab Shaikh",
     "year": "2026",
-    "strategy": "Open-format performance & comedy night. Designed a kinetic stage spotlight motion visual optimized for 9:16 Instagram stories and club digital displays.",
+    "strategy": "Dynamic kinetic motion poster & collateral suite for live music and nightlife event promotion.",
     "tech": "After Effects, Premiere Pro, Photoshop",
     "media": "/01_Gig_Posters/2026_May_Anti_Open_Stage_Post.mp4",
     "type": "video",
@@ -398,14 +398,14 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "2026_May_Anti_Open_Stage_Post.mp4",
-        "thumbnail": "./01_Gig_Posters/2026_May_Anti_Open_Stage_Post_thumb.webp"
+        "thumbnail": "/01_Gig_Posters/2026_May_Anti_Open_Stage_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_Anti_Open_Stage_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_Anti_Open_Stage_Post_thumb.webp"
   },
   {
-    "id": "34c64702f74f41aac263de7abcd3fc42",
+    "id": "a879a5146bc2b43102d246a1b660b5e6",
     "title": "Angrejibeats",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -413,26 +413,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "MaladSOCIAL",
     "year": "2026",
-    "strategy": "Bollywood-electronic crossover event. Combined bold typographic hierarchy with vibrant neon glow treatments for high social conversion.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats.webp",
+    "media": "/01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats.webp",
     "type": "image",
     "variants": [
       {
-        "id": "34c64702f74f41aac263de7abcd3fc42",
+        "id": "a879a5146bc2b43102d246a1b660b5e6",
         "label": "Main Deliverable",
-        "media": "./01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats.webp",
+        "media": "/01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "2026_May_MaladSOCIAL_AngrejiBeats.png",
-        "thumbnail": "./01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp"
+        "file": "2026_May_MaladSOCIAL_AngrejiBeats.webp",
+        "thumbnail": "/01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp"
   },
   {
-    "id": "01e0111e3d6b1a51752a6cd072e5005b",
+    "id": "6d4c32f630ce4e2df66bfbe4f67c076d",
     "title": "8Bc B2B Dreamstates",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -440,23 +440,23 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL",
     "year": "2026",
-    "strategy": "Exclusive back-to-back DJ showcase. Designed a surreal psychedelic layout featuring warped grid distortions and dual-tone holographic chromaticism.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.webp",
+    "media": "/01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "01e0111e3d6b1a51752a6cd072e5005b",
+        "id": "6d4c32f630ce4e2df66bfbe4f67c076d",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.webp",
+        "media": "/01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.png",
-        "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp"
+        "file": "2026_May_KharSOCIAL _8BC b2b Dreamstates_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp"
   },
   {
     "id": "f091788aeaf1ccc9859fc6625540a817",
@@ -467,8 +467,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Promotional lifestyle video and kinetic food/cocktail reel created for premium hospitality brands and venue social channels.",
-    "tech": "Premiere Pro, After Effects",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
     "media": "/02_Campaign_and_Promos/Hospitality/Video-528.mp4",
     "type": "video",
     "variants": [
@@ -479,11 +479,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Video-528.mp4",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-528_thumb.webp"
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Video-528_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-528_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Video-528_thumb.webp"
   },
   {
     "id": "0317652624e681e9debbaa6e579cf833",
@@ -494,8 +494,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Promotional lifestyle video and kinetic food/cocktail reel created for premium hospitality brands and venue social channels.",
-    "tech": "Premiere Pro, After Effects",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
     "media": "/02_Campaign_and_Promos/Hospitality/Video-216.mp4",
     "type": "video",
     "variants": [
@@ -506,11 +506,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Video-216.mp4",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-216_thumb.webp"
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Video-216_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Video-216_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Video-216_thumb.webp"
   },
   {
     "id": "cf887d32fec90b0dba36a065b89f28b3",
@@ -521,8 +521,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Strategic promotional campaign collateral designed for Hospitality Group, bridging high-impact digital marketing assets with physical venue touchpoints.",
-    "tech": "Photoshop, Illustrator, InDesign",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
     "media": "/02_Campaign_and_Promos/Hospitality/rS indeoendence.mp4",
     "type": "video",
     "variants": [
@@ -533,14 +533,14 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "rS indeoendence.mp4",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/rS indeoendence_thumb.webp"
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/rS indeoendence_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/rS indeoendence_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/rS indeoendence_thumb.webp"
   },
   {
-    "id": "f7caa63d77b9ea11b3876e382338b1eb",
+    "id": "415c50232fc876a8dca378d22b6b7ff7",
     "title": "Pulse",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -548,26 +548,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL",
     "year": "2025",
-    "strategy": "Deep melodic techno event branding. Created pulsating concentric vector waveforms paired with minimalist technical typography.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post.webp",
+    "media": "/01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "f7caa63d77b9ea11b3876e382338b1eb",
+        "id": "415c50232fc876a8dca378d22b6b7ff7",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post.webp",
+        "media": "/01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2025_March_AntiSOCIAL_Pulse_Post.png",
-        "thumbnail": "./01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp"
+        "file": "2025_March_AntiSOCIAL_Pulse_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp"
   },
   {
-    "id": "0e1bc5ae864e3f5a2e003be284c2d6cd",
+    "id": "de4418b9be89c0c6fcc9a904c34c57e6",
     "title": "Mumbai Square",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -575,26 +575,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Metaraph",
     "year": "2025",
-    "strategy": "Strategic promotional campaign collateral designed for Metaraph, bridging high-impact digital marketing assets with physical venue touchpoints.",
-    "tech": "Photoshop, Illustrator, InDesign",
-    "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Square.webp",
+    "strategy": "Editorial nightlife branding and promo collateral for Metaraph tour dates.",
+    "tech": "Photoshop, Illustrator",
+    "media": "/02_Campaign_and_Promos/Metaraph/Mumbai Square.webp",
     "type": "image",
     "variants": [
       {
-        "id": "0e1bc5ae864e3f5a2e003be284c2d6cd",
+        "id": "de4418b9be89c0c6fcc9a904c34c57e6",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Square.webp",
+        "media": "/02_Campaign_and_Promos/Metaraph/Mumbai Square.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Mumbai Square.png",
-        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp"
+        "file": "Mumbai Square.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp"
   },
   {
-    "id": "869a69a185d343733cd955e5ecdc3c0f",
+    "id": "a58ab87eed3e588e254adfae39913f8c",
     "title": "Mumbai",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -602,35 +602,35 @@
     "role": "Visual Strategist & Art Director",
     "client": "Metaraph",
     "year": "2025",
-    "strategy": "Strategic promotional campaign collateral designed for Metaraph, bridging high-impact digital marketing assets with physical venue touchpoints.",
-    "tech": "Photoshop, Illustrator, InDesign",
-    "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Post.webp",
+    "strategy": "Editorial nightlife branding and promo collateral for Metaraph tour dates.",
+    "tech": "Photoshop, Illustrator",
+    "media": "/02_Campaign_and_Promos/Metaraph/Mumbai Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "869a69a185d343733cd955e5ecdc3c0f",
+        "id": "a58ab87eed3e588e254adfae39913f8c",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Post.webp",
+        "media": "/02_Campaign_and_Promos/Metaraph/Mumbai Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Mumbai Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp"
+        "file": "Mumbai Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp"
       },
       {
-        "id": "283aff79217a10ffffcb44bb0f140443",
+        "id": "a3084ac8dcd27208ca7514db1b98dd2b",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/Metaraph/Mumbai Story.webp",
+        "media": "/02_Campaign_and_Promos/Metaraph/Mumbai Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Mumbai Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Story_thumb.webp"
+        "file": "Mumbai Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp"
   },
   {
-    "id": "5f013a43fd7a5dfb8e2a391cc14a2cd7",
+    "id": "38fe1b00293a012893cde40bf4780b1c",
     "title": "Molo 5Th Square Sms",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -638,26 +638,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "5f013a43fd7a5dfb8e2a391cc14a2cd7",
+        "id": "38fe1b00293a012893cde40bf4780b1c",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Square SMS Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp"
+        "file": "Molo 5th April Square SMS Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp"
   },
   {
-    "id": "c03e5b0aadaa7eeb4f6f714d85203854",
+    "id": "3700180b022493382b3e2ac1d715a0c4",
     "title": "Molo 5Th Square Skillbox",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -665,26 +665,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "c03e5b0aadaa7eeb4f6f714d85203854",
+        "id": "3700180b022493382b3e2ac1d715a0c4",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Square Skillbox Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp"
+        "file": "Molo 5th April Square Skillbox Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp"
   },
   {
-    "id": "a36e32011b984e4407fd221592649901",
+    "id": "25335ca2945f405337e89d7e0f195cf8",
     "title": "Molo 5Th Square",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -692,26 +692,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Post.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "a36e32011b984e4407fd221592649901",
+        "id": "25335ca2945f405337e89d7e0f195cf8",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Post.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Square Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp"
+        "file": "Molo 5th April Square Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp"
   },
   {
-    "id": "3ca4c12258a89393b83b502c44ab053a",
+    "id": "076fa79c6f2ac0453336b950aa01806b",
     "title": "Molo 5Th Sms",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -719,26 +719,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS.webp",
     "type": "image",
     "variants": [
       {
-        "id": "3ca4c12258a89393b83b502c44ab053a",
+        "id": "076fa79c6f2ac0453336b950aa01806b",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover SMS.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp"
+        "file": "Molo 5th April Cover SMS.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp"
   },
   {
-    "id": "b499db4a1f6410889680073538c751a2",
+    "id": "f5ad5e9da9812fc0e09ff10b7eda2c20",
     "title": "Molo 5Th Skillbox 1350X1080",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -746,26 +746,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080.webp",
     "type": "image",
     "variants": [
       {
-        "id": "b499db4a1f6410889680073538c751a2",
+        "id": "f5ad5e9da9812fc0e09ff10b7eda2c20",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover Skillbox 1350x1080.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp"
+        "file": "Molo 5th April Cover Skillbox 1350x1080.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp"
   },
   {
-    "id": "40766c3c914baf80892a810fa931b0c8",
+    "id": "0c67d30ecb48d04a5f1cd059cff67e46",
     "title": "Molo 5Th Skillbox",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -773,26 +773,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox.webp",
     "type": "image",
     "variants": [
       {
-        "id": "40766c3c914baf80892a810fa931b0c8",
+        "id": "0c67d30ecb48d04a5f1cd059cff67e46",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover Skillbox.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp"
+        "file": "Molo 5th April Cover Skillbox.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp"
   },
   {
-    "id": "3f327d9ce6229e79f2d50179bc9dc0cf",
+    "id": "f00a5011a7d5f8546584fd5cc6586a20",
     "title": "Molo 5Th Insider",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -800,26 +800,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider.webp",
     "type": "image",
     "variants": [
       {
-        "id": "3f327d9ce6229e79f2d50179bc9dc0cf",
+        "id": "f00a5011a7d5f8546584fd5cc6586a20",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Molo 5th April Cover Insider.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp"
+        "file": "Molo 5th April Cover Insider.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp"
   },
   {
-    "id": "cde6611f261682ca6c4f057c262f6ef4",
+    "id": "863e313a1167d68b8503d20aaba1d88e",
     "title": "Molo 5Th",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -827,32 +827,32 @@
     "role": "Visual Strategist & Art Director",
     "client": "Molo",
     "year": "2025",
-    "strategy": "MOLO event promotional system multi-channel deployment. Formatted across Skillbox (1350x1080 & 16:9), Insider ticketing, and SMS marketing channels.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Post.webp",
+    "strategy": "Modern visual communication and branding campaign layout for MOLO events.",
+    "tech": "Photoshop, Illustrator, InDesign",
+    "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "cde6611f261682ca6c4f057c262f6ef4",
+        "id": "863e313a1167d68b8503d20aaba1d88e",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Post.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Molo 5th April Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp"
+        "file": "Molo 5th April Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp"
       },
       {
-        "id": "bf72925fa1f943dba1db0d3f6862695d",
+        "id": "0fd06ea600b81060cfaad7d535e3939f",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/MOLO/Molo 5th April Story.webp",
+        "media": "/02_Campaign_and_Promos/MOLO/Molo 5th April Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Molo 5th April Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Story_thumb.webp"
+        "file": "Molo 5th April Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp"
   },
   {
     "id": "06348a38b87f895dbf08b9d76b8ef8a1",
@@ -863,8 +863,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "Metaraph",
     "year": "2025",
-    "strategy": "Metaraph India Tour kinetic video trailer. Synchronized dark cyber-gothic motion graphics with heavy techno audio drops for maximum tour hype.",
-    "tech": "After Effects, Premiere Pro",
+    "strategy": "Editorial nightlife branding and promo collateral for Metaraph tour dates.",
+    "tech": "Photoshop, Illustrator",
     "media": "/02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel.mp4",
     "type": "video",
     "variants": [
@@ -875,11 +875,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Metaraph Mumbai_Reel.mp4",
-        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_thumb.webp"
+        "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_thumb.webp"
   },
   {
     "id": "9e240fc2849783fed0b77ad659f4cff1",
@@ -890,8 +890,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "Metaraph",
     "year": "2025",
-    "strategy": "Metaraph India Tour kinetic video trailer. Synchronized dark cyber-gothic motion graphics with heavy techno audio drops for maximum tour hype.",
-    "tech": "After Effects, Premiere Pro",
+    "strategy": "Editorial nightlife branding and promo collateral for Metaraph tour dates.",
+    "tech": "Photoshop, Illustrator",
     "media": "/02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story.mp4",
     "type": "video",
     "variants": [
@@ -902,14 +902,14 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Metaraph Kolkata_Story.mp4",
-        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_thumb.webp"
+        "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_thumb.webp"
   },
   {
-    "id": "b7a135f0e82bfc66eb2a3e0fd8ca97e9",
+    "id": "ec006d69c23cdd5f41d303daf46602ed",
     "title": "Metaraph",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -917,35 +917,35 @@
     "role": "Visual Strategist & Art Director",
     "client": "Metaraph",
     "year": "2025",
-    "strategy": "Metaraph India Tour multi-city visual campaign (Mumbai & Kolkata). Designed dark cyber-gothic print and digital assets tailored for international electronic artists.",
+    "strategy": "Editorial nightlife branding and promo collateral for Metaraph tour dates.",
     "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/Metaraph/Metaraph Post.webp",
+    "media": "/02_Campaign_and_Promos/Metaraph/Metaraph Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "b7a135f0e82bfc66eb2a3e0fd8ca97e9",
+        "id": "ec006d69c23cdd5f41d303daf46602ed",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/Metaraph/Metaraph Post.webp",
+        "media": "/02_Campaign_and_Promos/Metaraph/Metaraph Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Metaraph Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp"
+        "file": "Metaraph Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp"
       },
       {
-        "id": "ad9b94ec988fe41cbd437117019015c6",
+        "id": "0d99a2feef26b9b8f3b5158d02d2d6fe",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/Metaraph/Metaraph Story.webp",
+        "media": "/02_Campaign_and_Promos/Metaraph/Metaraph Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Metaraph Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Story_thumb.webp"
+        "file": "Metaraph Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp"
   },
   {
-    "id": "18f49743fe162ccb4022d7f099cbcf47",
+    "id": "55c995e1762cd34b5a2b8eb61a02df18",
     "title": "Malad Desi Drip",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -953,26 +953,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "MaladSOCIAL",
     "year": "2025",
-    "strategy": "Urban streetwear & hip-hop nightlife session. Developed bespoke metallic lettering layered over gritty photocopier halftone textures.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2025_March_Malad_Desi Drip_Post.webp",
+    "media": "/01_Gig_Posters/2025_March_Malad_Desi Drip_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "18f49743fe162ccb4022d7f099cbcf47",
+        "id": "55c995e1762cd34b5a2b8eb61a02df18",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2025_March_Malad_Desi Drip_Post.webp",
+        "media": "/01_Gig_Posters/2025_March_Malad_Desi Drip_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2025_March_Malad_Desi Drip_Post.png",
-        "thumbnail": "./01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp"
+        "file": "2025_March_Malad_Desi Drip_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp"
   },
   {
-    "id": "497b6c99ada230bc58c37b93aa8d1fa1",
+    "id": "766be5e9f3c97f1834cbb2c3180079ce",
     "title": "Khar V1",
     "category": "Event Calendars",
     "folder": "02_Event_Calendars",
@@ -980,26 +980,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Comprehensive monthly venue calendar programming layout for KharSOCIAL Calendar. Structured multi-week event schedules with seamless brand consistency.",
-    "tech": "InDesign, Illustrator, Photoshop",
-    "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1.webp",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "Photoshop, InDesign",
+    "media": "/02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1.webp",
     "type": "image",
     "variants": [
       {
-        "id": "497b6c99ada230bc58c37b93aa8d1fa1",
+        "id": "766be5e9f3c97f1834cbb2c3180079ce",
         "label": "Main Deliverable",
-        "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "khar Calender Weeks v1.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp"
+        "file": "khar Calender Weeks v1.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp"
   },
   {
-    "id": "63384ed55ed06922a857946ac49e66b2",
+    "id": "5e902af4fd17e7b677b4400af47003c7",
     "title": "Khar",
     "category": "Event Calendars",
     "folder": "02_Event_Calendars",
@@ -1007,44 +1007,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Comprehensive monthly venue calendar programming layout for KharSOCIAL Calendar. Structured multi-week event schedules with seamless brand consistency.",
-    "tech": "InDesign, Illustrator, Photoshop",
-    "media": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post.webp",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "Photoshop, InDesign",
+    "media": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "63384ed55ed06922a857946ac49e66b2",
+        "id": "5e902af4fd17e7b677b4400af47003c7",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Khar Calender June Post.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp"
+        "file": "Khar Calender June Post.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp"
       },
       {
-        "id": "c6039ee1839ec20848d9ea88cff8202a",
+        "id": "35db0f7fde8c1845f939770885ee6541",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Story.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Khar Calender June Story.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Story_thumb.webp"
+        "file": "Khar Calender June Story.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Story_thumb.webp"
       },
       {
-        "id": "6fee44275a81479be1272953c3c4e5c6",
+        "id": "e850099eb4e685146f23b5e29c7316b2",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Cover.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "Khar Calender June Cover.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Cover_thumb.webp"
+        "file": "Khar Calender June Cover.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp"
   },
   {
-    "id": "9a02acdf6b94e7b25ee1ae9bdf5f88c8",
+    "id": "db7c08e394ba682c6c82d31de7782efe",
     "title": "Khar",
     "category": "Event Calendars",
     "folder": "02_Event_Calendars",
@@ -1052,26 +1052,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Comprehensive monthly venue calendar programming layout for KharSOCIAL Calendar. Structured multi-week event schedules with seamless brand consistency.",
-    "tech": "InDesign, Illustrator, Photoshop",
-    "media": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post.webp",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "Photoshop, InDesign",
+    "media": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "9a02acdf6b94e7b25ee1ae9bdf5f88c8",
+        "id": "db7c08e394ba682c6c82d31de7782efe",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "Khar Social_March _Calendar_Post.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp"
+        "file": "Khar Social_March _Calendar_Post.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp"
   },
   {
-    "id": "e6294f3ffafbd56d9f72ecd589c59b92",
+    "id": "f3a4d96095983a4f7dbe2d5ec5912e62",
     "title": "Khar",
     "category": "Event Calendars",
     "folder": "02_Event_Calendars",
@@ -1079,26 +1079,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Weekly venue programming story carousel (9:16) with clear daily artist rosters and synchronized calendar typography for mobile viewing.",
-    "tech": "Photoshop, Illustrator, After Effects",
-    "media": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story.webp",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "Photoshop, InDesign",
+    "media": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story.webp",
     "type": "image",
     "variants": [
       {
-        "id": "e6294f3ffafbd56d9f72ecd589c59b92",
+        "id": "f3a4d96095983a4f7dbe2d5ec5912e62",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Khar Social_March _Calendar_Story.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp"
+        "file": "Khar Social_March _Calendar_Story.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp"
   },
   {
-    "id": "e4febf41f386b5362634076381445f4c",
+    "id": "0c87dc712069e87b628c7e19fe450d3b",
     "title": "Khar",
     "category": "Event Calendars",
     "folder": "02_Event_Calendars",
@@ -1106,44 +1106,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "KharSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Weekly venue programming story carousel (9:16) with clear daily artist rosters and synchronized calendar typography for mobile viewing.",
-    "tech": "Photoshop, Illustrator, After Effects",
-    "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story.webp",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "Photoshop, InDesign",
+    "media": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story.webp",
     "type": "image",
     "variants": [
       {
-        "id": "e4febf41f386b5362634076381445f4c",
+        "id": "0c87dc712069e87b628c7e19fe450d3b",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "khar Calender WEEKS Story.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp"
+        "file": "khar Calender WEEKS Story.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp"
       },
       {
-        "id": "38472a54a92b1542ef4f9e5dfc724e01",
+        "id": "7fcbb0ab9d5f908d1e64ac02e6e78cb2",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender COver.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_May/khar Calender COver.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "khar Calender COver.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender COver_thumb.webp"
+        "file": "khar Calender COver.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender COver_thumb.webp"
       },
       {
-        "id": "c0307d9c7058344c31162879c7d09a88",
+        "id": "7bc81cb8861fd2d48d4b56d53f32a216",
         "label": "Sunboard Print Spread",
-        "media": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Sunboard.webp",
+        "media": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Sunboard.webp",
         "type": "image",
         "ratio": "Print Sunboard",
-        "file": "khar Calender WEEKS Sunboard.png",
-        "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Sunboard_thumb.webp"
+        "file": "khar Calender WEEKS Sunboard.webp",
+        "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Sunboard_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp"
   },
   {
-    "id": "c03c18475b48a002d14f57d799b5eb4a",
+    "id": "fd42fe83cd328a823ecae5c690426a35",
     "title": "Image 983",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1151,26 +1151,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-983.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-983.webp",
     "type": "image",
     "variants": [
       {
-        "id": "c03c18475b48a002d14f57d799b5eb4a",
+        "id": "fd42fe83cd328a823ecae5c690426a35",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-983.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-983.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-983.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp"
+        "file": "Image-983.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp"
   },
   {
-    "id": "e1b092af99f7863de463a4e0662083ce",
+    "id": "a132b90951a1fc7bcb2b550232ab1cf4",
     "title": "Image 880",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1178,26 +1178,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-880.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-880.webp",
     "type": "image",
     "variants": [
       {
-        "id": "e1b092af99f7863de463a4e0662083ce",
+        "id": "a132b90951a1fc7bcb2b550232ab1cf4",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-880.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-880.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-880.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp"
+        "file": "Image-880.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp"
   },
   {
-    "id": "2b58f4af989c037a52c71a7ac4c3d2f0",
+    "id": "05fea65c96922ee75201c440bcdcfdf2",
     "title": "Image 811",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1205,26 +1205,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-811.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-811.webp",
     "type": "image",
     "variants": [
       {
-        "id": "2b58f4af989c037a52c71a7ac4c3d2f0",
+        "id": "05fea65c96922ee75201c440bcdcfdf2",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-811.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-811.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-811.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp"
+        "file": "Image-811.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp"
   },
   {
-    "id": "db13d17e4219a2aef4679dc3ea433bef",
+    "id": "31695a53b7e6f75dbbee8f7c2fdb7d8a",
     "title": "Image 807",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1232,26 +1232,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-807.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-807.webp",
     "type": "image",
     "variants": [
       {
-        "id": "db13d17e4219a2aef4679dc3ea433bef",
+        "id": "31695a53b7e6f75dbbee8f7c2fdb7d8a",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-807.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-807.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-807.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp"
+        "file": "Image-807.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp"
   },
   {
-    "id": "3cabca475dc1973dd6952430e4d76a8a",
+    "id": "9a704e803a8cd04a295677bb559c8127",
     "title": "Image 658",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1259,26 +1259,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-658.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-658.webp",
     "type": "image",
     "variants": [
       {
-        "id": "3cabca475dc1973dd6952430e4d76a8a",
+        "id": "9a704e803a8cd04a295677bb559c8127",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-658.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-658.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-658.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp"
+        "file": "Image-658.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp"
   },
   {
-    "id": "b8fefe80892ff4e41c08adb9b3e04237",
+    "id": "e2ee2c55824624a745e8a6e8392afdc7",
     "title": "Image 563",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1286,26 +1286,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-563.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-563.webp",
     "type": "image",
     "variants": [
       {
-        "id": "b8fefe80892ff4e41c08adb9b3e04237",
+        "id": "e2ee2c55824624a745e8a6e8392afdc7",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-563.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-563.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-563.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp"
+        "file": "Image-563.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp"
   },
   {
-    "id": "1bebdac3032c7650bd6cbbbcfcfdd439",
+    "id": "e4feb65b80ea35dcb7129d47f664c4fc",
     "title": "Image 536",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1313,26 +1313,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-536.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-536.webp",
     "type": "image",
     "variants": [
       {
-        "id": "1bebdac3032c7650bd6cbbbcfcfdd439",
+        "id": "e4feb65b80ea35dcb7129d47f664c4fc",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-536.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-536.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-536.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp"
+        "file": "Image-536.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp"
   },
   {
-    "id": "a69174bc2a22529590ff69407f18218a",
+    "id": "d09442fe6199c2d80a7ab20dd35ca17f",
     "title": "Image 27",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1340,26 +1340,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-27.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-27.webp",
     "type": "image",
     "variants": [
       {
-        "id": "a69174bc2a22529590ff69407f18218a",
+        "id": "d09442fe6199c2d80a7ab20dd35ca17f",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-27.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-27.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-27.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp"
+        "file": "Image-27.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp"
   },
   {
-    "id": "6eb6ee57963240097ad1afd0a704d40f",
+    "id": "272ce08a761507d4f130bc12989ed672",
     "title": "Image 237",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1367,26 +1367,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "Hospitality Group",
     "year": "2025",
-    "strategy": "Premium venue hospitality collateral, lifestyle food photography curation, and menu visual design keeping brand identity crisp and sophisticated.",
-    "tech": "Photoshop, Lightroom, InDesign",
-    "media": "./02_Campaign_and_Promos/Hospitality/Image-237.webp",
+    "strategy": "Promotional visual assets and digital collateral for premium hospitality venues.",
+    "tech": "Photoshop, Lightroom, Premiere",
+    "media": "/02_Campaign_and_Promos/Hospitality/Image-237.webp",
     "type": "image",
     "variants": [
       {
-        "id": "6eb6ee57963240097ad1afd0a704d40f",
+        "id": "272ce08a761507d4f130bc12989ed672",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/Hospitality/Image-237.webp",
+        "media": "/02_Campaign_and_Promos/Hospitality/Image-237.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "Image-237.jpg",
-        "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp"
+        "file": "Image-237.webp",
+        "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp"
   },
   {
-    "id": "a8458ad9aec92c98a8dfb4a5bfcacbb8",
+    "id": "d47d4f14f10fca2c810f0a692e871d4a",
     "title": "Dop6Th",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1394,35 +1394,35 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "a8458ad9aec92c98a8dfb4a5bfcacbb8",
+        "id": "d47d4f14f10fca2c810f0a692e871d4a",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP6th Feb Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp"
+        "file": "DOP6th Feb Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp"
       },
       {
-        "id": "628bc1b58c7627b4921b4b5695089536",
+        "id": "a616d927bf7b810807bd8052746ac433",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP6th Feb Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Story_thumb.webp"
+        "file": "DOP6th Feb Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp"
   },
   {
-    "id": "c115efdc4089f9190a36caaaec856db1",
+    "id": "741138dcb1b163011eb1a0417aa2a383",
     "title": "Dop27Th",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1430,44 +1430,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "c115efdc4089f9190a36caaaec856db1",
+        "id": "741138dcb1b163011eb1a0417aa2a383",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP27th Feb Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp"
+        "file": "DOP27th Feb Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp"
       },
       {
-        "id": "59fabf6436c7969b6c4580f4fa4bf38b",
+        "id": "2002d424d9303da16678fc4c573594c2",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP27th Feb Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Story_thumb.webp"
+        "file": "DOP27th Feb Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Story_thumb.webp"
       },
       {
-        "id": "a6ea5c53d558c7ec2a69f4f8a4190e78",
+        "id": "947bceda89dc63d2f71ee6f6890903b0",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Cover.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP27th Feb Cover.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Cover_thumb.webp"
+        "file": "DOP27th Feb Cover.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp"
   },
   {
-    "id": "aaf856e4f72131e20289cbc629bc1310",
+    "id": "422fd766d49fc896ea46d9b4647c4b36",
     "title": "Dop20Th",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1475,44 +1475,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "aaf856e4f72131e20289cbc629bc1310",
+        "id": "422fd766d49fc896ea46d9b4647c4b36",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP20th Feb Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp"
+        "file": "DOP20th Feb Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp"
       },
       {
-        "id": "8f14283bd1c4be678ec587d9f23131b7",
+        "id": "570912f474f0b63c6dd1503b084aa350",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP20th Feb Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Story_thumb.webp"
+        "file": "DOP20th Feb Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Story_thumb.webp"
       },
       {
-        "id": "4860b85f921f69f171018a27735fb6b5",
+        "id": "b984f4b892f5117b0e4498e39cd847b1",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Cover.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP20th Feb Cover.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Cover_thumb.webp"
+        "file": "DOP20th Feb Cover.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp"
   },
   {
-    "id": "66ed6cb41f5a9cd35d1501b84a14cd36",
+    "id": "683a047133de4e40b78c5d02b411e06a",
     "title": "Dop13Th",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1520,26 +1520,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "66ed6cb41f5a9cd35d1501b84a14cd36",
+        "id": "683a047133de4e40b78c5d02b411e06a",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP13th Feb Post.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp"
+        "file": "DOP13th Feb Post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp"
   },
   {
-    "id": "f5ad00bcf69963a5aa12fb045a7accc5",
+    "id": "bca30bc9945b199f488e7bce1f3bc027",
     "title": "Dop V1",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1547,26 +1547,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1.webp",
     "type": "image",
     "variants": [
       {
-        "id": "f5ad00bcf69963a5aa12fb045a7accc5",
+        "id": "bca30bc9945b199f488e7bce1f3bc027",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1.webp",
+        "media": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Feb V1.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp"
+        "file": "DOP Feb V1.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp"
   },
   {
-    "id": "5755c41dd320f8498ac908c8d85b9dfc",
+    "id": "f38527085e28967e00401cbbe4a47407",
     "title": "Dop 4",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1574,44 +1574,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "5755c41dd320f8498ac908c8d85b9dfc",
+        "id": "f38527085e28967e00401cbbe4a47407",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "DOP Week 4 post.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp"
+        "file": "DOP Week 4 post.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp"
       },
       {
-        "id": "a2f55e82ae5a1306c0be4d97f4d215bc",
+        "id": "7b7b4882f378cfd1c0e4328bf0b55988",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 4 Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Story_thumb.webp"
+        "file": "DOP Week 4 Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Story_thumb.webp"
       },
       {
-        "id": "95ce6a01d151a034add436fdedd89cf2",
+        "id": "3225bf1541c5b70146f2042779ea499d",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Cover.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 4 Cover.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Cover_thumb.webp"
+        "file": "DOP Week 4 Cover.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 Cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp"
   },
   {
-    "id": "deac1c1051cba15863566dc5d2543544",
+    "id": "6a258cec065fe84312f9203017b46fd1",
     "title": "Dop 3",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1619,44 +1619,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3.webp",
     "type": "image",
     "variants": [
       {
-        "id": "deac1c1051cba15863566dc5d2543544",
+        "id": "6a258cec065fe84312f9203017b46fd1",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 3.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp"
+        "file": "DOP Week 3.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp"
       },
       {
-        "id": "9fdaa74d0c2fe2d6857de362db84df44",
+        "id": "753aa76c92d907d2c82bc1dcd8f1e523",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 3 Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 Story_thumb.webp"
+        "file": "DOP Week 3 Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 Story_thumb.webp"
       },
       {
-        "id": "9402dfc5f1c29066eb72d7c63060fcad",
+        "id": "f1f252c7664d987f6eb310fa6fa881d8",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 cover.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 3 cover.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 cover_thumb.webp"
+        "file": "DOP Week 3 cover.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3 cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp"
   },
   {
-    "id": "063bd7084b3a00501e0d10986e8a8e08",
+    "id": "16783ffd9a97a68240af0d2a206a6df9",
     "title": "Dop 2",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1664,44 +1664,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2.webp",
     "type": "image",
     "variants": [
       {
-        "id": "063bd7084b3a00501e0d10986e8a8e08",
+        "id": "16783ffd9a97a68240af0d2a206a6df9",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 2.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp"
+        "file": "DOP Week 2.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp"
       },
       {
-        "id": "c7079531ef2034f92aa41db962509bc6",
+        "id": "ad61d196759d6c98881e6c1464398d01",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 2 Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 Story_thumb.webp"
+        "file": "DOP Week 2 Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 Story_thumb.webp"
       },
       {
-        "id": "933911f0e3f9f5379ad16745bdff99eb",
+        "id": "58b090490d375bb95290b72b81259cb4",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 cover.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 2 cover.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 cover_thumb.webp"
+        "file": "DOP Week 2 cover.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2 cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp"
   },
   {
-    "id": "9ad4a5cadddd6e4aa254df2b841f82fb",
+    "id": "2b52a8b0db90239827d5551a621d49c5",
     "title": "Dop 1 V4",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1709,26 +1709,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4.webp",
     "type": "image",
     "variants": [
       {
-        "id": "9ad4a5cadddd6e4aa254df2b841f82fb",
+        "id": "2b52a8b0db90239827d5551a621d49c5",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1 v4.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp"
+        "file": "DOP Week 1 v4.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp"
   },
   {
-    "id": "350c186be1b8593e346cd67b2b180028",
+    "id": "50ea2f8e1a050b8f51a833bd121b9829",
     "title": "Dop 1 V3",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1736,26 +1736,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3.webp",
     "type": "image",
     "variants": [
       {
-        "id": "350c186be1b8593e346cd67b2b180028",
+        "id": "50ea2f8e1a050b8f51a833bd121b9829",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1 v3.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp"
+        "file": "DOP Week 1 v3.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp"
   },
   {
-    "id": "fc7e4ec9a116696252a71184fb3f4132",
+    "id": "5c8008976dcac9f9f5845fe4cc397f93",
     "title": "Dop 1 V2",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1763,26 +1763,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2.webp",
     "type": "image",
     "variants": [
       {
-        "id": "fc7e4ec9a116696252a71184fb3f4132",
+        "id": "5c8008976dcac9f9f5845fe4cc397f93",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1 v2.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp"
+        "file": "DOP Week 1 v2.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp"
   },
   {
-    "id": "722f435809f97d6048f7363e717299ec",
+    "id": "6302138b2bc7c2ca9c325f9432ae75a3",
     "title": "Dop 1",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1790,44 +1790,44 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1.webp",
     "type": "image",
     "variants": [
       {
-        "id": "722f435809f97d6048f7363e717299ec",
+        "id": "6302138b2bc7c2ca9c325f9432ae75a3",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP Week 1.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp"
+        "file": "DOP Week 1.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp"
       },
       {
-        "id": "103903035fc7307db2a6bfed318068a4",
+        "id": "a873b9862b5af138e5b74b0c2c741fd9",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP Week 1 Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Story_thumb.webp"
+        "file": "DOP Week 1 Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Story_thumb.webp"
       },
       {
-        "id": "87ab76fca2187845fb3afab53f5b6375",
+        "id": "f52183f70034d952c5c63b2eeecfe887",
         "label": "Cover Banner (16:9)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Cover.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Cover.webp",
         "type": "image",
         "ratio": "16:9 (Landscape)",
-        "file": "DOP Week 1 Cover.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Cover_thumb.webp"
+        "file": "DOP Week 1 Cover.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 Cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp"
   },
   {
-    "id": "48eed17764b975fda285efa0364c4fb7",
+    "id": "55b4f9f6acbeaeb3d41166910d2e55ec",
     "title": "Dop",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1835,32 +1835,32 @@
     "role": "Visual Strategist & Art Director",
     "client": "DOP Series",
     "year": "2025",
-    "strategy": "DOP Music Experience multi-channel campaign asset. Maintained strict brand cohesion across multi-format digital and print distribution.",
-    "tech": "Photoshop, Illustrator",
-    "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender.webp",
+    "strategy": "Multi-week campaign covers, calendars, and story assets for DOP music experiences.",
+    "tech": "Photoshop, After Effects",
+    "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender.webp",
     "type": "image",
     "variants": [
       {
-        "id": "48eed17764b975fda285efa0364c4fb7",
+        "id": "55b4f9f6acbeaeb3d41166910d2e55ec",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "DOP April Calender.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp"
+        "file": "DOP April Calender.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp"
       },
       {
-        "id": "9c9efa83a3e2193a411a1fa4c3933a35",
+        "id": "ac1976ae67c14a412a04619fa9c96def",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender Story.webp",
+        "media": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "DOP April Calender Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender Story_thumb.webp"
+        "file": "DOP April Calender Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp"
   },
   {
     "id": "3efe74a32cc682832ff47d43264f80bc",
@@ -1871,8 +1871,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_April/Cover April.mp4",
     "type": "video",
     "variants": [
@@ -1883,11 +1883,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Cover April.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/Cover April_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/Cover April_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/Cover April_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/Cover April_thumb.webp"
   },
   {
     "id": "f1df667c0ba9f9be5efbd0d0dba14fbf",
@@ -1898,8 +1898,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_May/Cover.mp4",
     "type": "video",
     "variants": [
@@ -1910,14 +1910,14 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Cover.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Cover_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Cover_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Cover_thumb.webp"
   },
   {
-    "id": "e6ab2eb3037f7cc5ef97900cf131bcb5",
+    "id": "71aba23950bfdc5f722bc34cdb5849dd",
     "title": "Coeus 500X750",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1925,26 +1925,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "COEUS",
     "year": "2025",
-    "strategy": "COEUS comprehensive brand identity & launch suite. Formatted bespoke geometric layouts across 1280x640 banners, 500x750 editorial prints, and social collateral.",
-    "tech": "Photoshop, Illustrator, InDesign",
-    "media": "./02_Campaign_and_Promos/COEUS/COEUS 500x750.webp",
+    "strategy": "Visual identity and branding system developed for COEUS, focusing on strategic minimalist aesthetics.",
+    "tech": "Photoshop, Illustrator",
+    "media": "/02_Campaign_and_Promos/COEUS/COEUS 500x750.webp",
     "type": "image",
     "variants": [
       {
-        "id": "e6ab2eb3037f7cc5ef97900cf131bcb5",
+        "id": "71aba23950bfdc5f722bc34cdb5849dd",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/COEUS/COEUS 500x750.webp",
+        "media": "/02_Campaign_and_Promos/COEUS/COEUS 500x750.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "COEUS 500x750.png",
-        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp"
+        "file": "COEUS 500x750.webp",
+        "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp"
   },
   {
-    "id": "2ceaed70bc0919b19f7f65d20bfa5ab7",
+    "id": "030c7757454e60e599a6ed68ce75d56d",
     "title": "Coeus 1280X640",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1952,26 +1952,26 @@
     "role": "Visual Strategist & Art Director",
     "client": "COEUS",
     "year": "2025",
-    "strategy": "COEUS comprehensive brand identity & launch suite. Formatted bespoke geometric layouts across 1280x640 banners, 500x750 editorial prints, and social collateral.",
-    "tech": "Photoshop, Illustrator, InDesign",
-    "media": "./02_Campaign_and_Promos/COEUS/COEUS 1280x640.webp",
+    "strategy": "Visual identity and branding system developed for COEUS, focusing on strategic minimalist aesthetics.",
+    "tech": "Photoshop, Illustrator",
+    "media": "/02_Campaign_and_Promos/COEUS/COEUS 1280x640.webp",
     "type": "image",
     "variants": [
       {
-        "id": "2ceaed70bc0919b19f7f65d20bfa5ab7",
+        "id": "030c7757454e60e599a6ed68ce75d56d",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/COEUS/COEUS 1280x640.webp",
+        "media": "/02_Campaign_and_Promos/COEUS/COEUS 1280x640.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "COEUS 1280x640.png",
-        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp"
+        "file": "COEUS 1280x640.webp",
+        "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp"
   },
   {
-    "id": "c9117967e08960b16220405dd6c26c82",
+    "id": "e1a31b0d34bdac8888417beb4675a6ed",
     "title": "Coeus",
     "category": "Campaigns & Promos",
     "folder": "02_Campaign_and_Promos",
@@ -1979,35 +1979,35 @@
     "role": "Visual Strategist & Art Director",
     "client": "COEUS",
     "year": "2025",
-    "strategy": "COEUS comprehensive brand identity & launch suite. Formatted bespoke geometric layouts across 1280x640 banners, 500x750 editorial prints, and social collateral.",
-    "tech": "Photoshop, Illustrator, InDesign",
-    "media": "./02_Campaign_and_Promos/COEUS/COEUS Finasl.webp",
+    "strategy": "Visual identity and branding system developed for COEUS, focusing on strategic minimalist aesthetics.",
+    "tech": "Photoshop, Illustrator",
+    "media": "/02_Campaign_and_Promos/COEUS/COEUS Finasl.webp",
     "type": "image",
     "variants": [
       {
-        "id": "c9117967e08960b16220405dd6c26c82",
+        "id": "e1a31b0d34bdac8888417beb4675a6ed",
         "label": "Main Deliverable",
-        "media": "./02_Campaign_and_Promos/COEUS/COEUS Finasl.webp",
+        "media": "/02_Campaign_and_Promos/COEUS/COEUS Finasl.webp",
         "type": "image",
         "ratio": "Primary Artwork",
-        "file": "COEUS Finasl.png",
-        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp"
+        "file": "COEUS Finasl.webp",
+        "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp"
       },
       {
-        "id": "a44d3f84842cbad833001932e0562966",
+        "id": "a2745a537957aa48ace4599e80455afd",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Campaign_and_Promos/COEUS/COEUS Story.webp",
+        "media": "/02_Campaign_and_Promos/COEUS/COEUS Story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "COEUS Story.png",
-        "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS Story_thumb.webp"
+        "file": "COEUS Story.webp",
+        "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp"
   },
   {
-    "id": "000c6c4d5b26d3812029d532f01a0e92",
+    "id": "6a9ad287ef9d2eede1eb63d3c75a0f88",
     "title": "Chemburd+Social Circuitx",
     "category": "Gig Posters",
     "folder": "01_Gig_Posters",
@@ -2015,23 +2015,23 @@
     "role": "Visual Strategist & Art Director",
     "client": "ChemburSOCIAL",
     "year": "2025",
-    "strategy": "Electronic music underground concept. Engineered circuit-board-inspired vector schematics and acid-tinted typographic hierarchies.",
+    "strategy": "High-contrast brutalist gig poster design created for premier nightlife venues.",
     "tech": "Photoshop, Illustrator",
-    "media": "./01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post.webp",
+    "media": "/01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post.webp",
     "type": "image",
     "variants": [
       {
-        "id": "000c6c4d5b26d3812029d532f01a0e92",
+        "id": "6a9ad287ef9d2eede1eb63d3c75a0f88",
         "label": "Feed Post (1:1 / 4:5)",
-        "media": "./01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post.webp",
+        "media": "/01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post.webp",
         "type": "image",
         "ratio": "1:1 (Square/Post)",
-        "file": "2025_March_ChemburD+SOCIAL_CircuitX_Post.png",
-        "thumbnail": "./01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp"
+        "file": "2025_March_ChemburD+SOCIAL_CircuitX_Post.webp",
+        "thumbnail": "/01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp"
   },
   {
     "id": "f4599fa7e13c657701845b78a98dc0d0",
@@ -2042,8 +2042,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Weekly venue programming story carousel (9:16) with clear daily artist rosters and synchronized calendar typography for mobile viewing.",
-    "tech": "Photoshop, Illustrator, After Effects",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_April/April Calender Story.mp4",
     "type": "video",
     "variants": [
@@ -2054,11 +2054,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "April Calender Story.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Calender Story_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Calender Story_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Calender Story_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Calender Story_thumb.webp"
   },
   {
     "id": "ea51ad9fc44cbc8aaca540503e59585b",
@@ -2069,8 +2069,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4.mp4",
     "type": "video",
     "variants": [
@@ -2081,11 +2081,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Anti Calender June Week 4.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_thumb.webp"
   },
   {
     "id": "647463684db5e0866f9b67f845fc461c",
@@ -2096,8 +2096,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3.mp4",
     "type": "video",
     "variants": [
@@ -2108,11 +2108,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Anti Calender June Week 3.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_thumb.webp"
   },
   {
     "id": "7d41cfef678ae816fcb35a1063d0d270",
@@ -2123,8 +2123,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2.mp4",
     "type": "video",
     "variants": [
@@ -2135,11 +2135,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Anti Calender June Week 2.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_thumb.webp"
   },
   {
     "id": "672d179d6e4b4e888ecd59f0e8658875",
@@ -2150,8 +2150,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1.mp4",
     "type": "video",
     "variants": [
@@ -2162,14 +2162,14 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Anti Calender June Week 1.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_thumb.webp"
   },
   {
-    "id": "9865636c4cebea4bde752901041b20ca",
+    "id": "a19e6632dc86c0eb50e7f1e3abc5d9a2",
     "title": "Anti",
     "category": "Event Calendars",
     "folder": "02_Event_Calendars",
@@ -2177,32 +2177,32 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Weekly venue programming story carousel (9:16) with clear daily artist rosters and synchronized calendar typography for mobile viewing.",
-    "tech": "Photoshop, Illustrator, After Effects",
-    "media": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June story.webp",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "Photoshop, InDesign",
+    "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June story.webp",
     "type": "image",
     "variants": [
       {
-        "id": "9865636c4cebea4bde752901041b20ca",
+        "id": "a19e6632dc86c0eb50e7f1e3abc5d9a2",
         "label": "Story / Reel (9:16)",
-        "media": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June story.webp",
+        "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June story.webp",
         "type": "image",
         "ratio": "9:16 (Vertical)",
-        "file": "Anti Calender June story.png",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp"
+        "file": "Anti Calender June story.webp",
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp"
       },
       {
-        "id": "81359b7c7fc4d4a02348565b4a6a7edb",
+        "id": "68689faf27d0788bb78a8325ee1a4a51",
         "label": "Sunboard Print Spread",
-        "media": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Sunboard.webp",
+        "media": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Sunboard.webp",
         "type": "image",
         "ratio": "Print Sunboard",
-        "file": "Anti Calender June Sunboard.png",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June Sunboard_thumb.webp"
+        "file": "Anti Calender June Sunboard.webp",
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Sunboard_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp"
   },
   {
     "id": "53ea232c4f027b95c162be46968298f5",
@@ -2213,8 +2213,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 5.mp4",
     "type": "video",
     "variants": [
@@ -2225,11 +2225,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "April Week 5.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 5_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 5_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 5_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 5_thumb.webp"
   },
   {
     "id": "38ec145014ac78e4a455f8fae8a3cf94",
@@ -2240,8 +2240,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_May/Week 5.mp4",
     "type": "video",
     "variants": [
@@ -2252,11 +2252,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Week 5.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 5_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 5_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 5_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 5_thumb.webp"
   },
   {
     "id": "5fb42693c00ce2c5e286c18a3dd45a5b",
@@ -2267,8 +2267,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 4.mp4",
     "type": "video",
     "variants": [
@@ -2279,11 +2279,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "April Week 4.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 4_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 4_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 4_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 4_thumb.webp"
   },
   {
     "id": "b0c714425eac23adaa640c64f0e249bd",
@@ -2294,8 +2294,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_May/Week 4.mp4",
     "type": "video",
     "variants": [
@@ -2306,11 +2306,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Week 4.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 4_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 4_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 4_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 4_thumb.webp"
   },
   {
     "id": "4e2384f9929c02421ea94faa0c686c87",
@@ -2321,8 +2321,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 3.mp4",
     "type": "video",
     "variants": [
@@ -2333,11 +2333,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "April Week 3.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 3_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 3_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 3_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 3_thumb.webp"
   },
   {
     "id": "5f308f727c8c2028f8e3a4cce05158d4",
@@ -2348,8 +2348,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_May/Week 3.mp4",
     "type": "video",
     "variants": [
@@ -2360,11 +2360,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Week 3.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 3_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 3_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 3_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 3_thumb.webp"
   },
   {
     "id": "0f7cdd3df13984f7550d56ce38ee62c5",
@@ -2375,8 +2375,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 2.mp4",
     "type": "video",
     "variants": [
@@ -2387,11 +2387,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "April Week 2.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 2_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 2_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 2_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 2_thumb.webp"
   },
   {
     "id": "48c4d8167de5ff952b83d346b254632a",
@@ -2402,8 +2402,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_May/Week 2.mp4",
     "type": "video",
     "variants": [
@@ -2414,11 +2414,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Week 2.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 2_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 2_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 2_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 2_thumb.webp"
   },
   {
     "id": "f6cfca48b3b9492ac96333d2533bf6a8",
@@ -2429,8 +2429,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_April/April Week 1.mp4",
     "type": "video",
     "variants": [
@@ -2441,11 +2441,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "April Week 1.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 1_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 1_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_April/April Week 1_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 1_thumb.webp"
   },
   {
     "id": "03515eb1878686b16813704d4427b692",
@@ -2456,8 +2456,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "AntiSOCIAL Calendar",
     "year": "2025",
-    "strategy": "Monthly venue calendar 60fps kinetic motion teaser. Blends dynamic month overview transitions with rhythmic music cues for social hype.",
-    "tech": "After Effects, Premiere Pro, Photoshop",
+    "strategy": "Monthly event programming calendars, teaser animations, and print sunboard schedules.",
+    "tech": "After Effects, Photoshop, InDesign",
     "media": "/02_Event_Calendars/Anti_Calendar_May/Week 1.mp4",
     "type": "video",
     "variants": [
@@ -2468,11 +2468,11 @@
         "type": "video",
         "ratio": "9:16 (Video)",
         "file": "Week 1.mp4",
-        "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 1_thumb.webp"
+        "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 1_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "./02_Event_Calendars/Anti_Calendar_May/Week 1_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 1_thumb.webp"
   },
   {
     "id": "f6fad1f945bb3b33e0b59eb5a0459675",
@@ -2483,8 +2483,8 @@
     "role": "Visual Strategist & Art Director",
     "client": "F.Gheewala KSA",
     "year": "2023",
-    "strategy": "Extensive 57-page corporate profile and publication design. Structured complex enterprise data grids, brand guidelines, infographics, and international recruitment systems.",
-    "tech": "InDesign, Illustrator, Photoshop, Acrobat Pro",
+    "strategy": "Comprehensive corporate profile and print-ready multi-page brochure system.",
+    "tech": "InDesign, Illustrator",
     "media": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf",
     "type": "pdf",
     "variants": [

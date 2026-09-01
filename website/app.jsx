@@ -2836,14 +2836,20 @@ function App() {
         return './' + clean;
       };
 
-      const normalized = data.map((p) => ({
-        ...p,
-        media: resolveMedia(p.media),
-        variants: (p.variants || []).map((v) => ({
-          ...v,
-          media: resolveMedia(v.media)
-        }))
-      }));
+      const normalized = data
+        .filter((p) => !p.media?.includes('_thumb'))
+        .map((p) => ({
+          ...p,
+          media: resolveMedia(p.media),
+          thumbnail: resolveMedia(p.thumbnail || p.media),
+          variants: (p.variants || [])
+            .filter((v) => !v.media?.includes('_thumb'))
+            .map((v) => ({
+              ...v,
+              media: resolveMedia(v.media),
+              thumbnail: resolveMedia(v.thumbnail || v.media)
+            }))
+        }));
 
       setProjects(normalized);
     } catch (err) {
