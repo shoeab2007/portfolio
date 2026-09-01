@@ -622,25 +622,36 @@ function ScrollRevealWrapper({ children, index = 0, className = "" }) {
 }
 
 // -------------------------------------------------------------
-// 5.4 Vimeo Video Integration Helper & Player
+// 5.4 Vimeo Video & Showcase Integration Helper & Player
 // -------------------------------------------------------------
 function parseVimeoId(url) {
   if (!url || typeof url !== 'string') return null;
   const trimmed = url.trim();
-  if (/^\d{6,12}$/.test(trimmed)) return trimmed;
+  if (trimmed.includes('showcase/')) {
+    const sMatch = trimmed.match(/showcase\/(\d+)/);
+    return sMatch ? { type: 'showcase', id: sMatch[1] } : null;
+  }
+  if (/^\d{6,12}$/.test(trimmed)) return { type: 'video', id: trimmed };
   const match = trimmed.match(/(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)(\d+)/);
-  return match ? match[1] : null;
+  return match ? { type: 'video', id: match[1] } : null;
 }
 
-function VimeoEmbed({ vimeoId, autoplay = true, loop = true, muted = false, className = '' }) {
-  if (!vimeoId) return null;
-  const embedUrl = `https://player.vimeo.com/video/${vimeoId}?autoplay=${autoplay ? 1 : 0}&loop=${loop ? 1 : 0}&muted=${muted ? 1 : 0}&autopause=0&title=0&byline=0&portrait=0&dnt=1`;
+function VimeoEmbed({ vimeoId = '12389928', isShowcase = false, autoplay = true, loop = true, muted = false, className = '' }) {
+  let embedUrl = '';
+  if (isShowcase || (typeof vimeoId === 'string' && (vimeoId.includes('showcase') || vimeoId === '12389928')) || (typeof vimeoId === 'object' && vimeoId?.type === 'showcase')) {
+    const sId = typeof vimeoId === 'object' ? vimeoId.id : (vimeoId.includes('showcase') ? (vimeoId.match(/showcase\/(\d+)/)?.[1] || '12389928') : vimeoId);
+    embedUrl = `https://vimeo.com/showcase/${sId}/embed2`;
+  } else {
+    const rawId = typeof vimeoId === 'object' ? vimeoId.id : vimeoId;
+    embedUrl = `https://player.vimeo.com/video/${rawId}?autoplay=${autoplay ? 1 : 0}&loop=${loop ? 1 : 0}&muted=${muted ? 1 : 0}&autopause=0&title=0&byline=0&portrait=0&dnt=1`;
+  }
+
   return (
-    <div className={`relative w-full h-full min-h-[340px] max-h-[580px] flex items-center justify-center bg-black overflow-hidden rounded-xl ${className}`}>
+    <div className={`relative w-full h-full min-h-[350px] max-h-[580px] flex items-center justify-center bg-black overflow-hidden rounded-xl ${className}`}>
       <iframe
         src={embedUrl}
-        className="w-full h-full min-h-[340px] max-h-[560px] border-0 rounded-xl"
-        allow="autoplay; fullscreen; picture-in-picture"
+        className="w-full h-full min-h-[350px] max-h-[560px] border-0 rounded-xl"
+        allow="autoplay; fullscreen; picture-in-picture; gyroscope; accelerometer; clipboard-write; encrypted-media; web-share"
         allowFullScreen
         title="Vimeo Player"
       />
@@ -963,6 +974,44 @@ function BentoProjectsGrid({
             >
               RESET ALL FILTERS
             </button>
+          </div>
+        )}
+
+        {/* Vimeo Motion Showcase Cinema Stage */}
+        {activeFilter === 'video' && (
+          <div className="mb-10 p-4 sm:p-6 bg-darkcard/90 border border-cyan-400/30 rounded-2xl shadow-[0_0_35px_rgba(0,240,255,0.15)] space-y-4 animate-fade-in">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
+              <div className="flex items-center gap-2.5 font-mono text-xs text-cyan-400 font-bold uppercase">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
+                <span>OFFICIAL VIMEO MOTION REEL SHOWCASE</span>
+              </div>
+              <a
+                href="https://vimeo.com/showcase/12389928"
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="VIMEO"
+                className="font-mono text-[11px] text-white/70 hover:text-cyan-400 flex items-center gap-1 uppercase transition-colors"
+              >
+                <span>OPEN ON VIMEO.COM</span>
+                <i data-lucide="arrow-up-right" className="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            {/* Vimeo Responsive Showcase Embed */}
+            <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-white/15 shadow-2xl bg-black">
+              <div className="relative w-full aspect-[4/5] sm:aspect-[16/10] max-h-[540px]">
+                <iframe
+                  src="https://vimeo.com/showcase/12389928/embed2"
+                  className="w-full h-full border-0"
+                  allow="autoplay; fullscreen; picture-in-picture; gyroscope; accelerometer; clipboard-write; encrypted-media; web-share"
+                  allowFullScreen
+                  title="Shoeab Ahmed Vimeo Motion Showcase"
+                />
+              </div>
+            </div>
+            <p className="text-center font-mono text-[11px] text-white/50 uppercase">
+              Stream all motion posters, gig promos, and video teasers in high-definition HD.
+            </p>
           </div>
         )}
 
