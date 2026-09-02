@@ -2437,13 +2437,15 @@ function AboutSection() {
 
             {/* Featured Enterprise Credential Spotlight Banner */}
             <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-blue-950/40 via-darkcard to-darkcard border border-blue-400/40 space-y-2.5 relative overflow-hidden shadow-[0_0_25px_rgba(59,130,246,0.12)]">
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
                 <div className="flex items-center gap-2 font-mono text-[10px] text-blue-400 font-bold uppercase tracking-wider">
                   <i data-lucide="shield-check" className="w-3.5 h-3.5 text-blue-400"></i>
                   <span>FEATURED ENTERPRISE CREDENTIAL</span>
                 </div>
-                <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-blue-400/15 border border-blue-400/40 text-blue-300 font-bold uppercase tracking-wider">
-                  18-MONTH ENGAGEMENT
+                <span className="font-mono text-[9px] px-2.5 py-0.5 rounded bg-blue-400/15 border border-blue-400/40 text-blue-300 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="text-white/80">2022 — 2023</span>
+                  <span className="text-blue-400/50">•</span>
+                  <span>18-MONTH ENGAGEMENT</span>
                 </span>
               </div>
               <h4 className="font-sans font-black text-base sm:text-lg text-white uppercase tracking-tight">
