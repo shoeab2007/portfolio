@@ -343,9 +343,6 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
             className="text-white/80 hover:text-accent transition-colors flex items-center gap-1.5 group"
           >
             <span className="text-accent/60 group-hover:text-accent">//01</span> ARCHIVE
-            <span className="text-[10px] px-1.5 py-0.2 bg-white/10 group-hover:bg-accent group-hover:text-black rounded transition-colors">
-              {totalCount}
-            </span>
           </button>
           <button
             onClick={() => scrollTo('playground')}
@@ -435,9 +432,6 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
               className="text-left text-2xl font-black uppercase text-white hover:text-accent border-b border-white/10 pb-4 flex items-center justify-between"
             >
               <span>01 // ARCHIVE</span>
-              <span className="font-mono text-sm text-accent bg-accent/10 px-2 py-0.5 rounded">
-                {totalCount} ITEMS
-              </span>
             </button>
             <button
               onClick={() => scrollTo('playground')}
@@ -520,7 +514,7 @@ function HeroSection({ totalCount, onExplore }) {
         {/* Subtitle & Manifesto */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
           <p className="lg:col-span-8 font-mono text-sm sm:text-base md:text-lg text-white/80 uppercase border-l-2 border-accent pl-5 leading-relaxed">
-            Specializing in brand identity, social media design, photography, and video editing. Over <span className="text-accent font-bold">9+ years</span> of turning marketing goals into visuals that ship on time across <span className="text-accent font-bold">{totalCount} curated artworks</span>.
+            Specializing in brand identity, social media design, photography, and video editing. Over <span className="text-accent font-bold">9+ years</span> of turning marketing goals into visuals that ship on time across commercial campaigns, live music events, and brand rollouts.
           </p>
 
           {/* Action CTAs */}
@@ -713,31 +707,30 @@ function BentoProjectsGrid({
 
   const categories = useMemo(() => {
     return [
-      { id: 'all', label: 'ALL WORKS', count: projects.length },
-      { id: 'Gig Posters', label: 'GIG POSTERS', count: projects.filter((p) => p.category === 'Gig Posters').length },
-      { id: 'Campaigns & Promos', label: 'CAMPAIGNS', count: projects.filter((p) => p.category === 'Campaigns & Promos').length },
-      { id: 'Event Calendars', label: 'CALENDARS', count: projects.filter((p) => p.category === 'Event Calendars').length },
-      { id: 'video', label: 'MOTION / VIDEO', count: projects.filter((p) => p.type === 'video').length },
-      { id: 'Brochures', label: 'BROCHURES', count: projects.filter((p) => p.category === 'Brochures').length },
-      { id: 'custom', label: 'CUSTOM UPLOADS', count: projects.filter((p) => !p.is_default).length }
+      { id: 'all', label: 'ALL WORKS' },
+      { id: 'Gig Posters', label: 'GIG POSTERS' },
+      { id: 'Campaigns & Promos', label: 'CAMPAIGNS' },
+      { id: 'Event Calendars', label: 'CALENDARS' },
+      { id: 'video', label: 'MOTION / VIDEO' },
+      { id: 'Brochures', label: 'BROCHURES' },
+      { id: 'custom', label: 'CUSTOM UPLOADS' }
     ];
-  }, [projects]);
+  }, []);
 
   // Subcategories for Event Calendars
   const calendarSubcategories = useMemo(() => {
-    const calList = projects.filter((p) => p.category === 'Event Calendars');
     return [
-      { id: 'all', label: 'ALL CALENDARS', count: calList.length },
-      { id: 'anti_all', label: 'antiSOCIAL (19)', count: calList.filter((p) => p.client && p.client.toLowerCase().includes('anti')).length },
-      { id: 'khar_all', label: 'KharSOCIAL (9)', count: calList.filter((p) => p.client && p.client.toLowerCase().includes('khar')).length },
-      { id: 'Anti_Calendar_April', label: 'ANTI • APRIL (7)', count: calList.filter((p) => p.subfolder === 'Anti_Calendar_April').length },
-      { id: 'Anti_Calendar_May', label: 'ANTI • MAY (6)', count: calList.filter((p) => p.subfolder === 'Anti_Calendar_May').length },
-      { id: 'Anti_Calendar_June', label: 'ANTI • JUNE (6)', count: calList.filter((p) => p.subfolder === 'Anti_Calendar_June').length },
-      { id: 'Khar_Calendar_May', label: 'KHAR • MAY (4)', count: calList.filter((p) => p.subfolder === 'Khar_Calendar_May').length },
-      { id: 'Khar_Calendar_June', label: 'KHAR • JUNE (3)', count: calList.filter((p) => p.subfolder === 'Khar_Calendar_June').length },
-      { id: 'Khar_Calendar_March25', label: 'KHAR • MAR 25 (2)', count: calList.filter((p) => p.subfolder === 'Khar_Calendar_March25').length }
+      { id: 'all', label: 'ALL CALENDARS' },
+      { id: 'anti_all', label: 'antiSOCIAL' },
+      { id: 'khar_all', label: 'KharSOCIAL' },
+      { id: 'Anti_Calendar_April', label: 'ANTI • APRIL' },
+      { id: 'Anti_Calendar_May', label: 'ANTI • MAY' },
+      { id: 'Anti_Calendar_June', label: 'ANTI • JUNE' },
+      { id: 'Khar_Calendar_May', label: 'KHAR • MAY' },
+      { id: 'Khar_Calendar_June', label: 'KHAR • JUNE' },
+      { id: 'Khar_Calendar_March25', label: 'KHAR • MAR 25' }
     ];
-  }, [projects]);
+  }, []);
 
   // Subcategories for Campaigns & Promos
   const campaignSubcategories = useMemo(() => {
@@ -796,11 +789,7 @@ function BentoProjectsGrid({
             <div className="flex items-center gap-2 font-mono text-xs text-accent uppercase mb-2">
               <span>// ARCHIVE INDEX</span>
               <span>•</span>
-              <span>
-                {activeFilter === 'all'
-                  ? `${projects.length} CURATED DELIVERABLES`
-                  : `FILTERED: ${filteredProjects.length} OF ${projects.length} TOTAL DELIVERABLES`}
-              </span>
+              <span>COMMERCIAL &amp; EVENT DELIVERABLES</span>
             </div>
             <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-normal text-white font-sans flex items-baseline gap-3.5 flex-wrap">
               <span className="tracking-tight">FEATURED</span> <SvgOutlinedWord text="WORKS" />
@@ -872,13 +861,6 @@ function BentoProjectsGrid({
               }`}
             >
               <span>{cat.label}</span>
-              <span
-                className={`text-[10px] px-1.5 py-0.5 rounded ${
-                  activeFilter === cat.id ? 'bg-black text-accent' : 'bg-white/10 text-white/60'
-                }`}
-              >
-                {cat.count}
-              </span>
             </button>
           ))}
         </div>
@@ -1215,7 +1197,7 @@ function BentoProjectsGrid({
               data-cursor="LOAD"
               className="px-8 py-4 bg-darkcard hover:bg-accent text-white hover:text-black border border-white/20 hover:border-accent font-mono text-xs font-black uppercase rounded transition-all duration-300 shadow-md inline-flex items-center gap-2"
             >
-              <span>LOAD MORE ARTIFACTS ({filteredProjects.length - visibleCount} REMAINING)</span>
+              <span>LOAD MORE DELIVERABLES</span>
               <i data-lucide="chevron-down" className="w-4 h-4"></i>
             </button>
           </div>
