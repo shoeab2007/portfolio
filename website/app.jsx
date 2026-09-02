@@ -1364,6 +1364,16 @@ const CASE_STUDIES = {
     ],
     decisions: 'Built a systematic QC checklist for every deliverable: color profile verification, bleed/trim validation, font outline checks, and resolution audits. Developed template-based workflows to accelerate localization without compromising consistency.',
     outcome: '18-month engagement managing artwork compliance across a major global FMCG portfolio. Maintained zero rejection rate on pre-press QC, proving enterprise-grade production discipline.'
+  },
+  'F. Gheewala': {
+    brief: 'Corporate company profile brochure and executive recruitment presentation for Saudi Arabia & GCC market expansion.',
+    constraints: [
+      'Corporate identity compliance with established GCC recruitment authority',
+      'Multi-page editorial structure: company overview, services, executive team, accreditations',
+      'High-resolution print readiness for offset printing plus digital distribution'
+    ],
+    decisions: 'Clean corporate layout with bold blue and gold corporate accents, custom iconography for service offerings, and bilingual typography structure ensuring clarity for international GCC enterprise clients.',
+    outcome: 'Complete official corporate profile deployed across Riyadh and Dammam branches, cementing F. Gheewala\'s commercial standing across Saudi Arabia.'
   }
 };
 
@@ -1523,17 +1533,58 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
                 }
                 if (isPdf) {
                   return (
-                    <div className="p-8 text-center space-y-4">
-                      <i data-lucide="file-text" className="w-16 h-16 mx-auto text-accent"></i>
-                      <h4 className="font-bold text-white uppercase">{project.title}</h4>
-                      <a
-                        href={currentItem.media}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-black font-mono font-bold text-xs uppercase rounded"
-                      >
-                        <i data-lucide="download" className="w-4 h-4"></i> OPEN PDF PROFILE
-                      </a>
+                    <div className="w-full h-full min-h-[460px] flex flex-col items-center justify-between p-6 bg-darkcard/80 rounded-xl relative">
+                      {/* Document Header */}
+                      <div className="w-full flex items-center justify-between border-b border-white/10 pb-3">
+                        <div className="flex items-center gap-2 font-mono text-xs text-accent font-bold uppercase">
+                          <i data-lucide="file-text" className="w-4 h-4 text-accent"></i>
+                          <span>OFFICIAL CORPORATE BROCHURE</span>
+                        </div>
+                        <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-white/10 border border-white/15 text-white/80 uppercase">
+                          PDF • A4 MULTI-PAGE
+                        </span>
+                      </div>
+
+                      {/* Visual Document Cover Preview */}
+                      <div className="relative my-4 flex-grow flex items-center justify-center max-h-[360px] w-full group/pdf">
+                        <img
+                          src={currentItem.thumbnail || "/04_Brochures/F.Gheewala_Cover_thumb.webp"}
+                          alt={project.title}
+                          className="max-h-[340px] object-contain rounded-lg shadow-2xl border border-white/20 transition-transform duration-300 group-hover/pdf:scale-[1.02]"
+                        />
+                        <a
+                          href={currentItem.media}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="absolute inset-0 bg-black/40 opacity-0 group-hover/pdf:opacity-100 transition-opacity rounded-lg flex items-center justify-center backdrop-blur-sm"
+                        >
+                          <span className="px-4 py-2 rounded-lg bg-accent text-black font-mono text-xs font-black uppercase flex items-center gap-2 shadow-xl">
+                            <i data-lucide="external-link" className="w-4 h-4"></i>
+                            <span>VIEW COMPLETE PDF (NEW TAB)</span>
+                          </span>
+                        </a>
+                      </div>
+
+                      {/* Action Controls */}
+                      <div className="w-full flex flex-col sm:flex-row items-center gap-3 pt-3 border-t border-white/10">
+                        <a
+                          href={currentItem.media}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex-1 w-full bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,255,102,0.3)] text-center font-bold"
+                        >
+                          <i data-lucide="eye" className="w-4 h-4"></i>
+                          <span>OPEN PDF DOCUMENT</span>
+                        </a>
+                        <a
+                          href={currentItem.media}
+                          download="F.Gheewala_KSA_Company_Profile.pdf"
+                          className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold uppercase py-3 px-4 rounded-lg border border-white/20 transition-all flex items-center justify-center gap-2 text-center"
+                        >
+                          <i data-lucide="download" className="w-4 h-4"></i>
+                          <span>DOWNLOAD</span>
+                        </a>
+                      </div>
                     </div>
                   );
                 }

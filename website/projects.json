@@ -2526,29 +2526,38 @@
   },
   {
     "id": "f6fad1f945bb3b33e0b59eb5a0459675",
-    "title": "F.Gheewala Ksa Company Profile Profile",
+    "title": "F.Gheewala KSA Corporate Profile",
     "category": "Brochures",
     "folder": "04_Brochures",
     "subfolder": "",
     "role": "Visual Strategist & Art Director",
-    "client": "F.Gheewala KSA",
+    "client": "F. Gheewala Human Resources",
     "year": "2023",
-    "strategy": "Comprehensive corporate profile and print-ready multi-page brochure system.",
-    "tech": "InDesign, Illustrator",
-    "media": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf",
-    "type": "pdf",
+    "strategy": "Comprehensive multi-page international corporate company profile brochure, corporate layout systems, and recruitment documentation design for GCC expansion.",
+    "tech": "InDesign, Illustrator, Photoshop",
+    "media": "/04_Brochures/F.Gheewala_Cover.webp",
+    "type": "image",
     "variants": [
       {
-        "id": "f6fad1f945bb3b33e0b59eb5a0459675",
-        "label": "Corporate Profile (PDF)",
+        "id": "f6fad1f945bb3b33e0b59eb5a0459675-cover",
+        "label": "Brochure Cover (A4)",
+        "media": "/04_Brochures/F.Gheewala_Cover.webp",
+        "type": "image",
+        "ratio": "A4 Portrait",
+        "file": "F.Gheewala_Cover.webp",
+        "thumbnail": "/04_Brochures/F.Gheewala_Cover_thumb.webp"
+      },
+      {
+        "id": "f6fad1f945bb3b33e0b59eb5a0459675-pdf",
+        "label": "Complete PDF Document",
         "media": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf",
         "type": "pdf",
         "ratio": "PDF Document",
         "file": "F.Gheewala KSA Company Profile 2023.pdf",
-        "thumbnail": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf"
+        "thumbnail": "/04_Brochures/F.Gheewala_Cover_thumb.webp"
       }
     ],
     "is_default": true,
-    "thumbnail": "/04_Brochures/F.Gheewala KSA Company Profile 2023.pdf"
+    "thumbnail": "/04_Brochures/F.Gheewala_Cover_thumb.webp"
   }
 ]
