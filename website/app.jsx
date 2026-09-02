@@ -1959,8 +1959,10 @@ function AboutSection() {
     {
       role: 'Artwork Production Specialist',
       company: 'Unilever Pvt. Ltd. (Remote)',
+      badge: 'ENTERPRISE FMCG',
+      featured: true,
       period: 'FEB 2022 — AUG 2023',
-      desc: 'Managed production of print and digital artwork, maintaining brand and quality consistency across a major FMCG portfolio. Prepared and optimized files for print and digital platforms, troubleshooting production issues.'
+      desc: 'Managed high-volume print and digital artwork compliance across Unilever\'s major global FMCG portfolio. Enforced strict multi-market brand guidelines, packaging color accuracy, and pre-press production standards.'
     },
     {
       role: 'Graphic Designer',
@@ -2043,12 +2045,15 @@ function AboutSection() {
             {/* Education Box */}
             <div className="p-4 bg-darkcard border border-white/10 rounded-xl space-y-3">
               <span className="font-mono text-[10px] text-accent uppercase font-bold tracking-wider flex items-center gap-1.5">
-                <i data-lucide="graduation-cap" className="w-3.5 h-3.5"></i> EDUCATION
+                <i data-lucide="graduation-cap" className="w-3.5 h-3.5"></i> EDUCATION &amp; FOUNDATIONS
               </span>
-              <div className="space-y-2 divide-y divide-white/10 font-mono text-xs">
+              <div className="space-y-3 divide-y divide-white/10 font-mono text-xs">
                 <div className="pt-1">
                   <span className="text-white font-bold uppercase block">Maharashtra College of Arts, Commerce &amp; Science</span>
-                  <span className="text-white/50 text-[11px] uppercase">B.Sc. Computer Science — Undergraduate (UG) • 2017</span>
+                  <span className="text-white/50 text-[11px] uppercase block">B.Sc. Computer Science • Graduated 2017</span>
+                  <span className="text-accent/80 text-[10px] uppercase block pt-1 leading-relaxed">
+                    • 2011–2017: Pursued degree concurrently while executing commercial graphic design, signage, and print production contracts.
+                  </span>
                 </div>
                 <div className="pt-2">
                   <span className="text-white font-bold uppercase block">M.H. Saboo Siddik Junior College</span>
@@ -2068,13 +2073,35 @@ function AboutSection() {
               <span className="font-mono text-[10px] text-white/40 uppercase">2011 — PRESENT</span>
             </div>
 
+            {/* Featured Enterprise Credential Spotlight Banner */}
+            <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-blue-950/40 via-darkcard to-darkcard border border-blue-400/40 space-y-2.5 relative overflow-hidden shadow-[0_0_25px_rgba(59,130,246,0.12)]">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 font-mono text-[10px] text-blue-400 font-bold uppercase tracking-wider">
+                  <i data-lucide="shield-check" className="w-3.5 h-3.5 text-blue-400"></i>
+                  <span>FEATURED ENTERPRISE CREDENTIAL</span>
+                </div>
+                <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-blue-400/15 border border-blue-400/40 text-blue-300 font-bold uppercase tracking-wider">
+                  18-MONTH ENGAGEMENT
+                </span>
+              </div>
+              <h4 className="font-sans font-black text-base sm:text-lg text-white uppercase tracking-tight">
+                Artwork Production Specialist // Unilever Pvt. Ltd.
+              </h4>
+              <p className="font-mono text-xs text-white/70 uppercase leading-relaxed">
+                Managed print &amp; digital artwork compliance across Unilever’s global FMCG portfolio. Demonstrates the technical discipline to execute cleanly and reliably inside enterprise brand guidelines with zero margin for error.
+              </p>
+            </div>
+
             <div className="space-y-6 divide-y divide-white/10">
               {experiences.map((exp, idx) => (
-                <div key={idx} className={`${idx !== 0 ? 'pt-6' : ''} space-y-2 group`}>
+                <div key={idx} className={`${idx !== 0 ? 'pt-6' : ''} space-y-2 group ${exp.featured ? 'border-l-2 border-blue-400/80 pl-4 -ml-4 py-2 bg-blue-950/10 rounded-r-lg' : ''}`}>
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <h4 className="font-black text-lg sm:text-xl text-white uppercase tracking-tight group-hover:text-accent transition-colors font-sans">
-                        {exp.role}
+                      <h4 className="font-black text-lg sm:text-xl text-white uppercase tracking-tight group-hover:text-accent transition-colors font-sans flex items-center gap-2">
+                        <span>{exp.role}</span>
+                        {exp.featured && (
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                        )}
                       </h4>
                       <div className="font-mono text-xs text-accent/90 uppercase font-bold flex items-center gap-2 mt-0.5">
                         <span>{exp.company}</span>
@@ -2086,6 +2113,8 @@ function AboutSection() {
                         <span className={`font-mono text-[9px] px-2 py-0.5 rounded font-bold uppercase tracking-wider ${
                           exp.badge === 'CONTRACT'
                             ? 'bg-amber-400/15 border border-amber-400/40 text-amber-300 shadow-[0_0_10px_rgba(251,191,36,0.2)]'
+                            : exp.badge === 'ENTERPRISE FMCG'
+                            ? 'bg-blue-400/15 border border-blue-400/40 text-blue-300 shadow-[0_0_10px_rgba(59,130,246,0.2)]'
                             : 'bg-cyan-400/15 border border-cyan-400/40 text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.2)]'
                         }`}>
                           {exp.badge}
