@@ -412,20 +412,6 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
             <span className="hidden sm:inline">{soundEnabled ? 'SFX ON' : 'MUTED'}</span>
           </button>
 
-          {/* Secure Admin Lock Trigger */}
-          <button
-            onClick={() => {
-              AudioController.play('pop');
-              onOpenUpload();
-            }}
-            data-cursor="ADMIN"
-            className="bg-white/10 hover:bg-accent text-white hover:text-black border border-white/20 hover:border-accent font-mono text-xs font-bold px-3 py-1.5 rounded transition-all duration-300 flex items-center gap-1.5 shadow-sm"
-            title="Admin Passkey Upload Access"
-          >
-            <i data-lucide="lock" className="w-3.5 h-3.5"></i>
-            <span className="hidden sm:inline">ADMIN</span>
-          </button>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => {
@@ -2686,7 +2672,7 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
 // -------------------------------------------------------------
 // 14. Footer Component
 // -------------------------------------------------------------
-function Footer() {
+function Footer({ onOpenUpload }) {
   const scrollToTop = () => {
     AudioController.play('click');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2696,7 +2682,16 @@ function Footer() {
     <footer className="border-t border-white/15 bg-black py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-white/50 uppercase">
         <div className="flex items-center gap-3">
-          <div className="w-2.5 h-2.5 rounded-sm bg-accent rotate-45" />
+          <div
+            onClick={() => {
+              if (onOpenUpload) {
+                AudioController.play('pop');
+                onOpenUpload();
+              }
+            }}
+            title="System Gateway"
+            className="w-2.5 h-2.5 rounded-sm bg-accent rotate-45 cursor-pointer hover:scale-125 transition-transform"
+          />
           <span className="font-bold text-white tracking-wider font-sans">
             SHOEAB AHMED // BRAND DESIGNER &amp; VISUAL STRATEGIST
           </span>
@@ -2730,6 +2725,29 @@ function App() {
   const [viewMode, setViewMode] = useState('bento');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [uploadOpen, setUploadOpen] = useState(false);
+
+  // Secret admin shortcut: Ctrl+Shift+A (or Cmd+Shift+A) or URL hash #admin
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault();
+        AudioController.play('pop');
+        setUploadOpen(true);
+      }
+    };
+    const handleHash = () => {
+      if (window.location.hash === '#admin') {
+        setUploadOpen(true);
+      }
+    };
+    handleHash();
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('hashchange', handleHash);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('hashchange', handleHash);
+    };
+  }, []);
 
   // Fetch projects database with relative path normalization for GitHub Pages / Custom Domains
   const loadProjects = useCallback(async () => {
@@ -2873,7 +2891,7 @@ function App() {
       />
 
       {/* Brutalist Footer */}
-      <Footer />
+      <Footer onOpenUpload={() => setUploadOpen(true)} />
     </div>
   );
 }
