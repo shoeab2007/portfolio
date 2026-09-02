@@ -2350,9 +2350,87 @@ function HeroSection({ totalCount, onExplore }) {
       </div>
     </section>
   );
+// Helper component to trigger smooth 60fps scroll animations on viewport entry
 }
 
-// Helper component to trigger smooth 60fps scroll animations on viewport entry
+// ─── Client & Venue Trust Strip ───────────────────────────────────────────────
+function ClientTrustStrip() {
+  const clients = [
+    { name: 'antiSOCIAL', type: 'venue' },
+    { name: 'KharSOCIAL', type: 'venue' },
+    { name: 'ChemburSOCIAL', type: 'venue' },
+    { name: 'MaladSOCIAL', type: 'venue' },
+    { name: 'Koregaon ParkSOCIAL', type: 'venue' },
+    { name: 'Unilever', type: 'enterprise' },
+    { name: 'VCK Brand Communications', type: 'enterprise' },
+    { name: 'Bin Meshleh Holdings', type: 'enterprise' },
+    { name: 'F. Gheewala HR', type: 'enterprise' },
+    { name: 'AlBuraq Venture', type: 'enterprise' },
+    { name: 'AFp.net', type: 'enterprise' },
+    { name: 'Snoop Technologies', type: 'enterprise' },
+    { name: 'Teknovance', type: 'enterprise' },
+    { name: 'COEUS', type: 'venue' },
+    { name: 'MOLO', type: 'venue' },
+  ];
+
+  // Double the list for seamless infinite scroll
+  const marqueeItems = [...clients, ...clients];
+
+  return (
+    <section className="py-6 border-t border-b border-white/10 bg-black/80 relative overflow-hidden select-none">
+      {/* Section Label */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="flex items-center gap-2 font-mono text-[10px] text-white/40 uppercase tracking-widest">
+          <i data-lucide="shield-check" className="w-3 h-3 text-accent/60"></i>
+          <span>CLIENTS &amp; VENUES DESIGNED FOR</span>
+          <span className="flex-1 border-t border-white/10 ml-2"></span>
+        </div>
+      </div>
+
+      {/* Infinite Scrolling Marquee */}
+      <div className="relative">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none" />
+
+        <div className="flex overflow-hidden">
+          <div
+            className="flex items-center gap-4 sm:gap-6 whitespace-nowrap"
+            style={{
+              animation: 'trustMarquee 45s linear infinite',
+            }}
+          >
+            {marqueeItems.map((client, idx) => (
+              <React.Fragment key={idx}>
+                <span
+                  className={`font-mono text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-1.5 rounded-md border transition-colors ${
+                    client.type === 'venue'
+                      ? 'text-accent/90 border-accent/20 bg-accent/5 hover:bg-accent/10 hover:border-accent/40'
+                      : 'text-blue-300/90 border-blue-400/20 bg-blue-400/5 hover:bg-blue-400/10 hover:border-blue-400/40'
+                  }`}
+                >
+                  {client.name}
+                </span>
+                {idx < marqueeItems.length - 1 && (
+                  <span className="w-1 h-1 rounded-full bg-white/20 flex-shrink-0" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Inject keyframes */}
+      <style>{`
+        @keyframes trustMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+    </section>
+  );
+}
 function ScrollRevealWrapper({ children, index = 0, className = "" }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
@@ -4668,6 +4746,8 @@ function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
         />
+
+        <ClientTrustStrip />
 
         <BentoProjectsGrid
           projects={projects}
