@@ -502,7 +502,7 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
 // -------------------------------------------------------------
 function HeroSection({ totalCount, onExplore }) {
   return (
-    <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] pt-28 pb-16 flex flex-col justify-between overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] pt-36 sm:pt-32 pb-16 flex flex-col justify-between overflow-hidden">
       {/* Background Cyber Grid Lines & Ambient Glow */}
       <div className="absolute inset-0 bg-cyber-grid bg-[size:48px_48px] opacity-25 pointer-events-none z-0" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
@@ -511,13 +511,13 @@ function HeroSection({ totalCount, onExplore }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-grow flex flex-col justify-center">
         {/* Availability Badge */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-darkcard border border-white/15 backdrop-blur-md">
-            <span className="relative flex h-2 w-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-darkcard border border-white/15 backdrop-blur-md max-w-full">
+            <span className="relative flex h-2 w-2 flex-shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            <span className="font-mono text-xs uppercase tracking-wider text-white/90">
-              AVAILABLE FOR Q2 / Q3 2026 PROJECTS • 9+ YEARS EXP
+            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-white/90">
+              OPEN FOR COMMISSIONS • 9+ YRS EXP
             </span>
           </div>
           <span className="hidden sm:inline-block font-mono text-xs text-white/40">
@@ -527,7 +527,7 @@ function HeroSection({ totalCount, onExplore }) {
 
         {/* Giant Kinetic Headline */}
         <div className="space-y-2 mb-8">
-          <h1 className="font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] uppercase tracking-normal text-white leading-[0.92] select-none flex flex-wrap items-baseline gap-x-5 sm:gap-x-7 gap-y-1">
+          <h1 className="font-black text-4xl sm:text-6xl md:text-8xl lg:text-[7.2rem] uppercase tracking-normal text-white leading-[0.95] select-none flex flex-wrap items-baseline gap-x-3 sm:gap-x-6 gap-y-1">
             <span className="tracking-tight">GRAPHIC</span> <SvgOutlinedWord text="DESIGNER" />
             <br className="w-full hidden sm:block" />
             <span className="text-accent tracking-tight">&amp; VISUAL</span> <span className="tracking-tight">STRATEGIST</span>
@@ -536,19 +536,19 @@ function HeroSection({ totalCount, onExplore }) {
 
         {/* Subtitle & Manifesto */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
-          <p className="lg:col-span-8 font-mono text-sm sm:text-base md:text-lg text-white/80 uppercase border-l-2 border-accent pl-5 leading-relaxed">
+          <p className="lg:col-span-8 font-mono text-[11px] sm:text-sm md:text-base text-white/85 uppercase border-l-2 border-accent pl-4 pr-3 leading-relaxed break-words">
             Specializing in brand identity, social media design, photography, and video editing. Over <span className="text-accent font-bold">9+ years</span> of turning marketing goals into visuals that ship on time across commercial campaigns, live music events, and brand rollouts.
           </p>
 
           {/* Action CTAs */}
-          <div className="lg:col-span-4 flex flex-wrap gap-3 items-center">
+          <div className="lg:col-span-4 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center w-full">
             <button
               onClick={() => {
                 AudioController.play('pop');
                 onExplore();
               }}
               data-cursor="EXPLORE"
-              className="flex-1 min-w-[170px] bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] flex items-center justify-center gap-2 group"
+              className="w-full sm:flex-1 bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] flex items-center justify-center gap-2 group text-center"
             >
               <span>EXPLORE ARCHIVE</span>
               <i data-lucide="arrow-down-right" className="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform"></i>
@@ -558,7 +558,7 @@ function HeroSection({ totalCount, onExplore }) {
               href="#contact"
               onClick={() => AudioController.play('click')}
               data-cursor="CONNECT"
-              className="flex-1 min-w-[140px] bg-darkcard hover:bg-white/10 text-white border border-white/20 font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all flex items-center justify-center gap-2 text-center"
+              className="w-full sm:flex-1 bg-darkcard hover:bg-white/10 text-white border border-white/20 font-mono text-xs font-black uppercase py-4 px-6 rounded transition-all flex items-center justify-center gap-2 text-center"
             >
               <span>GET IN TOUCH</span>
               <i data-lucide="mail" className="w-4 h-4"></i>
