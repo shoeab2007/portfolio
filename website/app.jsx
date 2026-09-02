@@ -1946,6 +1946,7 @@ function AboutSection() {
     {
       role: 'Graphic Designer',
       company: 'AFp.net',
+      badge: 'FREELANCE',
       period: 'FEB 2025 — MAR 2025',
       desc: 'Produced posters, social assets, and event tickets for music events across India on tight event timelines.'
     },
@@ -1976,6 +1977,7 @@ function AboutSection() {
     {
       role: 'Graphic Designer',
       company: 'Teknovance Pvt. Ltd.',
+      badge: 'CONTRACT',
       period: 'DEC 2018 — FEB 2019',
       desc: 'Designed signage, cabinet, and directional sign layouts for a US-based client using CorelDraw and Illustrator.'
     },
@@ -2061,7 +2063,7 @@ function AboutSection() {
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="font-mono text-xs text-accent uppercase tracking-widest font-bold flex items-center gap-2">
                 <i data-lucide="briefcase" className="w-4 h-4 text-accent"></i>
-                <span>WORK EXPERIENCE ({experiences.length} ROLES)</span>
+                <span>WORK EXPERIENCE &amp; CLIENT ENGAGEMENTS</span>
               </h3>
               <span className="font-mono text-[10px] text-white/40 uppercase">2011 — PRESENT</span>
             </div>
@@ -2080,6 +2082,15 @@ function AboutSection() {
                     </div>
 
                     <div className="flex items-center gap-2">
+                      {exp.badge && (
+                        <span className={`font-mono text-[9px] px-2 py-0.5 rounded font-bold uppercase tracking-wider ${
+                          exp.badge === 'CONTRACT'
+                            ? 'bg-amber-400/15 border border-amber-400/40 text-amber-300 shadow-[0_0_10px_rgba(251,191,36,0.2)]'
+                            : 'bg-cyan-400/15 border border-cyan-400/40 text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.2)]'
+                        }`}>
+                          {exp.badge}
+                        </span>
+                      )}
                       <span className="font-mono text-[10px] px-2.5 py-1 rounded bg-accent/15 border border-accent/30 text-accent font-bold uppercase">
                         {exp.period}
                       </span>
