@@ -2006,14 +2006,10 @@ function AboutSection() {
             </h2>
 
             {/* Quick Profile Specs */}
-            <div className="grid grid-cols-3 gap-2 bg-darkcard border border-white/10 p-3 rounded-xl font-mono text-center">
+            <div className="grid grid-cols-2 gap-2 bg-darkcard border border-white/10 p-3 rounded-xl font-mono text-center">
               <div className="p-2 border-r border-white/10">
-                <span className="text-[9px] text-white/40 block uppercase">NATIONALITY</span>
-                <span className="text-xs text-white font-bold uppercase">INDIAN</span>
-              </div>
-              <div className="p-2 border-r border-white/10">
-                <span className="text-[9px] text-white/40 block uppercase">BASED IN</span>
-                <span className="text-xs text-white font-bold uppercase">MUMBAI</span>
+                <span className="text-[9px] text-white/40 block uppercase">LOCATION</span>
+                <span className="text-xs text-white font-bold uppercase">MUMBAI, INDIA</span>
               </div>
               <div className="p-2">
                 <span className="text-[9px] text-white/40 block uppercase">EXPERIENCE</span>
