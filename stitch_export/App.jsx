@@ -2516,52 +2516,82 @@ function ContactSection() {
                 </span>
               </div>
 
-              <div className="space-y-4 font-mono text-xs">
-                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
-                  <span className="text-[10px] text-white/40 uppercase block">AVAILABILITY STATUS</span>
-                  <p className="text-white font-bold text-sm uppercase">OPEN FOR Q3 / Q4 2026 PROJECTS &amp; FULL-TIME ROLES</p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
-                    <span className="text-[10px] text-white/40 uppercase block">EXPERIENCE</span>
-                    <span className="text-accent font-black text-sm uppercase">9+ YEARS VERIFIED</span>
-                  </div>
-                  <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
-                    <span className="text-[10px] text-white/40 uppercase block">LOCATION</span>
-                    <span className="text-white font-bold text-sm uppercase">MUMBAI (REMOTE)</span>
-                  </div>
-                </div>
-
-                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-2">
-                  <span className="text-[10px] text-accent uppercase font-bold tracking-wider block">
-                    CORE SPECIALIZATIONS &amp; SERVICES:
+              <div className="space-y-3 font-mono text-xs">
+                <div className="flex items-center justify-between pb-1">
+                  <span className="text-[10px] text-white/40 uppercase tracking-widest block font-bold">
+                    ENGAGEMENT MODELS &amp; SERVICES
                   </span>
-                  <div className="grid grid-cols-2 gap-2 text-white/80 text-[11px] uppercase">
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-accent" />
-                      <span>Brand Identity</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-accent" />
-                      <span>Social Media Design</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-accent" />
-                      <span>Commercial Photography</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-accent" />
-                      <span>Video &amp; Motion Editing</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-accent" />
-                      <span>Print &amp; Packaging</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-accent" />
-                      <span>Signage / OOH Layouts</span>
-                    </div>
+                  <span className="text-[10px] text-accent font-bold uppercase">
+                    9+ YRS EXP
+                  </span>
+                </div>
+
+                {/* Model 01: Nightlife & Venue Retainer */}
+                <div className="p-4 bg-black/60 border border-accent/25 hover:border-accent/50 rounded-xl space-y-2 transition-all">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-accent uppercase text-xs flex items-center gap-1.5">
+                      <i data-lucide="sparkles" className="w-3.5 h-3.5 text-accent"></i>
+                      <span>01 // NIGHTLIFE &amp; VENUE RETAINER</span>
+                    </span>
+                    <span className="text-[9px] px-2 py-0.5 rounded bg-accent/15 border border-accent/30 text-accent uppercase font-bold">
+                      RECURRING
+                    </span>
+                  </div>
+                  <p className="text-white/80 text-[11px] leading-relaxed">
+                    Weekly gig posters, club night sub-brands, lineup announcements, and kinetic motion reels. Rapid 24–48hr turnaround calibrated for multi-venue nightlife operators.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['1:1 Feed Post', '9:16 Story/Reel', 'LED Stage Visuals', 'A3 Print Flyer'].map((pill, i) => (
+                      <span key={i} className="text-[9px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/60 uppercase">
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Model 02: Brand Identity & Systems */}
+                <div className="p-4 bg-black/60 border border-cyan-400/25 hover:border-cyan-400/50 rounded-xl space-y-2 transition-all">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-cyan-300 uppercase text-xs flex items-center gap-1.5">
+                      <i data-lucide="layout-template" className="w-3.5 h-3.5 text-cyan-400"></i>
+                      <span>02 // BRAND IDENTITY &amp; SYSTEMS</span>
+                    </span>
+                    <span className="text-[9px] px-2 py-0.5 rounded bg-cyan-400/15 border border-cyan-400/30 text-cyan-300 uppercase font-bold">
+                      PROJECT-BASED
+                    </span>
+                  </div>
+                  <p className="text-white/80 text-[11px] leading-relaxed">
+                    Logomark suites, typography hierarchies, brand style guides, marketing collateral, packaging, and commercial social launch assets.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['Logo Suite', 'Brand Guidelines', 'Packaging', 'Social Kit'].map((pill, i) => (
+                      <span key={i} className="text-[9px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/60 uppercase">
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Model 03: Enterprise Artwork Production */}
+                <div className="p-4 bg-black/60 border border-blue-400/25 hover:border-blue-400/50 rounded-xl space-y-2 transition-all">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-blue-300 uppercase text-xs flex items-center gap-1.5">
+                      <i data-lucide="shield-check" className="w-3.5 h-3.5 text-blue-400"></i>
+                      <span>03 // ENTERPRISE ARTWORK PRODUCTION</span>
+                    </span>
+                    <span className="text-[9px] px-2 py-0.5 rounded bg-blue-400/15 border border-blue-400/30 text-blue-300 uppercase font-bold">
+                      CONTRACT / FT
+                    </span>
+                  </div>
+                  <p className="text-white/80 text-[11px] leading-relaxed">
+                    High-volume artwork compliance, pre-press standards, color management, and multi-market asset adaptation with zero-rejection QC (Unilever FMCG benchmarked).
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['FMCG Standards', 'Pre-Press QC', 'Multi-Market Rollout', 'Pantone Accuracy'].map((pill, i) => (
+                      <span key={i} className="text-[9px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/60 uppercase">
+                        {pill}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
