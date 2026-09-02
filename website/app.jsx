@@ -1285,6 +1285,82 @@ function BentoProjectsGrid({
 // -------------------------------------------------------------
 // 7. Interactive Project Detail Modal / Drawer with Multi-Size Suite
 // -------------------------------------------------------------
+// ─── Case Study Dossiers for Flagship Works ──────────────────────────────────
+const CASE_STUDIES = {
+  'AntiSOCIAL': {
+    brief: 'Weekly nightclub event poster series for Mumbai\'s premier underground venue. Each poster must cut through Instagram feed noise and drive ticket sales within 24–48 hours of publication.',
+    constraints: [
+      '24–48 hour turnaround from DJ confirmation to published artwork',
+      'Must be legible at thumbnail size on mobile feeds',
+      'High-contrast readability under dark venue / strobe lighting for LED screens',
+      'Multi-format delivery: Feed Post (1:1), Story (9:16), WhatsApp forward, LED backdrop'
+    ],
+    decisions: 'Acid-green brutalist typography on black creates instant brand recognition across the SOCIAL venue network. Motion-ready vector construction enables animated variants without rebuilding. Each poster follows a modular grid that accommodates 1–6 artist names while preserving visual hierarchy.',
+    outcome: 'Delivered 50+ event posters across 5 SOCIAL venues (antiSOCIAL, KharSOCIAL, ChemburSOCIAL, MaladSOCIAL, Koregaon ParkSOCIAL) with consistent visual language that became synonymous with the SOCIAL nightlife brand in Mumbai and Pune.'
+  },
+  'KharSOCIAL': {
+    brief: 'Recurring weekly event branding for KharSOCIAL\'s flagship club nights including Grind, Common Grounds, PullUP, and House52.',
+    constraints: [
+      'Maintain distinct visual identity per event series while keeping SOCIAL brand cohesion',
+      'Same-day turnaround for last-minute lineup changes',
+      'Assets must work across Instagram, WhatsApp broadcast, and in-venue LED panels'
+    ],
+    decisions: 'Developed a sub-brand visual system per event series — each with its own color accent and typographic treatment — while maintaining the overarching SOCIAL grid system and brutalist aesthetic.',
+    outcome: 'Built recognizable weekly event brands that audiences identify on sight in their feed, contributing to consistent venue turnout across multiple recurring series.'
+  },
+  'Metaraph': {
+    brief: 'Launch campaign visuals for Metaraph\'s India tour — a multi-city electronic music showcase requiring cohesive city-specific creative across Mumbai, Delhi, and Bangalore.',
+    constraints: [
+      'Single visual system adaptable to 3 different city identities',
+      'Must communicate tour dates, venues, and artist lineups clearly',
+      'Deliverables span digital (social), print (A3 posters), and motion (story animations)'
+    ],
+    decisions: 'Used a cinematic wide-format composition with city-coded color gradients. Typography anchored in bold condensed sans-serif for maximum impact at distance. Modular layout allows swapping city names and venue details without redesigning.',
+    outcome: 'Complete multi-city campaign delivered on schedule across all formats, establishing Metaraph\'s visual presence in the Indian electronic music circuit.'
+  },
+  'MOLO': {
+    brief: 'Event branding and promotional artwork for MOLO — a curated live music and culture experience series.',
+    constraints: [
+      'Premium positioning — artwork must feel elevated, not typical club flyer',
+      'Multi-format: square post, vertical story, horizontal banner',
+      'Tight coordination with venue marketing teams on copy and lineup changes'
+    ],
+    decisions: 'Shifted from the high-contrast brutalist approach to a more refined, editorial aesthetic with generous white space and restrained typography to match MOLO\'s curatorial positioning.',
+    outcome: 'Delivered a cohesive visual campaign that differentiated MOLO from louder nightlife brands, attracting a more design-conscious audience.'
+  },
+  'Unilever': {
+    brief: 'High-volume artwork production and brand compliance across Unilever\'s FMCG portfolio — ensuring every print and digital asset adheres to strict global brand guidelines.',
+    constraints: [
+      'Zero tolerance for color deviation — Pantone accuracy mandatory across all substrates',
+      'Multi-market adaptation: same master artwork localized for different regions',
+      'Enterprise approval workflows with multiple stakeholder sign-offs',
+      'Pre-press production standards for offset, flexo, and digital print'
+    ],
+    decisions: 'Built a systematic QC checklist for every deliverable: color profile verification, bleed/trim validation, font outline checks, and resolution audits. Developed template-based workflows to accelerate localization without compromising consistency.',
+    outcome: '18-month engagement managing artwork compliance across a major global FMCG portfolio. Maintained zero rejection rate on pre-press QC, proving enterprise-grade production discipline.'
+  }
+};
+
+// Resolve case study for a project by checking client name against the lookup
+const resolveCaseStudy = (project) => {
+  if (!project) return null;
+  const client = project.client || '';
+  // Direct match
+  if (CASE_STUDIES[client]) return CASE_STUDIES[client];
+  // Partial match (e.g. "AntiSOCIAL" matches client "AntiSOCIAL")
+  for (const key of Object.keys(CASE_STUDIES)) {
+    if (client.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(client.toLowerCase())) {
+      return CASE_STUDIES[key];
+    }
+  }
+  // Match by subfolder or title
+  const sub = (project.subfolder || '').replace(/_/g, ' ');
+  for (const key of Object.keys(CASE_STUDIES)) {
+    if (sub.toLowerCase().includes(key.toLowerCase())) return CASE_STUDIES[key];
+  }
+  return null;
+};
+
 function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
   const [activeVariant, setActiveVariant] = useState(null);
 
@@ -1517,6 +1593,53 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
                 {project.strategy || 'High-contrast brutalist design created for premier venue programming and branding.'}
               </p>
             </div>
+
+            {/* Case Study Dossier (Flagship Works Only) */}
+            {(() => {
+              const caseStudy = resolveCaseStudy(project);
+              if (!caseStudy) return null;
+              return (
+                <div className="bg-gradient-to-b from-accent/5 to-transparent border border-accent/20 rounded-xl p-4 sm:p-5 space-y-4">
+                  <div className="flex items-center gap-2 font-mono text-[10px] text-accent font-bold uppercase tracking-wider">
+                    <i data-lucide="file-search" className="w-3.5 h-3.5 text-accent"></i>
+                    <span>CASE STUDY DOSSIER</span>
+                  </div>
+
+                  {/* The Brief */}
+                  <div className="space-y-1">
+                    <span className="font-mono text-[10px] text-white/40 uppercase tracking-wider block">THE BRIEF</span>
+                    <p className="font-mono text-xs text-white/85 leading-relaxed">{caseStudy.brief}</p>
+                  </div>
+
+                  {/* Key Constraints */}
+                  <div className="space-y-1.5">
+                    <span className="font-mono text-[10px] text-white/40 uppercase tracking-wider block">KEY CONSTRAINTS</span>
+                    <ul className="space-y-1">
+                      {caseStudy.constraints.map((c, i) => (
+                        <li key={i} className="font-mono text-[11px] text-white/70 leading-relaxed flex items-start gap-2">
+                          <span className="text-amber-400 mt-0.5 flex-shrink-0">▸</span>
+                          <span>{c}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Design Decisions */}
+                  <div className="space-y-1">
+                    <span className="font-mono text-[10px] text-white/40 uppercase tracking-wider block">DESIGN DECISIONS</span>
+                    <p className="font-mono text-xs text-white/85 leading-relaxed border-l-2 border-accent/40 pl-3">{caseStudy.decisions}</p>
+                  </div>
+
+                  {/* Outcome */}
+                  <div className="space-y-1 bg-accent/10 border border-accent/20 rounded-lg p-3">
+                    <span className="font-mono text-[10px] text-accent uppercase tracking-wider font-bold block flex items-center gap-1.5">
+                      <i data-lucide="trophy" className="w-3 h-3"></i> OUTCOME
+                    </span>
+                    <p className="font-mono text-xs text-white/90 leading-relaxed">{caseStudy.outcome}</p>
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Metadata Matrix */}
             <div className="grid grid-cols-2 gap-4 border-y border-white/10 py-4 font-mono text-xs">
