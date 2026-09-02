@@ -713,6 +713,7 @@ function BentoProjectsGrid({
 
   const categories = useMemo(() => {
     return [
+      { id: 'all', label: 'ALL WORKS', count: projects.length },
       { id: 'Gig Posters', label: 'GIG POSTERS', count: projects.filter((p) => p.category === 'Gig Posters').length },
       { id: 'Campaigns & Promos', label: 'CAMPAIGNS', count: projects.filter((p) => p.category === 'Campaigns & Promos').length },
       { id: 'Event Calendars', label: 'CALENDARS', count: projects.filter((p) => p.category === 'Event Calendars').length },
@@ -760,7 +761,7 @@ function BentoProjectsGrid({
         if (p.type !== 'video') return false;
       } else if (activeFilter === 'custom') {
         if (p.is_default) return false;
-      } else if (activeFilter) {
+      } else if (activeFilter && activeFilter !== 'all') {
         if (p.category !== activeFilter) return false;
       }
 
@@ -795,7 +796,11 @@ function BentoProjectsGrid({
             <div className="flex items-center gap-2 font-mono text-xs text-accent uppercase mb-2">
               <span>// ARCHIVE INDEX</span>
               <span>•</span>
-              <span>{filteredProjects.length} CURATED PROJECTS</span>
+              <span>
+                {activeFilter === 'all'
+                  ? `${projects.length} CURATED DELIVERABLES`
+                  : `FILTERED: ${filteredProjects.length} OF ${projects.length} TOTAL DELIVERABLES`}
+              </span>
             </div>
             <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-normal text-white font-sans flex items-baseline gap-3.5 flex-wrap">
               <span className="tracking-tight">FEATURED</span> <SvgOutlinedWord text="WORKS" />
@@ -2721,7 +2726,7 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('Gig Posters');
+  const [activeFilter, setActiveFilter] = useState('all');
   const [viewMode, setViewMode] = useState('bento');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [uploadOpen, setUploadOpen] = useState(false);
