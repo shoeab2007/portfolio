@@ -376,6 +376,20 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
 
         {/* Action Controls */}
         <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Resume / CV Direct Download */}
+          <a
+            href="./Shoeab_Ahmed_Resume.pdf"
+            download="Shoeab_Ahmed_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="RESUME"
+            className="p-2 sm:px-3 sm:py-1.5 rounded border border-accent/40 hover:border-accent bg-accent/10 hover:bg-accent hover:text-black text-accent font-mono text-xs font-bold flex items-center gap-1.5 transition-all shadow-[0_0_12px_rgba(0,255,102,0.15)]"
+            title="Download Shoeab Ahmed Resume (PDF)"
+          >
+            <i data-lucide="file-down" className="w-3.5 h-3.5"></i>
+            <span className="hidden sm:inline">CV / RESUME</span>
+          </a>
+
           {/* LinkedIn Direct Link */}
           <a
             href="https://www.linkedin.com/in/shaikhshoeab/"
@@ -459,7 +473,19 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
             </button>
           </div>
 
-          <div className="pt-6 border-t border-white/10 font-mono text-xs text-white/50 flex flex-col gap-2">
+          <div className="pt-6 border-t border-white/10 font-mono text-xs text-white/50 flex flex-col gap-4">
+            {/* Mobile Resume Download Button */}
+            <a
+              href="./Shoeab_Ahmed_Resume.pdf"
+              download="Shoeab_Ahmed_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full py-3 px-4 rounded bg-accent text-black font-mono text-xs font-bold uppercase flex items-center justify-center gap-2 shadow-md"
+            >
+              <i data-lucide="file-down" className="w-4 h-4"></i>
+              <span>DOWNLOAD RESUME (PDF)</span>
+            </a>
+
             <div className="flex items-center justify-between text-white/80">
               <span>AVAILABLE FOR COMMISSIONS</span>
               <span className="text-accent font-bold">Q2 / Q3 2026</span>
@@ -1363,6 +1389,7 @@ const resolveCaseStudy = (project) => {
 
 function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
   const [activeVariant, setActiveVariant] = useState(null);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   // Sync active variant when project changes
   useEffect(() => {
@@ -1378,18 +1405,22 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
               ratio: 'Primary View'
             };
       setActiveVariant(defaultVar);
+      setIsZoomed(false);
     }
   }, [project]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft') onPrev();
-      if (e.key === 'ArrowRight') onNext();
+      if (e.key === 'Escape') {
+        if (isZoomed) setIsZoomed(false);
+        else onClose();
+      }
+      if (e.key === 'ArrowLeft' && !isZoomed) onPrev();
+      if (e.key === 'ArrowRight' && !isZoomed) onNext();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose, onPrev, onNext]);
+  }, [onClose, onPrev, onNext, isZoomed]);
 
   if (!project) return null;
 
@@ -1507,22 +1538,47 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
                   );
                 }
                 return (
-                  <img
-                    key={currentItem.media}
-                    src={currentItem.media}
-                    alt={project.title}
-                    className="w-full h-full max-h-[550px] object-contain transition-all duration-300"
-                  />
+                  <div
+                    className="w-full h-full flex items-center justify-center cursor-zoom-in group/zoom relative"
+                    onClick={() => setIsZoomed(true)}
+                    title="Click to view full-screen / zoom"
+                  >
+                    <img
+                      key={currentItem.media}
+                      src={currentItem.media}
+                      alt={project.title}
+                      className="w-full h-full max-h-[550px] object-contain transition-transform duration-300 group-hover/zoom:scale-[1.01]"
+                    />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/zoom:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                      <span className="font-mono text-xs px-3 py-1.5 rounded-lg bg-black/85 text-white border border-white/20 backdrop-blur-md flex items-center gap-1.5 shadow-xl">
+                        <i data-lucide="zoom-in" className="w-3.5 h-3.5 text-accent"></i>
+                        <span>CLICK TO EXPAND / ZOOM</span>
+                      </span>
+                    </div>
+                  </div>
                 );
               })()}
 
               {/* Active Format Pill Indicator on Top of Media */}
-              <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1 rounded font-mono text-[11px] font-bold text-accent uppercase flex items-center gap-1.5 shadow-md">
+              <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1 rounded font-mono text-[11px] font-bold text-accent uppercase flex items-center gap-1.5 shadow-md z-10">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
                 <span>{currentItem.label}</span>
                 <span className="text-white/40">•</span>
                 <span className="text-white/80">{currentItem.ratio}</span>
               </div>
+
+              {/* Zoom Action Button */}
+              {!isVideo && !isPdf && (
+                <button
+                  onClick={() => setIsZoomed(true)}
+                  data-cursor="ZOOM"
+                  className="absolute top-3 right-3 bg-black/80 hover:bg-accent hover:text-black text-white/80 border border-white/20 hover:border-accent px-2.5 py-1 rounded font-mono text-[10px] font-bold uppercase flex items-center gap-1.5 shadow-md transition-all z-10"
+                  title="Expand to Fullscreen"
+                >
+                  <i data-lucide="maximize-2" className="w-3 h-3"></i>
+                  <span className="hidden sm:inline">FULLSCREEN</span>
+                </button>
+              )}
             </div>
 
             {/* Other Sizes / Formats of the Same Artwork Interactive Selector */}
@@ -1699,6 +1755,43 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
           </div>
         </div>
       </div>
+
+      {/* Fullscreen High-Res Image Lightbox Overlay */}
+      {isZoomed && !isVideo && !isPdf && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center p-4 cursor-zoom-out animate-fade-in select-none"
+          onClick={() => setIsZoomed(false)}
+        >
+          {/* Top Control Bar */}
+          <div
+            className="absolute top-4 sm:top-6 right-4 sm:right-6 flex items-center gap-3 z-10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span className="font-mono text-xs text-white/50 uppercase hidden sm:inline">
+              CLICK OUTSIDE OR ESC TO CLOSE
+            </span>
+            <button
+              onClick={() => setIsZoomed(false)}
+              className="p-2 sm:px-3 sm:py-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white border border-white/20 transition-all font-mono text-xs font-bold uppercase flex items-center gap-1.5 shadow-lg"
+            >
+              <i data-lucide="x" className="w-4 h-4"></i>
+              <span>CLOSE</span>
+            </button>
+          </div>
+
+          {/* High-Res View Container */}
+          <div
+            className="max-w-[96vw] max-h-[92vh] flex items-center justify-center select-none"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={currentItem.media}
+              alt={project.title}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-[0_0_80px_rgba(0,0,0,0.9)] border border-white/15"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -2254,6 +2347,30 @@ function AboutSection() {
                   <span className="text-white/50 text-[11px] uppercase">HSC — Science • 2011</span>
                 </div>
               </div>
+            </div>
+
+            {/* Direct Resume / CV Download Card */}
+            <div className="p-4 bg-darkcard border border-accent/30 rounded-xl flex items-center justify-between gap-3 shadow-[0_0_15px_rgba(0,255,102,0.1)]">
+              <div className="space-y-0.5">
+                <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block font-bold">
+                  VERIFIED CV / RESUME
+                </span>
+                <span className="font-mono text-xs text-white font-bold uppercase block">
+                  SHOEAB AHMED • PDF FORMAT
+                </span>
+              </div>
+              <a
+                href="./Shoeab_Ahmed_Resume.pdf"
+                download="Shoeab_Ahmed_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="DOWNLOAD"
+                className="px-4 py-2 rounded-lg bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase flex items-center gap-1.5 transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] hover:scale-105"
+                title="Download Official PDF Resume"
+              >
+                <i data-lucide="download" className="w-3.5 h-3.5"></i>
+                <span>GET CV</span>
+              </a>
             </div>
           </div>
 
