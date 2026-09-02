@@ -796,19 +796,24 @@ function BentoProjectsGrid({
   viewMode,
   setViewMode
 }) {
-  const [activeSubcategory, setActiveSubcategory] = useState('all');
+  const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [hoveredId, setHoveredId] = useState(null);
   const [visibleCount, setVisibleCount] = useState(24);
 
-  // Reset subcategory whenever main category filter changes
+  // Set intelligent default subcategory whenever main category filter changes
   useEffect(() => {
-    setActiveSubcategory('all');
+    if (activeFilter === 'Event Calendars') {
+      setActiveSubcategory('anti_all');
+    } else if (activeFilter === 'Campaigns & Promos') {
+      setActiveSubcategory('COEUS');
+    } else {
+      setActiveSubcategory(null);
+    }
     setVisibleCount(24);
   }, [activeFilter]);
 
   const categories = useMemo(() => {
     return [
-      { id: 'all', label: 'ALL WORKS' },
       { id: 'Gig Posters', label: 'GIG POSTERS' },
       { id: 'Campaigns & Promos', label: 'CAMPAIGNS' },
       { id: 'Event Calendars', label: 'CALENDARS' },
@@ -818,10 +823,9 @@ function BentoProjectsGrid({
     ];
   }, []);
 
-  // Subcategories for Event Calendars
+  // Subcategories for Event Calendars (No "ALL CALENDARS")
   const calendarSubcategories = useMemo(() => {
     return [
-      { id: 'all', label: 'ALL CALENDARS' },
       { id: 'anti_all', label: 'antiSOCIAL' },
       { id: 'khar_all', label: 'KharSOCIAL' },
       { id: 'Anti_Calendar_April', label: 'ANTI • APRIL' },
@@ -833,19 +837,17 @@ function BentoProjectsGrid({
     ];
   }, []);
 
-  // Subcategories for Campaigns & Promos
+  // Subcategories for Campaigns & Promos (No "ALL CAMPAIGNS")
   const campaignSubcategories = useMemo(() => {
-    const campList = projects.filter((p) => p.category === 'Campaigns & Promos');
     return [
-      { id: 'all', label: 'ALL CAMPAIGNS', count: campList.length },
-      { id: 'COEUS', label: 'COEUS BRANDING', count: campList.filter((p) => p.subfolder === 'COEUS').length },
-      { id: 'MOLO', label: 'MOLO SERIES', count: campList.filter((p) => p.subfolder === 'MOLO').length },
-      { id: '2025_Feb_DOP', label: 'DOP FEB', count: campList.filter((p) => p.subfolder === '2025_Feb_DOP').length },
-      { id: '2025_April_DOP', label: 'DOP APRIL', count: campList.filter((p) => p.subfolder === '2025_April_DOP').length },
-      { id: 'Hospitality', label: 'HOSPITALITY', count: campList.filter((p) => p.subfolder === 'Hospitality').length },
-      { id: 'Metaraph', label: 'METARAPH', count: campList.filter((p) => p.subfolder === 'Metaraph').length }
+      { id: 'COEUS', label: 'COEUS BRANDING' },
+      { id: 'MOLO', label: 'MOLO SERIES' },
+      { id: '2025_Feb_DOP', label: 'DOP FEB' },
+      { id: '2025_April_DOP', label: 'DOP APRIL' },
+      { id: 'Hospitality', label: 'HOSPITALITY' },
+      { id: 'Metaraph', label: 'METARAPH' }
     ];
-  }, [projects]);
+  }, []);
 
   // Filtered Projects based on active category and subcategory
   const filteredProjects = useMemo(() => {
@@ -855,12 +857,12 @@ function BentoProjectsGrid({
         if (p.type !== 'video') return false;
       } else if (activeFilter === 'custom') {
         if (p.is_default) return false;
-      } else if (activeFilter && activeFilter !== 'all') {
+      } else if (activeFilter) {
         if (p.category !== activeFilter) return false;
       }
 
       // Subcategory filter for Event Calendars
-      if (activeFilter === 'Event Calendars' && activeSubcategory !== 'all') {
+      if (activeFilter === 'Event Calendars' && activeSubcategory) {
         if (activeSubcategory === 'anti_all') {
           if (!p.client || !p.client.toLowerCase().includes('anti')) return false;
         } else if (activeSubcategory === 'khar_all') {
@@ -871,7 +873,7 @@ function BentoProjectsGrid({
       }
 
       // Subcategory filter for Campaigns & Promos
-      if (activeFilter === 'Campaigns & Promos' && activeSubcategory !== 'all') {
+      if (activeFilter === 'Campaigns & Promos' && activeSubcategory) {
         if (p.subfolder !== activeSubcategory) return false;
       }
 
@@ -1029,14 +1031,12 @@ function BentoProjectsGrid({
             <p className="font-mono text-xs text-white/50 mb-6">Try clearing your search query or selecting a different category tab.</p>
             <button
               onClick={() => {
-                setSearchQuery('');
-                setActiveFilter('all');
-                setActiveSubcategory('all');
-                setSelectedYear('all');
+                setActiveFilter('Gig Posters');
+                setActiveSubcategory(null);
               }}
               className="px-5 py-2.5 bg-accent text-black font-mono font-bold text-xs uppercase rounded hover:bg-white transition-colors"
             >
-              RESET ALL FILTERS
+              RESET TO GIG POSTERS
             </button>
           </div>
         )}
@@ -3142,7 +3142,7 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('Gig Posters');
   const [viewMode, setViewMode] = useState('bento');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [uploadOpen, setUploadOpen] = useState(false);
