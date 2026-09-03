@@ -1693,15 +1693,6 @@ function ProjectDetailModal({ project, onClose, onPrev, onNext }) {
               </h2>
             </div>
 
-            {/* Strategic Intent */}
-            <div className="border-l-2 border-accent pl-4 space-y-1">
-              <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block">
-                STRATEGIC EXECUTION
-              </span>
-              <p className="font-mono text-xs sm:text-sm text-white/90 uppercase leading-relaxed">
-                {project.strategy || 'High-contrast brutalist design created for premier venue programming and branding.'}
-              </p>
-            </div>
 
             {/* Case Study Dossier (Flagship Works Only) */}
             {(() => {
