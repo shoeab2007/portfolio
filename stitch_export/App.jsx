@@ -1128,12 +1128,6 @@ function BentoProjectsGrid({
                             </span>
                           )}
                         </div>
-
-                        {project.strategy && (
-                          <p className="font-mono text-xs text-white/70 uppercase line-clamp-2 leading-relaxed pt-0.5 group-hover:text-white transition-colors">
-                            {project.strategy}
-                          </p>
-                        )}
                       </div>
 
                       <div className="flex items-center justify-between pt-3 border-t border-white/10 font-mono text-xs">
@@ -1217,9 +1211,6 @@ function BentoProjectsGrid({
                           </span>
                         )}
                       </div>
-                      <p className="font-mono text-sm text-white/90 uppercase line-clamp-3 leading-relaxed">
-                        {project.strategy}
-                      </p>
                     </div>
 
                     <div className="flex items-center justify-between pt-4 border-t border-white/10 font-mono text-xs">
@@ -1270,9 +1261,6 @@ function BentoProjectsGrid({
                         <span>•</span>
                         <span className="text-white/60">{project.category}</span>
                       </div>
-                      <p className="font-mono text-xs text-white/70 uppercase truncate max-w-xl mt-1">
-                        {project.strategy}
-                      </p>
                     </div>
                   </div>
 
