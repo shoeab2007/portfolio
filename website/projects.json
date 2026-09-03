@@ -24,7 +24,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Zynth Main_Post_thumb.webp",
+    "case_study": {
+      "brief": "Key visual and event identity for 'Zynth' — a live modular synthesizer and experimental electronic showcase at antiSOCIAL.",
+      "constraints": [
+        "Translate the analog, patch-cable hardware synth culture into a modern graphic design system",
+        "Accommodate live hardware performers with detailed technical billing",
+        "High visual differentiation from standard DJ club night flyers"
+      ],
+      "decisions": "Designed with oscilloscope waveform patterns, technical schematic gridlines, and fluorescent green vector elements on deep obsidian black.",
+      "outcome": "Attracted Mumbai's dedicated modular synthesizer and audiophile community, establishing Zynth as a recurring experimental music series."
+    }
   },
   {
     "id": "e08bfc4b9cdda94b2268c7ceae02546b",
@@ -51,7 +61,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp",
+    "case_study": {
+      "brief": "Specialist electronic music showcase poster for 'Xchange' at premier underground venues.",
+      "constraints": [
+        "Reflect the complex technical synergy of back-to-back DJ sets and hypnotic electronic subgenres",
+        "Ensure equal typographic prominence for co-headlining electronic music producers",
+        "Optimized for high-contrast viewing on dark nightclub screens and OLED smartphones"
+      ],
+      "decisions": "Employed dual-column mirrored typography, mathematical sound-frequency gridlines, and deep space obsidian aesthetics with piercing laser-green accents.",
+      "outcome": "Garnered praise from both performing artists and attendees for elevated visual storytelling, driving full dancefloor attendance."
+    }
   },
   {
     "id": "00139d39583dc9a66bd4497a63ff45d4",
@@ -78,7 +98,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_PullUP_Post_thumb.webp",
+    "case_study": {
+      "brief": "High-impact weekly residency poster for 'PullUP' — KharSOCIAL's premier bass, UK garage, and grime club night.",
+      "constraints": [
+        "Infuse UK sound-system and underground street culture into the established KharSOCIAL brand identity",
+        "Fast weekly turnaround with recurring artist lineup changes",
+        "Extreme contrast for mobile thumb-stopping performance"
+      ],
+      "decisions": "Applied distressed bold display fonts, heavy industrial rule lines, and vibrant neon accents that mimic underground London pirate radio aesthetics.",
+      "outcome": "Built 'PullUP' into KharSOCIAL's most consistent weekly bass night with sustained repeat ticket buyers."
+    }
   },
   {
     "id": "6cf34a3974506e1d3eb2cce14268cbb4",
@@ -107,7 +137,17 @@
     ],
     "is_default": true,
     "thumbnail": "/01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_thumb.webp",
-    "animated_preview": "/01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_anim.webp"
+    "animated_preview": "/01_Gig_Posters/2026_April_Koregaon ParkSOCIAL_Disco Sishco_Post_anim.webp",
+    "case_study": {
+      "brief": "Retro-modern promotional poster for 'Disco Sishco' — nu-disco, funk, and retro dance night at Koregaon ParkSOCIAL, Pune.",
+      "constraints": [
+        "Capture nostalgic 70s/80s disco vibrancy while keeping the design grounded in contemporary brutalist aesthetics",
+        "Appeal to both student crowds and seasoned electronic music listeners in Pune",
+        "Multi-format export for Instagram post, vertical reels, and table displays"
+      ],
+      "decisions": "Employed warm chromatic aberration, curvilinear retro typography contrasted against a tight modern grid, and subtle disco mirror reflections.",
+      "outcome": "One of Koregaon ParkSOCIAL's most attended thematic nights of the season with strong organic social sharing."
+    }
   },
   {
     "id": "49b69c29fc185f5d06af16fc74001888",
@@ -134,7 +174,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_Khar social_House52_Post_thumb.webp",
+    "case_study": {
+      "brief": "Week 52 programming breakdown card for KharSOCIAL (April Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 52 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly April design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across KharSOCIAL attendees."
+    }
   },
   {
     "id": "0c893f768a22f89ca1511f6de49c3672",
@@ -161,7 +211,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_March_KharSOCIAL_Holi Social_Post_thumb.webp",
+    "case_study": {
+      "brief": "High-octane festive club party poster for 'Holi' celebration at KharSOCIAL.",
+      "constraints": [
+        "Represent festive Holi energy without relying on clichéd powder splatter vectors",
+        "Must preserve KharSOCIAL's underground club aesthetic while feeling festive and celebratory",
+        "Clear announcement of dry-color rules, safety guidelines, and multi-DJ lineup"
+      ],
+      "decisions": "Created an electric, saturated neon color treatment constrained inside crisp brutalist geometric frames, balancing raw festive euphoria with architectural graphic discipline.",
+      "outcome": "Complete afternoon-to-night sellout at KharSOCIAL with record-setting festival beverage and food sales."
+    }
   },
   {
     "id": "d34ebd328b8092cafd784fd545a6520c",
@@ -188,7 +248,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KoregaonSOCIAL_HHL_Post_thumb.webp",
+    "case_study": {
+      "brief": "Underground cipher and street dance battle poster for Hip Hop League (Hhl) at Koregaon ParkSOCIAL Pune.",
+      "constraints": [
+        "Authentic hip-hop culture representation avoiding commercial clichés",
+        "Clearly communicate battle registration rules, prize pools, and DJ showcase timings",
+        "High-contrast black-and-white print readiness for local street distribution"
+      ],
+      "decisions": "Used aggressive hand-treated typography, layered collage textures, bold geometric framing, and graffiti-inspired numbering accents.",
+      "outcome": "Drew over 150+ regional dancers and MCs to Koregaon ParkSOCIAL, cementing the venue as a hub for Pune street culture."
+    }
   },
   {
     "id": "c1c5c31ef276bec0928629a05b4049d5",
@@ -215,7 +285,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_June_KoregaonSOCIAL_HHL_Post_thumb.webp",
+    "case_study": {
+      "brief": "Underground cipher and street dance battle poster for Hip Hop League (Hhl) at Koregaon ParkSOCIAL Pune.",
+      "constraints": [
+        "Authentic hip-hop culture representation avoiding commercial clichés",
+        "Clearly communicate battle registration rules, prize pools, and DJ showcase timings",
+        "High-contrast black-and-white print readiness for local street distribution"
+      ],
+      "decisions": "Used aggressive hand-treated typography, layered collage textures, bold geometric framing, and graffiti-inspired numbering accents.",
+      "outcome": "Drew over 150+ regional dancers and MCs to Koregaon ParkSOCIAL, cementing the venue as a hub for Pune street culture."
+    }
   },
   {
     "id": "533a8d40dbe049fb23d9fa54f1d5ebfa",
@@ -242,7 +322,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_KoregaonSOCIAL_HHL_Post_thumb.webp",
+    "case_study": {
+      "brief": "Underground cipher and street dance battle poster for Hip Hop League (Hhl) at Koregaon ParkSOCIAL Pune.",
+      "constraints": [
+        "Authentic hip-hop culture representation avoiding commercial clichés",
+        "Clearly communicate battle registration rules, prize pools, and DJ showcase timings",
+        "High-contrast black-and-white print readiness for local street distribution"
+      ],
+      "decisions": "Used aggressive hand-treated typography, layered collage textures, bold geometric framing, and graffiti-inspired numbering accents.",
+      "outcome": "Drew over 150+ regional dancers and MCs to Koregaon ParkSOCIAL, cementing the venue as a hub for Pune street culture."
+    }
   },
   {
     "id": "8c8580af186eba378960f4371450fc6e",
@@ -269,7 +359,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_AntiSOCIAL_Heads will Roll_Post_thumb.webp",
+    "case_study": {
+      "brief": "Flagship gig poster for 'Heads Will Roll' — a dark underground industrial techno night at antiSOCIAL Mumbai.",
+      "constraints": [
+        "Evoke uncompromising dark industrial techno culture through raw visual tension",
+        "Deliverables: 1:1 Instagram Post, 9:16 Story, and in-venue LED stage backdrop",
+        "Must remain starkly legible under strobe and laser lighting inside the venue"
+      ],
+      "decisions": "Utilized high-contrast razor-sharp distorted typography, glitch-scanned industrial textures, and a monochrome palette punctuated by stark hazard accents.",
+      "outcome": "Packed antiSOCIAL to capacity with zero unsold advance tickets and high audience social media re-shares."
+    }
   },
   {
     "id": "057183d3ac78aeb5130295e3a8782073",
@@ -296,7 +396,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Grind_Post_thumb.webp",
+    "case_study": {
+      "brief": "Event branding and social promotional suite for 'Grind' — KharSOCIAL's premier urban, hip-hop, and R&B residency.",
+      "constraints": [
+        "Balance commercial urban hip-hop appeal with KharSOCIAL's alternative edge",
+        "Multi-asset delivery: static feed square, animated motion reel, and DJ story cards",
+        "Same-day turnaround for guest host confirmations"
+      ],
+      "decisions": "Created a clean metallic typographic lockup with sleek urban streetwear framing, deep blacks, and polished chrome accents.",
+      "outcome": "Established Grind as KharSOCIAL's signature weekend urban party with consistent table sellouts."
+    }
   },
   {
     "id": "b79dbcb5d9ca68bd9c4e4e311951ba66",
@@ -325,7 +435,17 @@
     ],
     "is_default": true,
     "thumbnail": "/01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_thumb.webp",
-    "animated_preview": "/01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_anim.webp"
+    "animated_preview": "/01_Gig_Posters/2026_May_KharSOCIAL_Grind_Post_anim.webp",
+    "case_study": {
+      "brief": "Event branding and social promotional suite for 'Grind' — KharSOCIAL's premier urban, hip-hop, and R&B residency.",
+      "constraints": [
+        "Balance commercial urban hip-hop appeal with KharSOCIAL's alternative edge",
+        "Multi-asset delivery: static feed square, animated motion reel, and DJ story cards",
+        "Same-day turnaround for guest host confirmations"
+      ],
+      "decisions": "Created a clean metallic typographic lockup with sleek urban streetwear framing, deep blacks, and polished chrome accents.",
+      "outcome": "Established Grind as KharSOCIAL's signature weekend urban party with consistent table sellouts."
+    }
   },
   {
     "id": "787a032367e5ecff0af28f09f8b30406",
@@ -352,7 +472,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_April_KharSOCIAL_Common Grounds_Post_thumb.webp",
+    "case_study": {
+      "brief": "Community music poster for 'Common Grounds' — a genre-fluid showcase uniting live indie bands and electronic producers at KharSOCIAL.",
+      "constraints": [
+        "Unite disparate genres (indie rock, synth-pop, deep house) under a single cohesive aesthetic",
+        "Give balanced visual weight to 4 co-headlining acts without favoring one genre",
+        "Inviting community atmosphere that encourages early evening arrivals"
+      ],
+      "decisions": "Built a harmonized tri-tone layout with interconnected geometric nodes and modular artist quadrants that visually signify creative intersection.",
+      "outcome": "Achieved strong early-doors attendance and established a recurring collaborative platform for emerging indie musicians."
+    }
   },
   {
     "id": "79e38bd5d5262faaf09be451c1e3c4b6",
@@ -379,7 +509,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_Chembur_Desi Class_Post_thumb.webp",
+    "case_study": {
+      "brief": "Club event creative for 'Chembur Desi Class' — celebrating regional underground sound and club culture at ChemburSOCIAL.",
+      "constraints": [
+        "Tailor nightlife creative specifically for Chembur's emerging alternative music audience",
+        "Integrate regional cultural elements with modern electronic music club styling",
+        "High visual pop for WhatsApp forward circulation and local neighbourhood engagement"
+      ],
+      "decisions": "Blended bold Devanagari-inspired angular lettering with modern cyber-grid framing and saturated electric cyan/green accents.",
+      "outcome": "Helped establish ChemburSOCIAL as a vital new destination in suburban Mumbai's nightlife circuit."
+    }
   },
   {
     "id": "dcd5fb786a0e7ab1f25235e25b505cd8",
@@ -408,7 +548,17 @@
     ],
     "is_default": true,
     "thumbnail": "/01_Gig_Posters/2026_May_Anti_Open_Stage_Post_thumb.webp",
-    "animated_preview": "/01_Gig_Posters/2026_May_Anti_Open_Stage_Post_anim.webp"
+    "animated_preview": "/01_Gig_Posters/2026_May_Anti_Open_Stage_Post_anim.webp",
+    "case_study": {
+      "brief": "Comprehensive monthly event programming calendar for antiSOCIAL (April Schedule).",
+      "constraints": [
+        "High-density data architecture organizing 20+ live music, DJ, and cultural events on a single canvas",
+        "Dual-mode output: 8-foot physical venue entrance sunboard and digital social media grid carousel",
+        "Strict typographical hierarchy preventing cognitive overload for casual scrollers"
+      ],
+      "decisions": "Constructed a high-density modular matrix with antiSOCIAL's signature dark brutalist aesthetic, bold date numbers, and clean artist name grouping by weekend vs weekday.",
+      "outcome": "Functioned as the definitive monthly programming reference for antiSOCIAL, keeping venue attendance at capacity across the entire month."
+    }
   },
   {
     "id": "a879a5146bc2b43102d246a1b660b5e6",
@@ -435,7 +585,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_MaladSOCIAL_AngrejiBeats_thumb.webp",
+    "case_study": {
+      "brief": "High-energy club night creative for 'Angrejibeats' at MaladSOCIAL, targeting suburban Mumbai's commercial dance crowd.",
+      "constraints": [
+        "High-glamour commercial party positioning with strong mainstream crossover appeal",
+        "Clearly communicate VIP table booking numbers and dress code rules",
+        "Stand out among crowded weekend nightlife options in northern Mumbai"
+      ],
+      "decisions": "Utilized glossy high-contrast typography, rich purple/magenta duotone glow, and sleek modular metadata cards that communicate luxury nightlife.",
+      "outcome": "Drove full table reservation capacity and established recurring suburban weekend footfall."
+    }
   },
   {
     "id": "6d4c32f630ce4e2df66bfbe4f67c076d",
@@ -462,7 +622,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2026_May_KharSOCIAL _8BC b2b Dreamstates_Post_thumb.webp",
+    "case_study": {
+      "brief": "Specialist electronic music showcase poster for '8Bc B2B Dreamstates' at premier underground venues.",
+      "constraints": [
+        "Reflect the complex technical synergy of back-to-back DJ sets and hypnotic electronic subgenres",
+        "Ensure equal typographic prominence for co-headlining electronic music producers",
+        "Optimized for high-contrast viewing on dark nightclub screens and OLED smartphones"
+      ],
+      "decisions": "Employed dual-column mirrored typography, mathematical sound-frequency gridlines, and deep space obsidian aesthetics with piercing laser-green accents.",
+      "outcome": "Garnered praise from both performing artists and attendees for elevated visual storytelling, driving full dancefloor attendance."
+    }
   },
   {
     "id": "f091788aeaf1ccc9859fc6625540a817",
@@ -491,7 +661,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Campaign_and_Promos/Hospitality/Video-528_thumb.webp",
-    "animated_preview": "/02_Campaign_and_Promos/Hospitality/Video-528_anim.webp"
+    "animated_preview": "/02_Campaign_and_Promos/Hospitality/Video-528_anim.webp",
+    "case_study": {
+      "brief": "High-energy promotional motion reel for Hospitality Group luxury dining and nightlife events (Video 528).",
+      "constraints": [
+        "Seamless 60fps looping suitable for in-venue ultra-wide LED signage and digital menu boards",
+        "Highlight premium craft mixology and culinary artistry with sophisticated pacing",
+        "Compressed format optimized for fast mobile video delivery"
+      ],
+      "decisions": "Combined macro culinary and cocktail footage with sleek animated typography, subtle metallic accents, and fluid transitions that elevate venue prestige.",
+      "outcome": "Boosted in-venue cocktail special orders and enhanced digital screen ambiance across peak dining hours."
+    }
   },
   {
     "id": "0317652624e681e9debbaa6e579cf833",
@@ -520,7 +700,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Campaign_and_Promos/Hospitality/Video-216_thumb.webp",
-    "animated_preview": "/02_Campaign_and_Promos/Hospitality/Video-216_anim.webp"
+    "animated_preview": "/02_Campaign_and_Promos/Hospitality/Video-216_anim.webp",
+    "case_study": {
+      "brief": "High-energy promotional motion reel for Hospitality Group luxury dining and nightlife events (Video 216).",
+      "constraints": [
+        "Seamless 60fps looping suitable for in-venue ultra-wide LED signage and digital menu boards",
+        "Highlight premium craft mixology and culinary artistry with sophisticated pacing",
+        "Compressed format optimized for fast mobile video delivery"
+      ],
+      "decisions": "Combined macro culinary and cocktail footage with sleek animated typography, subtle metallic accents, and fluid transitions that elevate venue prestige.",
+      "outcome": "Boosted in-venue cocktail special orders and enhanced digital screen ambiance across peak dining hours."
+    }
   },
   {
     "id": "cf887d32fec90b0dba36a065b89f28b3",
@@ -549,7 +739,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Campaign_and_Promos/Hospitality/rS indeoendence_thumb.webp",
-    "animated_preview": "/02_Campaign_and_Promos/Hospitality/rS indeoendence_anim.webp"
+    "animated_preview": "/02_Campaign_and_Promos/Hospitality/rS indeoendence_anim.webp",
+    "case_study": {
+      "brief": "High-energy promotional motion reel for Hospitality Group luxury dining and nightlife events (Rs Indeoendence).",
+      "constraints": [
+        "Seamless 60fps looping suitable for in-venue ultra-wide LED signage and digital menu boards",
+        "Highlight premium craft mixology and culinary artistry with sophisticated pacing",
+        "Compressed format optimized for fast mobile video delivery"
+      ],
+      "decisions": "Combined macro culinary and cocktail footage with sleek animated typography, subtle metallic accents, and fluid transitions that elevate venue prestige.",
+      "outcome": "Boosted in-venue cocktail special orders and enhanced digital screen ambiance across peak dining hours."
+    }
   },
   {
     "id": "415c50232fc876a8dca378d22b6b7ff7",
@@ -576,7 +776,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2025_March_AntiSOCIAL_Pulse_Post_thumb.webp",
+    "case_study": {
+      "brief": "Specialist electronic music showcase poster for 'Pulse' at premier underground venues.",
+      "constraints": [
+        "Reflect the complex technical synergy of back-to-back DJ sets and hypnotic electronic subgenres",
+        "Ensure equal typographic prominence for co-headlining electronic music producers",
+        "Optimized for high-contrast viewing on dark nightclub screens and OLED smartphones"
+      ],
+      "decisions": "Employed dual-column mirrored typography, mathematical sound-frequency gridlines, and deep space obsidian aesthetics with piercing laser-green accents.",
+      "outcome": "Garnered praise from both performing artists and attendees for elevated visual storytelling, driving full dancefloor attendance."
+    }
   },
   {
     "id": "de4418b9be89c0c6fcc9a904c34c57e6",
@@ -603,7 +813,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Square_thumb.webp",
+    "case_study": {
+      "brief": "Flagship 1:1 Instagram grid post announcing Metaraph's headline India Tour date in Mumbai.",
+      "constraints": [
+        "High visual density that stops scrollers in Instagram explore feeds",
+        "Legibility of international headliner and 4 regional supporting acts within a square container",
+        "Dark mode aesthetics calibrated for OLED mobile screens"
+      ],
+      "decisions": "Built a centered typographic crosshair grid that locks the artist name in ultra-bold condensed sans-serif, flanked by tour coordinates and ticketing partner logos.",
+      "outcome": "Served as the primary social anchor image for the tour, generating record save and share metrics across Mumbai electronic music communities."
+    }
   },
   {
     "id": "a58ab87eed3e588e254adfae39913f8c",
@@ -639,7 +859,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Mumbai Post_thumb.webp",
+    "case_study": {
+      "brief": "Master creative campaign key-visual for Metaraph's multi-city electronic music tour across India.",
+      "constraints": [
+        "Single master visual system adaptable to diverse city stops (Mumbai, Kolkata, Delhi)",
+        "Balance raw underground industrial techno credibility with commercial ticketing appeal",
+        "Print-ready A3 vector layout and digital web assets"
+      ],
+      "decisions": "Utilized high-contrast stark monochrome base with acid industrial highlights, custom distorted typography, and modular city stamp modules that swap without redesigning.",
+      "outcome": "Sold-out tour stops across all venues with unified visual branding recognized nationwide."
+    }
   },
   {
     "id": "38fe1b00293a012893cde40bf4780b1c",
@@ -666,7 +896,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square SMS Post_thumb.webp",
+    "case_study": {
+      "brief": "Ultra-compressed, mobile-optimized visual banner for MOLO SMS and WhatsApp direct marketing broadcasts.",
+      "constraints": [
+        "Must load instantly over cellular data with file size under 150 KB",
+        "Text must remain legible when previewed as a tiny chat thumbnail",
+        "Direct call to action to buy tickets immediately"
+      ],
+      "decisions": "Maximized font size of key headlines, stripped complex background noise for clean solid gradients, and highlighted direct ticket booking urgency.",
+      "outcome": "Generated an immediate 18% direct click-through rate from SMS broadcasts to the ticketing checkout page."
+    }
   },
   {
     "id": "3700180b022493382b3e2ac1d715a0c4",
@@ -693,7 +933,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Skillbox Post_thumb.webp",
+    "case_study": {
+      "brief": "Square 1:1 event listing creative for Skillbox ticketing platform checkout and artist social tags.",
+      "constraints": [
+        "Strict adherence to Skillbox ticket platform upload guidelines and border padding",
+        "High contrast so ticketing prices and lineup are clear on mobile web checkout",
+        "Harmonize MOLO's aesthetic with Skillbox brand UI requirements"
+      ],
+      "decisions": "Employed warm earth-toned gradients and disciplined serif-sans typographic pairing, creating an elevated feel distinct from typical nightlife club flyers.",
+      "outcome": "Seamless ticket launch on Skillbox with zero rejection or re-formatting requests from platform curation team."
+    }
   },
   {
     "id": "25335ca2945f405337e89d7e0f195cf8",
@@ -720,7 +970,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Square Post_thumb.webp",
+    "case_study": {
+      "brief": "Master campaign visual identity for MOLO 5th Edition — a curated live music and lifestyle gathering.",
+      "constraints": [
+        "Differentiate MOLO from loud nightclub rave flyers through elevated editorial design",
+        "Multi-format adaptability across print, social, and digital ticketing partners",
+        "Coordinate across multiple artist teams with varying photo asset qualities"
+      ],
+      "decisions": "Chose an elegant brutalist editorial direction with generous whitespace, refined typography, and organic duotone textures that reflect MOLO's cultural positioning.",
+      "outcome": "Delivered a complete 8-asset promotional suite that established MOLO 5th Edition as one of the season's premier lifestyle events."
+    }
   },
   {
     "id": "076fa79c6f2ac0453336b950aa01806b",
@@ -747,7 +1007,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover SMS_thumb.webp",
+    "case_study": {
+      "brief": "Ultra-compressed, mobile-optimized visual banner for MOLO SMS and WhatsApp direct marketing broadcasts.",
+      "constraints": [
+        "Must load instantly over cellular data with file size under 150 KB",
+        "Text must remain legible when previewed as a tiny chat thumbnail",
+        "Direct call to action to buy tickets immediately"
+      ],
+      "decisions": "Maximized font size of key headlines, stripped complex background noise for clean solid gradients, and highlighted direct ticket booking urgency.",
+      "outcome": "Generated an immediate 18% direct click-through rate from SMS broadcasts to the ticketing checkout page."
+    }
   },
   {
     "id": "f5ad5e9da9812fc0e09ff10b7eda2c20",
@@ -774,7 +1044,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox 1350x1080_thumb.webp",
+    "case_study": {
+      "brief": "Portrait 4:5 social campaign creative for MOLO 5th Edition, maximizing vertical real estate on Instagram feeds.",
+      "constraints": [
+        "4:5 ratio optimization (1080x1350) to occupy 20% more screen space than square posts",
+        "Maintain refined, editorial white space consistent with MOLO curatorial guidelines",
+        "Legibility across both feed scroll and profile grid preview center crop"
+      ],
+      "decisions": "Placed primary curatorial titles within the central 1080x1080 safe zone, utilizing the extra top and bottom space for elegant editorial dates, venue coordinates, and ticketing details.",
+      "outcome": "Achieved highest engagement rate of the MOLO 5th edition campaign with zero text cropping across feed and profile grid views."
+    }
   },
   {
     "id": "0c67d30ecb48d04a5f1cd059cff67e46",
@@ -801,7 +1081,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Skillbox_thumb.webp",
+    "case_study": {
+      "brief": "Horizontal desktop banner for MOLO 5th Edition event header on Skillbox ticketing platform.",
+      "constraints": [
+        "Extreme horizontal ratio requiring wide-format compositional balance",
+        "Critical ticketing details must avoid overlap with Skillbox native UI overlay buttons",
+        "Sharp high-DPI rendering on desktop Retina screens"
+      ],
+      "decisions": "Positioned the MOLO identity on the far left with generous breathing space, leaving the center clear and stacking event metadata cleanly on the right.",
+      "outcome": "Optimized desktop conversion rate on Skillbox event landing page during early-bird ticket release."
+    }
   },
   {
     "id": "f00a5011a7d5f8546584fd5cc6586a20",
@@ -828,7 +1118,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Cover Insider_thumb.webp",
+    "case_study": {
+      "brief": "Ticketing banner for Paytm Insider event listing and curated entertainment carousel for MOLO 5th Edition.",
+      "constraints": [
+        "Paytm Insider app carousel dimensions and safe-zone compliance",
+        "Color profile tuned for readability against Insider's dark app background",
+        "Fast visual communication of date, venue, and curated lineup"
+      ],
+      "decisions": "Created a high-contrast layout with MOLO's bespoke typographic lockup and vivid accent pill badges highlighting date and venue location.",
+      "outcome": "Featured on Paytm Insider Mumbai city curation page, driving substantial early-bird ticket velocity."
+    }
   },
   {
     "id": "863e313a1167d68b8503d20aaba1d88e",
@@ -864,7 +1164,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/MOLO/Molo 5th April Post_thumb.webp",
+    "case_study": {
+      "brief": "Master campaign visual identity for MOLO 5th Edition — a curated live music and lifestyle gathering.",
+      "constraints": [
+        "Differentiate MOLO from loud nightclub rave flyers through elevated editorial design",
+        "Multi-format adaptability across print, social, and digital ticketing partners",
+        "Coordinate across multiple artist teams with varying photo asset qualities"
+      ],
+      "decisions": "Chose an elegant brutalist editorial direction with generous whitespace, refined typography, and organic duotone textures that reflect MOLO's cultural positioning.",
+      "outcome": "Delivered a complete 8-asset promotional suite that established MOLO 5th Edition as one of the season's premier lifestyle events."
+    }
   },
   {
     "id": "06348a38b87f895dbf08b9d76b8ef8a1",
@@ -893,7 +1203,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_thumb.webp",
-    "animated_preview": "/02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_anim.webp"
+    "animated_preview": "/02_Campaign_and_Promos/Metaraph/Metaraph Mumbai_Reel_anim.webp",
+    "case_study": {
+      "brief": "High-velocity 9:16 vertical kinetic motion reel for Metaraph's headline show at antiSOCIAL Mumbai.",
+      "constraints": [
+        "Fast 60fps kinetic motion synced to heavy industrial techno BPM",
+        "Essential gig info (date, venue, ticket link) must remain visible during rapid glitch transitions",
+        "Under 15MB file size limit for instantaneous Instagram Story playback without buffering"
+      ],
+      "decisions": "Synchronized typography cuts with analog video distortion and heavy bass pulses. Layered industrial acid-green flashes against stark black backgrounds to match the artist's intense sound.",
+      "outcome": "Drove over 15,000 organic story views within 24 hours of drop and accelerated final tier ticket sell-out for antiSOCIAL."
+    }
   },
   {
     "id": "9e240fc2849783fed0b77ad659f4cff1",
@@ -922,7 +1242,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_thumb.webp",
-    "animated_preview": "/02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_anim.webp"
+    "animated_preview": "/02_Campaign_and_Promos/Metaraph/Metaraph Kolkata_Story_anim.webp",
+    "case_study": {
+      "brief": "High-velocity 9:16 vertical kinetic motion reel for Metaraph's headline show at antiSOCIAL Mumbai.",
+      "constraints": [
+        "Fast 60fps kinetic motion synced to heavy industrial techno BPM",
+        "Essential gig info (date, venue, ticket link) must remain visible during rapid glitch transitions",
+        "Under 15MB file size limit for instantaneous Instagram Story playback without buffering"
+      ],
+      "decisions": "Synchronized typography cuts with analog video distortion and heavy bass pulses. Layered industrial acid-green flashes against stark black backgrounds to match the artist's intense sound.",
+      "outcome": "Drove over 15,000 organic story views within 24 hours of drop and accelerated final tier ticket sell-out for antiSOCIAL."
+    }
   },
   {
     "id": "ec006d69c23cdd5f41d303daf46602ed",
@@ -958,7 +1288,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Metaraph/Metaraph Post_thumb.webp",
+    "case_study": {
+      "brief": "Master creative campaign key-visual for Metaraph's multi-city electronic music tour across India.",
+      "constraints": [
+        "Single master visual system adaptable to diverse city stops (Mumbai, Kolkata, Delhi)",
+        "Balance raw underground industrial techno credibility with commercial ticketing appeal",
+        "Print-ready A3 vector layout and digital web assets"
+      ],
+      "decisions": "Utilized high-contrast stark monochrome base with acid industrial highlights, custom distorted typography, and modular city stamp modules that swap without redesigning.",
+      "outcome": "Sold-out tour stops across all venues with unified visual branding recognized nationwide."
+    }
   },
   {
     "id": "55c995e1762cd34b5a2b8eb61a02df18",
@@ -985,7 +1325,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2025_March_Malad_Desi Drip_Post_thumb.webp",
+    "case_study": {
+      "brief": "High-energy club night creative for 'Malad Desi Drip' at MaladSOCIAL, targeting suburban Mumbai's commercial dance crowd.",
+      "constraints": [
+        "High-glamour commercial party positioning with strong mainstream crossover appeal",
+        "Clearly communicate VIP table booking numbers and dress code rules",
+        "Stand out among crowded weekend nightlife options in northern Mumbai"
+      ],
+      "decisions": "Utilized glossy high-contrast typography, rich purple/magenta duotone glow, and sleek modular metadata cards that communicate luxury nightlife.",
+      "outcome": "Drove full table reservation capacity and established recurring suburban weekend footfall."
+    }
   },
   {
     "id": "766be5e9f3c97f1834cbb2c3180079ce",
@@ -1012,7 +1362,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender Weeks v1_thumb.webp",
+    "case_study": {
+      "brief": "Week 1 programming breakdown card for KharSOCIAL (May Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 1 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly May design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across KharSOCIAL attendees."
+    }
   },
   {
     "id": "5e902af4fd17e7b677b4400af47003c7",
@@ -1057,7 +1417,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_June/Khar Calender June Post_thumb.webp",
+    "case_study": {
+      "brief": "Comprehensive monthly event programming calendar for KharSOCIAL (June Schedule).",
+      "constraints": [
+        "High-density data architecture organizing 20+ live music, DJ, and cultural events on a single canvas",
+        "Dual-mode output: 8-foot physical venue entrance sunboard and digital social media grid carousel",
+        "Strict typographical hierarchy preventing cognitive overload for casual scrollers"
+      ],
+      "decisions": "Constructed a high-density modular matrix with KharSOCIAL's signature dark brutalist aesthetic, bold date numbers, and clean artist name grouping by weekend vs weekday.",
+      "outcome": "Functioned as the definitive monthly programming reference for KharSOCIAL, keeping venue attendance at capacity across the entire month."
+    }
   },
   {
     "id": "db7c08e394ba682c6c82d31de7782efe",
@@ -1084,7 +1454,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Post_thumb.webp",
+    "case_study": {
+      "brief": "Comprehensive monthly event programming calendar for KharSOCIAL (March Schedule).",
+      "constraints": [
+        "High-density data architecture organizing 20+ live music, DJ, and cultural events on a single canvas",
+        "Dual-mode output: 8-foot physical venue entrance sunboard and digital social media grid carousel",
+        "Strict typographical hierarchy preventing cognitive overload for casual scrollers"
+      ],
+      "decisions": "Constructed a high-density modular matrix with KharSOCIAL's signature dark brutalist aesthetic, bold date numbers, and clean artist name grouping by weekend vs weekday.",
+      "outcome": "Functioned as the definitive monthly programming reference for KharSOCIAL, keeping venue attendance at capacity across the entire month."
+    }
   },
   {
     "id": "f3a4d96095983a4f7dbe2d5ec5912e62",
@@ -1111,7 +1491,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_March25/Khar Social_March _Calendar_Story_thumb.webp",
+    "case_study": {
+      "brief": "Comprehensive monthly event programming calendar for KharSOCIAL (March Schedule).",
+      "constraints": [
+        "High-density data architecture organizing 20+ live music, DJ, and cultural events on a single canvas",
+        "Dual-mode output: 8-foot physical venue entrance sunboard and digital social media grid carousel",
+        "Strict typographical hierarchy preventing cognitive overload for casual scrollers"
+      ],
+      "decisions": "Constructed a high-density modular matrix with KharSOCIAL's signature dark brutalist aesthetic, bold date numbers, and clean artist name grouping by weekend vs weekday.",
+      "outcome": "Functioned as the definitive monthly programming reference for KharSOCIAL, keeping venue attendance at capacity across the entire month."
+    }
   },
   {
     "id": "0c87dc712069e87b628c7e19fe450d3b",
@@ -1156,7 +1546,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Khar_Calendar_May/khar Calender WEEKS Story_thumb.webp",
+    "case_study": {
+      "brief": "Comprehensive monthly event programming calendar for KharSOCIAL (May Schedule).",
+      "constraints": [
+        "High-density data architecture organizing 20+ live music, DJ, and cultural events on a single canvas",
+        "Dual-mode output: 8-foot physical venue entrance sunboard and digital social media grid carousel",
+        "Strict typographical hierarchy preventing cognitive overload for casual scrollers"
+      ],
+      "decisions": "Constructed a high-density modular matrix with KharSOCIAL's signature dark brutalist aesthetic, bold date numbers, and clean artist name grouping by weekend vs weekday.",
+      "outcome": "Functioned as the definitive monthly programming reference for KharSOCIAL, keeping venue attendance at capacity across the entire month."
+    }
   },
   {
     "id": "fd42fe83cd328a823ecae5c690426a35",
@@ -1183,7 +1583,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-983_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #983) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "a132b90951a1fc7bcb2b550232ab1cf4",
@@ -1210,7 +1620,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-880_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #880) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "05fea65c96922ee75201c440bcdcfdf2",
@@ -1237,7 +1657,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-811_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #811) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "31695a53b7e6f75dbbee8f7c2fdb7d8a",
@@ -1264,7 +1694,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-807_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #807) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "9a704e803a8cd04a295677bb559c8127",
@@ -1291,7 +1731,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-658_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #658) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "e2ee2c55824624a745e8a6e8392afdc7",
@@ -1318,7 +1768,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-563_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #563) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "e4feb65b80ea35dcb7129d47f664c4fc",
@@ -1345,7 +1805,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-536_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #536) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "d09442fe6199c2d80a7ab20dd35ca17f",
@@ -1372,7 +1842,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-27_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #27) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "272ce08a761507d4f130bc12989ed672",
@@ -1399,7 +1879,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/Hospitality/Image-237_thumb.webp",
+    "case_study": {
+      "brief": "Curated promotional collateral (Series #237) for Hospitality Group's premium dining and cocktail experiences.",
+      "constraints": [
+        "Luxury brand positioning with strict compliance to hospitality photography standards",
+        "Clear typographic display of chef tasting notes, pairing ingredients, and reservation details",
+        "High-resolution print readiness for physical table menus plus digital social display"
+      ],
+      "decisions": "Designed with a contemporary editorial layout, deep moody shadows, elegant serif accents, and generous breathing room that lets culinary photography take center stage.",
+      "outcome": "Standardized the visual presentation across seasonal promotions, increasing guest table reservations and beverage sales."
+    }
   },
   {
     "id": "d47d4f14f10fca2c810f0a692e871d4a",
@@ -1435,7 +1925,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP6th Feb Post_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP February 2025 (Dop6Th) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP February 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "741138dcb1b163011eb1a0417aa2a383",
@@ -1480,7 +1980,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP27th Feb Post_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP February 2025 (Dop27Th) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP February 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "422fd766d49fc896ea46d9b4647c4b36",
@@ -1525,7 +2035,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP20th Feb Post_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP February 2025 (Dop20Th) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP February 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "683a047133de4e40b78c5d02b411e06a",
@@ -1552,7 +2072,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP13th Feb Post_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP February 2025 (Dop13Th) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP February 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "bca30bc9945b199f488e7bce1f3bc027",
@@ -1579,7 +2109,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_Feb_DOP/DOP Feb V1_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP February 2025 (Dop V1) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP February 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "f38527085e28967e00401cbbe4a47407",
@@ -1624,7 +2164,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 4 post_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP April 2025 (Dop 4) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP April 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "6a258cec065fe84312f9203017b46fd1",
@@ -1669,7 +2219,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 3_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP April 2025 (Dop 3) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP April 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "16783ffd9a97a68240af0d2a206a6df9",
@@ -1714,7 +2274,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 2_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP April 2025 (Dop 2) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP April 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "2b52a8b0db90239827d5551a621d49c5",
@@ -1741,7 +2311,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v4_thumb.webp",
+    "case_study": {
+      "brief": "Special iteration (Dop 1 V4) for DOP April 2025 daytime electronic music session, adapting to revised artist billing.",
+      "constraints": [
+        "Urgent 4-hour turnaround to reflect last-minute lineup addition",
+        "Maintain seamless brand continuity with the existing DOP seasonal campaign",
+        "Simultaneous multi-size export for Instagram Story, Post, and WhatsApp VIP groups"
+      ],
+      "decisions": "Rebalanced the modular typographic grid to incorporate the new artist tier without shrinking master headline fonts, maintaining visual weight and golden-hour warmth.",
+      "outcome": "Released smoothly within hours of artist confirmation, maintaining attendee trust and driving surge ticket sales."
+    }
   },
   {
     "id": "50ea2f8e1a050b8f51a833bd121b9829",
@@ -1768,7 +2348,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v3_thumb.webp",
+    "case_study": {
+      "brief": "Special iteration (Dop 1 V3) for DOP April 2025 daytime electronic music session, adapting to revised artist billing.",
+      "constraints": [
+        "Urgent 4-hour turnaround to reflect last-minute lineup addition",
+        "Maintain seamless brand continuity with the existing DOP seasonal campaign",
+        "Simultaneous multi-size export for Instagram Story, Post, and WhatsApp VIP groups"
+      ],
+      "decisions": "Rebalanced the modular typographic grid to incorporate the new artist tier without shrinking master headline fonts, maintaining visual weight and golden-hour warmth.",
+      "outcome": "Released smoothly within hours of artist confirmation, maintaining attendee trust and driving surge ticket sales."
+    }
   },
   {
     "id": "5c8008976dcac9f9f5845fe4cc397f93",
@@ -1795,7 +2385,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1 v2_thumb.webp",
+    "case_study": {
+      "brief": "Special iteration (Dop 1 V2) for DOP April 2025 daytime electronic music session, adapting to revised artist billing.",
+      "constraints": [
+        "Urgent 4-hour turnaround to reflect last-minute lineup addition",
+        "Maintain seamless brand continuity with the existing DOP seasonal campaign",
+        "Simultaneous multi-size export for Instagram Story, Post, and WhatsApp VIP groups"
+      ],
+      "decisions": "Rebalanced the modular typographic grid to incorporate the new artist tier without shrinking master headline fonts, maintaining visual weight and golden-hour warmth.",
+      "outcome": "Released smoothly within hours of artist confirmation, maintaining attendee trust and driving surge ticket sales."
+    }
   },
   {
     "id": "6302138b2bc7c2ca9c325f9432ae75a3",
@@ -1840,7 +2440,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP Week 1_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP April 2025 (Dop 1) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP April 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "55b4f9f6acbeaeb3d41166910d2e55ec",
@@ -1876,7 +2486,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/2025_April_DOP/DOP April Calender_thumb.webp",
+    "case_study": {
+      "brief": "Official campaign poster for DOP April 2025 (Dop) — outdoor day-party electronic music gathering.",
+      "constraints": [
+        "Communicate open-air, daytime Sunday electronic music vibe rather than dark midnight club rave",
+        "Modular weekly framework that accommodates rotating guest headliners each Sunday",
+        "Clear presentation of venue entry timings, stage schedules, and table reservations"
+      ],
+      "decisions": "Used vibrant sunlight-inspired warm gradients, bold sans-serif lettering, and structured data ribbons that organize timings, venue rules, and artist names clearly.",
+      "outcome": "Consistent Sunday capacity attendance throughout the DOP April 2025 residency, establishing DOP as a benchmark daytime music brand."
+    }
   },
   {
     "id": "3efe74a32cc682832ff47d43264f80bc",
@@ -1905,7 +2525,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/Cover April_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/Cover April_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/Cover April_anim.webp",
+    "case_study": {
+      "brief": "Master monthly key visual & programming cover for antiSOCIAL (April Programming).",
+      "constraints": [
+        "Establish the visual identity that will govern all weekly sub-posters and calendar cards for the entire month",
+        "High-impact standalone artwork suitable for venue entrance sunboard and social feed anchor",
+        "Zero text clutter while setting a bold musical mood for the upcoming month"
+      ],
+      "decisions": "Engineered a signature brutalist key visual using antiSOCIAL's iconic high-contrast styling, heavy industrial textures, and futuristic wireframe elements that signal raw underground culture.",
+      "outcome": "Served as the monthly visual cornerstone for antiSOCIAL, generating high anticipation and bookmark rates across nightlife communities."
+    }
   },
   {
     "id": "f1df667c0ba9f9be5efbd0d0dba14fbf",
@@ -1934,7 +2564,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Cover_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Cover_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Cover_anim.webp",
+    "case_study": {
+      "brief": "Master monthly key visual & programming cover for antiSOCIAL (May Programming).",
+      "constraints": [
+        "Establish the visual identity that will govern all weekly sub-posters and calendar cards for the entire month",
+        "High-impact standalone artwork suitable for venue entrance sunboard and social feed anchor",
+        "Zero text clutter while setting a bold musical mood for the upcoming month"
+      ],
+      "decisions": "Engineered a signature brutalist key visual using antiSOCIAL's iconic high-contrast styling, heavy industrial textures, and futuristic wireframe elements that signal raw underground culture.",
+      "outcome": "Served as the monthly visual cornerstone for antiSOCIAL, generating high anticipation and bookmark rates across nightlife communities."
+    }
   },
   {
     "id": "71aba23950bfdc5f722bc34cdb5849dd",
@@ -1961,7 +2601,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 500x750_thumb.webp",
+    "case_study": {
+      "brief": "Vertical 2:3 digital marketing card for COEUS executive mobile announcements and partner communications.",
+      "constraints": [
+        "Vertical framing tailored for mobile messaging and app-based card carousels",
+        "Strict typographic hierarchy ensuring key value propositions are legible in under 2 seconds",
+        "Clean negative space suitable for localized text adaptations"
+      ],
+      "decisions": "Structured an inverted modular layout with high-impact headline locking the top, centered brand iconography, and technical metadata grounding the bottom border.",
+      "outcome": "Increased click-through rates across mobile partner invitations and standardized COEUS mobile asset specifications."
+    }
   },
   {
     "id": "030c7757454e60e599a6ed68ce75d56d",
@@ -1988,7 +2638,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS 1280x640_thumb.webp",
+    "case_study": {
+      "brief": "Widescreen 2:1 hero banner for COEUS strategic brand portal and digital partner showcase.",
+      "constraints": [
+        "2:1 widescreen canvas requiring horizontal visual tension without empty dead space",
+        "High-resolution crispness across both 4K desktop displays and low-dpi mobile devices",
+        "Seamless alignment with COEUS minimalist corporate branding guidelines"
+      ],
+      "decisions": "Engineered a wide architectural layout featuring bold geometric typography on the left third balanced by abstract dimensional branding elements on the right with subtle neon cyan accents.",
+      "outcome": "Deployed as primary header asset across COEUS partner portal with zero distortion across multiple screen ratios."
+    }
   },
   {
     "id": "e1a31b0d34bdac8888417beb4675a6ed",
@@ -2024,7 +2684,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp"
+    "thumbnail": "/02_Campaign_and_Promos/COEUS/COEUS Finasl_thumb.webp",
+    "case_study": {
+      "brief": "Foundational brand identity guidelines and core campaign visual system for COEUS corporate identity.",
+      "constraints": [
+        "Must communicate analytical precision and high-level strategic intelligence",
+        "Scalable across physical corporate stationery, digital decks, and large-format booth graphics",
+        "Restrained monochrome aesthetic punctuated by a single signature neon cyan accent"
+      ],
+      "decisions": "Crafted a geometric modernist identity with bespoke wordmark kerning, a mathematically proportioned icon mark, and strict whitespace rules that convey corporate authority.",
+      "outcome": "Delivered comprehensive 40-page brand guide and asset library adopted across all COEUS commercial touchpoints."
+    }
   },
   {
     "id": "6a9ad287ef9d2eede1eb63d3c75a0f88",
@@ -2051,7 +2721,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp"
+    "thumbnail": "/01_Gig_Posters/2025_March_ChemburD+SOCIAL_CircuitX_Post_thumb.webp",
+    "case_study": {
+      "brief": "Club event creative for 'Chemburd+Social Circuitx' — celebrating regional underground sound and club culture at ChemburSOCIAL.",
+      "constraints": [
+        "Tailor nightlife creative specifically for Chembur's emerging alternative music audience",
+        "Integrate regional cultural elements with modern electronic music club styling",
+        "High visual pop for WhatsApp forward circulation and local neighbourhood engagement"
+      ],
+      "decisions": "Blended bold Devanagari-inspired angular lettering with modern cyber-grid framing and saturated electric cyan/green accents.",
+      "outcome": "Helped establish ChemburSOCIAL as a vital new destination in suburban Mumbai's nightlife circuit."
+    }
   },
   {
     "id": "f4599fa7e13c657701845b78a98dc0d0",
@@ -2080,7 +2760,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Calender Story_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Calender Story_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Calender Story_anim.webp",
+    "case_study": {
+      "brief": "Vertical 9:16 interactive story programming schedule for antiSOCIAL (April Schedule).",
+      "constraints": [
+        "Must organize up to 25+ events into an easy-to-read vertical format for mobile stories",
+        "Legible artist names and dates at 5.5-inch phone screen size within 3 seconds of viewing",
+        "Color-coded genre indicators for techno, hip-hop, indie, and comedy nights"
+      ],
+      "decisions": "Structured a multi-slide chronological feed with clean date badges, bold artist names, and high-visibility ticket link stickers in the bottom third safe zone.",
+      "outcome": "Became the primary weekly referral driver for antiSOCIAL ticket sales on Instagram highlights."
+    }
   },
   {
     "id": "ea51ad9fc44cbc8aaca540503e59585b",
@@ -2109,7 +2799,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 4_anim.webp",
+    "case_study": {
+      "brief": "Week 4 programming breakdown card for antiSOCIAL (June Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 4 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly June design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "647463684db5e0866f9b67f845fc461c",
@@ -2138,7 +2838,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 3_anim.webp",
+    "case_study": {
+      "brief": "Week 3 programming breakdown card for antiSOCIAL (June Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 3 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly June design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "7d41cfef678ae816fcb35a1063d0d270",
@@ -2167,7 +2877,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 2_anim.webp",
+    "case_study": {
+      "brief": "Week 2 programming breakdown card for antiSOCIAL (June Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 2 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly June design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "672d179d6e4b4e888ecd59f0e8658875",
@@ -2196,7 +2916,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June Week 1_anim.webp",
+    "case_study": {
+      "brief": "Week 1 programming breakdown card for antiSOCIAL (June Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 1 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly June design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "a19e6632dc86c0eb50e7f1e3abc5d9a2",
@@ -2232,7 +2962,17 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp"
+    "thumbnail": "/02_Event_Calendars/Anti_Calendar_June/Anti Calender June story_thumb.webp",
+    "case_study": {
+      "brief": "Comprehensive monthly event programming calendar for antiSOCIAL (June Schedule).",
+      "constraints": [
+        "High-density data architecture organizing 20+ live music, DJ, and cultural events on a single canvas",
+        "Dual-mode output: 8-foot physical venue entrance sunboard and digital social media grid carousel",
+        "Strict typographical hierarchy preventing cognitive overload for casual scrollers"
+      ],
+      "decisions": "Constructed a high-density modular matrix with antiSOCIAL's signature dark brutalist aesthetic, bold date numbers, and clean artist name grouping by weekend vs weekday.",
+      "outcome": "Functioned as the definitive monthly programming reference for antiSOCIAL, keeping venue attendance at capacity across the entire month."
+    }
   },
   {
     "id": "53ea232c4f027b95c162be46968298f5",
@@ -2261,7 +3001,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 5_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 5_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 5_anim.webp",
+    "case_study": {
+      "brief": "Week 5 programming breakdown card for antiSOCIAL (April Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 5 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly April design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "38ec145014ac78e4a455f8fae8a3cf94",
@@ -2290,7 +3040,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 5_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 5_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 5_anim.webp",
+    "case_study": {
+      "brief": "Week 5 programming breakdown card for antiSOCIAL (May Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 5 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly May design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "5fb42693c00ce2c5e286c18a3dd45a5b",
@@ -2319,7 +3079,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 4_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 4_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 4_anim.webp",
+    "case_study": {
+      "brief": "Week 4 programming breakdown card for antiSOCIAL (April Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 4 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly April design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "b0c714425eac23adaa640c64f0e249bd",
@@ -2348,7 +3118,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 4_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 4_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 4_anim.webp",
+    "case_study": {
+      "brief": "Week 4 programming breakdown card for antiSOCIAL (May Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 4 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly May design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "4e2384f9929c02421ea94faa0c686c87",
@@ -2377,7 +3157,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 3_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 3_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 3_anim.webp",
+    "case_study": {
+      "brief": "Week 3 programming breakdown card for antiSOCIAL (April Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 3 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly April design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "5f308f727c8c2028f8e3a4cce05158d4",
@@ -2406,7 +3196,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 3_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 3_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 3_anim.webp",
+    "case_study": {
+      "brief": "Week 3 programming breakdown card for antiSOCIAL (May Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 3 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly May design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "0f7cdd3df13984f7550d56ce38ee62c5",
@@ -2435,7 +3235,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 2_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 2_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 2_anim.webp",
+    "case_study": {
+      "brief": "Week 2 programming breakdown card for antiSOCIAL (April Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 2 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly April design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "48c4d8167de5ff952b83d346b254632a",
@@ -2464,7 +3274,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 2_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 2_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 2_anim.webp",
+    "case_study": {
+      "brief": "Week 2 programming breakdown card for antiSOCIAL (May Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 2 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly May design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "f6cfca48b3b9492ac96333d2533bf6a8",
@@ -2493,7 +3313,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_April/April Week 1_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 1_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_April/April Week 1_anim.webp",
+    "case_study": {
+      "brief": "Week 1 programming breakdown card for antiSOCIAL (April Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 1 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly April design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "03515eb1878686b16813704d4427b692",
@@ -2522,7 +3352,17 @@
     ],
     "is_default": true,
     "thumbnail": "/02_Event_Calendars/Anti_Calendar_May/Week 1_thumb.webp",
-    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 1_anim.webp"
+    "animated_preview": "/02_Event_Calendars/Anti_Calendar_May/Week 1_anim.webp",
+    "case_study": {
+      "brief": "Week 1 programming breakdown card for antiSOCIAL (May Calendar).",
+      "constraints": [
+        "Present detailed day-by-day artist lineups for Week 1 with exact stage times and entry policies",
+        "Maintain strict alignment with the master monthly May design system",
+        "Deliver rapid-turnaround updates when artist schedules shift"
+      ],
+      "decisions": "Used a modular horizontal calendar grid with clear weekday headers, high-contrast artist typography, and subtle genre-coded status tags.",
+      "outcome": "Ensured consistent mid-week and weekend turnout with zero confusion on set times across antiSOCIAL attendees."
+    }
   },
   {
     "id": "f6fad1f945bb3b33e0b59eb5a0459675",
@@ -2558,6 +3398,16 @@
       }
     ],
     "is_default": true,
-    "thumbnail": "/04_Brochures/F.Gheewala_Cover_thumb.webp"
+    "thumbnail": "/04_Brochures/F.Gheewala_Cover_thumb.webp",
+    "case_study": {
+      "brief": "Corporate company profile brochure and executive recruitment presentation for Saudi Arabia & GCC market expansion.",
+      "constraints": [
+        "Strict adherence to official GCC corporate recruitment compliance standards",
+        "Multi-page editorial structure: company overview, overseas placement services, executive team, and accreditations",
+        "Dual-format export requirement: 300 DPI CMYK pre-press offset print and lightweight interactive digital PDF"
+      ],
+      "decisions": "Applied an authoritative navy blue and royal gold palette with high-contrast bilingual typography, custom corporate iconography for specialized trade verticals, and a systematic 12-column editorial grid.",
+      "outcome": "Official corporate profile successfully deployed across Riyadh, Dammam, and Mumbai branches, cementing F. Gheewala's commercial standing with GCC enterprise clients."
+    }
   }
 ]

@@ -1377,19 +1377,21 @@ const CASE_STUDIES = {
   }
 };
 
-// Resolve case study for a project by checking client name against the lookup
+// Resolve case study for a project: prioritize unique artwork-level case study first, then fallback to lookup
 const resolveCaseStudy = (project) => {
   if (!project) return null;
+  // 1. Direct artwork-level unique case study (Primary)
+  if (project.case_study) return project.case_study;
+  // 2. Direct client match
   const client = project.client || '';
-  // Direct match
   if (CASE_STUDIES[client]) return CASE_STUDIES[client];
-  // Partial match (e.g. "AntiSOCIAL" matches client "AntiSOCIAL")
+  // 3. Partial match (e.g. "AntiSOCIAL" matches client "AntiSOCIAL")
   for (const key of Object.keys(CASE_STUDIES)) {
     if (client.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(client.toLowerCase())) {
       return CASE_STUDIES[key];
     }
   }
-  // Match by subfolder or title
+  // 4. Match by subfolder or title
   const sub = (project.subfolder || '').replace(/_/g, ' ');
   for (const key of Object.keys(CASE_STUDIES)) {
     if (sub.toLowerCase().includes(key.toLowerCase())) return CASE_STUDIES[key];
