@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House of Al Hadiyah — WORN. NOT MADE. | Handcrafted Stone Bead Bracelets</title>
+  <meta name="description" content="Cinematic 10-second landing page film and collection showcase for House of Al Hadiyah. Warm, artisanal, bohemian-luxury beaded bracelets in earth tones, terracotta, and sage green.">
+
+  <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="linen-texture">
+
+  <!-- Announcement Ribbon -->
+  <div class="announcement-bar">
+    AUTUMN / WINTER EDIT <span>✦</span> BESPOKE HAND-KNOTTED TALISMANS <span>✦</span> WORLDWIDE ARTISANAL SHIPPING
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-logo-main">
+          House of Al Hadiyah <span class="star">✦</span>
+        </div>
+        <div class="brand-logo-sub">Handmade Stone Bead Jewelry</div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">The Film</a></li>
+        <li><a href="#storyboard">3-Shot Storyboard</a></li>
+        <li><a href="#craft">Artisanal Pillars</a></li>
+        <li><a href="#stones">Natural Stones</a></li>
+        <li><a href="#manifesto">Philosophy</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="navSoundBtn" class="btn btn-outline" title="Toggle Sound">
+          <span id="navSoundLabel">Sound: Muted</span>
+        </button>
+        <a href="#specs" class="btn btn-primary">Download Video</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Cinematic Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-header">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        10-Second Cinematic Brand Film · 16:9 4K Master
+      </div>
+      <h1 class="hero-title">Worn. Not Made.</h1>
+      <p class="hero-subtitle">
+        A sensory, slow-crafted visual meditation on natural gemstones, textured organic linen, and effortless bohemian luxury.
+      </p>
+    </div>
+
+    <!-- 16:9 Cinematic Video Player -->
+    <div class="video-hero-card">
+      <div class="video-viewport" id="videoViewport">
+        <video id="brandVideo" autoplay loop muted playsinline preload="auto">
+          <source src="./house_of_al_hadiyah_10s_cinematic.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+
+        <!-- Top Left Watermark -->
+        <div class="video-watermark-top">
+          <div class="watermark-pill"><span class="accent">✦</span> House of Al Hadiyah</div>
+          <div class="watermark-pill">10.00s · 16:9 UHD</div>
+        </div>
+
+        <!-- Top Right Dynamic Shot Indicator -->
+        <div class="current-shot-indicator" id="shotIndicator">
+          <span class="shot-dot"></span>
+          <span id="shotIndicatorText">Shot 1: Studio Macro · "WORN. NOT MADE."</span>
+        </div>
+
+        <!-- Center Big Play Button Overlay -->
+        <div class="center-play-overlay" id="centerPlayBtn" title="Play / Pause">
+          <svg id="centerPlayIcon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <!-- Video Player Control Bar -->
+      <div class="player-controls-container">
+        <!-- Scrubber -->
+        <div class="timeline-wrapper" id="timelineWrapper">
+          <div class="timeline-rail" id="timelineRail">
+            <div class="timeline-progress" id="timelineProgress"></div>
+            <div class="timeline-thumb" id="timelineThumb"></div>
+            <div class="shot-marker shot1" data-label="0:00 · Macro Studio"></div>
+            <div class="shot-marker shot2" data-label="0:03.5 · Craft Tags"></div>
+            <div class="shot-marker shot3" data-label="0:07 · Golden Hour"></div>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <!-- Left Controls -->
+          <div class="controls-left">
+            <button class="control-btn" id="playPauseBtn" title="Play/Pause (Space)">
+              <svg id="playIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+
+            <button class="control-btn" id="audioToggleBtn" title="Toggle Audio (M)">
+              <span id="audioSymbol" style="font-size: 14px;">🔇</span>
+            </button>
+
+            <div class="time-readout">
+              <span class="current" id="timeCurrent">00:00</span> / <span id="timeDuration">00:10</span>
+            </div>
+
+            <button class="control-btn active" id="loopToggleBtn" title="10s Infinite Loop">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            </button>
+          </div>
+
+          <!-- Middle Jump Tabs (User specified shots) -->
+          <div class="jump-tabs">
+            <button class="jump-tab-btn active" data-seek="0.0">Shot 1 [0:00]</button>
+            <button class="jump-tab-btn" data-seek="3.5">Shot 2 [0:03.5]</button>
+            <button class="jump-tab-btn" data-seek="7.0">Shot 3 [0:07]</button>
+          </div>
+
+          <!-- Right Controls -->
+          <div class="controls-right">
+            <button class="control-btn" id="speedBtn" title="Playback Speed">1.0x</button>
+            <button class="control-btn" id="fullscreenBtn" title="Fullscreen (F)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Shot Film Storyboard Section -->
+  <section class="storyboard-section" id="storyboard">
+    <div class="section-header">
+      <span class="section-tag">Directorial Vision</span>
+      <h2 class="section-title">The 3-Shot Timeline</h2>
+      <p class="section-desc">
+        Crafted specifically to honor tactile texture, natural light, and the organic allure of earthbound materials across 10 seamless seconds.
+      </p>
+    </div>
+
+    <div class="storyboard-grid">
+      <!-- Shot 1 Card -->
+      <div class="story-card">
+        <div class="story-media">
+          <img src="./assets/shot1_macro_studio.jpg" alt="Shot 1: Macro Studio Wrist Close-up">
+          <div class="story-pill-time">0:00 — 0:03.5</div>
+        </div>
+        <div class="story-body">
+          <div class="story-shot-num">Opening Shot · Studio Macro</div>
+          <h3 class="story-headline">"WORN. NOT MADE."</h3>
+          <p class="story-text">
+            Extreme macro close-up of colorful handmade stone bead bracelets stacked on a wrist. Gentle optical camera push-in in a darkened studio with soft directional natural light skimming the bead contours against raw oatmeal linen.
+          </p>
+          <div class="story-specs">
+            <div class="spec-item"><span class="spec-label">Camera Move</span><span class="spec-val">Optical Push-in (1.00x → 1.14x)</span></div>
+            <div class="spec-item"><span class="spec-label">Lighting Style</span><span class="spec-val">Darkened Studio · Soft Natural Key</span></div>
+            <div class="spec-item"><span class="spec-label">Serif Typography</span><span class="spec-val">Cormorant Garamond · Elegant Gold Tracking</span></div>
+          </div>
+          <button class="jump-to-scene-btn" onclick="seekVideo(0.0)">Jump to Scene 1</button>
+        </div>
+      </div>
+
+      <!-- Shot 2 Card -->
+      <div class="story-card">
+        <div class="story-media">
+          <img src="./assets/shot2_craft_scroll.jpg" alt="Shot 2: Craft Detail Scroll with Tags">
+          <div class="story-pill-time">0:03.5 — 0:07.0</div>
+        </div>
+        <div class="story-body">
+          <div class="story-shot-num">Second Shot · Craft Scroll</div>
+          <h3 class="story-headline">The Artisanal Pillars</h3>
+          <p class="story-text">
+            Smooth scroll motion drifting across hand-knotted bracelets resting on draped textured linen cloth. Sequential frosted badge reveal: "HANDCRAFTED" · "NATURAL STONES" · "ADJUSTABLE FIT" with subtle fade transitions.
+          </p>
+          <div class="story-specs">
+            <div class="spec-item"><span class="spec-label">Camera Move</span><span class="spec-val">Horizontal Product Scroll (Left → Right)</span></div>
+            <div class="spec-item"><span class="spec-label">Overlay Badges</span><span class="spec-val">3 Frosted Glass Pills + Gold Separator Dots</span></div>
+            <div class="spec-item"><span class="spec-label">Animation Timing</span><span class="spec-val">Staggered Slide-Up & Fade (3.8s, 4.6s, 5.5s)</span></div>
+          </div>
+          <button class="jump-to-scene-btn" onclick="seekVideo(3.5)">Jump to Scene 2</button>
+        </div>
+      </div>
+
+      <!-- Shot 3 Card -->
+      <div class="story-card">
+        <div class="story-media">
+          <img src="./assets/shot3_golden_hour.jpg" alt="Shot 3: Golden Hour Lifestyle">
+          <div class="story-pill-time">0:07.0 — 0:10.0</div>
+        </div>
+        <div class="story-body">
+          <div class="story-shot-num">Final Shot · Golden Hour</div>
+          <h3 class="story-headline">House of Al Hadiyah</h3>
+          <p class="story-text">
+            Lifestyle close-up of beaded bracelets styled on wrist in golden hour outdoor setting. Warm amber sunlight rim-lighting the wrist and beads with natural lens flare and creamy bokeh, concluding with the brand hallmark.
+          </p>
+          <div class="story-specs">
+            <div class="spec-item"><span class="spec-label">Camera Move</span><span class="spec-val">Cinematic Drift into Golden Flare</span></div>
+            <div class="spec-item"><span class="spec-label">Atmosphere</span><span class="spec-val">Golden Hour Backlight · Bohemian Bokeh</span></div>
+            <div class="spec-item"><span class="spec-label">Brand Outro</span><span class="spec-val">Hallmark Crest · Seamless Dark Loop Dip</span></div>
+          </div>
+          <button class="jump-to-scene-btn" onclick="seekVideo(7.0)">Jump to Scene 3</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Tags Feature Section -->
+  <section class="tags-feature-section" id="craft">
+    <div class="tags-container">
+      <div class="section-header">
+        <span class="section-tag">As Highlighted in Film</span>
+        <h2 class="section-title">The Three Craft Signatures</h2>
+        <p class="section-desc">
+          Revealed during the second shot's smooth scroll sequence, these three pillars define every piece from House of Al Hadiyah.
+        </p>
+      </div>
+
+      <!-- The exact tags from the user's prompt -->
+      <div class="tags-pill-row">
+        <div class="craft-tag-pill"><span class="icon">✦</span> "HANDCRAFTED"</div>
+        <div class="craft-tag-divider">·</div>
+        <div class="craft-tag-pill"><span class="icon">✦</span> "NATURAL STONES"</div>
+        <div class="craft-tag-divider">·</div>
+        <div class="craft-tag-pill"><span class="icon">✦</span> "ADJUSTABLE FIT"</div>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">✦</div>
+          <h3 class="pillar-title">Handcrafted</h3>
+          <p class="pillar-text">
+            Every bracelet is meticulously assembled by hand. Artisans hand-select each stone for color harmony, thread them on durable reinforced cording, and finish them with traditional hand-tied knotwork.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">◈</div>
+          <h3 class="pillar-title">Natural Stones</h3>
+          <p class="pillar-text">
+            We use genuine, ethically gathered semi-precious gemstones—African turquoise, red jasper, moss agate, golden amber, and natural terracotta clay beads. No synthetic dyes or plastic composites.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">♾</div>
+          <h3 class="pillar-title">Adjustable Fit</h3>
+          <p class="pillar-text">
+            Engineered with a sliding macramé tension closure that glides smoothly to fit wrists from 6.0" to 8.5". Tailored for effortless stacking, secure all-day wear, and tactile comfort.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artisanal Stone Palette -->
+  <section class="stones-section" id="stones">
+    <div class="section-header">
+      <span class="section-tag">Earth Tones & Materials</span>
+      <h2 class="section-title">The Natural Palette</h2>
+      <p class="section-desc">
+        Grounded in terracotta, sage green, warm cream, and raw mineral hues.
+      </p>
+    </div>
+
+    <div class="stone-grid">
+      <div class="stone-card">
+        <div class="stone-swatch swatch-turquoise"></div>
+        <h4 class="stone-name">African Turquoise</h4>
+        <div class="stone-meaning">Structure · Evolution · Balance</div>
+        <p class="stone-desc">A form of jasper exhibiting rich teal-green speckles that evoke ancient oceanic bedrock.</p>
+      </div>
+
+      <div class="stone-card">
+        <div class="stone-swatch swatch-jasper"></div>
+        <h4 class="stone-name">Red Jasper</h4>
+        <div class="stone-meaning">Grounding · Endurance · Warmth</div>
+        <p class="stone-desc">Deep terracotta and brick-red earth stone offering warm stabilizing presence.</p>
+      </div>
+
+      <div class="stone-card">
+        <div class="stone-swatch swatch-moss-agate"></div>
+        <h4 class="stone-name">Moss Agate</h4>
+        <div class="stone-meaning">Tranquility · Foliage · Abundance</div>
+        <p class="stone-desc">Translucent dendritic chalcedony with soft sage green mineral inclusions.</p>
+      </div>
+
+      <div class="stone-card">
+        <div class="stone-swatch swatch-terracotta"></div>
+        <h4 class="stone-name">Hand-fired Terracotta</h4>
+        <div class="stone-meaning">Purity · Tactility · Primitive Craft</div>
+        <p class="stone-desc">Clay beads shaped by hand and kiln-fired to a velvety, warm earthen finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Manifesto -->
+  <section class="manifesto-section" id="manifesto">
+    <div class="manifesto-container">
+      <span class="manifesto-kicker">The Brand Ethos</span>
+      <blockquote class="manifesto-quote">
+        "True beauty isn't engineered in a machine. It is <span>worn</span>, lived in, and shaped by the earth."
+      </blockquote>
+      <p class="manifesto-body">
+        House of Al Hadiyah was founded on the belief that everyday talismans should carry weight, story, and tactile warmth. We design bracelets that embrace organic variation, celebrate the irregularities of raw minerals, and look even better as time passes.
+      </p>
+      <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);">
+        ✦ W O R N .   N O T   M A D E . ✦
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs & Download Box -->
+  <section class="specs-download-section" id="specs">
+    <div class="specs-box">
+      <div class="specs-info">
+        <h3 class="specs-title">10-Second Master Film Deliverable</h3>
+        <p style="color: var(--cream-muted); font-size: 0.85rem;">
+          Broadcast and web-ready cinematic MP4 encoded with H.264 High Profile and stereo ambient audio.
+        </p>
+        <div class="specs-chips">
+          <span class="spec-chip">10.00 Seconds</span>
+          <span class="spec-chip">1920x1080 (16:9 UHD)</span>
+          <span class="spec-chip">30.00 FPS</span>
+          <span class="spec-chip">H.264 / AAC</span>
+          <span class="spec-chip">FastStart Enabled</span>
+        </div>
+      </div>
+
+      <div class="specs-actions">
+        <a href="./house_of_al_hadiyah_10s_cinematic.mp4" download="house_of_al_hadiyah_10s_cinematic.mp4" class="btn btn-primary">
+          Download MP4 (6 MB)
+        </a>
+        <button class="btn btn-outline" onclick="seekVideo(0.0); document.getElementById('brandVideo').play();">
+          Replay Film ↺
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo-main">
+            House of Al Hadiyah <span style="color:var(--gold)">✦</span>
+          </div>
+          <p>
+            Handmade beaded bracelets rooted in earth tones, bohemian elegance, and timeless artisanal craft. Made to be worn and cherished.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--cream); margin-bottom:12px; font-weight:600;">Explore</div>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.82rem;">
+            <li><a href="#hero" style="color:var(--cream-dim); text-decoration:none;">The Film</a></li>
+            <li><a href="#storyboard" style="color:var(--cream-dim); text-decoration:none;">Storyboard</a></li>
+            <li><a href="#craft" style="color:var(--cream-dim); text-decoration:none;">Pillars</a></li>
+            <li><a href="#stones" style="color:var(--cream-dim); text-decoration:none;">Stones</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--cream); margin-bottom:12px; font-weight:600;">Color Palette</div>
+          <div style="display:flex; gap:8px; margin-top:8px;">
+            <div title="Terracotta #C86D51" style="width:24px; height:24px; border-radius:50%; background:#C86D51; border:1px solid rgba(255,255,255,0.2);"></div>
+            <div title="Sage Green #748B75" style="width:24px; height:24px; border-radius:50%; background:#748B75; border:1px solid rgba(255,255,255,0.2);"></div>
+            <div title="Warm Cream #FAF7F2" style="width:24px; height:24px; border-radius:50%; background:#FAF7F2; border:1px solid rgba(255,255,255,0.2);"></div>
+            <div title="Studio Dark #1A1817" style="width:24px; height:24px; border-radius:50%; background:#1A1817; border:1px solid rgba(255,255,255,0.2);"></div>
+            <div title="Gold Accent #D4AF37" style="width:24px; height:24px; border-radius:50%; background:#D4AF37; border:1px solid rgba(255,255,255,0.2);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 House of Al Hadiyah. All rights reserved.</div>
+        <div style="letter-spacing:0.1em;">WORN. NOT MADE.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
