@@ -802,7 +802,9 @@ function BentoProjectsGrid({
 
   // Set intelligent default subcategory whenever main category filter changes
   useEffect(() => {
-    if (activeFilter === 'Event Calendars') {
+    if (activeFilter === 'Social Media') {
+      setActiveSubcategory('AD');
+    } else if (activeFilter === 'Event Calendars') {
       setActiveSubcategory('anti_all');
     } else if (activeFilter === 'Campaigns & Promos') {
       setActiveSubcategory('COEUS');
@@ -815,11 +817,22 @@ function BentoProjectsGrid({
   const categories = useMemo(() => {
     return [
       { id: 'Gig Posters', label: 'GIG POSTERS' },
+      { id: 'Social Media', label: 'SOCIAL MEDIA' },
       { id: 'Campaigns & Promos', label: 'CAMPAIGNS' },
       { id: 'Event Calendars', label: 'CALENDARS' },
       { id: 'video', label: 'MOTION / VIDEO' },
       { id: 'Brochures', label: 'BROCHURES' },
       { id: 'custom', label: 'CUSTOM UPLOADS' }
+    ];
+  }, []);
+
+  // Subcategories for Social Media (Folder-wise)
+  const socialMediaSubcategories = useMemo(() => {
+    return [
+      { id: 'AD', label: 'AD SERIES' },
+      { id: 'Journal', label: 'THE JOURNAL' },
+      { id: 'Kona Kona', label: 'KONA KONA' },
+      { id: 'RS', label: 'RS SERIES' }
     ];
   }, []);
 
@@ -859,6 +872,11 @@ function BentoProjectsGrid({
         if (p.is_default) return false;
       } else if (activeFilter) {
         if (p.category !== activeFilter) return false;
+      }
+
+      // Subcategory filter for Social Media (Folder-wise: AD, Journal, Kona Kona, RS)
+      if (activeFilter === 'Social Media' && activeSubcategory) {
+        if (p.subfolder !== activeSubcategory) return false;
       }
 
       // Subcategory filter for Event Calendars
@@ -946,27 +964,61 @@ function BentoProjectsGrid({
           </div>
         </div>
 
-        {/* Category Pills Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-4 no-scrollbar">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => {
-                AudioController.play('click');
-                setActiveFilter(cat.id);
-                setVisibleCount(24);
-              }}
-              data-cursor={cat.label}
-              className={`whitespace-nowrap px-4 py-2 rounded font-mono text-xs font-bold uppercase transition-all duration-200 flex items-center gap-2 ${
-                activeFilter === cat.id
-                  ? 'bg-accent text-black shadow-[0_0_15px_rgba(0,255,102,0.4)]'
-                  : 'bg-darkcard text-white/70 hover:text-white hover:border-white/40 border border-white/15'
-              }`}
-            >
-              <span>{cat.label}</span>
-            </button>
-          ))}
+        {/* High-Impact Upfront Category Dock */}
+        <div className="relative mb-8 p-2 sm:p-2.5 bg-gradient-to-r from-darkcard/95 via-darkcard to-darkcard/95 border border-white/20 hover:border-accent/40 rounded-2xl backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] transition-all">
+          <div className="flex items-center gap-2.5 sm:gap-3 overflow-x-auto pb-1 no-scrollbar scroll-smooth">
+            {categories.map((cat) => {
+              const isActive = activeFilter === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    AudioController.play('click');
+                    setActiveFilter(cat.id);
+                    setVisibleCount(24);
+                  }}
+                  data-cursor={cat.label}
+                  className={`whitespace-nowrap px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4 rounded-xl font-mono text-xs sm:text-sm md:text-base font-black tracking-wider uppercase transition-all duration-300 flex items-center gap-2.5 select-none ${
+                    isActive
+                      ? 'bg-accent text-black shadow-[0_0_25px_rgba(0,255,102,0.5)] scale-[1.02] translate-y-[-1px]'
+                      : 'bg-white/5 hover:bg-white/15 text-white/75 hover:text-white border border-white/10 hover:border-white/30'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${isActive ? 'bg-black animate-pulse' : 'bg-white/30'}`} />
+                  <span>{cat.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
+
+        {/* Subcategories Ribbon for Social Media (Folder-Wise) */}
+        {activeFilter === 'Social Media' && (
+          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar bg-darkcard/80 p-3.5 rounded-xl border border-accent/30 animate-fade-in">
+            <span className="font-mono text-[10px] text-accent font-bold uppercase pl-2 flex items-center gap-1.5 whitespace-nowrap">
+              <i data-lucide="share-2" className="w-3.5 h-3.5"></i>
+              SUBFOLDER SERIES:
+            </span>
+            {socialMediaSubcategories.map((sub) => (
+              <button
+                key={sub.id}
+                onClick={() => {
+                  AudioController.play('click');
+                  setActiveSubcategory(sub.id);
+                  setVisibleCount(24);
+                }}
+                data-cursor={sub.label}
+                className={`whitespace-nowrap px-3.5 py-1.5 rounded font-mono text-[11px] font-bold uppercase transition-all flex items-center gap-1.5 ${
+                  activeSubcategory === sub.id
+                    ? 'bg-accent text-black shadow-[0_0_10px_rgba(0,255,102,0.4)]'
+                    : 'bg-black/60 hover:bg-white/10 text-white/70 hover:text-white border border-white/10'
+                }`}
+              >
+                <span>{sub.label}</span>
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Subcategory Filter Ribbon for Event Calendars */}
         {activeFilter === 'Event Calendars' && (

@@ -3409,5 +3409,959 @@
       "decisions": "Applied an authoritative navy blue and royal gold palette with high-contrast bilingual typography, custom corporate iconography for specialized trade verticals, and a systematic 12-column editorial grid.",
       "outcome": "Official corporate profile successfully deployed across Riyadh, Dammam, and Mumbai branches, cementing F. Gheewala's commercial standing with GCC enterprise clients."
     }
+  },
+  {
+    "id": "7bdc820a38447fbdc8b20df323171a1a",
+    "title": "Banana Pancakes Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/Banana pancakes Reel.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "7bdc820a38447fbdc8b20df323171a1a-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/Banana pancakes Reel.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "Banana pancakes Reel.mp4",
+        "thumbnail": "/05_Social Media/AD/Banana pancakes Reel_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/Banana pancakes Reel_thumb.webp",
+    "case_study": {
+      "brief": "Whimsical culinary sizzle reel promoting signature weekend brunch dessert offerings.",
+      "constraints": [
+        "Vertical 9:16 mobile format synchronized to upbeat breakfast cafe acoustic rhythm",
+        "High-saturation color grading that makes food textures mouth-watering in feed previews",
+        "Under 15-second loop duration optimized for maximum Instagram algorithm retention"
+      ],
+      "decisions": "Applied rapid macro-cuts between syrup drizzle and butter melt with playful kinetic typography popping on beat.",
+      "outcome": "Drove surge in weekend dessert orders and achieved 2.4x higher organic shares than average venue reels."
+    }
+  },
+  {
+    "id": "7476861f7f98263e1c1c960aaf815e68",
+    "title": "Diary Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/Diary Reel.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "7476861f7f98263e1c1c960aaf815e68-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/Diary Reel.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "Diary Reel.mp4",
+        "thumbnail": "/05_Social Media/AD/Diary Reel_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/Diary Reel_thumb.webp",
+    "case_study": {
+      "brief": "Intimate narrative motion teaser showcasing the creative process and behind-the-scenes venue stories.",
+      "constraints": [
+        "Analog film grain and scrapbook aesthetic without appearing messy or illegible",
+        "Pacing designed for contemplative storytelling rather than aggressive club hype",
+        "Clear branding watermark remaining visible across multiple platform crops"
+      ],
+      "decisions": "Blended handwritten editorial script with vintage 8mm film burn overlays and warm sepia-toned transitions.",
+      "outcome": "Substantially increased follower dwell time and bookmark rates, deepening audience brand loyalty."
+    }
+  },
+  {
+    "id": "798d6c2f4dd26749aece0ee2125f259a",
+    "title": "Dim Lights Night Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/Dim lights post.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "798d6c2f4dd26749aece0ee2125f259a-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/Dim lights post.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "Dim lights post.mp4",
+        "thumbnail": "/05_Social Media/AD/Dim lights post_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/Dim lights post_thumb.webp",
+    "case_study": {
+      "brief": "Moody atmospheric evening motion teaser capturing late-night intimate cocktail lounge vibes.",
+      "constraints": [
+        "Low-light ambient footage requiring careful contrast curve adjustments to avoid muddy compression",
+        "Subtle ambient motion that loops seamlessly without jarring jump-cuts",
+        "Legible reservation call-to-action in dark environment"
+      ],
+      "decisions": "Pushed deep obsidian blacks while lifting candlelit amber highlights, paired with minimal neon cyan typography.",
+      "outcome": "Successfully established the venue's late-night romantic positioning with direct reservation inquiries."
+    }
+  },
+  {
+    "id": "8f09d5bf3e20f7f0a7738563e69a7020",
+    "title": "Lollipops & Rainbows Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/Lollipops & Rainbows Reel.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "8f09d5bf3e20f7f0a7738563e69a7020-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/Lollipops & Rainbows Reel.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "Lollipops & Rainbows Reel.mp4",
+        "thumbnail": "/05_Social Media/AD/Lollipops & Rainbows Reel_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/Lollipops & Rainbows Reel_thumb.webp",
+    "case_study": {
+      "brief": "Vibrant, high-energy festival confectionery and cocktail experience reel with chromatic pop styling.",
+      "constraints": [
+        "Fast-paced candy color palette avoiding childish tropes while maintaining sophisticated fun",
+        "Multi-element compositing combining motion graphics, 2D stickers, and live-action pours",
+        "Optimized audio-reactive sync for high-impact social delivery"
+      ],
+      "decisions": "Used psychedelic saturated pastel gradients, liquid-smooth kinetic text scaling, and snappy zoom transitions.",
+      "outcome": "Became the most viewed promo reel of the seasonal campaign, generating viral user audio remakes."
+    }
+  },
+  {
+    "id": "7eb3cba5457e0b8b2d1e2d08f1493280",
+    "title": "Seasonal Menu Motion Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/Menu Reel.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "7eb3cba5457e0b8b2d1e2d08f1493280-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/Menu Reel.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "Menu Reel.mp4",
+        "thumbnail": "/05_Social Media/AD/Menu Reel_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/Menu Reel_thumb.webp",
+    "case_study": {
+      "brief": "Dynamic interactive menu teaser highlighting newly launched chef special dishes and mixology pairings.",
+      "constraints": [
+        "Organize 6 signature menu highlights within a 12-second total reel runtime",
+        "Dish names and core ingredients must be readable in under 1.5 seconds per slide",
+        "Cohesive transition between savory mains and dessert cocktail pairings"
+      ],
+      "decisions": "Constructed a split-screen kinetic layout featuring dish footage on the top half and typography specs on the bottom.",
+      "outcome": "Directly accelerated menu item trial during launch week with zero guest confusion on ingredients."
+    }
+  },
+  {
+    "id": "039910034d36a918371660247ba65a2f",
+    "title": "New Year’s Eve Celebration Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/New Year’s Eve Poster.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "039910034d36a918371660247ba65a2f-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/New Year’s Eve Poster.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "New Year’s Eve Poster.mp4",
+        "thumbnail": "/05_Social Media/AD/New Year’s Eve Poster_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/New Year’s Eve Poster_thumb.webp",
+    "case_study": {
+      "brief": "Glitz, countdown glamour, and high-energy ticket launch motion poster for premier New Year's Eve gala.",
+      "constraints": [
+        "Midnight countdown urgency with premium golden-tier luxury event positioning",
+        "Ticket tier pricing and VIP table booking details prominently legible",
+        "High-contrast sparkle and metallic particle dynamics that compress cleanly on Instagram"
+      ],
+      "decisions": "Engineered metallic 3D gold typography, synchronized countdown pulse effects, and velvet black backdrop contrast.",
+      "outcome": "Assisted in 100% VIP table sell-out 10 days prior to New Year's Eve."
+    }
+  },
+  {
+    "id": "eb66b89f25e903c0c7e620aae7136b70",
+    "title": "Postcard From Paradise Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/postcard Reel.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "eb66b89f25e903c0c7e620aae7136b70-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/postcard Reel.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "postcard Reel.mp4",
+        "thumbnail": "/05_Social Media/AD/postcard Reel_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/postcard Reel_thumb.webp",
+    "case_study": {
+      "brief": "Travel-inspired lifestyle motion postcard promoting coastal summer cocktail activations.",
+      "constraints": [
+        "Evoke nostalgic vintage travel postcards with modern kinetic digital pacing",
+        "Stamp and postal stamp vector elements integrated over live-action beverage footage",
+        "Relaxed summer tempo suited for afternoon terrace day-drinking curation"
+      ],
+      "decisions": "Applied textured paper postage frames, subtle tilt-shift focal blur, and sun-kissed golden hour color saturation.",
+      "outcome": "Drove elevated weekend terrace footfall and served as the visual template for seasonal summer socials."
+    }
+  },
+  {
+    "id": "2d35e2bf5d2b759b87e7c30f10e0e228",
+    "title": "Signature Brand Showcase Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "AD",
+    "role": "Motion & Graphic Designer",
+    "client": "AD Visuals",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Illustrator",
+    "media": "/05_Social Media/AD/Reel Reel.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "2d35e2bf5d2b759b87e7c30f10e0e228-reel",
+        "label": "Vertical Reel (9:16)",
+        "media": "/05_Social Media/AD/Reel Reel.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "Reel Reel.mp4",
+        "thumbnail": "/05_Social Media/AD/Reel Reel_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/AD/Reel Reel_thumb.webp",
+    "case_study": {
+      "brief": "Master promotional sizzle reel uniting brand culture, mixology, crowd energy, and culinary artistry.",
+      "constraints": [
+        "Represent the entire brand ecosystem within a fast 60fps 15-second visual whirlwind",
+        "Maintain extreme brand consistency across diverse footage lighting conditions",
+        "High impact intro within the first 0.8 seconds to stop thumb scrolling"
+      ],
+      "decisions": "Used rapid-fire match cuts, rhythmic glitch typography, bass-heavy audio sync, and bold signature brand lockup.",
+      "outcome": "Pinned as master profile header video, accumulating thousands of organic profile views and new followers."
+    }
+  },
+  {
+    "id": "f372150640b4c666be589a3ba46a0e94",
+    "title": "The Journal Gourmet Burger",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "Journal",
+    "role": "Visual Strategist & Art Director",
+    "client": "The Journal",
+    "year": "2024",
+    "tech": "Photoshop, Lightroom",
+    "media": "/05_Social Media/Journal/Burger.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "f372150640b4c666be589a3ba46a0e94-post",
+        "label": "Editorial Feed Post (4:5)",
+        "media": "/05_Social Media/Journal/Burger.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "Burger.jpg",
+        "thumbnail": "/05_Social Media/Journal/Burger_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/Journal/Burger_thumb.webp",
+    "case_study": {
+      "brief": "Editorial high-end culinary photography post spotlighting The Journal's artisanal brioche burger.",
+      "constraints": [
+        "Highlight fresh artisanal ingredients (brioche sheen, melting cheese, crisp greens) without artificial retouching",
+        "Editorial minimal layout consistent with The Journal's publication-grade aesthetic",
+        "High-DPI sharp crop tailored for modern high-density mobile screens"
+      ],
+      "decisions": "Used natural diffused window lighting with subtle directional rim light, paired with clean editorial negative space and muted olive-toned background balance.",
+      "outcome": "Generated the highest food engagement metric of the quarter and a notable surge in direct dinner orders."
+    }
+  },
+  {
+    "id": "566c08d5989def4394a63481ef5af779",
+    "title": "Christmas Playlist Motion Carousel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "Journal",
+    "role": "Motion & Graphic Designer",
+    "client": "The Journal",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro, Photoshop",
+    "media": "/05_Social Media/Journal/Christmas Playslit Carousel/1.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "566c08d5989def4394a63481ef5af779-slide1",
+        "label": "Slide 01 // Track 01",
+        "media": "/05_Social Media/Journal/Christmas Playslit Carousel/1.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "1.mp4",
+        "thumbnail": "/05_Social Media/Journal/Christmas Playslit Carousel/1_thumb.webp"
+      },
+      {
+        "id": "566c08d5989def4394a63481ef5af779-slide2",
+        "label": "Slide 02 // Track 02",
+        "media": "/05_Social Media/Journal/Christmas Playslit Carousel/2.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "2.mp4",
+        "thumbnail": "/05_Social Media/Journal/Christmas Playslit Carousel/2_thumb.webp"
+      },
+      {
+        "id": "566c08d5989def4394a63481ef5af779-slide3",
+        "label": "Slide 03 // Track 03",
+        "media": "/05_Social Media/Journal/Christmas Playslit Carousel/3.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "3.mp4",
+        "thumbnail": "/05_Social Media/Journal/Christmas Playslit Carousel/3_thumb.webp"
+      },
+      {
+        "id": "566c08d5989def4394a63481ef5af779-slide4",
+        "label": "Slide 04 // Track 04",
+        "media": "/05_Social Media/Journal/Christmas Playslit Carousel/4.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "4.mp4",
+        "thumbnail": "/05_Social Media/Journal/Christmas Playslit Carousel/4_thumb.webp"
+      },
+      {
+        "id": "566c08d5989def4394a63481ef5af779-slide5",
+        "label": "Slide 05 // Track 05",
+        "media": "/05_Social Media/Journal/Christmas Playslit Carousel/5.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "5.mp4",
+        "thumbnail": "/05_Social Media/Journal/Christmas Playslit Carousel/5_thumb.webp"
+      },
+      {
+        "id": "566c08d5989def4394a63481ef5af779-slide6",
+        "label": "Slide 06 // Track 06",
+        "media": "/05_Social Media/Journal/Christmas Playslit Carousel/6.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "6.mp4",
+        "thumbnail": "/05_Social Media/Journal/Christmas Playslit Carousel/6_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/Journal/Christmas Playslit Carousel/1_thumb.webp",
+    "case_study": {
+      "brief": "6-slide holiday music playlist motion carousel curated by The Journal for festive season ambiance.",
+      "constraints": [
+        "Seamless storytelling across 6 sequential motion slides encouraging complete carousel swiping",
+        "Integrate animated album artwork, track timestamps, and festive typography without visual clutter",
+        "Cohesive audio-visual pacing that feels like an interactive mini music magazine"
+      ],
+      "decisions": "Designed a nostalgic holiday vinyl record aesthetic with delicate snowfall particles, warm emerald/crimson accents, and smooth song preview transitions.",
+      "outcome": "Over 85% carousel completion rate with listeners actively saving the curated Spotify playlist link."
+    }
+  },
+  {
+    "id": "ece9eb3625b39b44e1f1e4cf77291c76",
+    "title": "Craft Beer Tasting Carousel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "Kona Kona",
+    "role": "Visual Strategist & Art Director",
+    "client": "Kona Kona",
+    "year": "2024",
+    "tech": "Photoshop, Illustrator, Lightroom",
+    "media": "/05_Social Media/Kona Kona/Beer Carousel/1.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "ece9eb3625b39b44e1f1e4cf77291c76-slide1",
+        "label": "Slide 01 // Tap Selection",
+        "media": "/05_Social Media/Kona Kona/Beer Carousel/1.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "1.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Beer Carousel/1_thumb.webp"
+      },
+      {
+        "id": "ece9eb3625b39b44e1f1e4cf77291c76-slide2",
+        "label": "Slide 02 // Tasting Notes",
+        "media": "/05_Social Media/Kona Kona/Beer Carousel/2.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "2.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Beer Carousel/2_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/Kona Kona/Beer Carousel/1_thumb.webp",
+    "case_study": {
+      "brief": "2-slide educational carousel breaking down artisanal craft beers on tap and flavor profiles.",
+      "constraints": [
+        "Clean layout presenting ABV, IBU, hops variety, and tasting pairings clearly",
+        "Warm amber beverage photography framed inside contemporary restaurant branding",
+        "Quick swipe-through format for fast table-side guest browsing on smartphones"
+      ],
+      "decisions": "Constructed crisp modular info-cards with custom hop icons, amber beverage hero shots, and clean modern typography.",
+      "outcome": "Enhanced craft beer sales by 22% during weekday tap takeovers."
+    }
+  },
+  {
+    "id": "bc24ca9741216d097a740d90776ba474",
+    "title": "Christmas Festive Menu Carousel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "Kona Kona",
+    "role": "Visual Strategist & Art Director",
+    "client": "Kona Kona",
+    "year": "2024",
+    "tech": "Photoshop, Illustrator, Lightroom",
+    "media": "/05_Social Media/Kona Kona/Christmas Menu Carousel/1.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "bc24ca9741216d097a740d90776ba474-slide1",
+        "label": "Slide 01 // Holiday Appetizers",
+        "media": "/05_Social Media/Kona Kona/Christmas Menu Carousel/1.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "1.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Christmas Menu Carousel/1_thumb.webp"
+      },
+      {
+        "id": "bc24ca9741216d097a740d90776ba474-slide2",
+        "label": "Slide 02 // Chef Mains",
+        "media": "/05_Social Media/Kona Kona/Christmas Menu Carousel/2.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "2.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Christmas Menu Carousel/2_thumb.webp"
+      },
+      {
+        "id": "bc24ca9741216d097a740d90776ba474-slide3",
+        "label": "Slide 03 // Festive Desserts",
+        "media": "/05_Social Media/Kona Kona/Christmas Menu Carousel/3.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "3.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Christmas Menu Carousel/3_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/Kona Kona/Christmas Menu Carousel/1_thumb.webp",
+    "case_study": {
+      "brief": "3-slide seasonal dining carousel unveiling Kona Kona's multi-course holiday dining experience.",
+      "constraints": [
+        "Sophisticated holiday palette avoiding garish commercial red/green tropes",
+        "Legible course pricing, dietary vegetarian/non-vegetarian tags, and booking dates",
+        "Adaptable for print table easel inserts and Instagram carousel"
+      ],
+      "decisions": "Used botanical pine-green and muted berry tones with gold typography accents and generous whitespace around dish photos.",
+      "outcome": "Filled Christmas Eve and Christmas Day seating across all 3 seatings."
+    }
+  },
+  {
+    "id": "e6c165f0af2760ff43ac7c10b662a8ca",
+    "title": "Signature Kebab Menu Carousel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "Kona Kona",
+    "role": "Visual Strategist & Art Director",
+    "client": "Kona Kona",
+    "year": "2024",
+    "tech": "Photoshop, Illustrator, Lightroom",
+    "media": "/05_Social Media/Kona Kona/Kebab Menu Carousel/front.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "e6c165f0af2760ff43ac7c10b662a8ca-slide1",
+        "label": "Slide 01 // Clay Oven Specialties",
+        "media": "/05_Social Media/Kona Kona/Kebab Menu Carousel/front.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "front.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Kebab Menu Carousel/front_thumb.webp"
+      },
+      {
+        "id": "e6c165f0af2760ff43ac7c10b662a8ca-slide2",
+        "label": "Slide 02 // Platters & Dips",
+        "media": "/05_Social Media/Kona Kona/Kebab Menu Carousel/back.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "back.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Kebab Menu Carousel/back_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/Kona Kona/Kebab Menu Carousel/front_thumb.webp",
+    "case_study": {
+      "brief": "2-slide culinary highlight showcasing traditional clay-oven tandoori kebabs and artisanal marinades.",
+      "constraints": [
+        "Capture sizzle, char, and aromatic spice textures in close-up food photography",
+        "Dual-sided presentation format matching the physical restaurant menu architecture",
+        "High contrast for readability on dim evening dinner smartphone browsing"
+      ],
+      "decisions": "Employed dramatic charcoal-dark backgrounds with warm terracotta and turmeric-yellow typography that complements tandoori spices.",
+      "outcome": "Drove high social sharing and established kebabs as Kona Kona's signature evening hero dish."
+    }
+  },
+  {
+    "id": "25479aa01c96f6f263fbd843547fce40",
+    "title": "Must-Try Cocktails Carousel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "Kona Kona",
+    "role": "Visual Strategist & Art Director",
+    "client": "Kona Kona",
+    "year": "2024",
+    "tech": "Photoshop, Illustrator, Lightroom",
+    "media": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/1.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "25479aa01c96f6f263fbd843547fce40-slide1",
+        "label": "Slide 01 // Smoked Old Fashioned",
+        "media": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/1.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "1.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/1_thumb.webp"
+      },
+      {
+        "id": "25479aa01c96f6f263fbd843547fce40-slide2",
+        "label": "Slide 02 // Tropical Botanicals",
+        "media": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/2.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "2.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/2_thumb.webp"
+      },
+      {
+        "id": "25479aa01c96f6f263fbd843547fce40-slide3",
+        "label": "Slide 03 // Spiced Highball",
+        "media": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/3.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "3.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/3_thumb.webp"
+      },
+      {
+        "id": "25479aa01c96f6f263fbd843547fce40-slide4",
+        "label": "Slide 04 // Artisanal Spritz",
+        "media": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/4.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "4.jpg",
+        "thumbnail": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/4_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/Kona Kona/Must Try Coktails Carousel/1_thumb.webp",
+    "case_study": {
+      "brief": "4-slide mixology showcase breaking down Kona Kona's 4 signature craft cocktails and botanical infusions.",
+      "constraints": [
+        "Highlight crystal glassware, hand-cut ice, and artisanal garnishes in crisp detail",
+        "One hero cocktail per slide with flavor profile sliders (Sweet, Smoky, Crisp, Citrus)",
+        "Visual hierarchy optimized for swipe-through cocktail discovery"
+      ],
+      "decisions": "Designed individual bespoke color-temperature backdrops for each drink while maintaining a unified minimal framing grid.",
+      "outcome": "Recognized as Kona Kona's top-saved cocktail post series with direct guest orders by showing the saved post."
+    }
+  },
+  {
+    "id": "e34bc81463f08d9437d54c779f155373",
+    "title": "RS Brand Launch // Coming Soon",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "RS",
+    "role": "Visual Strategist & Art Director",
+    "client": "RS Series",
+    "year": "2024",
+    "tech": "Photoshop, Illustrator",
+    "media": "/05_Social Media/RS/Coming Soon Post.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "e34bc81463f08d9437d54c779f155373-post",
+        "label": "Teaser Post (4:5)",
+        "media": "/05_Social Media/RS/Coming Soon Post.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "Coming Soon Post.jpg",
+        "thumbnail": "/05_Social Media/RS/Coming Soon Post_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/RS/Coming Soon Post_thumb.webp",
+    "case_study": {
+      "brief": "Mysterious brand launch teaser post announcing the upcoming arrival of the RS culinary concept.",
+      "constraints": [
+        "Build curiosity and buzz without revealing the full menu or physical location premature to launch",
+        "Establish the premium brand tone, typography lockup, and visual identity from day one",
+        "High impact on social feeds to drive early follower acquisition"
+      ],
+      "decisions": "Created a dramatic high-contrast composition with bold architectural typography emerging from deep shadows.",
+      "outcome": "Drove over 500 initial pre-launch follower sign-ups within 48 hours of posting."
+    }
+  },
+  {
+    "id": "09d119c8c658e364470051391ccee96d",
+    "title": "RS Warm Gulab Jamun Post",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "RS",
+    "role": "Visual Strategist & Art Director",
+    "client": "RS Series",
+    "year": "2024",
+    "tech": "Photoshop, Lightroom",
+    "media": "/05_Social Media/RS/Gulab Jamun Post.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "09d119c8c658e364470051391ccee96d-post",
+        "label": "Dessert Special Post",
+        "media": "/05_Social Media/RS/Gulab Jamun Post.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "Gulab Jamun Post.jpg",
+        "thumbnail": "/05_Social Media/RS/Gulab Jamun Post_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/RS/Gulab Jamun Post_thumb.webp",
+    "case_study": {
+      "brief": "Sensory culinary post highlighting RS's artisanal warm gulab jamun soaked in rose-cardamom syrup.",
+      "constraints": [
+        "Capture the golden glistening syrup texture and delicate pistachio garnish in high detail",
+        "Warm dessert photography that triggers immediate craving on smartphone screens",
+        "Balanced editorial typography framing the dish without obstructing the photo"
+      ],
+      "decisions": "Employed warm golden directional lighting, rich bronze undertones, and minimal editorial typography anchoring the bottom.",
+      "outcome": "Became RS's most engaged food post of the month with immediate dine-in dessert requests."
+    }
+  },
+  {
+    "id": "ac3d9ae3af2e0ad27cfc17c7958166e0",
+    "title": "RS Brand Launch Intro Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "RS",
+    "role": "Motion & Graphic Designer",
+    "client": "RS Series",
+    "year": "2024",
+    "tech": "After Effects, Premiere Pro",
+    "media": "/05_Social Media/RS/Intro Reel.mp4",
+    "type": "video",
+    "variants": [
+      {
+        "id": "ac3d9ae3af2e0ad27cfc17c7958166e0-reel",
+        "label": "Launch Reel (9:16)",
+        "media": "/05_Social Media/RS/Intro Reel.mp4",
+        "type": "video",
+        "ratio": "9:16 Vertical",
+        "file": "Intro Reel.mp4",
+        "thumbnail": "/05_Social Media/RS/Intro Reel_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/RS/Intro Reel_thumb.webp",
+    "case_study": {
+      "brief": "Official video announcement reel introducing RS's brand philosophy, culinary craft, and venue atmosphere.",
+      "constraints": [
+        "Fast 15-second cinematic pacing that tells a complete brand story",
+        "Seamless kinetic audio sync highlighting culinary flames, cocktail shaking, and guest vibes",
+        "Clear call to action for reservations and website discovery"
+      ],
+      "decisions": "Constructed high-speed editorial cuts, rhythmic bass drops, and bold typographic overlays that introduce the brand identity.",
+      "outcome": "Accumulated over 25,000 views and served as the primary paid-ad asset for the brand launch."
+    }
+  },
+  {
+    "id": "b1c02fce8269d1ab9b9e9a69aa242135",
+    "title": "RS Artisanal MealBox Post",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "RS",
+    "role": "Visual Strategist & Art Director",
+    "client": "RS Series",
+    "year": "2024",
+    "tech": "Photoshop, Illustrator",
+    "media": "/05_Social Media/RS/MealBoc Post.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "b1c02fce8269d1ab9b9e9a69aa242135-post",
+        "label": "Gourmet Box Post",
+        "media": "/05_Social Media/RS/MealBoc Post.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "MealBoc Post.jpg",
+        "thumbnail": "/05_Social Media/RS/MealBoc Post_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/RS/MealBoc Post_thumb.webp",
+    "case_study": {
+      "brief": "Promotional product creative announcing RS's premium takeaway gourmet meal box packaging and offerings.",
+      "constraints": [
+        "Showcase packaging design and interior meal compartmentalization clearly",
+        "Communicate convenience without compromising on luxury restaurant positioning",
+        "Clear ordering instructions via direct message and partner delivery apps"
+      ],
+      "decisions": "Used clean overhead flat-lay photography with branded kraft box aesthetics, gold foil stamp highlights, and neat metadata labels.",
+      "outcome": "Accelerated corporate weekday lunch orders by 35% within the first month of rollout."
+    }
+  },
+  {
+    "id": "d0e977274db6565c1d4f25d523e3d177",
+    "title": "RS Jalebi Carousel & Motion Reel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "RS",
+    "role": "Motion & Graphic Designer",
+    "client": "RS Series",
+    "year": "2024",
+    "tech": "Photoshop, After Effects, Premiere Pro",
+    "media": "/05_Social Media/RS/Jalebi Carousel/1.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "d0e977274db6565c1d4f25d523e3d177-slide1",
+        "label": "Slide 01 // Key Visual (Image)",
+        "media": "/05_Social Media/RS/Jalebi Carousel/1.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "1.jpg",
+        "thumbnail": "/05_Social Media/RS/Jalebi Carousel/1_thumb.webp"
+      },
+      {
+        "id": "d0e977274db6565c1d4f25d523e3d177-slide2",
+        "label": "Slide 02 // Sizzle Reel (Motion Video)",
+        "media": "/05_Social Media/RS/Jalebi Carousel/2.mp4",
+        "type": "video",
+        "ratio": "4:5 Portrait Video",
+        "file": "2.mp4",
+        "thumbnail": "/05_Social Media/RS/Jalebi Carousel/2_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/RS/Jalebi Carousel/1_thumb.webp",
+    "case_study": {
+      "brief": "Hybrid multi-format carousel combining high-res still photography and kinetic video for RS's signature crisp jalebi.",
+      "constraints": [
+        "Seamless transition from high-resolution static hero image to dynamic motion fry video",
+        "Capture the authentic crunch and golden saffron syrup swirl",
+        "Encourage users to swipe from the teaser image into the motion sizzle"
+      ],
+      "decisions": "Designed a hook-first slide 1 with a subtle swipe indicator, following into a high-frame-rate video of hot jalebis emerging from saffron syrup.",
+      "outcome": "Achieved unprecedented swipe engagement and comments praising the appetizing hybrid format."
+    }
+  },
+  {
+    "id": "14788c1d024350b6623ec37ae5d6e7ef",
+    "title": "Season Manthan Festive Carousel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "RS",
+    "role": "Visual Strategist & Art Director",
+    "client": "RS Series",
+    "year": "2024",
+    "tech": "Photoshop, Illustrator",
+    "media": "/05_Social Media/RS/Season Manthan carousel/1.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "14788c1d024350b6623ec37ae5d6e7ef-slide1",
+        "label": "Slide 01 // Cover Manifesto",
+        "media": "/05_Social Media/RS/Season Manthan carousel/1.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "1.jpg",
+        "thumbnail": "/05_Social Media/RS/Season Manthan carousel/1_thumb.webp"
+      },
+      {
+        "id": "14788c1d024350b6623ec37ae5d6e7ef-slide2",
+        "label": "Slide 02 // Festive Concept",
+        "media": "/05_Social Media/RS/Season Manthan carousel/2.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "2.jpg",
+        "thumbnail": "/05_Social Media/RS/Season Manthan carousel/2_thumb.webp"
+      },
+      {
+        "id": "14788c1d024350b6623ec37ae5d6e7ef-slide3",
+        "label": "Slide 03 // Chef Specials",
+        "media": "/05_Social Media/RS/Season Manthan carousel/3.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "3.jpg",
+        "thumbnail": "/05_Social Media/RS/Season Manthan carousel/3_thumb.webp"
+      },
+      {
+        "id": "14788c1d024350b6623ec37ae5d6e7ef-slide4",
+        "label": "Slide 04 // Heritage Flavors",
+        "media": "/05_Social Media/RS/Season Manthan carousel/4.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "4.jpg",
+        "thumbnail": "/05_Social Media/RS/Season Manthan carousel/4_thumb.webp"
+      },
+      {
+        "id": "14788c1d024350b6623ec37ae5d6e7ef-slide5",
+        "label": "Slide 05 // Artisanal Pairings",
+        "media": "/05_Social Media/RS/Season Manthan carousel/5.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "5.jpg",
+        "thumbnail": "/05_Social Media/RS/Season Manthan carousel/5_thumb.webp"
+      },
+      {
+        "id": "14788c1d024350b6623ec37ae5d6e7ef-slide6",
+        "label": "Slide 06 // Celebration Dining",
+        "media": "/05_Social Media/RS/Season Manthan carousel/6.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "6.jpg",
+        "thumbnail": "/05_Social Media/RS/Season Manthan carousel/6_thumb.webp"
+      },
+      {
+        "id": "14788c1d024350b6623ec37ae5d6e7ef-slide7",
+        "label": "Slide 07 // Booking & Details",
+        "media": "/05_Social Media/RS/Season Manthan carousel/7.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "7.jpg",
+        "thumbnail": "/05_Social Media/RS/Season Manthan carousel/7_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/RS/Season Manthan carousel/1_thumb.webp",
+    "case_study": {
+      "brief": "7-slide comprehensive editorial campaign carousel unveiling RS's 'Season Manthan' festive culinary voyage.",
+      "constraints": [
+        "Maintain narrative tension across 7 continuous slides without losing audience attention",
+        "Detailed culinary storytelling covering regional heritage ingredients, chef philosophy, and dining menus",
+        "Editorial typography layout that remains clean and readable across every slide"
+      ],
+      "decisions": "Created a continuous panoramic design system where background textures flow across slide borders, paired with refined royal gold and charcoal tones.",
+      "outcome": "Exceeded all seasonal campaign benchmarks with over 70% of viewers swiping through all 7 slides."
+    }
+  },
+  {
+    "id": "6dc84e73c761fb0b65fe44ce8ff7253e",
+    "title": "Shared Vision Multi-Format Carousel",
+    "category": "Social Media",
+    "folder": "05_Social Media",
+    "subfolder": "RS",
+    "role": "Motion & Graphic Designer",
+    "client": "RS Series",
+    "year": "2024",
+    "tech": "Photoshop, After Effects, Premiere Pro",
+    "media": "/05_Social Media/RS/Shared Vision Carousel/1.jpg",
+    "type": "image",
+    "variants": [
+      {
+        "id": "6dc84e73c761fb0b65fe44ce8ff7253e-slide1",
+        "label": "Slide 01 // Vision Manifesto (Image)",
+        "media": "/05_Social Media/RS/Shared Vision Carousel/1.jpg",
+        "type": "image",
+        "ratio": "4:5 Portrait",
+        "file": "1.jpg",
+        "thumbnail": "/05_Social Media/RS/Shared Vision Carousel/1_thumb.webp"
+      },
+      {
+        "id": "6dc84e73c761fb0b65fe44ce8ff7253e-slide2",
+        "label": "Slide 02 // Culinary Craft (Video)",
+        "media": "/05_Social Media/RS/Shared Vision Carousel/2.mp4",
+        "type": "video",
+        "ratio": "4:5 Portrait Video",
+        "file": "2.mp4",
+        "thumbnail": "/05_Social Media/RS/Shared Vision Carousel/2_thumb.webp"
+      },
+      {
+        "id": "6dc84e73c761fb0b65fe44ce8ff7253e-slide3",
+        "label": "Slide 03 // Guest Experience (Video)",
+        "media": "/05_Social Media/RS/Shared Vision Carousel/3.mp4",
+        "type": "video",
+        "ratio": "4:5 Portrait Video",
+        "file": "3.mp4",
+        "thumbnail": "/05_Social Media/RS/Shared Vision Carousel/3_thumb.webp"
+      },
+      {
+        "id": "6dc84e73c761fb0b65fe44ce8ff7253e-slide4",
+        "label": "Slide 04 // The Future (Video)",
+        "media": "/05_Social Media/RS/Shared Vision Carousel/4.mp4",
+        "type": "video",
+        "ratio": "4:5 Portrait Video",
+        "file": "4.mp4",
+        "thumbnail": "/05_Social Media/RS/Shared Vision Carousel/4_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/05_Social Media/RS/Shared Vision Carousel/1_thumb.webp",
+    "case_study": {
+      "brief": "4-slide multimedia carousel celebrating team craftsmanship, culinary innovation, and the brand's shared vision.",
+      "constraints": [
+        "Harmonize a still editorial manifesto opener with 3 high-tempo motion reels",
+        "Smooth transition between kitchen craft, hospitality service, and future brand expansion",
+        "High replay value for social community engagement"
+      ],
+      "decisions": "Anchored slide 1 with a powerful typographic manifesto that sets expectations, followed by 3 kinetic reels spotlighting chef hands, hospitality warmth, and venue energy.",
+      "outcome": "Widely shared among hospitality industry peers and recognized as RS's most comprehensive brand culture story."
+    }
   }
 ]
