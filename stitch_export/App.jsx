@@ -1343,6 +1343,20 @@ function BentoProjectsGrid({
             </button>
           </div>
         )}
+
+        {/* Secondary Behance Archive CTA */}
+        <div className="mt-14 text-center">
+          <a
+            href="https://behance.net/shoeabshaikh"
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="BEHANCE"
+            className="inline-flex items-center gap-3 px-6 py-3.5 bg-white/5 hover:bg-accent text-white hover:text-black border border-white/20 hover:border-accent font-mono text-xs font-bold uppercase rounded-xl transition-all duration-300 shadow-md group"
+          >
+            <span>LOOKING FOR MORE ARTWORKS? VISIT BEHANCE ARCHIVE</span>
+            <i data-lucide="arrow-up-right" className="w-4 h-4 text-accent group-hover:text-black transition-colors"></i>
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -3549,35 +3563,61 @@ function Footer({ onOpenUpload }) {
   };
 
   return (
-    <footer className="border-t border-white/15 bg-black py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-white/50 uppercase">
-        <div className="flex items-center gap-3">
-          <div
-            onClick={() => {
-              if (onOpenUpload) {
-                AudioController.play('pop');
-                onOpenUpload();
-              }
-            }}
-            title="System Gateway"
-            className="w-2.5 h-2.5 rounded-sm bg-accent rotate-45 cursor-pointer hover:scale-125 transition-transform"
-          />
-          <span className="font-bold text-white tracking-wider font-sans">
-            SHOEAB AHMED // GRAPHIC DESIGNER &amp; VISUAL STRATEGIST
-          </span>
-          <span>© {new Date().getFullYear()}</span>
+    <footer className="border-t border-white/15 bg-black py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Massive "FOR MORE ARTWORKS CLICK HERE" Banner linking to Behance */}
+        <div className="w-full mb-16">
+          <a
+            href="https://behance.net/shoeabshaikh"
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="BEHANCE"
+            className="group relative block w-full p-8 sm:p-12 md:p-16 bg-gradient-to-r from-darkcard via-black to-darkcard border-2 border-white/20 hover:border-accent rounded-3xl shadow-[0_15px_50px_rgba(0,0,0,0.8)] hover:shadow-[0_0_50px_rgba(0,255,102,0.35)] transition-all duration-300 text-center overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            <span className="font-mono text-xs sm:text-sm text-accent font-black tracking-widest uppercase block mb-3">
+              [ 50+ COMMERCIAL CASE STUDIES • BRAND IDENTITY SYSTEMS • COMPLETE RETROSPECTIVE ]
+            </span>
+            <h2 className="font-sans font-black text-3xl sm:text-5xl md:text-7xl text-white uppercase tracking-tight group-hover:text-accent transition-colors flex items-center justify-center gap-3 sm:gap-6 flex-wrap">
+              <span>FOR MORE ARTWORKS CLICK HERE</span>
+              <span className="text-accent group-hover:translate-x-3 group-hover:-translate-y-3 transition-transform inline-block">↗</span>
+            </h2>
+            <p className="font-mono text-xs sm:text-sm text-white/60 uppercase mt-4 max-w-xl mx-auto tracking-wider">
+              behance.net/shoeabshaikh • Complete high-resolution client project showcases &amp; visual identities
+            </p>
+          </a>
         </div>
 
-        <div className="flex items-center gap-6">
-          <span>REACT 18 • TAILWIND • MATTER.JS</span>
-          <button
-            onClick={scrollToTop}
-            data-cursor="TOP"
-            className="text-white hover:text-accent flex items-center gap-1.5 transition-colors border border-white/20 px-3 py-1.5 rounded"
-          >
-            <span>BACK TO TOP</span>
-            <i data-lucide="arrow-up" className="w-3.5 h-3.5"></i>
-          </button>
+        {/* Bottom Metadata & Copyright Bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-white/50 uppercase">
+          <div className="flex items-center gap-3">
+            <div
+              onClick={() => {
+                if (onOpenUpload) {
+                  AudioController.play('pop');
+                  onOpenUpload();
+                }
+              }}
+              title="System Gateway"
+              className="w-2.5 h-2.5 rounded-sm bg-accent rotate-45 cursor-pointer hover:scale-125 transition-transform"
+            />
+            <span className="font-bold text-white tracking-wider font-sans">
+              SHOEAB AHMED // GRAPHIC DESIGNER &amp; VISUAL STRATEGIST
+            </span>
+            <span>© {new Date().getFullYear()}</span>
+          </div>
+
+          <div className="flex items-center gap-6">
+            <span>REACT 18 • TAILWIND • MATTER.JS</span>
+            <button
+              onClick={scrollToTop}
+              data-cursor="TOP"
+              className="text-white hover:text-accent flex items-center gap-1.5 transition-colors border border-white/20 px-3 py-1.5 rounded"
+            >
+              <span>BACK TO TOP</span>
+              <i data-lucide="arrow-up" className="w-3.5 h-3.5"></i>
+            </button>
+          </div>
         </div>
       </div>
     </footer>
