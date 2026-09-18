@@ -323,7 +323,13 @@ function Navbar({ soundEnabled, setSoundEnabled, onOpenUpload, totalCount }) {
           data-cursor="TOP"
           className="group cursor-pointer flex items-center gap-3 select-none"
         >
-          <div className="w-3 h-3 bg-accent rounded-sm rotate-45 group-hover:rotate-180 transition-transform duration-500 shadow-[0_0_12px_#00FF66]" />
+          <div className="relative w-9 h-9 rounded-full overflow-hidden border border-accent/70 shadow-[0_0_12px_rgba(0,255,102,0.3)] flex-shrink-0 group-hover:scale-105 transition-transform bg-black/80">
+            <img
+              src="./assets/shoeab_portrait.webp"
+              alt="Shoeab Ahmed"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
           <div>
             <span className="font-black text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-accent transition-colors font-sans">
               SHOEAB AHMED
@@ -511,7 +517,10 @@ function HeroSection({ totalCount, onExplore }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-grow flex flex-col justify-center">
         {/* Availability Badge */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-darkcard border border-white/15 backdrop-blur-md max-w-full">
+          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-darkcard border border-white/15 backdrop-blur-md max-w-full shadow-sm">
+            <div className="w-5 h-5 rounded-full overflow-hidden border border-accent/70 flex-shrink-0 bg-black/80">
+              <img src="./assets/shoeab_portrait.webp" alt="Shoeab Ahmed" className="w-full h-full object-cover object-top" />
+            </div>
             <span className="relative flex h-2 w-2 flex-shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -2390,8 +2399,31 @@ function AboutSection() {
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span>// PROFILE &amp; PHILOSOPHY</span>
             </div>
-            <h2 className="font-black text-4xl sm:text-6xl uppercase tracking-tighter text-white font-sans leading-none">
-              SHOEAB <br /><span className="text-accent">AHMED</span>
+
+            {/* Grand Professional Portrait Showcase */}
+            <div className="relative group rounded-2xl overflow-hidden border-2 border-white/20 hover:border-accent shadow-[0_15px_40px_rgba(0,0,0,0.8)] hover:shadow-[0_0_35px_rgba(0,255,102,0.25)] transition-all duration-300">
+              <div className="aspect-[4/4.5] w-full overflow-hidden bg-black/90">
+                <img
+                  src="./assets/shoeab_portrait.webp"
+                  alt="Shoeab Ahmed - Lead Graphic Designer &amp; Visual Strategist"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 filter brightness-95 contrast-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-3 left-3 right-3 p-3.5 bg-black/80 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between font-mono">
+                <div>
+                  <span className="text-white font-bold text-xs uppercase block tracking-wider">SHOEAB AHMED</span>
+                  <span className="text-accent text-[10px] uppercase font-semibold">LEAD DESIGNER &amp; VISUAL STRATEGIST</span>
+                </div>
+                <span className="px-2.5 py-1 rounded bg-accent/20 border border-accent/40 text-accent text-[10px] font-black uppercase shadow-sm">
+                  9+ YRS EXP
+                </span>
+              </div>
+            </div>
+
+            <h2 className="font-black text-4xl sm:text-5xl uppercase tracking-tighter text-white font-sans leading-none">
+              SHOEAB <span className="text-accent">AHMED</span>
             </h2>
 
             {/* Quick Profile Specs */}
