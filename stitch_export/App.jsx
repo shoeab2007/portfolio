@@ -2830,9 +2830,9 @@ function ContactSection() {
 }
 
 // -------------------------------------------------------------
-// 13. Admin Passkey Auth & Upload Gate
+// 13. Admin Passkey Auth, Grid Arranger & Upload Dashboard
 // -------------------------------------------------------------
-function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
+function AdminUploadModal({ isOpen, onClose, onRefreshProjects, projects = [], onReorderProjects }) {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     try {
       return localStorage.getItem('shoeab_admin_authenticated') === 'true';
@@ -2842,11 +2842,19 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   });
   const [passkeyInput, setPasskeyInput] = useState('');
   const [authError, setAuthError] = useState('');
+  const [adminTab, setAdminTab] = useState('arrange'); // 'arrange' | 'upload'
 
+  // Arranger state
+  const [localList, setLocalList] = useState([]);
+  const [arrangerCat, setArrangerCat] = useState('ALL');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [toastMessage, setToastMessage] = useState('');
+  const [draggedIdx, setDraggedIdx] = useState(null);
+
+  // Upload state
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState('');
   const [uploadSuccess, setUploadSuccess] = useState(false);
-
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Gig Posters');
   const [client, setClient] = useState('');
@@ -2857,7 +2865,19 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   const [file, setFile] = useState(null);
   const [vimeoUrl, setVimeoUrl] = useState('');
 
+  // Sync projects to localList when modal opens
+  useEffect(() => {
+    if (isOpen && projects && projects.length > 0) {
+      setLocalList([...projects]);
+    }
+  }, [isOpen, projects]);
+
   if (!isOpen) return null;
+
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(''), 3000);
+  };
 
   const handlePasskeySubmit = (e) => {
     e.preventDefault();
@@ -2882,6 +2902,151 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
     } catch (err) {}
     AudioController.play('click');
   };
+
+  // Reordering helpers
+  const moveItemInGlobal = (fromGlobalIdx, toGlobalIdx) => {
+    if (toGlobalIdx < 0 || toGlobalIdx >= localList.length) return;
+    const updated = [...localList];
+    const [moved] = updated.splice(fromGlobalIdx, 1);
+    updated.splice(toGlobalIdx, 0, moved);
+    setLocalList(updated);
+    AudioController.play('pop');
+  };
+
+  const handleMoveUp = (item) => {
+    const globalIdx = localList.findIndex((p) => p.id === item.id);
+    if (globalIdx <= 0) return;
+    // If filtered, find previous item in this filter
+    if (arrangerCat !== 'ALL') {
+      let prevGlobalIdx = -1;
+      for (let i = globalIdx - 1; i >= 0; i--) {
+        if (localList[i].category === arrangerCat) {
+          prevGlobalIdx = i;
+          break;
+        }
+      }
+      if (prevGlobalIdx !== -1) {
+        moveItemInGlobal(globalIdx, prevGlobalIdx);
+        return;
+      }
+    }
+    moveItemInGlobal(globalIdx, globalIdx - 1);
+  };
+
+  const handleMoveDown = (item) => {
+    const globalIdx = localList.findIndex((p) => p.id === item.id);
+    if (globalIdx === -1 || globalIdx >= localList.length - 1) return;
+    // If filtered, find next item in this filter
+    if (arrangerCat !== 'ALL') {
+      let nextGlobalIdx = -1;
+      for (let i = globalIdx + 1; i < localList.length; i++) {
+        if (localList[i].category === arrangerCat) {
+          nextGlobalIdx = i;
+          break;
+        }
+      }
+      if (nextGlobalIdx !== -1) {
+        moveItemInGlobal(globalIdx, nextGlobalIdx);
+        return;
+      }
+    }
+    moveItemInGlobal(globalIdx, globalIdx + 1);
+  };
+
+  const handleMoveToTop = (item) => {
+    const globalIdx = localList.findIndex((p) => p.id === item.id);
+    if (globalIdx <= 0) return;
+    moveItemInGlobal(globalIdx, 0);
+  };
+
+  const handleMoveToBottom = (item) => {
+    const globalIdx = localList.findIndex((p) => p.id === item.id);
+    if (globalIdx === -1 || globalIdx >= localList.length - 1) return;
+    moveItemInGlobal(globalIdx, localList.length - 1);
+  };
+
+  const handleDragStart = (e, index) => {
+    setDraggedIdx(index);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDrop = (e, targetIdx) => {
+    e.preventDefault();
+    if (draggedIdx === null || draggedIdx === targetIdx) return;
+    moveItemInGlobal(draggedIdx, targetIdx);
+    setDraggedIdx(null);
+  };
+
+  // Save order to localStorage and apply live to active portfolio
+  const handleSaveOrder = () => {
+    try {
+      const orderIds = localList.map((p) => p.id);
+      localStorage.setItem('shoeab_custom_order', JSON.stringify(orderIds));
+      if (onReorderProjects) {
+        onReorderProjects([...localList]);
+      }
+      AudioController.play('success');
+      showToast('✓ Custom Grid Order Applied Live to Portfolio!');
+    } catch (err) {
+      console.error(err);
+      showToast('Error saving grid order.');
+    }
+  };
+
+  // Reset to default repo order
+  const handleResetOrder = () => {
+    try {
+      localStorage.removeItem('shoeab_custom_order');
+      if (onRefreshProjects) {
+        onRefreshProjects();
+      }
+      AudioController.play('pop');
+      showToast('⟲ Reverted to Default Sequence');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // Export reordered projects.json file for Git commit
+  const handleExportJson = () => {
+    try {
+      const cleanData = localList.map((p) => {
+        const item = { ...p };
+        // Normalize clean paths without leading ./
+        if (item.media && item.media.startsWith('./')) item.media = '/' + item.media.slice(2);
+        if (item.thumbnail && item.thumbnail.startsWith('./')) item.thumbnail = '/' + item.thumbnail.slice(2);
+        if (item.animated_preview && item.animated_preview.startsWith('./')) item.animated_preview = '/' + item.animated_preview.slice(2);
+        return item;
+      });
+      const blob = new Blob([JSON.stringify(cleanData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'projects.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      AudioController.play('success');
+      showToast('📥 Downloaded projects.json with new order!');
+    } catch (err) {
+      console.error(err);
+      showToast('Failed to export projects.json');
+    }
+  };
+
+  // Filtered view in Arranger
+  const displayedItems = localList.filter((p) => {
+    if (arrangerCat !== 'ALL' && p.category !== arrangerCat) return false;
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      const matchTitle = (p.title || '').toLowerCase().includes(q);
+      const matchClient = (p.client || '').toLowerCase().includes(q);
+      const matchSub = (p.subfolder || '').toLowerCase().includes(q);
+      if (!matchTitle && !matchClient && !matchSub) return false;
+    }
+    return true;
+  });
 
   const handleUploadSubmit = async (e) => {
     e.preventDefault();
@@ -2938,25 +3103,41 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/90 backdrop-blur-xl animate-fade-in">
       <div className="absolute inset-0" onClick={onClose} />
-      <div className="relative z-10 w-full max-w-lg bg-darkcard border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+      <div className={`relative z-10 w-full ${isAuthenticated ? 'max-w-4xl' : 'max-w-lg'} max-h-[90vh] flex flex-col bg-darkcard border border-white/20 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300`}>
+        
         {/* Modal Header */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <div className="flex items-center gap-2.5 font-mono text-xs text-accent font-bold uppercase">
-            <i data-lucide={isAuthenticated ? "unlock" : "lock"} className="w-4 h-4 text-accent"></i>
-            <span>{isAuthenticated ? 'ADMIN PORTFOLIO UPLOAD' : 'SECURITY GATE // OWNER ACCESS'}</span>
-          </div>
+        <div className="p-5 border-b border-white/10 flex items-center justify-between bg-black/40 flex-shrink-0">
           <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/30 text-accent flex items-center justify-center">
+              <i data-lucide={isAuthenticated ? "sliders-horizontal" : "lock"} className="w-4 h-4 text-accent"></i>
+            </div>
+            <div>
+              <h3 className="font-mono text-xs font-bold text-white uppercase tracking-wider">
+                {isAuthenticated ? 'PORTFOLIO ADMIN DASHBOARD' : 'SECURITY GATE // OWNER ACCESS'}
+              </h3>
+              <p className="font-mono text-[10px] text-white/50 uppercase">
+                {isAuthenticated ? 'Visual Grid Arranger & Content Management' : 'Restricted to Shoeab Shaikh'}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2.5">
             {isAuthenticated && (
               <button
                 onClick={handleSignOut}
-                className="font-mono text-[10px] text-red-400 hover:text-red-300 uppercase px-2 py-0.5 rounded border border-red-500/30 bg-red-500/10"
+                className="font-mono text-[10px] text-red-400 hover:text-red-300 uppercase px-2.5 py-1 rounded-lg border border-red-500/30 bg-red-500/10 hover:bg-red-500/20 transition-colors flex items-center gap-1"
+                title="Lock admin session"
               >
-                LOCK SESSION
+                <i data-lucide="lock" className="w-3 h-3"></i>
+                <span>LOCK</span>
               </button>
             )}
-            <button onClick={onClose} className="text-white/50 hover:text-white">
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 text-white/60 hover:text-white flex items-center justify-center transition-colors"
+            >
               <i data-lucide="x" className="w-4 h-4"></i>
             </button>
           </div>
@@ -2964,159 +3145,394 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects }) {
 
         {/* Auth Gate Screen */}
         {!isAuthenticated ? (
-          <form onSubmit={handlePasskeySubmit} className="space-y-4 font-mono">
-            <div className="text-center space-y-2 py-2">
-              <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 text-accent flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(0,255,102,0.2)]">
-                <i data-lucide="shield-alert" className="w-6 h-6"></i>
+          <div className="p-6 sm:p-8">
+            <form onSubmit={handlePasskeySubmit} className="space-y-4 font-mono">
+              <div className="text-center space-y-2 py-2">
+                <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 text-accent flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(0,255,102,0.2)]">
+                  <i data-lucide="shield-alert" className="w-6 h-6"></i>
+                </div>
+                <h3 className="font-sans font-black text-xl text-white uppercase tracking-tight">RESTRICTED ADMIN ACCESS</h3>
+                <p className="text-xs text-white/60 uppercase max-w-xs mx-auto leading-relaxed">
+                  Enter your master owner passkey to manage artwork sequence and uploads.
+                </p>
               </div>
-              <h3 className="font-sans font-black text-xl text-white uppercase tracking-tight">RESTRICTED ADMIN ACCESS</h3>
-              <p className="text-xs text-white/60 uppercase max-w-xs mx-auto leading-relaxed">
-                The upload system is restricted to the portfolio owner. Enter your master passkey to unlock.
-              </p>
-            </div>
 
-            {authError && (
-              <div className="p-3 bg-red-500/15 border border-red-500/50 text-red-300 text-xs rounded-xl font-bold uppercase text-center animate-shake">
-                {authError}
+              {authError && (
+                <div className="p-3 bg-red-500/15 border border-red-500/50 text-red-300 text-xs rounded-xl font-bold uppercase text-center animate-shake">
+                  {authError}
+                </div>
+              )}
+
+              <div className="space-y-1.5 pt-2">
+                <label className="text-[10px] text-white/50 uppercase tracking-wider block">ENTER MASTER PASSKEY</label>
+                <input
+                  type="password"
+                  required
+                  value={passkeyInput}
+                  onChange={(e) => setPasskeyInput(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full bg-black/70 border border-white/20 focus:border-accent rounded-xl p-3.5 text-white font-mono text-sm tracking-widest text-center focus:outline-none shadow-inner"
+                />
               </div>
-            )}
 
-            <div className="space-y-1.5 pt-2">
-              <label className="text-[10px] text-white/50 uppercase tracking-wider block">ENTER MASTER PASSKEY</label>
-              <input
-                type="password"
-                required
-                value={passkeyInput}
-                onChange={(e) => setPasskeyInput(e.target.value)}
-                placeholder="••••••••"
-                className="w-full bg-black/70 border border-white/20 focus:border-accent rounded-xl p-3.5 text-white font-mono text-sm tracking-widest text-center focus:outline-none shadow-inner"
-              />
-            </div>
-
-            <button
-              type="submit"
-              data-cursor="UNLOCK"
-              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-4 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.35)] flex items-center justify-center gap-2 text-xs mt-2"
-            >
-              <span>AUTHORIZE &amp; UNLOCK</span>
-              <i data-lucide="key" className="w-4 h-4"></i>
-            </button>
-          </form>
-        ) : uploadSuccess ? (
-          <div className="py-8 text-center space-y-3 font-mono">
-            <i data-lucide="check-circle" className="w-12 h-12 text-accent mx-auto"></i>
-            <h4 className="text-lg font-bold uppercase text-white font-sans">UPLOAD COMPLETE</h4>
-            <p className="text-xs text-white/60 uppercase">Gallery is updating in realtime...</p>
+              <button
+                type="submit"
+                data-cursor="UNLOCK"
+                className="w-full bg-accent hover:bg-white text-black font-black uppercase py-4 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(0,255,102,0.35)] flex items-center justify-center gap-2 text-xs mt-2"
+              >
+                <span>AUTHORIZE &amp; UNLOCK</span>
+                <i data-lucide="key" className="w-4 h-4"></i>
+              </button>
+            </form>
           </div>
         ) : (
-          <form onSubmit={handleUploadSubmit} className="space-y-4 font-mono text-xs">
-            {uploadError && (
-              <div className="p-2.5 bg-red-500/20 border border-red-500 text-red-300 text-[11px] rounded-xl">
-                {uploadError}
+          <div className="flex flex-col flex-grow overflow-hidden">
+            {/* Admin Tabs */}
+            <div className="flex items-center justify-between px-6 pt-3 border-b border-white/10 bg-black/20 flex-shrink-0">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    AudioController.play('click');
+                    setAdminTab('arrange');
+                  }}
+                  className={`px-4 py-2.5 font-mono text-xs font-bold uppercase transition-all border-b-2 flex items-center gap-2 ${
+                    adminTab === 'arrange'
+                      ? 'border-accent text-accent'
+                      : 'border-transparent text-white/50 hover:text-white'
+                  }`}
+                >
+                  <i data-lucide="grid" className="w-3.5 h-3.5"></i>
+                  <span>ARRANGE GRID ORDER ({localList.length})</span>
+                </button>
+                <button
+                  onClick={() => {
+                    AudioController.play('click');
+                    setAdminTab('upload');
+                  }}
+                  className={`px-4 py-2.5 font-mono text-xs font-bold uppercase transition-all border-b-2 flex items-center gap-2 ${
+                    adminTab === 'upload'
+                      ? 'border-accent text-accent'
+                      : 'border-transparent text-white/50 hover:text-white'
+                  }`}
+                >
+                  <i data-lucide="upload-cloud" className="w-3.5 h-3.5"></i>
+                  <span>UPLOAD NEW WORK</span>
+                </button>
+              </div>
+
+              {toastMessage && (
+                <div className="font-mono text-[11px] font-bold text-accent bg-accent/10 border border-accent/30 px-3 py-1 rounded-lg animate-fade-in">
+                  {toastMessage}
+                </div>
+              )}
+            </div>
+
+            {/* TAB 1: ARRANGE GRID ORDER */}
+            {adminTab === 'arrange' && (
+              <div className="flex flex-col flex-grow overflow-hidden p-4 sm:p-6 space-y-4">
+                {/* Arranger Controls Toolbar */}
+                <div className="flex flex-wrap items-center justify-between gap-3 bg-black/40 p-3 rounded-xl border border-white/10 flex-shrink-0">
+                  {/* Category Filter Pills */}
+                  <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+                    {['ALL', 'Gig Posters', 'Social Media', 'Campaigns & Promos', 'Event Calendars', 'Brochures'].map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => {
+                          AudioController.play('click');
+                          setArrangerCat(cat);
+                        }}
+                        className={`whitespace-nowrap px-3 py-1 rounded-lg font-mono text-[10px] font-bold uppercase transition-all ${
+                          arrangerCat === cat
+                            ? 'bg-accent text-black font-black shadow-[0_0_10px_rgba(0,255,102,0.3)]'
+                            : 'bg-white/5 hover:bg-white/10 text-white/60 hover:text-white border border-white/10'
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Search Bar */}
+                  <div className="relative min-w-[200px] flex-grow sm:flex-grow-0">
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Filter title / client..."
+                      className="w-full bg-black/60 border border-white/20 rounded-lg px-3 py-1.5 text-xs text-white font-mono focus:outline-none focus:border-accent"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={() => setSearchQuery('')}
+                        className="absolute right-2.5 top-2 text-white/40 hover:text-white text-xs"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Actions: Save, Reset, Export */}
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <button
+                      onClick={handleSaveOrder}
+                      data-cursor="SAVE"
+                      className="bg-accent hover:bg-white text-black font-mono text-[11px] font-black uppercase px-3.5 py-1.5 rounded-lg transition-all shadow-[0_0_15px_rgba(0,255,102,0.35)] flex items-center gap-1.5"
+                      title="Save and apply this exact order live to the portfolio grid"
+                    >
+                      <i data-lucide="save" className="w-3.5 h-3.5"></i>
+                      <span>SAVE &amp; APPLY LIVE</span>
+                    </button>
+                    <button
+                      onClick={handleResetOrder}
+                      className="bg-white/10 hover:bg-white/20 text-white/80 hover:text-white font-mono text-[11px] font-bold uppercase px-3 py-1.5 rounded-lg transition-all border border-white/15 flex items-center gap-1.5"
+                      title="Reset order to default file sequence"
+                    >
+                      <i data-lucide="rotate-ccw" className="w-3 h-3"></i>
+                      <span>RESET</span>
+                    </button>
+                    <button
+                      onClick={handleExportJson}
+                      className="bg-white/5 hover:bg-white/15 text-cyan-400 font-mono text-[11px] font-bold uppercase px-3 py-1.5 rounded-lg transition-all border border-cyan-400/30 flex items-center gap-1.5"
+                      title="Download reordered projects.json"
+                    >
+                      <i data-lucide="download" className="w-3 h-3"></i>
+                      <span>EXPORT JSON</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Info Helper Note */}
+                <div className="flex items-center justify-between text-[11px] font-mono text-white/40 px-1 flex-shrink-0">
+                  <span>
+                    SHOWING <strong className="text-white">{displayedItems.length}</strong> OF {localList.length} ARTWORKS (USE ▲ / ▼ OR DRAG TO REORDER)
+                  </span>
+                  <span className="hidden sm:inline text-accent/80">
+                    CHANGES APPLY INSTANTLY UPON CLICKING "SAVE &amp; APPLY LIVE"
+                  </span>
+                </div>
+
+                {/* Scrollable Reorderable List */}
+                <div className="flex-grow overflow-y-auto space-y-2 pr-1 custom-scrollbar max-h-[50vh]">
+                  {displayedItems.length === 0 ? (
+                    <div className="text-center py-12 text-white/40 font-mono text-xs uppercase">
+                      No artworks match your search filter.
+                    </div>
+                  ) : (
+                    displayedItems.map((item) => {
+                      const globalIdx = localList.findIndex((p) => p.id === item.id);
+                      return (
+                        <div
+                          key={item.id}
+                          draggable
+                          onDragStart={(e) => handleDragStart(e, globalIdx)}
+                          onDragOver={(e) => e.preventDefault()}
+                          onDrop={(e) => handleDrop(e, globalIdx)}
+                          className="p-2.5 sm:p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl flex items-center justify-between gap-3 transition-colors group cursor-grab active:cursor-grabbing"
+                        >
+                          {/* Left: Position Badge + Thumbnail + Info */}
+                          <div className="flex items-center gap-3 min-w-0 flex-grow">
+                            {/* Drag Indicator & Position */}
+                            <div className="flex items-center gap-1.5 text-white/40 group-hover:text-white flex-shrink-0">
+                              <span className="cursor-grab text-xs tracking-tighter select-none opacity-50 group-hover:opacity-100">⋮⋮</span>
+                              <span className="font-mono text-[11px] font-black text-accent bg-accent/10 px-2 py-0.5 rounded border border-accent/20">
+                                #{String(globalIdx + 1).padStart(2, '0')}
+                              </span>
+                            </div>
+
+                            {/* Thumbnail */}
+                            <div className="w-11 h-11 rounded-lg bg-black/80 border border-white/15 overflow-hidden flex-shrink-0 flex items-center justify-center p-0.5">
+                              <img
+                                src={item.thumbnail || item.media}
+                                alt=""
+                                className="w-full h-full object-contain"
+                                loading="lazy"
+                              />
+                            </div>
+
+                            {/* Title & Metadata */}
+                            <div className="min-w-0 flex-grow">
+                              <h4 className="font-mono text-xs font-bold text-white uppercase truncate group-hover:text-accent transition-colors">
+                                {item.title}
+                              </h4>
+                              <div className="flex items-center gap-2 font-mono text-[10px] text-white/50 uppercase truncate">
+                                <span className="text-accent">{item.category}</span>
+                                <span>•</span>
+                                <span className="text-white/70">{item.client || 'Shoeab Shaikh'}</span>
+                                {item.subfolder && (
+                                  <>
+                                    <span>•</span>
+                                    <span className="text-cyan-400">{item.subfolder}</span>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Right: Quick Action Buttons */}
+                          <div className="flex items-center gap-1 flex-shrink-0">
+                            <button
+                              onClick={() => handleMoveToTop(item)}
+                              disabled={globalIdx === 0}
+                              className="p-1.5 rounded bg-black/50 hover:bg-accent hover:text-black text-white/70 disabled:opacity-20 transition-all font-mono text-[10px] font-bold"
+                              title="Move to Top (#1)"
+                            >
+                              ⇈ TOP
+                            </button>
+                            <button
+                              onClick={() => handleMoveUp(item)}
+                              disabled={globalIdx === 0}
+                              className="p-1.5 rounded bg-black/50 hover:bg-accent hover:text-black text-white/70 disabled:opacity-20 transition-all font-mono text-[10px] font-bold"
+                              title="Move 1 Position Up"
+                            >
+                              ▲ UP
+                            </button>
+                            <button
+                              onClick={() => handleMoveDown(item)}
+                              disabled={globalIdx === localList.length - 1}
+                              className="p-1.5 rounded bg-black/50 hover:bg-accent hover:text-black text-white/70 disabled:opacity-20 transition-all font-mono text-[10px] font-bold"
+                              title="Move 1 Position Down"
+                            >
+                              ▼ DOWN
+                            </button>
+                            <button
+                              onClick={() => handleMoveToBottom(item)}
+                              disabled={globalIdx === localList.length - 1}
+                              className="p-1.5 rounded bg-black/50 hover:bg-accent hover:text-black text-white/70 disabled:opacity-20 transition-all font-mono text-[10px] font-bold"
+                              title="Move to Bottom"
+                            >
+                              ⇊
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
               </div>
             )}
 
-            <div className="space-y-3 p-3 bg-black/40 border border-white/10 rounded-xl">
-              <div>
-                <label className="text-white/70 block mb-1 uppercase text-[10px] font-bold">OPTION A: UPLOAD LOCAL MEDIA FILE</label>
-                <input
-                  type="file"
-                  accept="image/*,video/mp4,application/pdf"
-                  onChange={(e) => setFile(e.target.files[0])}
-                  className="w-full bg-black/60 border border-white/20 p-2 rounded-xl text-white file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
-                />
-              </div>
+            {/* TAB 2: UPLOAD NEW WORK */}
+            {adminTab === 'upload' && (
+              <div className="p-6 overflow-y-auto max-h-[60vh]">
+                {uploadSuccess ? (
+                  <div className="py-8 text-center space-y-3 font-mono">
+                    <i data-lucide="check-circle" className="w-12 h-12 text-accent mx-auto"></i>
+                    <h4 className="text-lg font-bold uppercase text-white font-sans">UPLOAD COMPLETE</h4>
+                    <p className="text-xs text-white/60 uppercase">Gallery is updating in realtime...</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleUploadSubmit} className="space-y-4 font-mono text-xs">
+                    {uploadError && (
+                      <div className="p-2.5 bg-red-500/20 border border-red-500 text-red-300 text-[11px] rounded-xl">
+                        {uploadError}
+                      </div>
+                    )}
 
-              <div className="flex items-center gap-2 text-white/30 text-[10px] uppercase font-bold">
-                <div className="flex-grow h-px bg-white/10" />
-                <span>OR</span>
-                <div className="flex-grow h-px bg-white/10" />
-              </div>
+                    <div className="space-y-3 p-3 bg-black/40 border border-white/10 rounded-xl">
+                      <div>
+                        <label className="text-white/70 block mb-1 uppercase text-[10px] font-bold">OPTION A: UPLOAD LOCAL MEDIA FILE</label>
+                        <input
+                          type="file"
+                          accept="image/*,video/mp4,application/pdf"
+                          onChange={(e) => setFile(e.target.files[0])}
+                          className="w-full bg-black/60 border border-white/20 p-2 rounded-xl text-white file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-accent file:text-black cursor-pointer"
+                        />
+                      </div>
 
-              <div>
-                <label className="text-cyan-400 block mb-1 uppercase text-[10px] font-bold flex items-center gap-1.5">
-                  <i data-lucide="video" className="w-3.5 h-3.5"></i>
-                  OPTION B: VIMEO VIDEO LINK / ID
-                </label>
-                <input
-                  type="text"
-                  value={vimeoUrl}
-                  onChange={(e) => setVimeoUrl(e.target.value)}
-                  placeholder="https://vimeo.com/123456789 or Video ID"
-                  className="w-full bg-black/60 border border-cyan-400/40 focus:border-cyan-400 rounded-xl p-2.5 text-white font-mono text-xs focus:outline-none"
-                />
-              </div>
-            </div>
+                      <div className="flex items-center gap-2 text-white/30 text-[10px] uppercase font-bold">
+                        <div className="flex-grow h-px bg-white/10" />
+                        <span>OR</span>
+                        <div className="flex-grow h-px bg-white/10" />
+                      </div>
 
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-white/50 block mb-1 uppercase text-[10px]">TITLE *</label>
-                <input
-                  type="text"
-                  required
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  placeholder="e.g. Neon Horizon"
-                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
-                />
-              </div>
-              <div>
-                <label className="text-white/50 block mb-1 uppercase text-[10px]">CATEGORY *</label>
-                <select
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white uppercase focus:outline-none"
-                >
-                  <option>Gig Posters</option>
-                  <option>Campaigns &amp; Promos</option>
-                  <option>Event Calendars</option>
-                  <option>Brochures</option>
-                  <option>Branding</option>
-                </select>
-              </div>
-            </div>
+                      <div>
+                        <label className="text-cyan-400 block mb-1 uppercase text-[10px] font-bold flex items-center gap-1.5">
+                          <i data-lucide="video" className="w-3.5 h-3.5"></i>
+                          OPTION B: VIMEO VIDEO LINK / ID
+                        </label>
+                        <input
+                          type="text"
+                          value={vimeoUrl}
+                          onChange={(e) => setVimeoUrl(e.target.value)}
+                          placeholder="https://vimeo.com/123456789 or Video ID"
+                          className="w-full bg-black/60 border border-cyan-400/40 focus:border-cyan-400 rounded-xl p-2.5 text-white font-mono text-xs focus:outline-none"
+                        />
+                      </div>
+                    </div>
 
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-white/50 block mb-1 uppercase text-[10px]">CLIENT</label>
-                <input
-                  type="text"
-                  value={client}
-                  onChange={(e) => setClient(e.target.value)}
-                  placeholder="antiSOCIAL, KharSOCIAL..."
-                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
-                />
-              </div>
-              <div>
-                <label className="text-white/50 block mb-1 uppercase text-[10px]">YEAR</label>
-                <input
-                  type="text"
-                  value={year}
-                  onChange={(e) => setYear(e.target.value)}
-                  className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
-                />
-              </div>
-            </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="text-white/50 block mb-1 uppercase text-[10px]">TITLE *</label>
+                        <input
+                          type="text"
+                          required
+                          value={title}
+                          onChange={(e) => setTitle(e.target.value)}
+                          placeholder="e.g. Neon Horizon"
+                          className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-white/50 block mb-1 uppercase text-[10px]">CATEGORY *</label>
+                        <select
+                          value={category}
+                          onChange={(e) => setCategory(e.target.value)}
+                          className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white uppercase focus:outline-none"
+                        >
+                          <option>Gig Posters</option>
+                          <option>Social Media</option>
+                          <option>Campaigns &amp; Promos</option>
+                          <option>Event Calendars</option>
+                          <option>Brochures</option>
+                        </select>
+                      </div>
+                    </div>
 
-            <div>
-              <label className="text-white/50 block mb-1 uppercase text-[10px]">STRATEGY / BRIEF NOTES</label>
-              <textarea
-                rows="2"
-                value={strategy}
-                onChange={(e) => setStrategy(e.target.value)}
-                placeholder="Visual direction or event brief..."
-                className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
-              ></textarea>
-            </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="text-white/50 block mb-1 uppercase text-[10px]">CLIENT</label>
+                        <input
+                          type="text"
+                          value={client}
+                          onChange={(e) => setClient(e.target.value)}
+                          placeholder="antiSOCIAL, KharSOCIAL..."
+                          className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-white/50 block mb-1 uppercase text-[10px]">YEAR</label>
+                        <input
+                          type="text"
+                          value={year}
+                          onChange={(e) => setYear(e.target.value)}
+                          className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
+                        />
+                      </div>
+                    </div>
 
-            <button
-              type="submit"
-              disabled={uploading}
-              className="w-full bg-accent hover:bg-white text-black font-black uppercase py-3.5 rounded-xl transition-colors disabled:opacity-50 text-xs"
-            >
-              {uploading ? 'PROCESSING UPLOAD...' : 'CONFIRM & ADD TO ARCHIVE'}
-            </button>
-          </form>
+                    <div>
+                      <label className="text-white/50 block mb-1 uppercase text-[10px]">STRATEGY / BRIEF NOTES</label>
+                      <textarea
+                        rows="2"
+                        value={strategy}
+                        onChange={(e) => setStrategy(e.target.value)}
+                        placeholder="Visual direction or event brief..."
+                        className="w-full bg-black/60 border border-white/20 rounded-xl p-2.5 text-white focus:outline-none focus:border-accent"
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={uploading}
+                      className="w-full bg-accent hover:bg-white text-black font-black uppercase py-3.5 rounded-xl transition-colors disabled:opacity-50 text-xs"
+                    >
+                      {uploading ? 'PROCESSING UPLOAD...' : 'CONFIRM & ADD TO ARCHIVE'}
+                    </button>
+                  </form>
+                )}
+              </div>
+            )}
+          </div>
         )}
       </div>
     </div>
@@ -3251,6 +3667,19 @@ function App() {
             }))
         }));
 
+      // Apply custom grid sequence if saved by admin
+      try {
+        const savedOrder = JSON.parse(localStorage.getItem('shoeab_custom_order') || 'null');
+        if (Array.isArray(savedOrder) && savedOrder.length > 0) {
+          const orderMap = new Map(savedOrder.map((id, index) => [id, index]));
+          normalized.sort((a, b) => {
+            const idxA = orderMap.has(a.id) ? orderMap.get(a.id) : 999999;
+            const idxB = orderMap.has(b.id) ? orderMap.get(b.id) : 999999;
+            return idxA - idxB;
+          });
+        }
+      } catch (e) {}
+
       setProjects(normalized);
     } catch (err) {
       console.error("Error loading portfolio dataset:", err);
@@ -3339,11 +3768,13 @@ function App() {
         />
       )}
 
-      {/* Admin Upload Modal */}
+      {/* Admin Upload & Grid Arranger Dashboard Modal */}
       <AdminUploadModal
         isOpen={uploadOpen}
         onClose={() => setUploadOpen(false)}
         onRefreshProjects={loadProjects}
+        projects={projects}
+        onReorderProjects={setProjects}
       />
 
       {/* Brutalist Footer */}

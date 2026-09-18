@@ -37,43 +37,6 @@
     }
   },
   {
-    "id": "e08bfc4b9cdda94b2268c7ceae02546b",
-    "title": "Xchange",
-    "category": "Gig Posters",
-    "folder": "01_Gig_Posters",
-    "subfolder": "",
-    "role": "Visual Strategist & Art Director",
-    "client": "Shoeab Shaikh",
-    "year": "2026",
-    "strategy": "",
-    "tech": "Photoshop, Illustrator",
-    "media": "/01_Gig_Posters/2026_April_Social Xchange_Post.webp",
-    "type": "image",
-    "variants": [
-      {
-        "id": "e08bfc4b9cdda94b2268c7ceae02546b",
-        "label": "Feed Post (1:1 / 4:5)",
-        "media": "/01_Gig_Posters/2026_April_Social Xchange_Post.webp",
-        "type": "image",
-        "ratio": "1:1 (Square/Post)",
-        "file": "2026_April_Social Xchange_Post.webp",
-        "thumbnail": "/01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp"
-      }
-    ],
-    "is_default": true,
-    "thumbnail": "/01_Gig_Posters/2026_April_Social Xchange_Post_thumb.webp",
-    "case_study": {
-      "brief": "Specialist electronic music showcase poster for 'Xchange' at premier underground venues.",
-      "constraints": [
-        "Reflect the complex technical synergy of back-to-back DJ sets and hypnotic electronic subgenres",
-        "Ensure equal typographic prominence for co-headlining electronic music producers",
-        "Optimized for high-contrast viewing on dark nightclub screens and OLED smartphones"
-      ],
-      "decisions": "Employed dual-column mirrored typography, mathematical sound-frequency gridlines, and deep space obsidian aesthetics with piercing laser-green accents.",
-      "outcome": "Garnered praise from both performing artists and attendees for elevated visual storytelling, driving full dancefloor attendance."
-    }
-  },
-  {
     "id": "00139d39583dc9a66bd4497a63ff45d4",
     "title": "Pullup",
     "category": "Gig Posters",
