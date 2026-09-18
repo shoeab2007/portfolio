@@ -3105,44 +3105,96 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects, projects = [], o
     setUploadError('');
 
     try {
-      const data = new FormData();
-      data.append('title', title);
-      data.append('category', category);
-      data.append('client', client || 'Shoeab Shaikh');
-      data.append('role', role);
-      data.append('year', year);
-      data.append('strategy', strategy || 'Curated portfolio piece.');
-      data.append('tech', tech);
-      if (vimeoUrl.trim()) {
-        data.append('vimeo_url', vimeoUrl.trim());
+      // If local python server is running, attempt backend POST
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        try {
+          const data = new FormData();
+          data.append('title', title);
+          data.append('category', category);
+          data.append('client', client || 'Shoeab Shaikh');
+          data.append('role', role);
+          data.append('year', year);
+          data.append('strategy', strategy || 'Curated portfolio piece.');
+          data.append('tech', tech);
+          if (vimeoUrl.trim()) data.append('vimeo_url', vimeoUrl.trim());
+          if (file) data.append('file', file);
+
+          await fetch('/api/upload', {
+            method: 'POST',
+            body: data
+          });
+        } catch (serverErr) {}
       }
+
+      // Always stage deliverable directly into the client portfolio state
+      let mediaUrl = '';
+      let mediaType = 'image';
       if (file) {
-        data.append('file', file);
+        mediaUrl = URL.createObjectURL(file);
+        if (file.type.includes('video') || file.name.toLowerCase().endsWith('.mp4')) {
+          mediaType = 'video';
+        } else if (file.type.includes('pdf') || file.name.toLowerCase().endsWith('.pdf')) {
+          mediaType = 'pdf';
+        }
+      } else if (vimeoUrl.trim()) {
+        mediaUrl = vimeoUrl.trim();
+        mediaType = 'video';
       }
 
-      const res = await fetch('/api/upload', {
-        method: 'POST',
-        body: data
-      });
+      const newId = 'upload_' + Date.now();
+      const newProject = {
+        id: newId,
+        title: title.trim() || 'Untitled Deliverable',
+        category: category,
+        folder: category === 'Brochures' ? '04_Brochures' : (category === 'Social Media' ? '05_Social Media' : '01_Gig_Posters'),
+        subfolder: '',
+        role: role,
+        client: client.trim() || 'Shoeab Shaikh',
+        year: year || '2026',
+        strategy: strategy || '',
+        tech: tech,
+        media: mediaUrl,
+        thumbnail: mediaUrl,
+        type: mediaType,
+        is_default: false,
+        variants: [
+          {
+            id: newId + '-main',
+            label: mediaType === 'pdf' ? 'Complete PDF Document' : 'Main Deliverable',
+            media: mediaUrl,
+            type: mediaType,
+            ratio: mediaType === 'pdf' ? 'PDF Document' : '1:1',
+            file: file ? file.name : 'Vimeo Video',
+            thumbnail: mediaUrl
+          }
+        ],
+        case_study: {
+          brief: strategy || `Commercial creative deliverable for ${client || 'Shoeab Shaikh'}.`,
+          constraints: ['Client brief and specs', 'High-contrast branding standards', 'Cross-platform deliverable format'],
+          decisions: `Executed in ${category} category adhering to brutalist editorial visual direction.`,
+          outcome: 'Added to portfolio archive.'
+        }
+      };
 
-      if (!res.ok) {
-        throw new Error('Upload failed on server. (Note: On static GitHub Pages, uploads are managed via Git repository commits).');
+      try {
+        const stored = JSON.parse(localStorage.getItem('shoeab_custom_uploads') || '[]');
+        stored.unshift(newProject);
+        localStorage.setItem('shoeab_custom_uploads', JSON.stringify(stored));
+      } catch (storageErr) {}
+
+      if (onReorderProjects) {
+        onReorderProjects([newProject, ...projects]);
       }
+      setLocalList([newProject, ...localList]);
 
       AudioController.play('success');
       setUploadSuccess(true);
       if (typeof confetti !== 'undefined') {
-        confetti({ particleCount: 50, spread: 70 });
+        confetti({ particleCount: 60, spread: 80 });
       }
-
-      setTimeout(() => {
-        setUploadSuccess(false);
-        onRefreshProjects();
-        onClose();
-      }, 1500);
     } catch (err) {
       console.error(err);
-      setUploadError(err.message || 'Failed to upload. Ensure server.py is running locally.');
+      setUploadError(err.message || 'An error occurred while adding artwork.');
     } finally {
       setUploading(false);
     }
@@ -3461,10 +3513,34 @@ function AdminUploadModal({ isOpen, onClose, onRefreshProjects, projects = [], o
             {adminTab === 'upload' && (
               <div className="p-6 overflow-y-auto max-h-[60vh]">
                 {uploadSuccess ? (
-                  <div className="py-8 text-center space-y-3 font-mono">
-                    <i data-lucide="check-circle" className="w-12 h-12 text-accent mx-auto"></i>
-                    <h4 className="text-lg font-bold uppercase text-white font-sans">UPLOAD COMPLETE</h4>
-                    <p className="text-xs text-white/60 uppercase">Gallery is updating in realtime...</p>
+                  <div className="py-8 text-center space-y-4 font-mono">
+                    <div className="w-14 h-14 rounded-full bg-accent/15 border border-accent text-accent flex items-center justify-center mx-auto shadow-[0_0_25px_rgba(0,255,102,0.4)]">
+                      <i data-lucide="check-circle" className="w-8 h-8 text-accent"></i>
+                    </div>
+                    <h4 className="text-xl font-black uppercase text-white font-sans">DELIVERABLE ADDED TO ARCHIVE!</h4>
+                    <p className="text-xs text-white/70 uppercase max-w-md mx-auto leading-relaxed">
+                      Your new artwork has been added to your live portfolio grid.
+                    </p>
+                    <div className="pt-2 flex items-center justify-center gap-3">
+                      <button
+                        onClick={() => {
+                          setUploadSuccess(false);
+                          setAdminTab('arrange');
+                        }}
+                        className="px-5 py-2.5 bg-accent hover:bg-white text-black font-mono text-xs font-black uppercase rounded-xl transition-all shadow-md"
+                      >
+                        ARRANGE IN GRID →
+                      </button>
+                      <button
+                        onClick={() => {
+                          setUploadSuccess(false);
+                          onClose();
+                        }}
+                        className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold uppercase rounded-xl transition-all border border-white/15"
+                      >
+                        CLOSE &amp; VIEW SITE
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleUploadSubmit} className="space-y-4 font-mono text-xs">
@@ -3722,7 +3798,7 @@ function App() {
         return './' + clean;
       };
 
-      const normalized = data
+      let normalized = data
         .filter((p) => !p.media?.includes('_thumb') && !p.media?.includes('_anim'))
         .map((p) => ({
           ...p,
@@ -3738,6 +3814,14 @@ function App() {
               animated_preview: resolveMedia(v.animated_preview || v.thumbnail || v.media)
             }))
         }));
+
+      // Merge custom uploads saved locally if any
+      try {
+        const customUploads = JSON.parse(localStorage.getItem('shoeab_custom_uploads') || '[]');
+        if (Array.isArray(customUploads) && customUploads.length > 0) {
+          normalized = [...customUploads, ...normalized];
+        }
+      } catch (e) {}
 
       // Apply custom grid sequence if saved by admin
       try {

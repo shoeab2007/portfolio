@@ -3374,6 +3374,52 @@
     }
   },
   {
+    "id": "fe7acf22545e6d2610147c4cbfaf7aed",
+    "title": "Allied Ispat Company Profile",
+    "category": "Brochures",
+    "folder": "04_Brochures",
+    "subfolder": "",
+    "role": "Visual Strategist & Editorial Designer",
+    "client": "Allied Ispat",
+    "year": "2025",
+    "strategy": "",
+    "tech": "InDesign, Illustrator, Photoshop, Acrobat Pro",
+    "media": "/04_Brochures/Allied_Ispat_Cover.webp",
+    "type": "image",
+    "variants": [
+      {
+        "id": "fe7acf22545e6d2610147c4cbfaf7aed-cover",
+        "label": "Brochure Cover (A4)",
+        "media": "/04_Brochures/Allied_Ispat_Cover.webp",
+        "type": "image",
+        "ratio": "A4 Portrait",
+        "file": "Allied_Ispat_Cover.webp",
+        "thumbnail": "/04_Brochures/Allied_Ispat_Cover_thumb.webp"
+      },
+      {
+        "id": "fe7acf22545e6d2610147c4cbfaf7aed-pdf",
+        "label": "Complete PDF Document (12 Pages)",
+        "media": "/04_Brochures/Allied Ispat LLC Brochure.pdf",
+        "type": "pdf",
+        "ratio": "PDF Document",
+        "file": "Allied Ispat LLC Brochure.pdf",
+        "thumbnail": "/04_Brochures/Allied_Ispat_Cover_thumb.webp"
+      }
+    ],
+    "is_default": true,
+    "thumbnail": "/04_Brochures/Allied_Ispat_Cover_thumb.webp",
+    "case_study": {
+      "brief": "Comprehensive B2B product catalogue and corporate capability brochure for Allied Ispat LLC, introducing their sub-brand GypsPlus Pro-Core to the UAE and GCC construction sectors. The design bridges an established 50-year manufacturing heritage in India with modern commercial positioning in Dubai.",
+      "constraints": [
+        "Detail complex architectural steel profiles, drywall partition sections, and false ceiling engineering specs across 12 structured pages",
+        "Brand harmony bridging 50+ years of Indian manufacturing legacy with modern UAE construction sector standards",
+        "Pre-press print-ready offset compliance and optimized digital PDF distribution for international contractors"
+      ],
+      "decisions": "Engineered a high-precision technical layout with clean modular specification tables, architectural isometric diagrams, and a robust steel-blue and industrial metallic identity system.",
+      "outcome": "Formally adopted as Allied Ispat LLC's primary corporate capability deck and technical procurement catalog for commercial and residential developers across the UAE."
+    }
+  },
+  {
     "id": "7bdc820a38447fbdc8b20df323171a1a",
     "title": "Banana Pancakes Reel",
     "category": "Social Media",
