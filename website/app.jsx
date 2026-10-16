@@ -3670,6 +3670,47 @@ function Footer({ onOpenUpload }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const [visitorCount, setVisitorCount] = useState(null);
+
+  useEffect(() => {
+    // Use a lightweight free hit counter API (no signup required)
+    // We use the countapi.xyz compatible endpoint via hits.sh
+    const namespace = 'shoeab2007-portfolio';
+    const key = 'visits';
+    const countedKey = `visitor_counted_${namespace}`;
+
+    // Check if this session already counted
+    const alreadyCounted = sessionStorage.getItem(countedKey);
+
+    if (alreadyCounted) {
+      // Just fetch current count without incrementing
+      fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data && typeof data.value === 'number') {
+            setVisitorCount(data.value);
+          }
+        })
+        .catch(() => setVisitorCount(null));
+    } else {
+      // Increment and fetch
+      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data && typeof data.value === 'number') {
+            setVisitorCount(data.value);
+            sessionStorage.setItem(countedKey, 'true');
+          }
+        })
+        .catch(() => setVisitorCount(null));
+    }
+  }, []);
+
+  const formatCount = (num) => {
+    if (num === null) return '---';
+    return num.toLocaleString('en-US');
+  };
+
   return (
     <footer className="border-t border-white/15 bg-black py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -3694,6 +3735,19 @@ function Footer({ onOpenUpload }) {
               behance.net/shoeabshaikh • Complete high-resolution client project showcases &amp; visual identities
             </p>
           </a>
+        </div>
+
+        {/* Visitor Counter */}
+        <div className="flex items-center justify-center mb-10">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-darkcard border border-white/10 backdrop-blur-md shadow-sm">
+            <i data-lucide="eye" className="w-3.5 h-3.5 text-accent/70"></i>
+            <span className="font-mono text-[11px] sm:text-xs text-white/60 uppercase tracking-widest">
+              PORTFOLIO VISITORS
+            </span>
+            <span className="font-mono text-sm sm:text-base font-black text-accent tracking-wider tabular-nums">
+              {formatCount(visitorCount)}
+            </span>
+          </div>
         </div>
 
         {/* Bottom Metadata & Copyright Bar */}
