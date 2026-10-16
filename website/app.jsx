@@ -1366,6 +1366,46 @@ function BentoProjectsGrid({
             <i data-lucide="arrow-up-right" className="w-4 h-4 text-accent group-hover:text-black transition-colors"></i>
           </a>
         </div>
+
+        {/* Bottom Category Dock — visible after scrolling through artworks */}
+        <div className="mt-16 pt-10 border-t border-white/10">
+          <div className="flex items-center gap-2 font-mono text-[10px] text-white/40 uppercase tracking-widest mb-4">
+            <i data-lucide="arrow-up" className="w-3 h-3 text-accent/60"></i>
+            <span>JUMP TO CATEGORY</span>
+            <span className="flex-1 border-t border-white/10 ml-2"></span>
+          </div>
+          <div className="relative p-2 sm:p-2.5 bg-gradient-to-r from-darkcard/95 via-darkcard to-darkcard/95 border border-white/20 hover:border-accent/40 rounded-2xl backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] transition-all">
+            <div className="flex items-center gap-2.5 sm:gap-3 overflow-x-auto pb-1 no-scrollbar scroll-smooth">
+              {categories.map((cat) => {
+                const isActive = activeFilter === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => {
+                      AudioController.play('click');
+                      setActiveFilter(cat.id);
+                      setVisibleCount(24);
+                      // Smooth scroll back to top of projects section
+                      const el = document.getElementById('projects');
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    data-cursor={cat.label}
+                    className={`whitespace-nowrap px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4 rounded-xl font-mono text-xs sm:text-sm md:text-base font-black tracking-wider uppercase transition-all duration-300 flex items-center gap-2.5 select-none ${
+                      isActive
+                        ? 'bg-accent text-black shadow-[0_0_25px_rgba(0,255,102,0.5)] scale-[1.02] translate-y-[-1px]'
+                        : 'bg-white/5 hover:bg-white/15 text-white/75 hover:text-white border border-white/10 hover:border-white/30'
+                    }`}
+                  >
+                    <span className={`w-2 h-2 rounded-full ${isActive ? 'bg-black animate-pulse' : 'bg-white/30'}`} />
+                    <span>{cat.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
